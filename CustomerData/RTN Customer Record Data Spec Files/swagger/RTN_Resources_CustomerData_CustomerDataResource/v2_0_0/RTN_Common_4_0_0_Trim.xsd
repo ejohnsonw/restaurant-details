@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    version="4.0.0"
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:ms-0400="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    xmlns:ota2="http://www.opentravel.org/OTM/Common/v0"
+    xmlns:otm="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:annotation>
+        <xsd:appinfo>
+            <otm:Library>
+                <otm:LibraryName>RTN_Common</otm:LibraryName>
+                <otm:LibraryVersion>4.0.0</otm:LibraryVersion>
+                <otm:LibraryStatus>FINAL</otm:LibraryStatus>
+                <otm:SourceFile>/RTN_Common_4_0_0.otm</otm:SourceFile>
+                <otm:CompilerVersion>4.0-SNAPSHOT</otm:CompilerVersion>
+                <otm:CompileDate>2022-10-11T09:49:27.826-04:00</otm:CompileDate>
+            </otm:Library>
+        </xsd:appinfo>
+    </xsd:annotation>
+    
+    <xsd:import namespace="http://www.opentravel.org/OTM/Common/v0" schemaLocation="built-ins/OTM_BuiltIns.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v2" schemaLocation="ms-0200_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v2" schemaLocation="ms-0200_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" schemaLocation="built-ins/OTA2_AppInfo_v1.0.0.xsd"/>
+    
+    <xsd:simpleType name="GUID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A globally unique ID for an object.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="Simple">GUID</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="128"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:element abstract="true" name="ProfileSubGrp" type="ms-0400:Profile_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details related to a an individual or company.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Profile</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="ProfileID"
+        substitutionGroup="ms-0400:ProfileSubGrp" type="ms-0400:Profile_ID"/>
+    <xsd:element name="ProfileIdentifier" type="ms-0400:Profile_ID"/>
+    <xsd:element name="Profile"
+        substitutionGroup="ms-0400:ProfileSubGrp" type="ms-0400:Profile"/>
+    <xsd:element name="ProfileSummary" type="ms-0400:Profile"/>
+    
+    <xsd:complexType name="Profile_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Profile</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ProfileID" type="ms-0400:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A globally unique identifier for a customer (person, entity, group).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="UserID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An customer facing identifier for the profile.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Profile">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Profile</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0400:Profile_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Status" type="ms-0200:ProfileStatus_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the current status of the profile (e.g. Active, Inactive, Marked for deletion, etc.).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0400:ProfileStatusHistory">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A collection of status changes for a profile along with associated data.  Even the current status will create a ProfileStatusHistory Record which can be used to calculate when a status began and potentially ended.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0400:AssociatedProfileSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information regarding another profile and the relationship to the profile.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="1" name="LastUsedDateTime" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the last time that the profile was utilized (e.g. updated, usage, etc.).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0400:ProfileEntity">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Profile information for a person or company.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0400:BusinessEntity">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The organization doing business as a portfolio holding company, brand or order fulfillment location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="ProfileStatusHistory" type="ms-0400:ProfileStatusHistory"/>
+    
+    <xsd:complexType name="ProfileStatusHistory">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">ProfileStatusHistory</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="Status" type="ms-0200:ProfileStatus_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the status of the profile at a previous date and time.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ChangeDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The date and time that the status changed (ISO 8601), this is preferred data and should be sent if available.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ChangedBy" type="ms-0400:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An identifier for the system that made the status change on the profile.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SystemName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the system that made the status change.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Comment" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Provides details around the nature or cause of the status change.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="AssociatedProfileSubGrp" type="ms-0400:AssociatedProfile">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">AssociatedProfile</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="AssociatedProfile"
+        substitutionGroup="ms-0400:AssociatedProfileSubGrp" type="ms-0400:AssociatedProfile"/>
+    <xsd:element name="AssociatedProfileSummary" type="ms-0400:AssociatedProfile"/>
+    <xsd:element name="AssociatedProfileDetail"
+        substitutionGroup="ms-0400:AssociatedProfileSubGrp" type="ms-0400:AssociatedProfile_Detail"/>
+    
+    <xsd:complexType name="AssociatedProfile">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">AssociatedProfile</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ProfileID" type="ms-0400:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The globally unique identifier for the associated profile.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="UserID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The customer facing ID for the profile.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="RelationshipType" type="ms-0200:RelationshipType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Defines the nature of the associated profile.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Description of the relationship between the associated profile and the profile on the record.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="AssociatedProfile_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">AssociatedProfile</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0400:AssociatedProfile">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+                <xsd:attribute name="mergeInd" type="xsd:boolean" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">When true, this profile will be merged with the primary profile.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="ProfileEntity" type="ms-0400:ProfileEntity">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Profile information for a person or company.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">ProfileEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="ProfileEntityCompany"
+        substitutionGroup="ms-0400:ProfileEntity" type="ms-0400:ProfileEntity_Company"/>
+    <xsd:element name="ProfileEntityPerson"
+        substitutionGroup="ms-0400:ProfileEntity" type="ms-0400:ProfileEntity_Person"/>
+    
+    <xsd:complexType abstract="true" name="ProfileEntity">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">ProfileEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Description related to the entitiy.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="ProfileEntity_Company">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">ProfileEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0400:ProfileEntity">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0200:CompanySubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Profile informaation for a business.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="ProfileEntity_Person">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">ProfileEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0400:ProfileEntity">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0200:PersonSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Profile information for a human being.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="BusinessEntity" type="ms-0400:BusinessEntity">
+        <xsd:annotation>
+            <xsd:documentation source="Description">The organization doing business as a portfolio holding company, brand or order fulfillment location.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">BusinessEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="BusinessEntityPortfolioHoldingCompany"
+        substitutionGroup="ms-0400:BusinessEntity" type="ms-0400:BusinessEntity_PortfolioHoldingCompany"/>
+    <xsd:element name="BusinessEntityBrand"
+        substitutionGroup="ms-0400:BusinessEntity" type="ms-0400:BusinessEntity_Brand"/>
+    <xsd:element name="BusinessEntityLocation"
+        substitutionGroup="ms-0400:BusinessEntity" type="ms-0400:BusinessEntity_Location"/>
+    
+    <xsd:complexType abstract="true" name="BusinessEntity">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">BusinessEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A description for the business entitiy.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BusinessEntity_PortfolioHoldingCompany">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">BusinessEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0400:BusinessEntity">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0200:PortfolioHoldingCompany">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A company that owns one or more brands.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BusinessEntity_Brand">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">BusinessEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0400:BusinessEntity">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="0" ref="ms-0200:Brand">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A group of restaurants belonging to the same company.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BusinessEntity_Location">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">BusinessEntity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0400:BusinessEntity">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0200:LocationSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An order fulfillment location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+</xsd:schema>

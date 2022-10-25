@@ -1,0 +1,122 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "RestaurantDetailsResource",
+    "version": "1.0.0"
+  },
+  "host": "127.0.0.1",
+  "basePath": "/v1_0",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/restaurantdetails": {
+      "post": {
+        "summary": "RestaurantDetailsResource - Create",
+        "operationId": "Create",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "RestaurantDetailsID",
+            "in": "body",
+            "description": "Specifies the location and menu details for a restaurant.",
+            "required": true,
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/RestaurantDetailsID"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "400": {
+            "description": ""
+          },
+          "401": {
+            "description": ""
+          },
+          "402": {
+            "description": ""
+          },
+          "403": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/restaurantdetails/{restaurantID}": {
+      "get": {
+        "summary": "RestaurantDetailsResource - Get",
+        "operationId": "Get",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "restaurantID",
+            "in": "path",
+            "description": "A unique identifier for the restaurant.",
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Specifies the location and menu details for a restaurant.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/RestaurantDetailsID"
+            }
+          },
+          "400": {
+            "description": "Specifies the location and menu details for a restaurant.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/RestaurantDetailsID"
+            }
+          },
+          "401": {
+            "description": "Specifies the location and menu details for a restaurant.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/RestaurantDetailsID"
+            }
+          },
+          "402": {
+            "description": "Specifies the location and menu details for a restaurant.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/RestaurantDetailsID"
+            }
+          },
+          "403": {
+            "description": "Specifies the location and menu details for a restaurant.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/RestaurantDetailsID"
+            }
+          },
+          "404": {
+            "description": "Specifies the location and menu details for a restaurant.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/RestaurantDetailsID"
+            }
+          },
+          "500": {
+            "description": "Specifies the location and menu details for a restaurant.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/RestaurantDetailsID"
+            }
+          }
+        }
+      }
+    }
+  }
+}

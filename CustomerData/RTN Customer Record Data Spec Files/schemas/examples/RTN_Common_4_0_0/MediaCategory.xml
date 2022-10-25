@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0400:MediaCategory
+    xmlns:ms-0400="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v4 ../../RTN_Common_4_0_0.xsd">
+    <ms-0400:Name>Beverages</ms-0400:Name>
+    <ms-0400:Media>
+        <ms-0400:MediaURI>http://www.w3.org/2001/XMLSchema</ms-0400:MediaURI>
+        <ms-0400:KnownAssetNumber>Example String Value</ms-0400:KnownAssetNumber>
+    </ms-0400:Media>
+</ms-0400:MediaCategory>

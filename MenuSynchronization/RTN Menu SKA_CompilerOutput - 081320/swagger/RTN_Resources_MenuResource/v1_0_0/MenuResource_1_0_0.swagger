@@ -1,0 +1,122 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "MenuResource",
+    "version": "1.0.0"
+  },
+  "host": "127.0.0.1",
+  "basePath": "/v1_0",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/menus": {
+      "post": {
+        "summary": "MenuResource - Create",
+        "operationId": "Create",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "MenuID",
+            "in": "body",
+            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "required": true,
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuID"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          },
+          "400": {
+            "description": ""
+          },
+          "401": {
+            "description": ""
+          },
+          "402": {
+            "description": ""
+          },
+          "403": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          },
+          "500": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/menus/{menuID}": {
+      "get": {
+        "summary": "MenuResource - Get",
+        "operationId": "Get",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "menuID",
+            "in": "path",
+            "description": "A system wide unique ID associated with a menu.",
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuID"
+            }
+          },
+          "400": {
+            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuID"
+            }
+          },
+          "401": {
+            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuID"
+            }
+          },
+          "402": {
+            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuID"
+            }
+          },
+          "403": {
+            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuID"
+            }
+          },
+          "404": {
+            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuID"
+            }
+          },
+          "500": {
+            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "schema": {
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuID"
+            }
+          }
+        }
+      }
+    }
+  }
+}

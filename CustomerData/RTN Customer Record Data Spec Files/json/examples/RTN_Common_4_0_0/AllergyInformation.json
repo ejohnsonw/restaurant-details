@@ -1,0 +1,8 @@
+{
+  "AllergyInformation" : {
+    "medicalNeedInd" : true,
+    "AllergyInformationType" : {
+      "value" : "Gluten"
+    }
+  }
+}

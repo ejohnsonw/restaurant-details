@@ -1,0 +1,321 @@
+{
+  "swagger": "2.0",
+  "x-otm-resource": {
+    "namespace": "http://www.modeldev.restauranttechnologynetwork.com/models/v2",
+    "localName": "CustomerDataResource"
+  },
+  "info": {
+    "title": "CustomerDataResource",
+    "x-otm-library": {
+      "ResourceName": "CustomerDataResource",
+      "LibraryName": "RTN_Resources_CustomerData",
+      "LibraryVersion": "2.0.0",
+      "LibraryStatus": "FINAL",
+      "SourceFile": "/RTN_Resources_CustomerData_2_0_0.otm",
+      "CompilerVersion": "4.0-SNAPSHOT",
+      "CompileDate": "2022-10-11T09:49:27.754-0400"
+    },
+    "description": "Resources to manage customer data.",
+    "version": "2.0.0"
+  },
+  "host": "example.com",
+  "basePath": "/resource/v2",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Profiles{ProfileID}": {
+      "get": {
+        "summary": "CustomerDataResource - Get",
+        "operationId": "Get",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "ProfileID",
+            "in": "path",
+            "description": "A globally unique identifier for a customer (person, entity, group).",
+            "x-otm-annotations": {
+              "examples": [
+                {
+                  "context": "Example",
+                  "value": "3a5e515d-dfb5-4f01-b41c-bc74637feb82"
+                }
+              ]
+            },
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "400": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "401": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "402": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "403": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "404": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "500": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "CustomerDataResource - Update",
+        "operationId": "Update",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "ProfileID",
+            "in": "path",
+            "description": "A globally unique identifier for a customer (person, entity, group).",
+            "x-otm-annotations": {
+              "examples": [
+                {
+                  "context": "Example",
+                  "value": "3a5e515d-dfb5-4f01-b41c-bc74637feb82"
+                }
+              ]
+            },
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          },
+          {
+            "name": "ProfileID",
+            "in": "body",
+            "description": "Details related to a an individual or company.",
+            "required": false,
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "400": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "401": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "402": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "403": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "404": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "500": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          }
+        }
+      }
+    },
+    "/Profiles": {
+      "post": {
+        "summary": "CustomerDataResource - Create",
+        "operationId": "Create",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "ProfileID",
+            "in": "body",
+            "description": "Details related to a an individual or company.",
+            "required": false,
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "400": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "401": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "402": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "403": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "404": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          },
+          "500": {
+            "description": "Details related to a an individual or company.",
+            "schema": {
+              "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+            }
+          }
+        }
+      }
+    }
+  }
+}

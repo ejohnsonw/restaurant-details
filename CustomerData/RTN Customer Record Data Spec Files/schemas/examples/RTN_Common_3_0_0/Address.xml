@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0300:Address
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v3 ../../RTN_Common_3_0_0.xsd">
+    <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+    <ms-0300:CityName>Rochester</ms-0300:CityName>
+    <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+    <ms-0300:Country>United States</ms-0300:Country>
+    <ms-0300:CountryCode>US</ms-0300:CountryCode>
+    <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+    <ms-0300:AddressType>Business</ms-0300:AddressType>
+</ms-0300:Address>

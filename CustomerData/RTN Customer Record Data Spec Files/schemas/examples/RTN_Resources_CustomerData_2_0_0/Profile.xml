@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0400:Profile
+    xmlns:ms-0400="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v4 ../../RTN_Common_4_0_0.xsd">
+    <ms-0400:ProfileID>3a5e515d-dfb5-4f01-b41c-bc74637feb82</ms-0400:ProfileID>
+    <ms-0400:UserID>5258865</ms-0400:UserID>
+    <ms-0400:Status>Active</ms-0400:Status>
+    <ms-0400:ProfileStatusHistory>
+        <ms-0400:Status>Inactive</ms-0400:Status>
+        <ms-0400:ChangeDate>2021-11-30T20:33:35+00:00</ms-0400:ChangeDate>
+        <ms-0400:ChangedBy>c5fe1946-1ab7-4967-be42-eea4c58d56fc</ms-0400:ChangedBy>
+        <ms-0400:SystemName>Loyalty R Us</ms-0400:SystemName>
+        <ms-0400:Comment>System status changed based on inactivity.</ms-0400:Comment>
+    </ms-0400:ProfileStatusHistory>
+    <ms-0400:AssociatedProfileDetail mergeInd="true">
+        <ms-0400:ProfileID>fad1b3e8-81cd-4824-8f37-4437822ee512</ms-0400:ProfileID>
+        <ms-0400:UserID>1233251</ms-0400:UserID>
+        <ms-0400:RelationshipType>Business</ms-0400:RelationshipType>
+        <ms-0400:Description>Spouse</ms-0400:Description>
+    </ms-0400:AssociatedProfileDetail>
+    <ms-0400:LastUsedDateTime>2021-09-07T15:50:00+04:00</ms-0400:LastUsedDateTime>
+    <ms-0400:ProfileEntityCompany>
+        <ms-0400:Description>Example String Value</ms-0400:Description>
+        <ms-0200:CompanyDetail>
+            <ms-0200:CompanyID>Example String Value</ms-0200:CompanyID>
+            <ms-0200:CompanyName>IBM</ms-0200:CompanyName>
+            <ms-0200:Address>
+                <ms-0200:StreetAddress>100 Main Avenue</ms-0200:StreetAddress>
+                <ms-0200:CityName>Rochester</ms-0200:CityName>
+                <ms-0200:PostalCode>14604</ms-0200:PostalCode>
+                <ms-0200:Country>United States</ms-0200:Country>
+                <ms-0200:CountryCode>US</ms-0200:CountryCode>
+                <ms-0200:StateOrTerritory>NY</ms-0200:StateOrTerritory>
+                <ms-0200:AddressType>Business</ms-0200:AddressType>
+            </ms-0200:Address>
+            <ms-0200:Phone primaryInd="true">
+                <ms-0200:PhoneNumber>555-555-5555</ms-0200:PhoneNumber>
+                <ms-0200:Type>Home</ms-0200:Type>
+                <ms-0200:Capabilities>Multimedia</ms-0200:Capabilities>
+            </ms-0200:Phone>
+            <ms-0200:ContactDetail birthday="2000-11-30">
+                <ms-0200:PersonName language="en-us" primaryInd="true">
+                    <ms-0200:First>John</ms-0200:First>
+                    <ms-0200:Last>Smith</ms-0200:Last>
+                    <ms-0200:Middle>Jacob</ms-0200:Middle>
+                    <ms-0200:Prefix>Mr.</ms-0200:Prefix>
+                    <ms-0200:Suffix>Jr.</ms-0200:Suffix>
+                    <ms-0200:NameType>Alias</ms-0200:NameType>
+                    <ms-0200:Title>M.D.</ms-0200:Title>
+                    <ms-0200:LastNamePrefix>Von de</ms-0200:LastNamePrefix>
+                </ms-0200:PersonName>
+                <ms-0200:Email primaryInd="true">
+                    <ms-0200:EmailAddress>john.dough@gmail.com</ms-0200:EmailAddress>
+                    <ms-0200:EmailType>Personal</ms-0200:EmailType>
+                </ms-0200:Email>
+                <ms-0200:Phone primaryInd="true">
+                    <ms-0200:PhoneNumber>555-555-5555</ms-0200:PhoneNumber>
+                    <ms-0200:Type>Business</ms-0200:Type>
+                    <ms-0200:Capabilities>Text</ms-0200:Capabilities>
+                </ms-0200:Phone>
+                <ms-0200:Address>
+                    <ms-0200:StreetAddress>100 Main Avenue</ms-0200:StreetAddress>
+                    <ms-0200:CityName>Rochester</ms-0200:CityName>
+                    <ms-0200:PostalCode>14604</ms-0200:PostalCode>
+                    <ms-0200:Country>United States</ms-0200:Country>
+                    <ms-0200:CountryCode>US</ms-0200:CountryCode>
+                    <ms-0200:StateOrTerritory>NY</ms-0200:StateOrTerritory>
+                    <ms-0200:AddressType>Business</ms-0200:AddressType>
+                </ms-0200:Address>
+                <ms-0200:SocialMedia>
+                    <ms-0200:URL>https://www.instagram.com/</ms-0200:URL>
+                    <ms-0200:Platform>Instagram</ms-0200:Platform>
+                    <ms-0200:Handle>@RTN</ms-0200:Handle>
+                    <ms-0200:UserName>John.Dough</ms-0200:UserName>
+                </ms-0200:SocialMedia>
+                <ms-0200:CommunicationMethod primaryInd="true">
+                    <ms-0200:CommunicationMethod>Phone</ms-0200:CommunicationMethod>
+                    <ms-0200:PreferredLanguage>en</ms-0200:PreferredLanguage>
+                </ms-0200:CommunicationMethod>
+                <ms-0200:Verification>
+                    <ms-0200:VerificationCategory>Age</ms-0200:VerificationCategory>
+                    <ms-0200:VerificationType>Passport</ms-0200:VerificationType>
+                    <ms-0200:VerifiedBy>Fred Flintstone</ms-0200:VerifiedBy>
+                    <ms-0200:VerificationSystem>Mitek Systems</ms-0200:VerificationSystem>
+                    <ms-0200:Description>Mitek verifies age data from scan of drivers license.</ms-0200:Description>
+                    <ms-0200:VerifiedInd>true</ms-0200:VerifiedInd>
+                </ms-0200:Verification>
+                <ms-0200:ThirdPartySystem>
+                    <ms-0200:ThirdPartySystemID>Example String Value</ms-0200:ThirdPartySystemID>
+                    <ms-0200:Type>Loyalty</ms-0200:Type>
+                    <ms-0200:SystemName>Paytronix</ms-0200:SystemName>
+                    <ms-0200:CustomerID>58688464525</ms-0200:CustomerID>
+                    <ms-0200:ProgramID>A8V7</ms-0200:ProgramID>
+                </ms-0200:ThirdPartySystem>
+                <ms-0200:Gender>Male</ms-0200:Gender>
+                <ms-0200:PreferredPronoun>He/Him</ms-0200:PreferredPronoun>
+                <ms-0200:SignificantDate>
+                    <ms-0200:Date>May 1</ms-0200:Date>
+                    <ms-0200:Description>The person's anniversary date.</ms-0200:Description>
+                    <ms-0200:DateType>Birthday</ms-0200:DateType>
+                </ms-0200:SignificantDate>
+                <ms-0200:Description>VIP</ms-0200:Description>
+            </ms-0200:ContactDetail>
+            <ms-0200:Description>Typewriter division</ms-0200:Description>
+            <ms-0200:WebsiteURL>https://www.ibm.com/</ms-0200:WebsiteURL>
+            <ms-0200:TimeZone>Eastern</ms-0200:TimeZone>
+            <ms-0200:IndustryClassificationName>Computer related services</ms-0200:IndustryClassificationName>
+            <ms-0200:IndustryClassificationCode>7379</ms-0200:IndustryClassificationCode>
+            <ms-0200:IndustryClassificationStandard>SIC</ms-0200:IndustryClassificationStandard>
+        </ms-0200:CompanyDetail>
+    </ms-0400:ProfileEntityCompany>
+    <ms-0400:BusinessEntityPortfolioHoldingCompany>
+        <ms-0400:Description>Example String Value</ms-0400:Description>
+        <ms-0200:PortfolioHoldingCompany>
+            <ms-0200:HoldingCompanyName>Bloomin' Brands</ms-0200:HoldingCompanyName>
+            <ms-0200:HoldingCompanyID>Example String Value</ms-0200:HoldingCompanyID>
+            <ms-0200:Brand preferredBrandInd="true">
+                <ms-0200:BrandName>Carrabas</ms-0200:BrandName>
+                <ms-0200:BrandID>SRG01</ms-0200:BrandID>
+                <ms-0200:PreferredBrandDescription>Work luncheons</ms-0200:PreferredBrandDescription>
+                <ms-0200:LocationDetail preferredStoreIndicatorInd="true">
+                    <ms-0200:LocationID>7898</ms-0200:LocationID>
+                    <ms-0200:URI>http://www.w3.org/2001/XMLSchema</ms-0200:URI>
+                    <ms-0200:Address>
+                        <ms-0200:StreetAddress>100 Main Avenue</ms-0200:StreetAddress>
+                        <ms-0200:CityName>Rochester</ms-0200:CityName>
+                        <ms-0200:PostalCode>14604</ms-0200:PostalCode>
+                        <ms-0200:Country>United States</ms-0200:Country>
+                        <ms-0200:CountryCode>US</ms-0200:CountryCode>
+                        <ms-0200:StateOrTerritory>NY</ms-0200:StateOrTerritory>
+                        <ms-0200:AddressType>Personal</ms-0200:AddressType>
+                    </ms-0200:Address>
+                    <ms-0200:Position>
+                        <ms-0200:Latitude>Example String Value</ms-0200:Latitude>
+                        <ms-0200:Longitude>Example String Value</ms-0200:Longitude>
+                    </ms-0200:Position>
+                    <ms-0200:LocationStatus>Open</ms-0200:LocationStatus>
+                    <ms-0200:OperationSchedule>
+                        <ms-0200:TimeSpanSummary
+                            endDate="2011-07-04T14:15:00+06:00" startDate="2011-01-24T09:45:00-06:00">
+                            <ms-0200:DaysOfWeek>Sunday</ms-0200:DaysOfWeek>
+                        </ms-0200:TimeSpanSummary>
+                    </ms-0200:OperationSchedule>
+                    <ms-0200:Description>Pine Street Location</ms-0200:Description>
+                    <ms-0200:ChannelEffectivity>
+                        <ms-0200:Channel>Curbside</ms-0200:Channel>
+                        <ms-0200:EffectivitySummary
+                            endDate="2011-01-24T09:45:00-06:00" startDate="2011-12-05T06:00:00Z">
+                            <ms-0200:DaysOfWeek>Monday</ms-0200:DaysOfWeek>
+                        </ms-0200:EffectivitySummary>
+                    </ms-0200:ChannelEffectivity>
+                    <ms-0200:Phone primaryInd="true">
+                        <ms-0200:PhoneNumber>555-555-5555</ms-0200:PhoneNumber>
+                        <ms-0200:Type>Mobile</ms-0200:Type>
+                        <ms-0200:Capabilities>TTY</ms-0200:Capabilities>
+                    </ms-0200:Phone>
+                    <ms-0200:PreferredStoreDescription>Work luncheon</ms-0200:PreferredStoreDescription>
+                    <ms-0200:Privacy>
+                        <ms-0200:ShareMarketIndicator>Yes</ms-0200:ShareMarketIndicator>
+                        <ms-0200:ShareSyncIndicator>No</ms-0200:ShareSyncIndicator>
+                    </ms-0200:Privacy>
+                    <ms-0200:CommunicationMethod primaryInd="true">
+                        <ms-0200:CommunicationMethod>Email</ms-0200:CommunicationMethod>
+                        <ms-0200:PreferredLanguage>en</ms-0200:PreferredLanguage>
+                    </ms-0200:CommunicationMethod>
+                    <ms-0200:PreferredOrderChannel>In store</ms-0200:PreferredOrderChannel>
+                    <ms-0200:TermsAndConditions acceptanceInd="true">
+                        <ms-0200:IssuerID>LRU5654</ms-0200:IssuerID>
+                        <ms-0200:IssuerDescription>Loyalties R Us</ms-0200:IssuerDescription>
+                        <ms-0200:Description>Loyalty program terms and conditions</ms-0200:Description>
+                        <ms-0200:DateTime>2021-09-07T15:50:00-04:00</ms-0200:DateTime>
+                    </ms-0200:TermsAndConditions>
+                    <ms-0200:OpenDate>2011-07-04T14:15:00+06:00</ms-0200:OpenDate>
+                    <ms-0200:ClosedDate>2011-12-05T06:00:00Z</ms-0200:ClosedDate>
+                </ms-0200:LocationDetail>
+                <ms-0200:Privacy>
+                    <ms-0200:ShareMarketIndicator>Inherit</ms-0200:ShareMarketIndicator>
+                    <ms-0200:ShareSyncIndicator>Yes</ms-0200:ShareSyncIndicator>
+                </ms-0200:Privacy>
+                <ms-0200:CommunicationMethod primaryInd="true">
+                    <ms-0200:CommunicationMethod>SMS</ms-0200:CommunicationMethod>
+                    <ms-0200:PreferredLanguage>en</ms-0200:PreferredLanguage>
+                </ms-0200:CommunicationMethod>
+                <ms-0200:TermsAndConditions acceptanceInd="true">
+                    <ms-0200:IssuerID>LRU5654</ms-0200:IssuerID>
+                    <ms-0200:IssuerDescription>Loyalties R Us</ms-0200:IssuerDescription>
+                    <ms-0200:Description>Loyalty program terms and conditions</ms-0200:Description>
+                    <ms-0200:DateTime>2021-09-07T15:50:00-04:00</ms-0200:DateTime>
+                </ms-0200:TermsAndConditions>
+                <ms-0200:PreferredOrderChannel>Out of store</ms-0200:PreferredOrderChannel>
+                <ms-0200:BrandDescription>Example String Value</ms-0200:BrandDescription>
+            </ms-0200:Brand>
+            <ms-0200:Privacy>
+                <ms-0200:ShareMarketIndicator>No</ms-0200:ShareMarketIndicator>
+                <ms-0200:ShareSyncIndicator>Inherit</ms-0200:ShareSyncIndicator>
+            </ms-0200:Privacy>
+            <ms-0200:CommunicationMethod primaryInd="true">
+                <ms-0200:CommunicationMethod>WeChat</ms-0200:CommunicationMethod>
+                <ms-0200:PreferredLanguage>en</ms-0200:PreferredLanguage>
+            </ms-0200:CommunicationMethod>
+            <ms-0200:TermsAndConditions acceptanceInd="true">
+                <ms-0200:IssuerID>LRU5654</ms-0200:IssuerID>
+                <ms-0200:IssuerDescription>Loyalties R Us</ms-0200:IssuerDescription>
+                <ms-0200:Description>Loyalty program terms and conditions</ms-0200:Description>
+                <ms-0200:DateTime>2021-09-07T15:50:00-04:00</ms-0200:DateTime>
+            </ms-0200:TermsAndConditions>
+            <ms-0200:Description>Example String Value</ms-0200:Description>
+        </ms-0200:PortfolioHoldingCompany>
+    </ms-0400:BusinessEntityPortfolioHoldingCompany>
+</ms-0400:Profile>

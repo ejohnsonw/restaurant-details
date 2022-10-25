@@ -1,0 +1,940 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Common",
+  "definitions": {
+    "TimeSpan": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint_Summary": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Summary"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Effectivity": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint_Summary": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Summary"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "TimeSpanDetail": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/TimeSpan"
+        },
+        {
+          "properties": {
+            "Name": {
+              "description": "Marketing name associated with the availability of an item (e.g. Happy Hour).",
+              "type": "string"
+            },
+            "WeekOfMonth": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 4
+            },
+            "MonthOfYear": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 12
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "EffectivityDetail": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Effectivity"
+        },
+        {
+          "properties": {
+            "Name": {
+              "description": "Marketing name associated with the availability of an item (e.g. Happy Hour).",
+              "type": "string"
+            },
+            "WeekOfMonth": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 4
+            },
+            "MonthOfYear": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 12
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "SKU": {
+      "description": "The Stock Keeping Unit.  A code that identifies a product.",
+      "properties": {
+        "productName": {
+          "description": "The name of the product for which the product code belongs.",
+          "type": "string"
+        },
+        "productCode": {
+          "description": "The SKU code for the product.",
+          "type": "string"
+        }
+      }
+    },
+    "Pricing": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Currency": {
+          "description": "Assigned Type: ms-0100:CurrencyCode",
+          "$ref": "#/definitions/CurrencyCode"
+        },
+        "Surcharge": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Surcharge"
+          }
+        },
+        "Tax": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tax"
+          }
+        },
+        "ItemPrice": {
+          "description": "The cost of an item.",
+          "type": "number",
+          "format": "float"
+        },
+        "Context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Discount": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Discount"
+          }
+        },
+        "taxExemptInd": {
+          "description": "When true, this item is not taxable  When false, this item is taxable.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "ItemPrice"
+      ],
+      "discriminator": "@type"
+    },
+    "Media": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "MediaURI": {
+          "description": "The URI for the media asset.",
+          "type": "string"
+        },
+        "KnownAssetNumber": {
+          "description": "The Known Asset Number for the media asset.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "MediaCategory": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Name": {
+          "description": "The name of the category for this specific media asset.",
+          "type": "string"
+        },
+        "Media": {
+          "description": "Assigned Type: ms-0100:Media",
+          "$ref": "#/definitions/Media"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Availability": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ExtensionPoint_Shared": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Shared"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "AvailabilityEffectivity": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Availability"
+        },
+        {
+          "properties": {
+            "Effectivity": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Effectivity"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "AvailabilityDayPart": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Availability"
+        },
+        {
+          "properties": {
+            "DayPart": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DayPart"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "DayPart": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "uRI": {
+          "description": "A URI to day part details.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Specifies the name of the day part (e.g. Breakfast, Lunch, Brunch, Dinner).",
+          "type": "string"
+        },
+        "TimeSpanSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeSpan"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Tax": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "amount": {
+          "description": "The system calculated tax amount.",
+          "type": "number",
+          "format": "float"
+        },
+        "Description": {
+          "description": "A textual description of the tax.",
+          "type": "string"
+        },
+        "taxIncludedInd": {
+          "description": "When true, tax is included in the price amount.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "amount"
+      ],
+      "discriminator": "@type"
+    },
+    "Surcharge": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "amount": {
+          "description": "The cost of the surcharge.",
+          "type": "number",
+          "format": "float"
+        },
+        "Description": {
+          "description": "A textual description of the surcharge.",
+          "type": "string"
+        },
+        "surchargeIncludedInd": {
+          "description": "When true, the surcharge is included in the item price.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Discount": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "valueType": {
+          "description": "Specifies if the discount is expressed as an amount or a percent.",
+          "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/ValueType_Enum"
+        },
+        "value": {
+          "description": "The discount amount or percentage.  The value type defines whether the value is an amount or a percent.",
+          "type": "number",
+          "format": "float"
+        },
+        "Application": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 128
+          }
+        },
+        "Description": {
+          "description": "A description of the discount.",
+          "type": "string"
+        },
+        "beforeTaxInd": {
+          "description": "When true, the discount is applied before tax.  When false, the discount applies after tax.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "LocationID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "GUID": {
+          "description": "A unique global identifier for the location.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/LocationID"
+        },
+        {
+          "properties": {
+            "URI": {
+              "description": "The URI for the location.",
+              "type": "string"
+            },
+            "Address": {
+              "description": "Assigned Type: ms-0100:Address",
+              "$ref": "#/definitions/Address"
+            },
+            "Position": {
+              "description": "Assigned Type: ms-0100:Position",
+              "$ref": "#/definitions/Position"
+            },
+            "LocationStatus": {
+              "description": "Assigned Type: ms-0100:Status_Enum",
+              "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/Status_Enum"
+            },
+            "OperationSchedule": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OperationSchedule"
+              }
+            },
+            "Description": {
+              "description": "A description of the location (e.g. store , ghost kitchen).",
+              "type": "string"
+            },
+            "LocationID": {
+              "description": "A number used to identify the location.",
+              "type": "string"
+            },
+            "ChannelEffectivity": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ChannelEffectivity"
+              }
+            },
+            "Phone": {
+              "description": "Assigned Type: ms-0100:Phone",
+              "$ref": "#/definitions/Phone"
+            },
+            "ExtensionPoint_Summary": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Summary"
+            }
+          }
+        }
+      ]
+    },
+    "LocationDetail": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Location"
+        },
+        {
+          "properties": {
+            "OpenDate": {
+              "description": "Specifies the date the restaurant is to open.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "ClosedDate": {
+              "description": "Specifies the date a location is to close.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "Address": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "StreetAddress": {
+          "description": "The street number and street name.",
+          "type": "string"
+        },
+        "CityName": {
+          "description": "The name of the city in which the entitiy is located.",
+          "type": "string"
+        },
+        "PostalCode": {
+          "description": "Specifies the state in which the entity is located.",
+          "type": "string"
+        },
+        "Country": {
+          "description": "Specifies the country in which the entity is located.",
+          "type": "string"
+        },
+        "CountryCode": {
+          "description": "ISO 3166 code for a country.",
+          "type": "string"
+        },
+        "StateOrTerritory": {
+          "description": "Specifies the state, territory or province in which the entity is located,",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "PostalCode"
+      ],
+      "discriminator": "@type"
+    },
+    "OperationSchedule": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "TimeSpanSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeSpan"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Position": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Latitude": {
+          "description": "The measure of the angular distance on the meridean north or south of the equator.",
+          "type": "string"
+        },
+        "Longitude": {
+          "description": "The measure of the angular distance on the meridian east or west of the prime meridian.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "ChannelEffectivity": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Channel": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "EffectivitySummary": {
+          "description": "Assigned Type: ms-0100:Effectivity_Summary",
+          "$ref": "#/definitions/Effectivity"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Phone": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "description": "The telephone number.",
+          "type": "string"
+        },
+        "Type": {
+          "description": "The phone number type (e.g. business, mobile).",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Promotion": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PromotionCode": {
+          "description": "A code that the guest provides to invoke a discount on the menu product (e.g. promotion, charity event).",
+          "type": "string"
+        },
+        "Description": {
+          "description": "Provides a description of the promotion or charity event identified in the promotion code.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "CurrencyCode": {
+      "description": "An ISO 4217 alpha character code used to specify the monetary unit.",
+      "properties": {
+        "value": {
+          "type": "string",
+          "pattern": "[a-zA-Z]{3}"
+        },
+        "decimalPlaces": {
+          "description": "An ISO 4201 \\\"minor unit\\\" typically used when an amount is sent without the decimal places to specify where the decimal should be placed (e.g. 2500 USD with 2 minor units would represent $25.00)",
+          "type": "string"
+        }
+      }
+    },
+    "PackingList": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ItemName": {
+          "description": "The name of the item to be packed.",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "The number of the packing item to be included.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "TimeSpanSummary": {
+          "$ref": "#/definitions/TimeSpan"
+        }
+      },
+      "required": [
+        "TimeSpanSummary"
+      ]
+    },
+    {
+      "properties": {
+        "EffectivitySummary": {
+          "$ref": "#/definitions/TimeSpan"
+        }
+      },
+      "required": [
+        "EffectivitySummary"
+      ]
+    },
+    {
+      "properties": {
+        "TimeSpanDetail": {
+          "$ref": "#/definitions/TimeSpanDetail"
+        }
+      },
+      "required": [
+        "TimeSpanDetail"
+      ]
+    },
+    {
+      "properties": {
+        "EffectivityDetail": {
+          "$ref": "#/definitions/TimeSpanDetail"
+        }
+      },
+      "required": [
+        "EffectivityDetail"
+      ]
+    },
+    {
+      "properties": {
+        "Pricing": {
+          "$ref": "#/definitions/Pricing"
+        }
+      },
+      "required": [
+        "Pricing"
+      ]
+    },
+    {
+      "properties": {
+        "Media": {
+          "$ref": "#/definitions/Media"
+        }
+      },
+      "required": [
+        "Media"
+      ]
+    },
+    {
+      "properties": {
+        "MediaCategory": {
+          "$ref": "#/definitions/MediaCategory"
+        }
+      },
+      "required": [
+        "MediaCategory"
+      ]
+    },
+    {
+      "properties": {
+        "AvailabilityShared": {
+          "$ref": "#/definitions/Availability"
+        }
+      },
+      "required": [
+        "AvailabilityShared"
+      ]
+    },
+    {
+      "properties": {
+        "AvailabilityEffectivity": {
+          "$ref": "#/definitions/AvailabilityEffectivity"
+        }
+      },
+      "required": [
+        "AvailabilityEffectivity"
+      ]
+    },
+    {
+      "properties": {
+        "AvailabilityDayPart": {
+          "$ref": "#/definitions/AvailabilityDayPart"
+        }
+      },
+      "required": [
+        "AvailabilityDayPart"
+      ]
+    },
+    {
+      "properties": {
+        "DayPart": {
+          "$ref": "#/definitions/DayPart"
+        }
+      },
+      "required": [
+        "DayPart"
+      ]
+    },
+    {
+      "properties": {
+        "Tax": {
+          "$ref": "#/definitions/Tax"
+        }
+      },
+      "required": [
+        "Tax"
+      ]
+    },
+    {
+      "properties": {
+        "Surcharge": {
+          "$ref": "#/definitions/Surcharge"
+        }
+      },
+      "required": [
+        "Surcharge"
+      ]
+    },
+    {
+      "properties": {
+        "Discount": {
+          "$ref": "#/definitions/Discount"
+        }
+      },
+      "required": [
+        "Discount"
+      ]
+    },
+    {
+      "properties": {
+        "LocationIdentifier": {
+          "$ref": "#/definitions/LocationID"
+        }
+      },
+      "required": [
+        "LocationIdentifier"
+      ]
+    },
+    {
+      "properties": {
+        "LocationSummary": {
+          "$ref": "#/definitions/Location"
+        }
+      },
+      "required": [
+        "LocationSummary"
+      ]
+    },
+    {
+      "properties": {
+        "LocationDetail": {
+          "$ref": "#/definitions/LocationDetail"
+        }
+      },
+      "required": [
+        "LocationDetail"
+      ]
+    },
+    {
+      "properties": {
+        "Address": {
+          "$ref": "#/definitions/Address"
+        }
+      },
+      "required": [
+        "Address"
+      ]
+    },
+    {
+      "properties": {
+        "OperationSchedule": {
+          "$ref": "#/definitions/OperationSchedule"
+        }
+      },
+      "required": [
+        "OperationSchedule"
+      ]
+    },
+    {
+      "properties": {
+        "Position": {
+          "$ref": "#/definitions/Position"
+        }
+      },
+      "required": [
+        "Position"
+      ]
+    },
+    {
+      "properties": {
+        "ChannelEffectivity": {
+          "$ref": "#/definitions/ChannelEffectivity"
+        }
+      },
+      "required": [
+        "ChannelEffectivity"
+      ]
+    },
+    {
+      "properties": {
+        "Phone": {
+          "$ref": "#/definitions/Phone"
+        }
+      },
+      "required": [
+        "Phone"
+      ]
+    },
+    {
+      "properties": {
+        "Promotion": {
+          "$ref": "#/definitions/Promotion"
+        }
+      },
+      "required": [
+        "Promotion"
+      ]
+    },
+    {
+      "properties": {
+        "PackingList": {
+          "$ref": "#/definitions/PackingList"
+        }
+      },
+      "required": [
+        "PackingList"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "Phone" : {
+    "primaryInd" : true,
+    "PhoneNumber" : "555-555-5555",
+    "Type" : {
+      "value" : "Home"
+    },
+    "Capabilities" : [ {
+      "value" : "Multimedia"
+    }, {
+      "value" : "Multimedia"
+    } ]
+  }
+}

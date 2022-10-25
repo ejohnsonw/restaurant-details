@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0400:OperationSchedule
+    xmlns:ms-0400="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v4 ../../RTN_Common_4_0_0.xsd">
+    <ms-0400:TimeSpanSummary endDate="2022-07-05T16:35:42+00:00" startDate="2022-07-05T16:27:29+00:00">
+        <ms-0400:DaysOfWeek>Sunday</ms-0400:DaysOfWeek>
+    </ms-0400:TimeSpanSummary>
+</ms-0400:OperationSchedule>

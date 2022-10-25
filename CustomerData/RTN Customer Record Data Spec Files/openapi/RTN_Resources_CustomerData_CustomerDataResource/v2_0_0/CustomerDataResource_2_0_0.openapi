@@ -1,0 +1,440 @@
+{
+  "openapi": "3.0",
+  "x-otm-resource": {
+    "namespace": "http://www.modeldev.restauranttechnologynetwork.com/models/v2",
+    "localName": "CustomerDataResource"
+  },
+  "info": {
+    "title": "CustomerDataResource",
+    "x-otm-library": {
+      "ResourceName": "CustomerDataResource",
+      "LibraryName": "RTN_Resources_CustomerData",
+      "LibraryVersion": "2.0.0",
+      "LibraryStatus": "FINAL",
+      "SourceFile": "/RTN_Resources_CustomerData_2_0_0.otm",
+      "CompilerVersion": "4.0-SNAPSHOT",
+      "CompileDate": "2022-10-11T09:49:28.309-0400"
+    },
+    "description": "Resources to manage customer data.",
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://example.com/resource/{apiVersion}",
+      "variables": {
+        "apiVersion": {
+          "default": "v2"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/Profiles{ProfileID}": {
+      "get": {
+        "summary": "CustomerDataResource - Get",
+        "operationId": "Get",
+        "parameters": [
+          {
+            "name": "ProfileID",
+            "in": "path",
+            "description": "A globally unique identifier for a customer (person, entity, group).",
+            "x-otm-annotations": {
+              "examples": [
+                {
+                  "context": "Example",
+                  "value": "3a5e515d-dfb5-4f01-b41c-bc74637feb82"
+                }
+              ]
+            },
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 128
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "CustomerDataResource - Update",
+        "operationId": "Update",
+        "parameters": [
+          {
+            "name": "ProfileID",
+            "in": "path",
+            "description": "A globally unique identifier for a customer (person, entity, group).",
+            "x-otm-annotations": {
+              "examples": [
+                {
+                  "context": "Example",
+                  "value": "3a5e515d-dfb5-4f01-b41c-bc74637feb82"
+                }
+              ]
+            },
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 128
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Details related to a an individual or company.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+              }
+            },
+            "application/xml": {
+              "x-xml-schema": {
+                "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Profiles": {
+      "post": {
+        "summary": "CustomerDataResource - Create",
+        "operationId": "Create",
+        "requestBody": {
+          "description": "Details related to a an individual or company.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+              }
+            },
+            "application/xml": {
+              "x-xml-schema": {
+                "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "RTN_Common_4_Trim.schema.json#/definitions/ProfileID"
+                }
+              },
+              "application/xml": {
+                "x-xml-schema": {
+                  "$xml-ref": "RTN_Common_4_0_0_Trim.xsd#/Profile"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "ReservationStatus_Enum" : {
+    "value" : "Arrived"
+  },
+  "extension" : "Other_Value"
+}

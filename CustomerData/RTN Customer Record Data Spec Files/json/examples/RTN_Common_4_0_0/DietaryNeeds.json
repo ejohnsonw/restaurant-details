@@ -1,0 +1,18 @@
+{
+  "DietaryNeeds" : {
+    "LifestyleChoice" : {
+      "@type" : "LifestyleChoice",
+      "medicalNeedInd" : true,
+      "LifeStyleChoiceType" : {
+        "value" : "Halal"
+      }
+    },
+    "AllergyInformation" : {
+      "@type" : "AllergyInformation",
+      "medicalNeedInd" : true,
+      "AllergyInformationType" : {
+        "value" : "Gluten"
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0400:PersonDetail
+    xmlns:ms-0400="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    birthday="2000-11-30"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v4 ../../RTN_Common_4_0_0.xsd">
+    <ms-0400:PersonName language="en-us" primaryInd="true">
+        <ms-0400:First>John</ms-0400:First>
+        <ms-0400:Last>Smith</ms-0400:Last>
+        <ms-0400:Middle>Jacob</ms-0400:Middle>
+        <ms-0400:Prefix>Mr.</ms-0400:Prefix>
+        <ms-0400:Suffix>Jr.</ms-0400:Suffix>
+        <ms-0400:NameType>Alias</ms-0400:NameType>
+        <ms-0400:Title>M.D.</ms-0400:Title>
+        <ms-0400:LastNamePrefix>Von de</ms-0400:LastNamePrefix>
+    </ms-0400:PersonName>
+    <ms-0400:Email primaryInd="true">
+        <ms-0400:EmailAddress>john.dough@gmail.com</ms-0400:EmailAddress>
+        <ms-0400:EmailType>Business</ms-0400:EmailType>
+    </ms-0400:Email>
+    <ms-0400:Phone primaryInd="true">
+        <ms-0400:PhoneNumber>555-555-5555</ms-0400:PhoneNumber>
+        <ms-0400:Type>Home</ms-0400:Type>
+        <ms-0400:Capabilities>Multimedia</ms-0400:Capabilities>
+    </ms-0400:Phone>
+    <ms-0400:Address>
+        <ms-0400:StreetAddress>100 Main Avenue</ms-0400:StreetAddress>
+        <ms-0400:CityName>Rochester</ms-0400:CityName>
+        <ms-0400:PostalCode>14604</ms-0400:PostalCode>
+        <ms-0400:Country>United States</ms-0400:Country>
+        <ms-0400:CountryCode>US</ms-0400:CountryCode>
+        <ms-0400:StateOrTerritory>NY</ms-0400:StateOrTerritory>
+        <ms-0400:AddressType>Personal</ms-0400:AddressType>
+    </ms-0400:Address>
+    <ms-0400:SocialMedia>
+        <ms-0400:URL>https://www.instagram.com/</ms-0400:URL>
+        <ms-0400:Platform>Instagram</ms-0400:Platform>
+        <ms-0400:Handle>@RTN</ms-0400:Handle>
+        <ms-0400:UserName>John.Dough</ms-0400:UserName>
+    </ms-0400:SocialMedia>
+    <ms-0400:CommunicationMethod primaryInd="true">
+        <ms-0400:CommunicationMethod>Phone</ms-0400:CommunicationMethod>
+        <ms-0400:PreferredLanguage>en</ms-0400:PreferredLanguage>
+    </ms-0400:CommunicationMethod>
+    <ms-0400:Verification>
+        <ms-0400:VerificationCategory>Age</ms-0400:VerificationCategory>
+        <ms-0400:VerificationType>Passport</ms-0400:VerificationType>
+        <ms-0400:VerifiedBy>Fred Flintstone</ms-0400:VerifiedBy>
+        <ms-0400:VerificationSystem>Mitek Systems</ms-0400:VerificationSystem>
+        <ms-0400:Description>Mitek verifies age data from scan of drivers license.</ms-0400:Description>
+        <ms-0400:VerifiedInd>true</ms-0400:VerifiedInd>
+    </ms-0400:Verification>
+    <ms-0400:ThirdPartySystem>
+        <ms-0400:ThirdPartySystemID>Example String Value</ms-0400:ThirdPartySystemID>
+        <ms-0400:Type>Loyalty</ms-0400:Type>
+        <ms-0400:SystemName>Paytronix</ms-0400:SystemName>
+        <ms-0400:CustomerID>58688464525</ms-0400:CustomerID>
+        <ms-0400:ProgramID>A8V7</ms-0400:ProgramID>
+    </ms-0400:ThirdPartySystem>
+    <ms-0400:Gender>Male</ms-0400:Gender>
+    <ms-0400:PreferredPronoun>He/Him</ms-0400:PreferredPronoun>
+    <ms-0400:CompanyDetail>
+        <ms-0400:CompanyID>Example String Value</ms-0400:CompanyID>
+        <ms-0400:CompanyName>IBM</ms-0400:CompanyName>
+        <ms-0400:Address>
+            <ms-0400:StreetAddress>100 Main Avenue</ms-0400:StreetAddress>
+            <ms-0400:CityName>Rochester</ms-0400:CityName>
+            <ms-0400:PostalCode>14604</ms-0400:PostalCode>
+            <ms-0400:Country>United States</ms-0400:Country>
+            <ms-0400:CountryCode>US</ms-0400:CountryCode>
+            <ms-0400:StateOrTerritory>NY</ms-0400:StateOrTerritory>
+            <ms-0400:AddressType>Business</ms-0400:AddressType>
+        </ms-0400:Address>
+        <ms-0400:Phone primaryInd="true">
+            <ms-0400:PhoneNumber>555-555-5555</ms-0400:PhoneNumber>
+            <ms-0400:Type>Business</ms-0400:Type>
+            <ms-0400:Capabilities>Text</ms-0400:Capabilities>
+        </ms-0400:Phone>
+        <ms-0400:Description>Typewriter division</ms-0400:Description>
+        <ms-0400:WebsiteURL>https://www.ibm.com/</ms-0400:WebsiteURL>
+        <ms-0400:TimeZone>Eastern</ms-0400:TimeZone>
+        <ms-0400:IndustryClassificationName>Computer related services</ms-0400:IndustryClassificationName>
+        <ms-0400:IndustryClassificationCode>7379</ms-0400:IndustryClassificationCode>
+        <ms-0400:IndustryClassificationStandard>SIC</ms-0400:IndustryClassificationStandard>
+    </ms-0400:CompanyDetail>
+    <ms-0400:SignificantDate>
+        <ms-0400:Date>May 1</ms-0400:Date>
+        <ms-0400:Description>The person's anniversary date.</ms-0400:Description>
+        <ms-0400:DateType>Birthday</ms-0400:DateType>
+    </ms-0400:SignificantDate>
+    <ms-0400:Description>VIP</ms-0400:Description>
+</ms-0400:PersonDetail>

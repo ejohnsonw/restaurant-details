@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0400:Behavior
+    xmlns:ms-0400="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v4 ../../RTN_Codelist_4_0_0.xsd">
+    <ms-0400:BehaviorType>Tendencies</ms-0400:BehaviorType>
+    <ms-0400:Value>Dessert Lover</ms-0400:Value>
+</ms-0400:Behavior>

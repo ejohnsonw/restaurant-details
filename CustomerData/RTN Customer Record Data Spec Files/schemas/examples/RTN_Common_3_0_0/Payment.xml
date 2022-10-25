@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0300:Payment
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    depositInd="true" tenderPresenceInd="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v3 ../../RTN_Common_3_0_0.xsd">
+    <ms-0300:Amount>32.50</ms-0300:Amount>
+    <ms-0300:CurrencyCode decimalPlaces="2">Example String Value</ms-0300:CurrencyCode>
+    <ms-0300:Tip>6.00</ms-0300:Tip>
+    <ms-0300:Gratuity>5.00</ms-0300:Gratuity>
+    <ms-0300:TenderType>Cash</ms-0300:TenderType>
+    <ms-0300:CardType>American Express</ms-0300:CardType>
+    <ms-0300:TenderDescription>Personal card</ms-0300:TenderDescription>
+    <ms-0300:AuthorizationCode>456</ms-0300:AuthorizationCode>
+    <ms-0300:CardEntryType>Dip</ms-0300:CardEntryType>
+    <ms-0300:CustomerName>John Dough</ms-0300:CustomerName>
+    <ms-0300:LastFour>9090</ms-0300:LastFour>
+    <ms-0300:FirstSix>429808</ms-0300:FirstSix>
+    <ms-0300:AccountNumber>12398873887</ms-0300:AccountNumber>
+</ms-0300:Payment>

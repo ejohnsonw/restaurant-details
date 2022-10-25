@@ -1,0 +1,11 @@
+{
+  "ProfileStatusHistory" : {
+    "Status" : {
+      "value" : "Active"
+    },
+    "ChangeDate" : "2021-11-30T20:33:35+00:00",
+    "ChangedBy" : "c5fe1946-1ab7-4967-be42-eea4c58d56fc",
+    "SystemName" : "Loyalty R Us",
+    "Comment" : "System status changed based on inactivity."
+  }
+}

@@ -1,0 +1,666 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Common",
+  "x-otm-library": {
+    "LibraryName": "RTN_Common",
+    "LibraryVersion": "4.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Common_4_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-10-11T09:49:27.943-0400"
+  },
+  "definitions": {
+    "ProfileID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Profile"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ProfileID": {
+          "description": "A globally unique identifier for a customer (person, entity, group).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "3a5e515d-dfb5-4f01-b41c-bc74637feb82"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        },
+        "UserID": {
+          "description": "An customer facing identifier for the profile.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "5258865"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ProfileIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Profile"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ProfileID": {
+          "description": "A globally unique identifier for a customer (person, entity, group).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "3a5e515d-dfb5-4f01-b41c-bc74637feb82"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        },
+        "UserID": {
+          "description": "An customer facing identifier for the profile.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "5258865"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Profile": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Profile"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProfileID"
+        },
+        {
+          "properties": {
+            "Status": {
+              "description": "Assigned Type: ms-0200:ProfileStatus_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Active"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/ProfileStatus_Enum"
+            },
+            "ProfileStatusHistory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProfileStatusHistory"
+              }
+            },
+            "AssociatedProfile": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AssociatedProfile"
+              }
+            },
+            "LastUsedDateTime": {
+              "description": "Specifies the last time that the profile was utilized (e.g. updated, usage, etc.).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "2021-09-07T15:50:00+04:00"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "ProfileEntity": {
+              "description": "Assigned Type: ms-0400:ProfileEntity",
+              "$ref": "#/definitions/ProfileEntity"
+            },
+            "BusinessEntity": {
+              "description": "Assigned Type: ms-0400:BusinessEntity",
+              "$ref": "#/definitions/BusinessEntity"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "LastUsedDateTime"
+          ]
+        }
+      ]
+    },
+    "ProfileSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Profile"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProfileID"
+        },
+        {
+          "properties": {
+            "Status": {
+              "description": "Assigned Type: ms-0200:ProfileStatus_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Active"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/ProfileStatus_Enum"
+            },
+            "ProfileStatusHistory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProfileStatusHistory"
+              }
+            },
+            "AssociatedProfile": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/AssociatedProfile"
+              }
+            },
+            "LastUsedDateTime": {
+              "description": "Specifies the last time that the profile was utilized (e.g. updated, usage, etc.).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "2021-09-07T15:50:00+04:00"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "ProfileEntity": {
+              "description": "Assigned Type: ms-0400:ProfileEntity",
+              "$ref": "#/definitions/ProfileEntity"
+            },
+            "BusinessEntity": {
+              "description": "Assigned Type: ms-0400:BusinessEntity",
+              "$ref": "#/definitions/BusinessEntity"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "LastUsedDateTime"
+          ]
+        }
+      ]
+    },
+    "ProfileStatusHistory": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "ProfileStatusHistory"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Status": {
+          "description": "Assigned Type: ms-0200:ProfileStatus_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Inactive"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/ProfileStatus_Enum"
+        },
+        "ChangeDate": {
+          "description": "The date and time that the status changed (ISO 8601), this is preferred data and should be sent if available.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "2021-11-30T20:33:35+00:00"
+              }
+            ]
+          },
+          "type": "string",
+          "format": "date-time"
+        },
+        "ChangedBy": {
+          "description": "An identifier for the system that made the status change on the profile.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "c5fe1946-1ab7-4967-be42-eea4c58d56fc"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        },
+        "SystemName": {
+          "description": "The name of the system that made the status change.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Loyalty R Us"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Comment": {
+          "description": "Provides details around the nature or cause of the status change.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "System status changed based on inactivity."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "Status"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "AssociatedProfile": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "AssociatedProfile"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ProfileID": {
+          "description": "The globally unique identifier for the associated profile.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "fad1b3e8-81cd-4824-8f37-4437822ee512"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        },
+        "UserID": {
+          "description": "The customer facing ID for the profile.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "1233251"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "RelationshipType": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/RelationshipType_Enum"
+          }
+        },
+        "Description": {
+          "description": "Description of the relationship between the associated profile and the profile on the record.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Spouse"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "AssociatedProfileSummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "AssociatedProfile"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ProfileID": {
+          "description": "The globally unique identifier for the associated profile.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "fad1b3e8-81cd-4824-8f37-4437822ee512"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        },
+        "UserID": {
+          "description": "The customer facing ID for the profile.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "1233251"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "RelationshipType": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/RelationshipType_Enum"
+          }
+        },
+        "Description": {
+          "description": "Description of the relationship between the associated profile and the profile on the record.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Spouse"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "AssociatedProfileDetail": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "AssociatedProfile"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/AssociatedProfile"
+        },
+        {
+          "properties": {
+            "mergeInd": {
+              "description": "When true, this profile will be merged with the primary profile.",
+              "type": "boolean"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "ProfileEntity": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "ProfileEntity"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Description": {
+          "description": "Description related to the entitiy.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ProfileEntityCompany": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "ProfileEntity"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProfileEntity"
+        },
+        {
+          "properties": {
+            "Company": {
+              "description": "Assigned Type: ms-0200:Company",
+              "$ref": "RTN_Common_2_Trim.schema.json#/definitions/CompanyID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "ProfileEntityPerson": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "ProfileEntity"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ProfileEntity"
+        },
+        {
+          "properties": {
+            "Person": {
+              "description": "Assigned Type: ms-0200:Person",
+              "$ref": "RTN_Common_2_Trim.schema.json#/definitions/Person"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "BusinessEntity": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "BusinessEntity"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Description": {
+          "description": "A description for the business entitiy.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "BusinessEntityPortfolioHoldingCompany": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "BusinessEntity"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/BusinessEntity"
+        },
+        {
+          "properties": {
+            "PortfolioHoldingCompany": {
+              "description": "Assigned Type: ms-0200:PortfolioHoldingCompany",
+              "$ref": "RTN_Common_2_Trim.schema.json#/definitions/PortfolioHoldingCompany"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "BusinessEntityBrand": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "BusinessEntity"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/BusinessEntity"
+        },
+        {
+          "properties": {
+            "Brand": {
+              "description": "Assigned Type: ms-0200:Brand",
+              "$ref": "RTN_Common_2_Trim.schema.json#/definitions/Brand"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "BusinessEntityLocation": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "BusinessEntity"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/BusinessEntity"
+        },
+        {
+          "properties": {
+            "Location": {
+              "description": "Assigned Type: ms-0200:Location",
+              "$ref": "RTN_Common_2_Trim.schema.json#/definitions/LocationID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/ProfileID"
+    },
+    {
+      "$ref": "#/definitions/ProfileIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Profile"
+    },
+    {
+      "$ref": "#/definitions/ProfileSummary"
+    },
+    {
+      "$ref": "#/definitions/ProfileStatusHistory"
+    },
+    {
+      "$ref": "#/definitions/AssociatedProfile"
+    },
+    {
+      "$ref": "#/definitions/AssociatedProfileSummary"
+    },
+    {
+      "$ref": "#/definitions/AssociatedProfileDetail"
+    },
+    {
+      "$ref": "#/definitions/ProfileEntity"
+    },
+    {
+      "$ref": "#/definitions/ProfileEntityCompany"
+    },
+    {
+      "$ref": "#/definitions/ProfileEntityPerson"
+    },
+    {
+      "$ref": "#/definitions/BusinessEntity"
+    },
+    {
+      "$ref": "#/definitions/BusinessEntityPortfolioHoldingCompany"
+    },
+    {
+      "$ref": "#/definitions/BusinessEntityBrand"
+    },
+    {
+      "$ref": "#/definitions/BusinessEntityLocation"
+    }
+  ]
+}

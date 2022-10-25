@@ -1,0 +1,6 @@
+{
+  "DataEntryApplicationType_Enum" : {
+    "value" : "POS"
+  },
+  "extension" : "Other_Value"
+}

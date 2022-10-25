@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Codelist",
+  "definitions": {
+    "AllergyInformation_Enum": {
+      "description": "A list of allergens.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AllergyInformation_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "AllergyInformation_Enum_Base": {
+      "description": "A list of allergens.",
+      "type": "string",
+      "enum": [
+        "Gluten",
+        "Peanut",
+        "Wheat",
+        "Soy",
+        "Milk",
+        "Eggs",
+        "Tree Nuts",
+        "Fish",
+        "Shellfish/Crustaceans",
+        "Other_"
+      ]
+    },
+    "LifestyleChoices_Enum": {
+      "description": "A list of lifestyle choices (e.g. Vegan).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/LifestyleChoices_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "LifestyleChoices_Enum_Base": {
+      "description": "A list of lifestyle choices (e.g. Vegan).",
+      "type": "string",
+      "enum": [
+        "Halal",
+        "Kosher",
+        "Vegan",
+        "Vegetarian",
+        "Other_"
+      ]
+    },
+    "NutritionInformationType_Enum": {
+      "description": "Specifies the details for the nutrition item being sent.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/NutritionInformationType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "NutritionInformationType_Enum_Base": {
+      "description": "Specifies the details for the nutrition item being sent.",
+      "type": "string",
+      "enum": [
+        "Calories",
+        "Calories From Fat",
+        "Total Fat",
+        "Saturated Fat",
+        "Trans Fat",
+        "Cholesterol",
+        "Sodium",
+        "Total Carbohydrates",
+        "Dietary Fiber",
+        "Total Sugar",
+        "Protein",
+        "Vitamin A",
+        "Vitamin C",
+        "Calcium",
+        "Iron",
+        "Other_"
+      ]
+    },
+    "UnitOfMeasure_Enum": {
+      "description": "Specifies the unit of measure for an associated item.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/UnitOfMeasure_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "UnitOfMeasure_Enum_Base": {
+      "description": "Specifies the unit of measure for an associated item.",
+      "type": "string",
+      "enum": [
+        "Grams",
+        "Milligrams",
+        "Cups",
+        "Liters",
+        "Ounces",
+        "Fluid ounces",
+        "Pound",
+        "Gallons",
+        "Pints",
+        "Quarts",
+        "Milliliters",
+        "Other_"
+      ]
+    },
+    "DaysOfWeek_Enum": {
+      "description": "An enumeration of the seven days of the week.",
+      "type": "string",
+      "enum": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ]
+    },
+    "ValueType_Enum": {
+      "description": "Specifies whether a value is an amount or a percent.",
+      "type": "string",
+      "enum": [
+        "Amount",
+        "Percent"
+      ]
+    },
+    "Action_Enum": {
+      "description": "Specifies an action to be taken.",
+      "type": "string",
+      "enum": [
+        "Add",
+        "Remove"
+      ]
+    },
+    "Contains_Enum": {
+      "description": "Used to explicitly denote whether an item contains or is free from another item (such as an allergen).",
+      "type": "string",
+      "enum": [
+        "Contains",
+        "Free From"
+      ]
+    },
+    "OrderStatus_Enum": {
+      "description": "Specifies the status of the order (e.g. received, in progress, canceled, delivered).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderStatus_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderStatus_Enum_Base": {
+      "description": "Specifies the status of the order (e.g. received, in progress, canceled, delivered).",
+      "type": "string",
+      "enum": [
+        "Received",
+        "In Progress",
+        "Completed",
+        "Picked Up",
+        "Canceled",
+        "Delivered",
+        "Other_"
+      ]
+    },
+    "Status_Enum": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "Temporarily Closed",
+        "Permanently Closed"
+      ]
+    }
+  }
+}

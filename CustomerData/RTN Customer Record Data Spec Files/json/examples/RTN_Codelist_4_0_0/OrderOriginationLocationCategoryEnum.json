@@ -1,0 +1,6 @@
+{
+  "OrderOriginationLocationCategory_Enum" : {
+    "value" : "On-premise"
+  },
+  "extension" : "Other_Value"
+}

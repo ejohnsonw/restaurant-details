@@ -1,0 +1,891 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_MenuSync",
+  "definitions": {
+    "MenuItemID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "IngredientID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "MenuItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuItemID"
+        },
+        {
+          "properties": {
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "type": "string"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Pricing"
+              }
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/SKU"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "Ingredient": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/IngredientID"
+        },
+        {
+          "properties": {
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "type": "string"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Pricing"
+              }
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/SKU"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "BaselineNutrition": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "count": {
+          "description": "The amount of the item specified in the Nutrition Information element (e.g. if the item selected in Nutrition Information is Sodium, this is the amount of sodium.  The unit of measure field identifies how this count is measured such as milligrams or grams).",
+          "type": "integer",
+          "format": "int32"
+        },
+        "NutritionInformationType": {
+          "description": "Assigned Type: ms-0100:NutritionInformationType_Enum",
+          "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/NutritionInformationType_Enum"
+        },
+        "UnitOfMeasure": {
+          "description": "Assigned Type: ms-0100:UnitOfMeasure_Enum",
+          "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/UnitOfMeasure_Enum"
+        },
+        "ExtensionPoint_Summary": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Summary"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "BaselineNutritionDetail": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaselineNutrition"
+        },
+        {
+          "properties": {
+            "minCount": {
+              "description": "Specifies the minimum amount related to the NutritionalInformation item (may be used when a range is sent).",
+              "type": "integer",
+              "format": "int32"
+            },
+            "maxCount": {
+              "description": "Specifies the minimum amount related to the NutritionalInformation item (may be used when a range is sent).",
+              "type": "integer",
+              "format": "int32"
+            },
+            "displayRange": {
+              "description": "Specifies the range for the nutritional information count.  Typically a slash is used between counts when a menu item has two choices e.g. sandwich with chips or side salad (350\\/450) and a dash is used between counts when a menu item has three or more choices e.g. sandwich with chips, side salad or fruit (350-500).",
+              "type": "string"
+            },
+            "shortName": {
+              "description": "Specifies an abbreviated name for the NutritionalInformation item (e.g. Cal, Carbs).",
+              "type": "string"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "DietaryRestrictions": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "AllergenDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AllergenDetails"
+          }
+        },
+        "LifestyleChoices_Enum": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/LifestyleChoices_Enum"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "ServingSize": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "count": {
+          "description": "The amount of the item related to the unit of measure.  The unit of measure field identifies how this count is measured such as milligrams or grams (e.g count - 422, UnitOfMeasure - grams to specify a 422 gram serving size).",
+          "type": "integer",
+          "format": "int32"
+        },
+        "UnitOfMeasure_Enum": {
+          "description": "Assigned Type: ms-0100:UnitOfMeasure_Enum",
+          "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/UnitOfMeasure_Enum"
+        },
+        "PreparedUnitOfMeasure": {
+          "description": "A text description of the unit of measre as the item is prepared (e.g. 1 taco, 1 bowl, 2 ramakins).",
+          "type": "string"
+        },
+        "Description": {
+          "description": "A textual description of the serving size.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Default": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "A number associated with QuantityUnits that describes the amount of a MenuProduct default.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "QuantityUnits": {
+          "description": "Descriptive units associated with the Quantity that describe the amount of a MenuProduct Default.  Arbitrary pieces such as cases, ounces, sizes or any other descriptive unit.",
+          "type": "string"
+        },
+        "Preparation": {
+          "description": "The name of the composition of the  items that are included as part of the menu item, menu product or modifier.",
+          "type": "string"
+        },
+        "PreparationQuantity": {
+          "description": "The amount of the item composition.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "PreparationUnits": {
+          "description": "Specifies the measure that apply to the composition.",
+          "type": "string"
+        },
+        "DefaultNotes": {
+          "description": "Description or comments related to the item being defined.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "ModifierID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Modifier": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModifierID"
+        },
+        {
+          "properties": {
+            "action": {
+              "description": "Specifies if the modifer is being added or removed.",
+              "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/Action_Enum"
+            },
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "type": "string"
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/SKU"
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Pricing"
+              }
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "MenuProductID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "menuProductID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "MenuProduct": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuProductID"
+        },
+        {
+          "properties": {
+            "name": {
+              "description": "The name of the menu product (e.g. Hamburger combo meal).",
+              "type": "string"
+            },
+            "size": {
+              "description": "Specifies the size related to the menu product (e.g. Large, Medium, Small).",
+              "type": "string"
+            },
+            "maximumOptions": {
+              "description": "The largest number of options that can be selected with this menu option.",
+              "type": "integer",
+              "format": "int32"
+            },
+            "minimumOptions": {
+              "description": "The smallest number of options that can be selected with this menu product.",
+              "type": "integer",
+              "format": "int32"
+            },
+            "MasterDescription": {
+              "description": "The master description for the menu product.",
+              "type": "string"
+            },
+            "ChannelDescription": {
+              "description": "The description of the menu product specific to the channel.",
+              "type": "string"
+            },
+            "MenuItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuItemID"
+              },
+              "minItems": 1
+            },
+            "Promotion": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Promotion"
+              }
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Availability"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Pricing"
+              },
+              "minItems": 1
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/SKU"
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "PackingList": {
+              "description": "Assigned Type: ms-0100:PackingList",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/PackingList"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "name",
+            "MenuItem",
+            "Pricing"
+          ]
+        }
+      ]
+    },
+    "Channel": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ChannelName": {
+          "description": "Identifies a channel.",
+          "type": "string"
+        },
+        "MenuItemDescription": {
+          "description": "A description related to the channel.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "AllergenDetails": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "AllergyInformation_Enum": {
+          "description": "Assigned Type: ms-0100:AllergyInformation_Enum",
+          "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/AllergyInformation_Enum"
+        },
+        "Contains_Enum": {
+          "description": "Assigned Type: ms-0100:Contains_Enum",
+          "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/Contains_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "AllergyInformation_Enum",
+        "Contains_Enum"
+      ],
+      "discriminator": "@type"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "MenuItemIdentifier": {
+          "$ref": "#/definitions/MenuItemID"
+        }
+      },
+      "required": [
+        "MenuItemIdentifier"
+      ]
+    },
+    {
+      "properties": {
+        "IngredientIdentifier": {
+          "$ref": "#/definitions/MenuItemID"
+        }
+      },
+      "required": [
+        "IngredientIdentifier"
+      ]
+    },
+    {
+      "properties": {
+        "MenuItemSummary": {
+          "$ref": "#/definitions/MenuItem"
+        }
+      },
+      "required": [
+        "MenuItemSummary"
+      ]
+    },
+    {
+      "properties": {
+        "IngredientSummary": {
+          "$ref": "#/definitions/MenuItem"
+        }
+      },
+      "required": [
+        "IngredientSummary"
+      ]
+    },
+    {
+      "properties": {
+        "BaselineNutritionSummary": {
+          "$ref": "#/definitions/BaselineNutrition"
+        }
+      },
+      "required": [
+        "BaselineNutritionSummary"
+      ]
+    },
+    {
+      "properties": {
+        "BaselineNutritionDetail": {
+          "$ref": "#/definitions/BaselineNutritionDetail"
+        }
+      },
+      "required": [
+        "BaselineNutritionDetail"
+      ]
+    },
+    {
+      "properties": {
+        "DietaryRestrictions": {
+          "$ref": "#/definitions/DietaryRestrictions"
+        }
+      },
+      "required": [
+        "DietaryRestrictions"
+      ]
+    },
+    {
+      "properties": {
+        "ServingSize": {
+          "$ref": "#/definitions/ServingSize"
+        }
+      },
+      "required": [
+        "ServingSize"
+      ]
+    },
+    {
+      "properties": {
+        "Default": {
+          "$ref": "#/definitions/Default"
+        }
+      },
+      "required": [
+        "Default"
+      ]
+    },
+    {
+      "properties": {
+        "ModifierIdentifier": {
+          "$ref": "#/definitions/ModifierID"
+        }
+      },
+      "required": [
+        "ModifierIdentifier"
+      ]
+    },
+    {
+      "properties": {
+        "ModifierSummary": {
+          "$ref": "#/definitions/Modifier"
+        }
+      },
+      "required": [
+        "ModifierSummary"
+      ]
+    },
+    {
+      "properties": {
+        "MenuProductIdentifier": {
+          "$ref": "#/definitions/MenuProductID"
+        }
+      },
+      "required": [
+        "MenuProductIdentifier"
+      ]
+    },
+    {
+      "properties": {
+        "MenuProductSummary": {
+          "$ref": "#/definitions/MenuProduct"
+        }
+      },
+      "required": [
+        "MenuProductSummary"
+      ]
+    },
+    {
+      "properties": {
+        "Channel": {
+          "$ref": "#/definitions/Channel"
+        }
+      },
+      "required": [
+        "Channel"
+      ]
+    },
+    {
+      "properties": {
+        "AllergenDetails": {
+          "$ref": "#/definitions/AllergenDetails"
+        }
+      },
+      "required": [
+        "AllergenDetails"
+      ]
+    }
+  ]
+}

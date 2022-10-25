@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0400:Pricing
+    xmlns:ms-0400="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    taxExemptInd="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v4 ../../RTN_Common_4_0_0.xsd">
+    <ms-0400:Currency decimalPlaces="2">Example String Value</ms-0400:Currency>
+    <ms-0400:Surcharge amount="3.00" surchargeIncludedInd="true">
+        <ms-0400:Description>Delivery fee</ms-0400:Description>
+    </ms-0400:Surcharge>
+    <ms-0400:Tax amount=".53" taxIncludedInd="true">
+        <ms-0400:Description>State tax</ms-0400:Description>
+    </ms-0400:Tax>
+    <ms-0400:ItemPrice>7.00</ms-0400:ItemPrice>
+    <ms-0400:Context>Third party delivery</ms-0400:Context>
+    <ms-0400:Discount beforeTaxInd="true" value="3.00" valueType="Amount">
+        <ms-0400:Application>Example String Value</ms-0400:Application>
+        <ms-0400:Description>Senior discount.</ms-0400:Description>
+    </ms-0400:Discount>
+</ms-0400:Pricing>

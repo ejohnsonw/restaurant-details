@@ -1,0 +1,7 @@
+{
+  "Tax" : {
+    "amount" : 0.53,
+    "taxIncludedInd" : true,
+    "Description" : "State tax"
+  }
+}

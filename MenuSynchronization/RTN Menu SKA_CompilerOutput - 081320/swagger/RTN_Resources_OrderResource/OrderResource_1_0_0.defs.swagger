@@ -1,0 +1,1899 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "OrderResource",
+    "version": "1.0.0"
+  },
+  "host": "127.0.0.1",
+  "basePath": "/v1_0",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/orders/{OrderID}": {
+      "get": {
+        "summary": "OrderResource - Get",
+        "operationId": "Get",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "A unique identifier for the order.",
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "400": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "401": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "402": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "403": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "404": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "500": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "OrderResource - Update",
+        "operationId": "Update",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "A unique identifier for the order.",
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          },
+          {
+            "name": "OrderID",
+            "in": "body",
+            "description": "Any saleable item or group of items on the menu.",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "400": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "401": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "402": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "403": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "404": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "500": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "summary": "OrderResource - Create",
+        "operationId": "Create",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "body",
+            "description": "Any saleable item or group of items on the menu.",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "400": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "401": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "402": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "403": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "404": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          },
+          "500": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "#/definitions/OrderID"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "MenuItemID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "IngredientID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "MenuItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuItemID"
+        },
+        {
+          "properties": {
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "type": "string"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pricing"
+              }
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "#/definitions/SKU"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "Ingredient": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/IngredientID"
+        },
+        {
+          "properties": {
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "type": "string"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pricing"
+              }
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "#/definitions/SKU"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "BaselineNutrition": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "count": {
+          "description": "The amount of the item specified in the Nutrition Information element (e.g. if the item selected in Nutrition Information is Sodium, this is the amount of sodium.  The unit of measure field identifies how this count is measured such as milligrams or grams).",
+          "type": "integer",
+          "format": "int32"
+        },
+        "NutritionInformationType": {
+          "description": "Assigned Type: ms-0100:NutritionInformationType_Enum",
+          "$ref": "#/definitions/NutritionInformationType_Enum"
+        },
+        "UnitOfMeasure": {
+          "description": "Assigned Type: ms-0100:UnitOfMeasure_Enum",
+          "$ref": "#/definitions/UnitOfMeasure_Enum"
+        },
+        "ExtensionPoint_Summary": {
+          "$ref": "#/definitions/ExtensionPoint_Summary"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "BaselineNutritionDetail": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaselineNutrition"
+        },
+        {
+          "properties": {
+            "minCount": {
+              "description": "Specifies the minimum amount related to the NutritionalInformation item (may be used when a range is sent).",
+              "type": "integer",
+              "format": "int32"
+            },
+            "maxCount": {
+              "description": "Specifies the minimum amount related to the NutritionalInformation item (may be used when a range is sent).",
+              "type": "integer",
+              "format": "int32"
+            },
+            "displayRange": {
+              "description": "Specifies the range for the nutritional information count.  Typically a slash is used between counts when a menu item has two choices e.g. sandwich with chips or side salad (350\\/450) and a dash is used between counts when a menu item has three or more choices e.g. sandwich with chips, side salad or fruit (350-500).",
+              "type": "string"
+            },
+            "shortName": {
+              "description": "Specifies an abbreviated name for the NutritionalInformation item (e.g. Cal, Carbs).",
+              "type": "string"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "DietaryRestrictions": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "AllergenDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AllergenDetails"
+          }
+        },
+        "LifestyleChoices_Enum": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LifestyleChoices_Enum"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "ServingSize": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "count": {
+          "description": "The amount of the item related to the unit of measure.  The unit of measure field identifies how this count is measured such as milligrams or grams (e.g count - 422, UnitOfMeasure - grams to specify a 422 gram serving size).",
+          "type": "integer",
+          "format": "int32"
+        },
+        "UnitOfMeasure_Enum": {
+          "description": "Assigned Type: ms-0100:UnitOfMeasure_Enum",
+          "$ref": "#/definitions/UnitOfMeasure_Enum"
+        },
+        "PreparedUnitOfMeasure": {
+          "description": "A text description of the unit of measre as the item is prepared (e.g. 1 taco, 1 bowl, 2 ramakins).",
+          "type": "string"
+        },
+        "Description": {
+          "description": "A textual description of the serving size.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Default": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "A number associated with QuantityUnits that describes the amount of a MenuProduct default.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "QuantityUnits": {
+          "description": "Descriptive units associated with the Quantity that describe the amount of a MenuProduct Default.  Arbitrary pieces such as cases, ounces, sizes or any other descriptive unit.",
+          "type": "string"
+        },
+        "Preparation": {
+          "description": "The name of the composition of the  items that are included as part of the menu item, menu product or modifier.",
+          "type": "string"
+        },
+        "PreparationQuantity": {
+          "description": "The amount of the item composition.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "PreparationUnits": {
+          "description": "Specifies the measure that apply to the composition.",
+          "type": "string"
+        },
+        "DefaultNotes": {
+          "description": "Description or comments related to the item being defined.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "ModifierID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Modifier": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModifierID"
+        },
+        {
+          "properties": {
+            "action": {
+              "description": "Specifies if the modifer is being added or removed.",
+              "$ref": "#/definitions/Action_Enum"
+            },
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "type": "string"
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "#/definitions/SKU"
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pricing"
+              }
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "MenuProductID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "menuProductID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "MenuProduct": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuProductID"
+        },
+        {
+          "properties": {
+            "name": {
+              "description": "The name of the menu product (e.g. Hamburger combo meal).",
+              "type": "string"
+            },
+            "size": {
+              "description": "Specifies the size related to the menu product (e.g. Large, Medium, Small).",
+              "type": "string"
+            },
+            "maximumOptions": {
+              "description": "The largest number of options that can be selected with this menu option.",
+              "type": "integer",
+              "format": "int32"
+            },
+            "minimumOptions": {
+              "description": "The smallest number of options that can be selected with this menu product.",
+              "type": "integer",
+              "format": "int32"
+            },
+            "MasterDescription": {
+              "description": "The master description for the menu product.",
+              "type": "string"
+            },
+            "ChannelDescription": {
+              "description": "The description of the menu product specific to the channel.",
+              "type": "string"
+            },
+            "MenuItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuItemID"
+              },
+              "minItems": 1
+            },
+            "Promotion": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Promotion"
+              }
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MediaCategory"
+              }
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "#/definitions/Availability"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pricing"
+              },
+              "minItems": 1
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "#/definitions/SKU"
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "PackingList": {
+              "description": "Assigned Type: ms-0100:PackingList",
+              "$ref": "#/definitions/PackingList"
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "name",
+            "MenuItem",
+            "Pricing"
+          ]
+        }
+      ]
+    },
+    "Channel": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ChannelName": {
+          "description": "Identifies a channel.",
+          "type": "string"
+        },
+        "MenuItemDescription": {
+          "description": "A description related to the channel.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "AllergenDetails": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "AllergyInformation_Enum": {
+          "description": "Assigned Type: ms-0100:AllergyInformation_Enum",
+          "$ref": "#/definitions/AllergyInformation_Enum"
+        },
+        "Contains_Enum": {
+          "description": "Assigned Type: ms-0100:Contains_Enum",
+          "$ref": "#/definitions/Contains_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "AllergyInformation_Enum",
+        "Contains_Enum"
+      ],
+      "discriminator": "@type"
+    },
+    "OrderID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "OrderID": {
+          "description": "A unique identifier for the order.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Order": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderID"
+        },
+        {
+          "properties": {
+            "OrderStatus_Enum": {
+              "description": "Assigned Type: ms-0100:OrderStatus_Enum",
+              "$ref": "#/definitions/OrderStatus_Enum"
+            },
+            "OrderTime": {
+              "description": "The date\\/time that the order was placed.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "PromiseDateTime": {
+              "description": "The date\\/time that the order was promised to be ready.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "LocationIdentifier": {
+              "description": "Assigned Type: ms-0100:Location_ID",
+              "$ref": "#/definitions/LocationID"
+            },
+            "Customer": {
+              "description": "Assigned Type: ms-0100:Customer",
+              "$ref": "#/definitions/Customer"
+            },
+            "OrderItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OrderItem"
+              },
+              "minItems": 1
+            },
+            "Total": {
+              "description": "Assigned Type: ms-0100:Total",
+              "$ref": "#/definitions/Total"
+            },
+            "Promotion": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Promotion"
+              }
+            },
+            "Destination": {
+              "description": "This is where the order and its items are handed off to the customer.  This could be a drive through, dine in \\/ take out, etc. This is NOT an order channel.",
+              "type": "string"
+            },
+            "ChannelDescription": {
+              "description": "A description of the channel where the order originated.",
+              "type": "string"
+            },
+            "OrderItemCount": {
+              "description": "The number of order items  contained within this order.  This field may be used to validate all order items have been received.",
+              "type": "integer",
+              "format": "int32"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PackingList"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "OrderItem",
+            "OrderItemCount"
+          ]
+        }
+      ]
+    },
+    "OrderItem": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Customer": {
+          "description": "Assigned Type: ms-0100:Customer",
+          "$ref": "#/definitions/Customer"
+        },
+        "ExtensionPoint_Shared": {
+          "$ref": "#/definitions/ExtensionPoint_Shared"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "OrderItemMenuProduct": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderItem"
+        },
+        {
+          "properties": {
+            "MenuProduct": {
+              "description": "Assigned Type: ms-0100:MenuProduct",
+              "$ref": "#/definitions/MenuProductID"
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "OrderItemMenuItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderItem"
+        },
+        {
+          "properties": {
+            "MenuItem": {
+              "description": "Assigned Type: ms-0100:MenuItem",
+              "$ref": "#/definitions/MenuItemID"
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "Total": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Currency": {
+          "description": "Assigned Type: ms-0100:CurrencyCode",
+          "$ref": "#/definitions/CurrencyCode"
+        },
+        "Surcharge": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Surcharge"
+          }
+        },
+        "Tax": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tax"
+          }
+        },
+        "ItemPrice": {
+          "description": "The cost of an item.",
+          "type": "number",
+          "format": "float"
+        },
+        "Context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Discount": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Discount"
+          }
+        },
+        "Gratuity": {
+          "description": "A tip on the order.",
+          "type": "number",
+          "format": "float"
+        },
+        "taxExemptInd": {
+          "description": "When true, this item is not taxable  When false, this item is taxable.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "ItemPrice"
+      ],
+      "discriminator": "@type"
+    },
+    "AllergyInformation_Enum": {
+      "description": "A list of allergens.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AllergyInformation_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "AllergyInformation_Enum_Base": {
+      "description": "A list of allergens.",
+      "type": "string",
+      "enum": [
+        "Gluten",
+        "Peanut",
+        "Wheat",
+        "Soy",
+        "Milk",
+        "Eggs",
+        "Tree Nuts",
+        "Fish",
+        "Shellfish/Crustaceans",
+        "Other_"
+      ]
+    },
+    "LifestyleChoices_Enum": {
+      "description": "A list of lifestyle choices (e.g. Vegan).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/LifestyleChoices_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "LifestyleChoices_Enum_Base": {
+      "description": "A list of lifestyle choices (e.g. Vegan).",
+      "type": "string",
+      "enum": [
+        "Halal",
+        "Kosher",
+        "Vegan",
+        "Vegetarian",
+        "Other_"
+      ]
+    },
+    "NutritionInformationType_Enum": {
+      "description": "Specifies the details for the nutrition item being sent.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/NutritionInformationType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "NutritionInformationType_Enum_Base": {
+      "description": "Specifies the details for the nutrition item being sent.",
+      "type": "string",
+      "enum": [
+        "Calories",
+        "Calories From Fat",
+        "Total Fat",
+        "Saturated Fat",
+        "Trans Fat",
+        "Cholesterol",
+        "Sodium",
+        "Total Carbohydrates",
+        "Dietary Fiber",
+        "Total Sugar",
+        "Protein",
+        "Vitamin A",
+        "Vitamin C",
+        "Calcium",
+        "Iron",
+        "Other_"
+      ]
+    },
+    "UnitOfMeasure_Enum": {
+      "description": "Specifies the unit of measure for an associated item.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/UnitOfMeasure_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "UnitOfMeasure_Enum_Base": {
+      "description": "Specifies the unit of measure for an associated item.",
+      "type": "string",
+      "enum": [
+        "Grams",
+        "Milligrams",
+        "Cups",
+        "Liters",
+        "Ounces",
+        "Fluid ounces",
+        "Pound",
+        "Gallons",
+        "Pints",
+        "Quarts",
+        "Milliliters",
+        "Other_"
+      ]
+    },
+    "DaysOfWeek_Enum": {
+      "description": "An enumeration of the seven days of the week.",
+      "type": "string",
+      "enum": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ]
+    },
+    "ValueType_Enum": {
+      "description": "Specifies whether a value is an amount or a percent.",
+      "type": "string",
+      "enum": [
+        "Amount",
+        "Percent"
+      ]
+    },
+    "Action_Enum": {
+      "description": "Specifies an action to be taken.",
+      "type": "string",
+      "enum": [
+        "Add",
+        "Remove"
+      ]
+    },
+    "Contains_Enum": {
+      "description": "Used to explicitly denote whether an item contains or is free from another item (such as an allergen).",
+      "type": "string",
+      "enum": [
+        "Contains",
+        "Free From"
+      ]
+    },
+    "OrderStatus_Enum": {
+      "description": "Specifies the status of the order (e.g. received, in progress, canceled, delivered).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderStatus_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderStatus_Enum_Base": {
+      "description": "Specifies the status of the order (e.g. received, in progress, canceled, delivered).",
+      "type": "string",
+      "enum": [
+        "Received",
+        "In Progress",
+        "Completed",
+        "Picked Up",
+        "Canceled",
+        "Delivered",
+        "Other_"
+      ]
+    },
+    "TimeSpan": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint_Summary": {
+          "$ref": "#/definitions/ExtensionPoint_Summary"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Effectivity": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint_Summary": {
+          "$ref": "#/definitions/ExtensionPoint_Summary"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "TimeSpanDetail": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/TimeSpan"
+        },
+        {
+          "properties": {
+            "Name": {
+              "description": "Marketing name associated with the availability of an item (e.g. Happy Hour).",
+              "type": "string"
+            },
+            "WeekOfMonth": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 4
+            },
+            "MonthOfYear": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 12
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "EffectivityDetail": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Effectivity"
+        },
+        {
+          "properties": {
+            "Name": {
+              "description": "Marketing name associated with the availability of an item (e.g. Happy Hour).",
+              "type": "string"
+            },
+            "WeekOfMonth": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 4
+            },
+            "MonthOfYear": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 12
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "SKU": {
+      "description": "The Stock Keeping Unit.  A code that identifies a product.",
+      "properties": {
+        "productName": {
+          "description": "The name of the product for which the product code belongs.",
+          "type": "string"
+        },
+        "productCode": {
+          "description": "The SKU code for the product.",
+          "type": "string"
+        }
+      }
+    },
+    "Pricing": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Currency": {
+          "description": "Assigned Type: ms-0100:CurrencyCode",
+          "$ref": "#/definitions/CurrencyCode"
+        },
+        "Surcharge": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Surcharge"
+          }
+        },
+        "Tax": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tax"
+          }
+        },
+        "ItemPrice": {
+          "description": "The cost of an item.",
+          "type": "number",
+          "format": "float"
+        },
+        "Context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Discount": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Discount"
+          }
+        },
+        "taxExemptInd": {
+          "description": "When true, this item is not taxable  When false, this item is taxable.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "ItemPrice"
+      ],
+      "discriminator": "@type"
+    },
+    "Media": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "MediaURI": {
+          "description": "The URI for the media asset.",
+          "type": "string"
+        },
+        "KnownAssetNumber": {
+          "description": "The Known Asset Number for the media asset.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "MediaCategory": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Name": {
+          "description": "The name of the category for this specific media asset.",
+          "type": "string"
+        },
+        "Media": {
+          "description": "Assigned Type: ms-0100:Media",
+          "$ref": "#/definitions/Media"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Availability": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ExtensionPoint_Shared": {
+          "$ref": "#/definitions/ExtensionPoint_Shared"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "AvailabilityEffectivity": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Availability"
+        },
+        {
+          "properties": {
+            "Effectivity": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Effectivity"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "AvailabilityDayPart": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Availability"
+        },
+        {
+          "properties": {
+            "DayPart": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DayPart"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "DayPart": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "uRI": {
+          "description": "A URI to day part details.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Specifies the name of the day part (e.g. Breakfast, Lunch, Brunch, Dinner).",
+          "type": "string"
+        },
+        "TimeSpanSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeSpan"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Tax": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "amount": {
+          "description": "The system calculated tax amount.",
+          "type": "number",
+          "format": "float"
+        },
+        "Description": {
+          "description": "A textual description of the tax.",
+          "type": "string"
+        },
+        "taxIncludedInd": {
+          "description": "When true, tax is included in the price amount.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "amount"
+      ],
+      "discriminator": "@type"
+    },
+    "Surcharge": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "amount": {
+          "description": "The cost of the surcharge.",
+          "type": "number",
+          "format": "float"
+        },
+        "Description": {
+          "description": "A textual description of the surcharge.",
+          "type": "string"
+        },
+        "surchargeIncludedInd": {
+          "description": "When true, the surcharge is included in the item price.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Discount": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "valueType": {
+          "description": "Specifies if the discount is expressed as an amount or a percent.",
+          "$ref": "#/definitions/ValueType_Enum"
+        },
+        "value": {
+          "description": "The discount amount or percentage.  The value type defines whether the value is an amount or a percent.",
+          "type": "number",
+          "format": "float"
+        },
+        "Application": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 128
+          }
+        },
+        "Description": {
+          "description": "A description of the discount.",
+          "type": "string"
+        },
+        "beforeTaxInd": {
+          "description": "When true, the discount is applied before tax.  When false, the discount applies after tax.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "LocationID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "GUID": {
+          "description": "A unique global identifier for the location.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Promotion": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PromotionCode": {
+          "description": "A code that the guest provides to invoke a discount on the menu product (e.g. promotion, charity event).",
+          "type": "string"
+        },
+        "Description": {
+          "description": "Provides a description of the promotion or charity event identified in the promotion code.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "PersonName": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "First": {
+          "description": "The first name or given name of the person.",
+          "type": "string"
+        },
+        "Last": {
+          "description": "The surname of the person.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "CustomerName": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "First": {
+          "description": "The first name or given name of the person.",
+          "type": "string"
+        },
+        "Last": {
+          "description": "The surname of the person.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Customer": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PersonName": {
+          "description": "Assigned Type: ms-0100:PersonName",
+          "$ref": "#/definitions/PersonName"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "CurrencyCode": {
+      "description": "An ISO 4217 alpha character code used to specify the monetary unit.",
+      "properties": {
+        "value": {
+          "type": "string",
+          "pattern": "[a-zA-Z]{3}"
+        },
+        "decimalPlaces": {
+          "description": "An ISO 4201 \\\"minor unit\\\" typically used when an amount is sent without the decimal places to specify where the decimal should be placed (e.g. 2500 USD with 2 minor units would represent $25.00)",
+          "type": "string"
+        }
+      }
+    },
+    "PackingList": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ItemName": {
+          "description": "The name of the item to be packed.",
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "The number of the packing item to be included.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "ExtensionPoint": {},
+    "ExtensionPoint_Summary": {},
+    "ExtensionPoint_Detail": {},
+    "ExtensionPoint_Custom": {},
+    "ExtensionPoint_Query": {},
+    "ExtensionPoint_Update": {},
+    "ExtensionPoint_Shared": {},
+    "ExtensionPoint_Choice": {}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "ChannelEffectivity" : {
+    "Channel" : [ "Curbside" ],
+    "Effectivity" : {
+      "@type" : "EffectivityDetail",
+      "startDate" : "2022-07-05T16:27:29+00:00",
+      "endDate" : "2022-07-05T16:35:42+00:00",
+      "EffectivityDetail" : [ "Sunday", 1, 7 ],
+      "Name" : "Happy hour"
+    }
+  }
+}

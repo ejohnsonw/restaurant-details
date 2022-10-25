@@ -1,0 +1,271 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Order",
+  "definitions": {
+    "OrderID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "OrderID": {
+          "description": "A unique identifier for the order.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Order": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderID"
+        },
+        {
+          "properties": {
+            "OrderStatus_Enum": {
+              "description": "Assigned Type: ms-0100:OrderStatus_Enum",
+              "$ref": "RTN_Codelist_1_0_0_Trim.schema.json#/definitions/OrderStatus_Enum"
+            },
+            "OrderTime": {
+              "description": "The date\\/time that the order was placed.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "PromiseDateTime": {
+              "description": "The date\\/time that the order was promised to be ready.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "LocationIdentifier": {
+              "description": "Assigned Type: ms-0100:Location_ID",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/LocationID"
+            },
+            "Customer": {
+              "description": "Assigned Type: ms-0100:Customer",
+              "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Customer"
+            },
+            "OrderItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OrderItem"
+              },
+              "minItems": 1
+            },
+            "Total": {
+              "description": "Assigned Type: ms-0100:Total",
+              "$ref": "#/definitions/Total"
+            },
+            "Promotion": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Promotion"
+              }
+            },
+            "Destination": {
+              "description": "This is where the order and its items are handed off to the customer.  This could be a drive through, dine in \\/ take out, etc. This is NOT an order channel.",
+              "type": "string"
+            },
+            "ChannelDescription": {
+              "description": "A description of the channel where the order originated.",
+              "type": "string"
+            },
+            "OrderItemCount": {
+              "description": "The number of order items  contained within this order.  This field may be used to validate all order items have been received.",
+              "type": "integer",
+              "format": "int32"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/PackingList"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "OrderItem",
+            "OrderItemCount"
+          ]
+        }
+      ]
+    },
+    "OrderItem": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Customer": {
+          "description": "Assigned Type: ms-0100:Customer",
+          "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Customer"
+        },
+        "ExtensionPoint_Shared": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Shared"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "OrderItemMenuProduct": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderItem"
+        },
+        {
+          "properties": {
+            "MenuProduct": {
+              "description": "Assigned Type: ms-0100:MenuProduct",
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuProductID"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "OrderItemMenuItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderItem"
+        },
+        {
+          "properties": {
+            "MenuItem": {
+              "description": "Assigned Type: ms-0100:MenuItem",
+              "$ref": "RTN_MenuSync_1_0_0_Trim.schema.json#/definitions/MenuItemID"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "Total": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Currency": {
+          "description": "Assigned Type: ms-0100:CurrencyCode",
+          "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/CurrencyCode"
+        },
+        "Surcharge": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Surcharge"
+          }
+        },
+        "Tax": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Tax"
+          }
+        },
+        "ItemPrice": {
+          "description": "The cost of an item.",
+          "type": "number",
+          "format": "float"
+        },
+        "Context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Discount": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Common_1_0_0_Trim.schema.json#/definitions/Discount"
+          }
+        },
+        "Gratuity": {
+          "description": "A tip on the order.",
+          "type": "number",
+          "format": "float"
+        },
+        "taxExemptInd": {
+          "description": "When true, this item is not taxable  When false, this item is taxable.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "ItemPrice"
+      ],
+      "discriminator": "@type"
+    }
+  },
+  "oneOf": [
+    {
+      "properties": {
+        "OrderIdentifier": {
+          "$ref": "#/definitions/OrderID"
+        }
+      },
+      "required": [
+        "OrderIdentifier"
+      ]
+    },
+    {
+      "properties": {
+        "OrderSummary": {
+          "$ref": "#/definitions/Order"
+        }
+      },
+      "required": [
+        "OrderSummary"
+      ]
+    },
+    {
+      "properties": {
+        "OrderItemShared": {
+          "$ref": "#/definitions/OrderItem"
+        }
+      },
+      "required": [
+        "OrderItemShared"
+      ]
+    },
+    {
+      "properties": {
+        "OrderItemMenuProduct": {
+          "$ref": "#/definitions/OrderItemMenuProduct"
+        }
+      },
+      "required": [
+        "OrderItemMenuProduct"
+      ]
+    },
+    {
+      "properties": {
+        "OrderItemMenuItem": {
+          "$ref": "#/definitions/OrderItemMenuItem"
+        }
+      },
+      "required": [
+        "OrderItemMenuItem"
+      ]
+    },
+    {
+      "properties": {
+        "Total": {
+          "$ref": "#/definitions/Total"
+        }
+      },
+      "required": [
+        "Total"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Resources_CustomerData",
+  "x-otm-library": {
+    "LibraryName": "RTN_Resources_CustomerData",
+    "LibraryVersion": "2.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Resources_CustomerData_2_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-10-11T09:49:27.901-0400"
+  }
+}

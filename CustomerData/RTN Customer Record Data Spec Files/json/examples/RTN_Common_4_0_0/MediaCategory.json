@@ -1,0 +1,10 @@
+{
+  "MediaCategory" : {
+    "Name" : "Beverages",
+    "Media" : {
+      "@type" : "Media",
+      "MediaURI" : "http://www.w3.org/2001/XMLSchema",
+      "KnownAssetNumber" : "Example String Value"
+    }
+  }
+}

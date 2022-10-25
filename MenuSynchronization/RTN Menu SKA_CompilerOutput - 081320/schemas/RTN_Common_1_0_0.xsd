@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://opentravel.org/local/user/rtn/v1"
+    version="1.0.0"
+    xmlns:ms-0100="http://opentravel.org/local/user/rtn/v1"
+    xmlns:ota2="http://www.opentravel.org/OTM/Common/v0"
+    xmlns:otm="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:annotation>
+        <xsd:appinfo>
+            <otm:Library>
+                <otm:ProjectName>RTN Menu SKA.otp</otm:ProjectName>
+                <otm:LibraryName>RTN_Common</otm:LibraryName>
+                <otm:LibraryVersion>1.0.0</otm:LibraryVersion>
+                <otm:LibraryStatus>DRAFT</otm:LibraryStatus>
+                <otm:SourceFile>/RTN_Common_1_0_0.otm</otm:SourceFile>
+                <otm:CompilerVersion>4.0-SNAPSHOT</otm:CompilerVersion>
+                <otm:CompileDate>2020-08-13T17:25:31.956-04:00</otm:CompileDate>
+            </otm:Library>
+        </xsd:appinfo>
+    </xsd:annotation>
+    
+    <xsd:import namespace="http://www.opentravel.org/OTM/Common/v0" schemaLocation="built-ins/OTM_BuiltIns.xsd"/>
+    <xsd:import
+        namespace="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" schemaLocation="built-ins/OTA2_AppInfo_v1.0.0.xsd"/>
+    <xsd:include schemaLocation="RTN_Codelist_1_0_0.xsd"/>
+    
+    <xsd:element abstract="true" name="TimeSpanSubGrp" type="ms-0100:TimeSpan">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies a time span by intdicating the start and end dates/times.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeSpan</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="TimeSpan"
+        substitutionGroup="ms-0100:TimeSpanSubGrp" type="ms-0100:TimeSpan"/>
+    <xsd:element name="TimeSpanSummary" type="ms-0100:TimeSpan"/>
+    <xsd:element name="TimeSpanDetail"
+        substitutionGroup="ms-0100:TimeSpanSubGrp" type="ms-0100:TimeSpan_Detail"/>
+    
+    <xsd:element abstract="true" name="EffectivitySubGrp" type="ms-0100:TimeSpan">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies a time span by intdicating the start and end dates/times.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeSpan</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Effectivity"
+        substitutionGroup="ms-0100:EffectivitySubGrp" type="ms-0100:TimeSpan"/>
+    <xsd:element name="EffectivitySummary" type="ms-0100:TimeSpan"/>
+    <xsd:element name="EffectivityDetail"
+        substitutionGroup="ms-0100:EffectivitySubGrp" type="ms-0100:TimeSpan_Detail"/>
+    
+    <xsd:complexType name="TimeSpan">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeSpan</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="7" minOccurs="0" name="DaysOfWeek" type="ms-0100:DaysOfWeek_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the days of week.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Summary"/>
+        </xsd:sequence>
+        <xsd:attribute name="startDate" type="xsd:dateTime" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">Specifies the start date/time.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="endDate" type="xsd:dateTime" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">Specifies the end date/time.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="TimeSpan_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeSpan</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:TimeSpan">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Name" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Marketing name associated with the availability of an item (e.g. Happy Hour).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="4" minOccurs="0"
+                        name="WeekOfMonth" type="xsd:positiveInteger">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the specific week of the month that are applicable.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="12" minOccurs="0"
+                        name="MonthOfYear" type="xsd:positiveInteger">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the specific month of the year that is applicable.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="GUID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A globally unique ID for an object.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="Simple">GUID</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="128"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="SKU">
+        <xsd:annotation>
+            <xsd:documentation source="Description">The Stock Keeping Unit.  A code that identifies a product.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ValueWithAttributes">SKU</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ota2:Empty">
+                <xsd:attribute name="productName" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">The name of the product for which the product code belongs.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="productCode" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">The SKU code for the product.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Pricing" type="ms-0100:Pricing"/>
+    
+    <xsd:complexType name="Pricing">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Defines the price, tax and related fees for an item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Pricing</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Currency" type="ms-0100:CurrencyCode">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the currency information for the amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Surcharge">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A collection of surcharges associated with the item (e.g. bag charge).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Tax">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A collection of taxes associated with the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="ItemPrice" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The cost of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="Context" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The order channel, daypart, effectivity for which this pricing item applies.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Discount">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Describes a discount and to which items it applies.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="taxExemptInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, this item is not taxable  When false, this item is taxable.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="AlphaLength3">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="Simple">AlphaLength3</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-zA-Z]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:element name="Media" type="ms-0100:Media"/>
+    
+    <xsd:complexType name="Media">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides a link to a media URI or Known Asseet Number.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Media</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="MediaURI" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The URI for the media asset.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="KnownAssetNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The Known Asset Number for the media asset.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="MediaCategory" type="ms-0100:MediaCategory"/>
+    
+    <xsd:complexType name="MediaCategory">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the category for the media asset contained within the object.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">MediaCategory</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Name" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the category for this specific media asset.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ms-0100:Media">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A media asset for the specified category.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="Availability" type="ms-0100:Availability">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Allows either the use of the effectivity object or the day part object to be used to define the availability.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">Availability</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="AvailabilityEffectivity"
+        substitutionGroup="ms-0100:Availability" type="ms-0100:Availability_Effectivity"/>
+    <xsd:element name="AvailabilityDayPart"
+        substitutionGroup="ms-0100:Availability" type="ms-0100:Availability_DayPart"/>
+    
+    <xsd:complexType abstract="true" name="Availability">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">Availability</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Shared"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Availability_Effectivity">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">Availability</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:Availability">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:EffectivitySubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Describes the effective dates/times that the item being described is available.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Availability_DayPart">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">Availability</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:Availability">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:DayPart">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies a portion of the day.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="DayPart" type="ms-0100:DayPart"/>
+    
+    <xsd:complexType name="DayPart">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Defines a specific part of the day (e.g. the days/hours that breakfast is available).  This object makes use of the summary facet on the TimeSpan object.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">DayPart</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Name" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the name of the day part (e.g. Breakfast, Lunch, Brunch, Dinner).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:TimeSpanSummary">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The start and end date and time for the day part.  May also include the day of week.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="uRI" type="xsd:anyURI" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">A URI to day part details.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element name="Tax" type="ms-0100:Tax"/>
+    
+    <xsd:complexType name="Tax">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Detailed tax information.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Tax</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A textual description of the tax.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="amount" type="xsd:decimal" use="required">
+            <xsd:annotation>
+                <xsd:documentation source="Description">The system calculated tax amount.</xsd:documentation>
+                <xsd:appinfo>
+                    <otm:Example context="ms">.53</otm:Example>
+                </xsd:appinfo>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="taxIncludedInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, tax is included in the price amount.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element name="Surcharge" type="ms-0100:Surcharge"/>
+    
+    <xsd:complexType name="Surcharge">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Detailed surcharge information (e.g. a charge added to a price).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Surcharge</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A textual description of the surcharge.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="amount" type="xsd:decimal" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">The cost of the surcharge.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="surchargeIncludedInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, the surcharge is included in the item price.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element name="Discount" type="ms-0100:Discount"/>
+    
+    <xsd:complexType name="Discount">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the details of a discount such as the amout or percent of the discount and to which items the discount applies.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Discount</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="Application" type="ms-0100:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A discount that applies to the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A description of the discount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="valueType" type="ms-0100:ValueType_Enum" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">Specifies if the discount is expressed as an amount or a percent.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="value" type="xsd:decimal" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">The discount amount or percentage.  The value type defines whether the value is an amount or a percent.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="beforeTaxInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, the discount is applied before tax.  When false, the discount applies after tax.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="LocationSubGrp" type="ms-0100:Location_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies details for a store or location.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Location</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="LocationID"
+        substitutionGroup="ms-0100:LocationSubGrp" type="ms-0100:Location_ID"/>
+    <xsd:element name="LocationIdentifier" type="ms-0100:Location_ID"/>
+    <xsd:element name="Location"
+        substitutionGroup="ms-0100:LocationSubGrp" type="ms-0100:Location"/>
+    <xsd:element name="LocationSummary" type="ms-0100:Location"/>
+    <xsd:element name="LocationDetail"
+        substitutionGroup="ms-0100:LocationSubGrp" type="ms-0100:Location_Detail"/>
+    
+    <xsd:complexType name="Location_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Location</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="GUID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A unique global identifier for the location.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Location">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Location</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:Location_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="URI" type="xsd:anyURI">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The URI for the location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Address">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the physical location of the entity.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Position">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Used to specify the geographic coordinates of a location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="LocationStatus" type="ms-0100:Status_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifes whether a location is open, temporarily closed or permanently closed.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:OperationSchedule">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the hours the location is open for business.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A description of the location (e.g. store , ghost kitchen).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="LocationID" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A number used to identify the location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:ChannelEffectivity">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the the availability (days, and hours) as well as the channels (e.g. Delivery, Curbside, Take-out). for which the availability applies.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Phone">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Phone number associated with the location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Summary"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Location_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Location</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:Location">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OpenDate" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the date the restaurant is to open.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ClosedDate" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the date a location is to close.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Address" type="ms-0100:Address"/>
+    
+    <xsd:complexType name="Address">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the physical location of an entity.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Address</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="StreetAddress" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The street number and street name.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CityName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the city in which the entitiy is located.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="PostalCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the state in which the entity is located.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Country" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the country in which the entity is located.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CountryCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">ISO 3166 code for a country.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="StateOrTerritory" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the state, territory or province in which the entity is located,</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="OperationSchedule" type="ms-0100:OperationSchedule"/>
+    
+    <xsd:complexType name="OperationSchedule">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the days and times of operation.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">OperationSchedule</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:TimeSpanSummary">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The days and times a location is open for business.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Position" type="ms-0100:Position"/>
+    
+    <xsd:complexType name="Position">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the geographic position of the entity.  This position element uses the ISO 6709 standard.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Position</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Latitude" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The measure of the angular distance on the meridean north or south of the equator.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Longitude" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The measure of the angular distance on the meridian east or west of the prime meridian.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="ChannelEffectivity" type="ms-0100:ChannelEffectivity"/>
+    
+    <xsd:complexType name="ChannelEffectivity">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies availability for specific channels (e.g. curbside, take-out, delivery).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">ChannelEffectivity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="Channel" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the channel for which the availabilty applies (e.g Curbside, Delivery, Take-out).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ms-0100:EffectivitySummary">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the days of week and times that apply to the availability.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Phone" type="ms-0100:Phone"/>
+    
+    <xsd:complexType name="Phone">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies telephone information.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Phone</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="PhoneNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The telephone number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Type" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The phone number type (e.g. business, mobile).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Promotion" type="ms-0100:Promotion"/>
+    
+    <xsd:complexType name="Promotion">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides information regarding a promotion or charity event.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Promotion</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="PromotionCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A code that the guest provides to invoke a discount on the menu product (e.g. promotion, charity event).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Provides a description of the promotion or charity event identified in the promotion code.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="PersonName" type="ms-0100:PersonName"/>
+    <xsd:element name="CustomerName" type="ms-0100:PersonName"/>
+    
+    <xsd:complexType name="PersonName">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the name of a person (e.g. customer, employee).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">PersonName</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="First" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The first name or given name of the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Last" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The surname of the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Person" type="ms-0100:Person"/>
+    
+    <xsd:complexType name="Person">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details about a person.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Person</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="ms-0100:PersonName">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the person.  This may include given name, surname, etc..</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Customer" type="ms-0100:Customer"/>
+    
+    <xsd:complexType name="Customer">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details about a customer.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Customer</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="ms-0100:PersonName">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the person.  This may include given name, surname, etc..</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="CurrencyCode">
+        <xsd:annotation>
+            <xsd:documentation source="Description">An ISO 4217 alpha character code used to specify the monetary unit.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ValueWithAttributes">CurrencyCode</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0100:AlphaLength3">
+                <xsd:attribute name="decimalPlaces" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">An ISO 4201 &amp;quot;minor unit&amp;quot; typically used when an amount is sent without the decimal places to specify where the decimal should be placed (e.g. 2500 USD with 2 minor units would represent $25.00)</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:element name="PackingList" type="ms-0100:PackingList"/>
+    
+    <xsd:complexType name="PackingList">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A items that should be packed for this menu item (e.g. utensils, napkins).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">PackingList</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ItemName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the item to be packed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Quantity" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The number of the packing item to be included.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+</xsd:schema>

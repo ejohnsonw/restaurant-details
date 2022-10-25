@@ -1,0 +1,14 @@
+{
+  "Verification" : {
+    "VerificationCategory" : {
+      "value" : "Age"
+    },
+    "VerificationType" : {
+      "value" : "Passport"
+    },
+    "VerifiedBy" : "Fred Flintstone",
+    "VerificationSystem" : "Mitek Systems",
+    "Description" : "Mitek verifies age data from scan of drivers license.",
+    "VerifiedInd" : true
+  }
+}

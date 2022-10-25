@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0300:Phone
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    primaryInd="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v3 ../../RTN_Common_3_0_0.xsd">
+    <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+    <ms-0300:Type>Home</ms-0300:Type>
+    <ms-0300:Capabilities>Multimedia</ms-0300:Capabilities>
+</ms-0300:Phone>

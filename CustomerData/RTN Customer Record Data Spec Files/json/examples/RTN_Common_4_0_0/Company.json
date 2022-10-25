@@ -1,0 +1,141 @@
+{
+  "CompanyDetail" : {
+    "CompanyID" : "Example String Value",
+    "CompanyName" : "IBM",
+    "Address" : [ {
+      "@type" : "Address",
+      "StreetAddress" : "100 Main Avenue",
+      "CityName" : "Rochester",
+      "PostalCode" : "14604",
+      "Country" : "United States",
+      "CountryCode" : "US",
+      "StateOrTerritory" : "NY",
+      "AddressType" : {
+        "value" : "Business"
+      }
+    } ],
+    "Phone" : [ {
+      "@type" : "Phone",
+      "primaryInd" : true,
+      "PhoneNumber" : "555-555-5555",
+      "Type" : {
+        "value" : "Home"
+      },
+      "Capabilities" : [ {
+        "value" : "Multimedia"
+      }, {
+        "value" : "Multimedia"
+      } ]
+    } ],
+    "Contact" : [ {
+      "@type" : "ContactDetail",
+      "birthday" : "2000-11-30",
+      "PersonName" : [ {
+        "@type" : "PersonName",
+        "language" : "en-us",
+        "primaryInd" : true,
+        "First" : "John",
+        "Last" : "Smith",
+        "Middle" : "Jacob",
+        "Prefix" : "Mr.",
+        "Suffix" : "Jr.",
+        "NameType" : {
+          "value" : "Alias"
+        },
+        "Title" : "M.D.",
+        "LastNamePrefix" : "Von de"
+      } ],
+      "Email" : [ {
+        "@type" : "Email",
+        "primaryInd" : true,
+        "EmailAddress" : "john.dough@gmail.com",
+        "EmailType" : {
+          "value" : "Personal"
+        }
+      } ],
+      "Phone" : [ {
+        "@type" : "Phone",
+        "primaryInd" : true,
+        "PhoneNumber" : "555-555-5555",
+        "Type" : {
+          "value" : "Business"
+        },
+        "Capabilities" : [ {
+          "value" : "Text"
+        }, {
+          "value" : "Text"
+        } ]
+      } ],
+      "Address" : [ {
+        "@type" : "Address",
+        "StreetAddress" : "100 Main Avenue",
+        "CityName" : "Rochester",
+        "PostalCode" : "14604",
+        "Country" : "United States",
+        "CountryCode" : "US",
+        "StateOrTerritory" : "NY",
+        "AddressType" : {
+          "value" : "Business"
+        }
+      } ],
+      "SocialMedia" : [ {
+        "@type" : "SocialMedia",
+        "URL" : "https://www.instagram.com/",
+        "Platform" : "Instagram",
+        "Handle" : "@RTN",
+        "UserName" : "John.Dough"
+      } ],
+      "CommunicationMethod" : [ {
+        "@type" : "CommunicationMethod",
+        "primaryInd" : true,
+        "CommunicationMethod" : {
+          "value" : "Phone"
+        },
+        "PreferredLanguage" : "en"
+      } ],
+      "Verification" : [ {
+        "@type" : "Verification",
+        "VerificationCategory" : {
+          "value" : "Age"
+        },
+        "VerificationType" : {
+          "value" : "Passport"
+        },
+        "VerifiedBy" : "Fred Flintstone",
+        "VerificationSystem" : "Mitek Systems",
+        "Description" : "Mitek verifies age data from scan of drivers license.",
+        "VerifiedInd" : true
+      } ],
+      "ThirdPartySystem" : [ {
+        "@type" : "ThirdPartySystem",
+        "ThirdPartySystemID" : "Example String Value",
+        "Type" : {
+          "value" : "Loyalty"
+        },
+        "SystemName" : "Paytronix",
+        "CustomerID" : "58688464525",
+        "ProgramID" : "A8V7"
+      } ],
+      "Gender" : "Male",
+      "PreferredPronoun" : {
+        "value" : "He/Him"
+      },
+      "Company" : [ ],
+      "SignificantDate" : [ {
+        "@type" : "SignificantDate",
+        "Date" : "May 1",
+        "Description" : "The person's anniversary date.",
+        "DateType" : {
+          "value" : "Birthday"
+        }
+      } ],
+      "Description" : "VIP"
+    } ],
+    "Description" : "Typewriter division",
+    "WebsiteURL" : "https://www.ibm.com/",
+    "TimeZone" : "Eastern",
+    "IndustryClassificationName" : "Computer related services",
+    "IndustryClassificationCode" : "7379",
+    "IndustryClassificationStandard" : "SIC"
+  }
+}

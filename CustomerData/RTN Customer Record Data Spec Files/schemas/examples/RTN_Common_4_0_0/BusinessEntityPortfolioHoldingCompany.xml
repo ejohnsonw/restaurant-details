@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0400:BusinessEntityPortfolioHoldingCompany
+    xmlns:ms-0400="http://www.modeldev.restauranttechnologynetwork.com/models/v4"
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v4 ../../RTN_Common_4_0_0.xsd">
+    <ms-0400:Description>Example String Value</ms-0400:Description>
+    <ms-0200:PortfolioHoldingCompany>
+        <ms-0200:HoldingCompanyName>Bloomin' Brands</ms-0200:HoldingCompanyName>
+        <ms-0200:HoldingCompanyID>Example String Value</ms-0200:HoldingCompanyID>
+        <ms-0200:Brand preferredBrandInd="true">
+            <ms-0200:BrandName>Carrabas</ms-0200:BrandName>
+            <ms-0200:BrandID>SRG01</ms-0200:BrandID>
+            <ms-0200:PreferredBrandDescription>Work luncheons</ms-0200:PreferredBrandDescription>
+            <ms-0200:LocationDetail preferredStoreIndicatorInd="true">
+                <ms-0200:LocationID>7898</ms-0200:LocationID>
+                <ms-0200:URI>http://www.w3.org/2001/XMLSchema</ms-0200:URI>
+                <ms-0200:Address>
+                    <ms-0200:StreetAddress>100 Main Avenue</ms-0200:StreetAddress>
+                    <ms-0200:CityName>Rochester</ms-0200:CityName>
+                    <ms-0200:PostalCode>14604</ms-0200:PostalCode>
+                    <ms-0200:Country>United States</ms-0200:Country>
+                    <ms-0200:CountryCode>US</ms-0200:CountryCode>
+                    <ms-0200:StateOrTerritory>NY</ms-0200:StateOrTerritory>
+                    <ms-0200:AddressType>Business</ms-0200:AddressType>
+                </ms-0200:Address>
+                <ms-0200:Position>
+                    <ms-0200:Latitude>Example String Value</ms-0200:Latitude>
+                    <ms-0200:Longitude>Example String Value</ms-0200:Longitude>
+                </ms-0200:Position>
+                <ms-0200:LocationStatus>Open</ms-0200:LocationStatus>
+                <ms-0200:OperationSchedule>
+                    <ms-0200:TimeSpanSummary
+                        endDate="2011-07-04T14:15:00+06:00" startDate="2011-01-24T09:45:00-06:00">
+                        <ms-0200:DaysOfWeek>Sunday</ms-0200:DaysOfWeek>
+                    </ms-0200:TimeSpanSummary>
+                </ms-0200:OperationSchedule>
+                <ms-0200:Description>Pine Street Location</ms-0200:Description>
+                <ms-0200:ChannelEffectivity>
+                    <ms-0200:Channel>Curbside</ms-0200:Channel>
+                    <ms-0200:EffectivitySummary
+                        endDate="2011-01-24T09:45:00-06:00" startDate="2011-12-05T06:00:00Z">
+                        <ms-0200:DaysOfWeek>Monday</ms-0200:DaysOfWeek>
+                    </ms-0200:EffectivitySummary>
+                </ms-0200:ChannelEffectivity>
+                <ms-0200:Phone primaryInd="true">
+                    <ms-0200:PhoneNumber>555-555-5555</ms-0200:PhoneNumber>
+                    <ms-0200:Type>Home</ms-0200:Type>
+                    <ms-0200:Capabilities>Multimedia</ms-0200:Capabilities>
+                </ms-0200:Phone>
+                <ms-0200:PreferredStoreDescription>Work luncheon</ms-0200:PreferredStoreDescription>
+                <ms-0200:Privacy>
+                    <ms-0200:ShareMarketIndicator>Yes</ms-0200:ShareMarketIndicator>
+                    <ms-0200:ShareSyncIndicator>No</ms-0200:ShareSyncIndicator>
+                </ms-0200:Privacy>
+                <ms-0200:CommunicationMethod primaryInd="true">
+                    <ms-0200:CommunicationMethod>Phone</ms-0200:CommunicationMethod>
+                    <ms-0200:PreferredLanguage>en</ms-0200:PreferredLanguage>
+                </ms-0200:CommunicationMethod>
+                <ms-0200:PreferredOrderChannel>In store</ms-0200:PreferredOrderChannel>
+                <ms-0200:TermsAndConditions acceptanceInd="true">
+                    <ms-0200:IssuerID>LRU5654</ms-0200:IssuerID>
+                    <ms-0200:IssuerDescription>Loyalties R Us</ms-0200:IssuerDescription>
+                    <ms-0200:Description>Loyalty program terms and conditions</ms-0200:Description>
+                    <ms-0200:DateTime>2021-09-07T15:50:00-04:00</ms-0200:DateTime>
+                </ms-0200:TermsAndConditions>
+                <ms-0200:OpenDate>2011-07-04T14:15:00+06:00</ms-0200:OpenDate>
+                <ms-0200:ClosedDate>2011-12-05T06:00:00Z</ms-0200:ClosedDate>
+            </ms-0200:LocationDetail>
+            <ms-0200:Privacy>
+                <ms-0200:ShareMarketIndicator>Inherit</ms-0200:ShareMarketIndicator>
+                <ms-0200:ShareSyncIndicator>Yes</ms-0200:ShareSyncIndicator>
+            </ms-0200:Privacy>
+            <ms-0200:CommunicationMethod primaryInd="true">
+                <ms-0200:CommunicationMethod>Email</ms-0200:CommunicationMethod>
+                <ms-0200:PreferredLanguage>en</ms-0200:PreferredLanguage>
+            </ms-0200:CommunicationMethod>
+            <ms-0200:TermsAndConditions acceptanceInd="true">
+                <ms-0200:IssuerID>LRU5654</ms-0200:IssuerID>
+                <ms-0200:IssuerDescription>Loyalties R Us</ms-0200:IssuerDescription>
+                <ms-0200:Description>Loyalty program terms and conditions</ms-0200:Description>
+                <ms-0200:DateTime>2021-09-07T15:50:00-04:00</ms-0200:DateTime>
+            </ms-0200:TermsAndConditions>
+            <ms-0200:PreferredOrderChannel>Out of store</ms-0200:PreferredOrderChannel>
+            <ms-0200:BrandDescription>Example String Value</ms-0200:BrandDescription>
+        </ms-0200:Brand>
+        <ms-0200:Privacy>
+            <ms-0200:ShareMarketIndicator>No</ms-0200:ShareMarketIndicator>
+            <ms-0200:ShareSyncIndicator>Inherit</ms-0200:ShareSyncIndicator>
+        </ms-0200:Privacy>
+        <ms-0200:CommunicationMethod primaryInd="true">
+            <ms-0200:CommunicationMethod>SMS</ms-0200:CommunicationMethod>
+            <ms-0200:PreferredLanguage>en</ms-0200:PreferredLanguage>
+        </ms-0200:CommunicationMethod>
+        <ms-0200:TermsAndConditions acceptanceInd="true">
+            <ms-0200:IssuerID>LRU5654</ms-0200:IssuerID>
+            <ms-0200:IssuerDescription>Loyalties R Us</ms-0200:IssuerDescription>
+            <ms-0200:Description>Loyalty program terms and conditions</ms-0200:Description>
+            <ms-0200:DateTime>2021-09-07T15:50:00-04:00</ms-0200:DateTime>
+        </ms-0200:TermsAndConditions>
+        <ms-0200:Description>Example String Value</ms-0200:Description>
+    </ms-0200:PortfolioHoldingCompany>
+</ms-0400:BusinessEntityPortfolioHoldingCompany>

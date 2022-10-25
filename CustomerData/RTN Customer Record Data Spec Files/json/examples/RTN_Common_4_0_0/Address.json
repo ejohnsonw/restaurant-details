@@ -1,0 +1,13 @@
+{
+  "Address" : {
+    "StreetAddress" : "100 Main Avenue",
+    "CityName" : "Rochester",
+    "PostalCode" : "14604",
+    "Country" : "United States",
+    "CountryCode" : "US",
+    "StateOrTerritory" : "NY",
+    "AddressType" : {
+      "value" : "Business"
+    }
+  }
+}

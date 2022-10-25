@@ -1,0 +1,9 @@
+{
+  "Email" : {
+    "primaryInd" : true,
+    "EmailAddress" : "john.dough@gmail.com",
+    "EmailType" : {
+      "value" : "Business"
+    }
+  }
+}

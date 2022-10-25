@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0200:Promotion
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v2 ../../RTN_Common_2_0_0.xsd">
+    <ms-0200:PromotionCode>Promo1</ms-0200:PromotionCode>
+    <ms-0200:Description>School fundraiser</ms-0200:Description>
+</ms-0200:Promotion>

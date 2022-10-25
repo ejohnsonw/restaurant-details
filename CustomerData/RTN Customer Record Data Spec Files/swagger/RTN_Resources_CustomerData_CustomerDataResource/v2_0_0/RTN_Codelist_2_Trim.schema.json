@@ -1,0 +1,554 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Codelist",
+  "x-otm-library": {
+    "LibraryName": "RTN_Codelist",
+    "LibraryVersion": "2.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Codelist_2_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-10-11T09:49:27.962-0400"
+  },
+  "definitions": {
+    "DaysOfWeek_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "DaysOfWeek_Enum"
+      },
+      "description": "An enumeration of the seven days of the week.",
+      "type": "string",
+      "enum": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ]
+    },
+    "Status_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Status_Enum"
+      },
+      "description": "Specifies the state of an item or service, e.g. the restaurant is temporarily closed.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Status_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Status_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Status_Enum"
+      },
+      "description": "Specifies the state of an item or service, e.g. the restaurant is temporarily closed.",
+      "type": "string",
+      "enum": [
+        "Open",
+        "Permanently Closed",
+        "Temporarily Closed",
+        "Other_"
+      ]
+    },
+    "AddressType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "AddressType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AddressType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "AddressType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "AddressType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Business",
+        "Personal",
+        "Other_"
+      ]
+    },
+    "PhoneCapabilities_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PhoneCapabilities_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/PhoneCapabilities_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "PhoneCapabilities_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PhoneCapabilities_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Multimedia",
+        "Text",
+        "TTY",
+        "Voice",
+        "Other_"
+      ]
+    },
+    "CommunicationMethod_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "CommunicationMethod_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/CommunicationMethod_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "CommunicationMethod_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "CommunicationMethod_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Phone",
+        "Email",
+        "SMS",
+        "WeChat",
+        "Whats App",
+        "Other_"
+      ]
+    },
+    "ProfileStatus_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ProfileStatus_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ProfileStatus_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "ProfileStatus_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ProfileStatus_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Marked for deletion",
+        "Locked",
+        "Other_"
+      ]
+    },
+    "RelationshipType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "RelationshipType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/RelationshipType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "RelationshipType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "RelationshipType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Business",
+        "Household",
+        "School group",
+        "Social group",
+        "Duplicate profile",
+        "Other_"
+      ]
+    },
+    "ThirdPartySystemType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ThirdPartySystemType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ThirdPartySystemType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "ThirdPartySystemType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ThirdPartySystemType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Loyalty",
+        "Reservation",
+        "Kitchen production",
+        "Delivery company",
+        "Other_"
+      ]
+    },
+    "NameType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "NameType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/NameType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "NameType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "NameType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Alias",
+        "Altername",
+        "Former",
+        "Nickname",
+        "Other_"
+      ]
+    },
+    "VerificationCategory_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "VerificationCategory_Enum"
+      },
+      "description": "Specifies the type of verification that has been performed.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/VerificationCategory_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "VerificationCategory_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "VerificationCategory_Enum"
+      },
+      "description": "Specifies the type of verification that has been performed.",
+      "type": "string",
+      "enum": [
+        "Age",
+        "Vaccine",
+        "Military",
+        "Other_"
+      ]
+    },
+    "VerificationType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "VerificationType_Enum"
+      },
+      "description": "Identifies the type of document used for verification.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/VerificationType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "VerificationType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "VerificationType_Enum"
+      },
+      "description": "Identifies the type of document used for verification.",
+      "type": "string",
+      "enum": [
+        "Passport",
+        "Drivers license",
+        "State ID",
+        "Other_"
+      ]
+    },
+    "Pronoun_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Pronoun_Enum"
+      },
+      "description": "A list of prounouns that may be utilized by a person.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Pronoun_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Pronoun_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Pronoun_Enum"
+      },
+      "description": "A list of prounouns that may be utilized by a person.",
+      "type": "string",
+      "enum": [
+        "He/Him",
+        "She/Her",
+        "They/Them",
+        "Other_"
+      ]
+    },
+    "OrderChannel_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderChannel_Enum"
+      },
+      "description": "Provides a list of systems for creating restaurant orders.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderChannel_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderChannel_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderChannel_Enum"
+      },
+      "description": "Provides a list of systems for creating restaurant orders.",
+      "type": "string",
+      "enum": [
+        "In store",
+        "Out of store",
+        "Phone",
+        "Mobile device",
+        "Desk top",
+        "Third party delivery",
+        "First party delivery",
+        "Kiosk",
+        "Mobile kiosk",
+        "Social ordering",
+        "Other_"
+      ]
+    },
+    "PhoneType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PhoneType_Enum"
+      },
+      "description": "Specifies the type of phone (home, business, mobile).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/PhoneType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "PhoneType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PhoneType_Enum"
+      },
+      "description": "Specifies the type of phone (home, business, mobile).",
+      "type": "string",
+      "enum": [
+        "Home",
+        "Business",
+        "Mobile",
+        "Other_"
+      ]
+    },
+    "DateType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DateType_Enum"
+      },
+      "description": "Specifes a type of date (birthday, anniversary, etc.)",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/DateType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "DateType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DateType_Enum"
+      },
+      "description": "Specifes a type of date (birthday, anniversary, etc.)",
+      "type": "string",
+      "enum": [
+        "Birthday",
+        "Anniversary",
+        "Membership anniversary",
+        "Other_"
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/DaysOfWeek_Enum"
+    },
+    {
+      "$ref": "#/definitions/Status_Enum"
+    },
+    {
+      "$ref": "#/definitions/Status_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/AddressType_Enum"
+    },
+    {
+      "$ref": "#/definitions/AddressType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/PhoneCapabilities_Enum"
+    },
+    {
+      "$ref": "#/definitions/PhoneCapabilities_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/CommunicationMethod_Enum"
+    },
+    {
+      "$ref": "#/definitions/CommunicationMethod_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/ProfileStatus_Enum"
+    },
+    {
+      "$ref": "#/definitions/ProfileStatus_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/RelationshipType_Enum"
+    },
+    {
+      "$ref": "#/definitions/RelationshipType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/ThirdPartySystemType_Enum"
+    },
+    {
+      "$ref": "#/definitions/ThirdPartySystemType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/NameType_Enum"
+    },
+    {
+      "$ref": "#/definitions/NameType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/VerificationCategory_Enum"
+    },
+    {
+      "$ref": "#/definitions/VerificationCategory_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/VerificationType_Enum"
+    },
+    {
+      "$ref": "#/definitions/VerificationType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Pronoun_Enum"
+    },
+    {
+      "$ref": "#/definitions/Pronoun_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderChannel_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderChannel_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/PhoneType_Enum"
+    },
+    {
+      "$ref": "#/definitions/PhoneType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/DateType_Enum"
+    },
+    {
+      "$ref": "#/definitions/DateType_Enum_Base"
+    }
+  ]
+}

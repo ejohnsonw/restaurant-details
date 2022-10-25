@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0200:ThirdPartySystem
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v2 ../../RTN_Common_2_0_0.xsd">
+    <ms-0200:ThirdPartySystemID>Example String Value</ms-0200:ThirdPartySystemID>
+    <ms-0200:Type>Loyalty</ms-0200:Type>
+    <ms-0200:SystemName>Paytronix</ms-0200:SystemName>
+    <ms-0200:CustomerID>58688464525</ms-0200:CustomerID>
+    <ms-0200:ProgramID>A8V7</ms-0200:ProgramID>
+</ms-0200:ThirdPartySystem>

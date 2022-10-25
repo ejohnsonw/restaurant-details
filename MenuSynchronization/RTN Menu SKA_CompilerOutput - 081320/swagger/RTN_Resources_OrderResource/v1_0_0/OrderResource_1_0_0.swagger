@@ -1,0 +1,222 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "OrderResource",
+    "version": "1.0.0"
+  },
+  "host": "127.0.0.1",
+  "basePath": "/v1_0",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/orders/{OrderID}": {
+      "get": {
+        "summary": "OrderResource - Get",
+        "operationId": "Get",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "A unique identifier for the order.",
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "400": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "401": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "402": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "403": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "404": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "500": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "OrderResource - Update",
+        "operationId": "Update",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "path",
+            "description": "A unique identifier for the order.",
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          },
+          {
+            "name": "OrderID",
+            "in": "body",
+            "description": "Any saleable item or group of items on the menu.",
+            "required": false,
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "400": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "401": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "402": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "403": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "404": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "500": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "summary": "OrderResource - Create",
+        "operationId": "Create",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "OrderID",
+            "in": "body",
+            "description": "Any saleable item or group of items on the menu.",
+            "required": false,
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "400": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "401": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "402": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "403": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "404": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          },
+          "500": {
+            "description": "Any saleable item or group of items on the menu.",
+            "schema": {
+              "$ref": "RTN_Order_1_0_0_Trim.schema.json#/definitions/OrderID"
+            }
+          }
+        }
+      }
+    }
+  }
+}

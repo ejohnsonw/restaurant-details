@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://opentravel.org/local/user/rtn/v1"
+    version="1.0.0"
+    xmlns:ms-0100="http://opentravel.org/local/user/rtn/v1"
+    xmlns:ota2="http://www.opentravel.org/OTM/Common/v0"
+    xmlns:otm="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:annotation>
+        <xsd:appinfo>
+            <otm:Library>
+                <otm:LibraryName>RTN_Codelist</otm:LibraryName>
+                <otm:LibraryVersion>1.0.0</otm:LibraryVersion>
+                <otm:LibraryStatus>DRAFT</otm:LibraryStatus>
+                <otm:SourceFile>/RTN_Codelist_1_0_0.otm</otm:SourceFile>
+                <otm:CompilerVersion>4.0-SNAPSHOT</otm:CompilerVersion>
+                <otm:CompileDate>2020-08-13T17:25:32.233-04:00</otm:CompileDate>
+            </otm:Library>
+        </xsd:appinfo>
+    </xsd:annotation>
+    
+    <xsd:import namespace="http://www.opentravel.org/OTM/Common/v0" schemaLocation="built-ins/OTM_BuiltIns.xsd"/>
+    <xsd:import
+        namespace="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" schemaLocation="built-ins/OTA2_AppInfo_v1.0.0.xsd"/>
+    
+    <xsd:complexType name="AllergyInformation_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of allergens.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">AllergyInformation_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0100:AllergyInformation_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="AllergyInformation_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of allergens.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">AllergyInformation_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Gluten"/>
+            <xsd:enumeration value="Peanut"/>
+            <xsd:enumeration value="Wheat"/>
+            <xsd:enumeration value="Soy"/>
+            <xsd:enumeration value="Milk"/>
+            <xsd:enumeration value="Eggs"/>
+            <xsd:enumeration value="Tree Nuts"/>
+            <xsd:enumeration value="Fish"/>
+            <xsd:enumeration value="Shellfish/Crustaceans"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="LifestyleChoices_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of lifestyle choices (e.g. Vegan).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">LifestyleChoices_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0100:LifestyleChoices_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="LifestyleChoices_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of lifestyle choices (e.g. Vegan).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">LifestyleChoices_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Halal"/>
+            <xsd:enumeration value="Kosher"/>
+            <xsd:enumeration value="Vegan"/>
+            <xsd:enumeration value="Vegetarian"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="NutritionInformationType_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the details for the nutrition item being sent.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">NutritionInformationType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0100:NutritionInformationType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="NutritionInformationType_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the details for the nutrition item being sent.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">NutritionInformationType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Calories"/>
+            <xsd:enumeration value="Calories From Fat"/>
+            <xsd:enumeration value="Total Fat"/>
+            <xsd:enumeration value="Saturated Fat"/>
+            <xsd:enumeration value="Trans Fat"/>
+            <xsd:enumeration value="Cholesterol"/>
+            <xsd:enumeration value="Sodium"/>
+            <xsd:enumeration value="Total Carbohydrates"/>
+            <xsd:enumeration value="Dietary Fiber"/>
+            <xsd:enumeration value="Total Sugar"/>
+            <xsd:enumeration value="Protein"/>
+            <xsd:enumeration value="Vitamin A"/>
+            <xsd:enumeration value="Vitamin C"/>
+            <xsd:enumeration value="Calcium"/>
+            <xsd:enumeration value="Iron"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="UnitOfMeasure_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the unit of measure for an associated item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">UnitOfMeasure_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0100:UnitOfMeasure_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="UnitOfMeasure_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the unit of measure for an associated item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">UnitOfMeasure_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Grams"/>
+            <xsd:enumeration value="Milligrams"/>
+            <xsd:enumeration value="Cups"/>
+            <xsd:enumeration value="Liters"/>
+            <xsd:enumeration value="Ounces"/>
+            <xsd:enumeration value="Fluid ounces"/>
+            <xsd:enumeration value="Pound"/>
+            <xsd:enumeration value="Gallons"/>
+            <xsd:enumeration value="Pints"/>
+            <xsd:enumeration value="Quarts"/>
+            <xsd:enumeration value="Milliliters"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="DaysOfWeek_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">An enumeration of the seven days of the week.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">DaysOfWeek_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Sunday"/>
+            <xsd:enumeration value="Monday"/>
+            <xsd:enumeration value="Tuesday"/>
+            <xsd:enumeration value="Wednesday"/>
+            <xsd:enumeration value="Thursday"/>
+            <xsd:enumeration value="Friday"/>
+            <xsd:enumeration value="Saturday"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="ValueType_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies whether a value is an amount or a percent.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">ValueType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Amount"/>
+            <xsd:enumeration value="Percent"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="Action_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies an action to be taken.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">Action_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Add"/>
+            <xsd:enumeration value="Remove"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="Contains_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Used to explicitly denote whether an item contains or is free from another item (such as an allergen).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">Contains_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Contains"/>
+            <xsd:enumeration value="Free From"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+</xsd:schema>

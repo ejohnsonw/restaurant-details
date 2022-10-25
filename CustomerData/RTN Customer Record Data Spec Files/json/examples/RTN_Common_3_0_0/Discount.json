@@ -1,0 +1,9 @@
+{
+  "Discount" : {
+    "valueType" : "Amount",
+    "value" : 3.00,
+    "beforeTaxInd" : true,
+    "Application" : [ "Example String Value" ],
+    "Description" : "Senior discount."
+  }
+}

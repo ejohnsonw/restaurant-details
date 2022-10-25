@@ -1,0 +1,9 @@
+{
+  "CommunicationMethod" : {
+    "primaryInd" : true,
+    "CommunicationMethod" : {
+      "value" : "Phone"
+    },
+    "PreferredLanguage" : "en"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "AdditionalCustomerSegmentationInfo" : {
+    "Demographic" : [ {
+      "@type" : "Demographic",
+      "DemographicType" : {
+        "value" : "Age"
+      },
+      "Value" : "35"
+    } ],
+    "Geographic" : [ {
+      "@type" : "Geographic",
+      "GeographicType" : {
+        "value" : "Country"
+      },
+      "Value" : "United States"
+    } ],
+    "Psychographic" : [ {
+      "@type" : "Psychographic",
+      "PsychographicType" : {
+        "value" : "Attitude"
+      },
+      "Value" : "Dog lover"
+    } ],
+    "Technographic" : [ {
+      "@type" : "Technographic",
+      "TechnographicType" : {
+        "value" : "Mobile user"
+      },
+      "Value" : "Android"
+    } ],
+    "Behavior" : [ {
+      "@type" : "Behavior",
+      "BehaviorType" : {
+        "value" : "Tendencies"
+      },
+      "Value" : "Dessert Lover"
+    } ],
+    "NeedsBased" : [ {
+      "@type" : "NeedsBased",
+      "ProductMustHaves" : [ "Severe tree nut allergy" ],
+      "ServiceMustHaves" : [ "Insists on window view" ]
+    } ],
+    "ValueBased" : [ {
+      "@type" : "ValueBased",
+      "EconomicValue" : "Free kids meals.",
+      "Description" : "Prefers restaurants with free kids meal"
+    } ],
+    "DataSource" : [ {
+      "value" : null,
+      "iD" : "Example String Value",
+      "name" : "Example String Value",
+      "sourceSystem" : "Example String Value"
+    } ]
+  }
+}

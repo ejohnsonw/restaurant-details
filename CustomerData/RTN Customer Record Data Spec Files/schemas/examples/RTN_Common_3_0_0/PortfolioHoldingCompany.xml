@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0300:PortfolioHoldingCompany
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v3 ../../RTN_Common_3_0_0.xsd">
+    <ms-0300:HoldingCompanyName>Bloomin' Brands</ms-0300:HoldingCompanyName>
+    <ms-0300:HoldingCompanyID>Example String Value</ms-0300:HoldingCompanyID>
+    <ms-0300:Brand preferredBrandInd="true">
+        <ms-0300:BrandName>Carrabas</ms-0300:BrandName>
+        <ms-0300:BrandID>SRG01</ms-0300:BrandID>
+        <ms-0300:PreferredBrandDescription>Work luncheons</ms-0300:PreferredBrandDescription>
+        <ms-0300:LocationDetail preferredStoreIndicatorInd="true">
+            <ms-0300:LocationID>7898</ms-0300:LocationID>
+            <ms-0300:URI>https://locations.RestaurantsRUs.com/md/california.html</ms-0300:URI>
+            <ms-0300:Address>
+                <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                <ms-0300:CityName>Rochester</ms-0300:CityName>
+                <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                <ms-0300:Country>United States</ms-0300:Country>
+                <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                <ms-0300:AddressType>Business</ms-0300:AddressType>
+            </ms-0300:Address>
+            <ms-0300:Position>
+                <ms-0300:Latitude>38.290668</ms-0300:Latitude>
+                <ms-0300:Longitude>-76.529121</ms-0300:Longitude>
+            </ms-0300:Position>
+            <ms-0300:LocationStatus>Open</ms-0300:LocationStatus>
+            <ms-0300:OperationSchedule>
+                <ms-0300:TimeSpanSummary
+                    endDate="2022-07-05T16:35:42+00:00" startDate="2022-07-05T16:27:29+00:00">
+                    <ms-0300:DaysOfWeek>Sunday</ms-0300:DaysOfWeek>
+                </ms-0300:TimeSpanSummary>
+            </ms-0300:OperationSchedule>
+            <ms-0300:Description>Pine Street Location</ms-0300:Description>
+            <ms-0300:ChannelEffectivity>
+                <ms-0300:Channel>Curbside</ms-0300:Channel>
+                <ms-0300:EffectivityDetail
+                    endDate="2022-07-05T16:35:42+00:00" startDate="2022-07-05T16:27:29+00:00">
+                    <ms-0300:DaysOfWeek>Monday</ms-0300:DaysOfWeek>
+                    <ms-0300:Name>Happy hour</ms-0300:Name>
+                    <ms-0300:WeekOfMonth>1</ms-0300:WeekOfMonth>
+                    <ms-0300:MonthOfYear>7</ms-0300:MonthOfYear>
+                </ms-0300:EffectivityDetail>
+            </ms-0300:ChannelEffectivity>
+            <ms-0300:Phone primaryInd="true">
+                <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                <ms-0300:Type>Home</ms-0300:Type>
+                <ms-0300:Capabilities>Multimedia</ms-0300:Capabilities>
+            </ms-0300:Phone>
+            <ms-0300:PreferredStoreDescription>Work luncheon</ms-0300:PreferredStoreDescription>
+            <ms-0300:Privacy>
+                <ms-0300:ShareMarketIndicator>Yes</ms-0300:ShareMarketIndicator>
+                <ms-0300:ShareSyncIndicator>No</ms-0300:ShareSyncIndicator>
+            </ms-0300:Privacy>
+            <ms-0300:CommunicationMethod primaryInd="true">
+                <ms-0300:CommunicationMethod>Phone</ms-0300:CommunicationMethod>
+                <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+            </ms-0300:CommunicationMethod>
+            <ms-0300:PreferredOrderChannel>In store</ms-0300:PreferredOrderChannel>
+            <ms-0300:TermsAndConditions acceptanceInd="true">
+                <ms-0300:IssuerID>LRU5654</ms-0300:IssuerID>
+                <ms-0300:IssuerDescription>Loyalties R Us</ms-0300:IssuerDescription>
+                <ms-0300:Description>Loyalty program terms and conditions</ms-0300:Description>
+                <ms-0300:DateTime>2021-09-07T15:50:00-04:00</ms-0300:DateTime>
+            </ms-0300:TermsAndConditions>
+            <ms-0300:OpenDate>2023-07-05T00:00:00</ms-0300:OpenDate>
+            <ms-0300:ClosedDate>2024-07-05T00:00:00</ms-0300:ClosedDate>
+        </ms-0300:LocationDetail>
+        <ms-0300:Privacy>
+            <ms-0300:ShareMarketIndicator>Inherit</ms-0300:ShareMarketIndicator>
+            <ms-0300:ShareSyncIndicator>Yes</ms-0300:ShareSyncIndicator>
+        </ms-0300:Privacy>
+        <ms-0300:CommunicationMethod primaryInd="true">
+            <ms-0300:CommunicationMethod>Email</ms-0300:CommunicationMethod>
+            <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+        </ms-0300:CommunicationMethod>
+        <ms-0300:TermsAndConditions acceptanceInd="true">
+            <ms-0300:IssuerID>LRU5654</ms-0300:IssuerID>
+            <ms-0300:IssuerDescription>Loyalties R Us</ms-0300:IssuerDescription>
+            <ms-0300:Description>Loyalty program terms and conditions</ms-0300:Description>
+            <ms-0300:DateTime>2021-09-07T15:50:00-04:00</ms-0300:DateTime>
+        </ms-0300:TermsAndConditions>
+        <ms-0300:PreferredOrderChannel>Out of store</ms-0300:PreferredOrderChannel>
+        <ms-0300:BrandDescription>Example String Value</ms-0300:BrandDescription>
+    </ms-0300:Brand>
+    <ms-0300:Privacy>
+        <ms-0300:ShareMarketIndicator>No</ms-0300:ShareMarketIndicator>
+        <ms-0300:ShareSyncIndicator>Inherit</ms-0300:ShareSyncIndicator>
+    </ms-0300:Privacy>
+    <ms-0300:CommunicationMethod primaryInd="true">
+        <ms-0300:CommunicationMethod>SMS</ms-0300:CommunicationMethod>
+        <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+    </ms-0300:CommunicationMethod>
+    <ms-0300:TermsAndConditions acceptanceInd="true">
+        <ms-0300:IssuerID>LRU5654</ms-0300:IssuerID>
+        <ms-0300:IssuerDescription>Loyalties R Us</ms-0300:IssuerDescription>
+        <ms-0300:Description>Loyalty program terms and conditions</ms-0300:Description>
+        <ms-0300:DateTime>2021-09-07T15:50:00-04:00</ms-0300:DateTime>
+    </ms-0300:TermsAndConditions>
+    <ms-0300:Description>Example String Value</ms-0300:Description>
+</ms-0300:PortfolioHoldingCompany>

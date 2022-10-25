@@ -1,0 +1,2602 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Common",
+  "x-otm-library": {
+    "LibraryName": "RTN_Common",
+    "LibraryVersion": "2.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Common_2_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-10-11T09:49:28.447-0400"
+  },
+  "definitions": {
+    "TimeSpan": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "TimeSpanSummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Effectivity": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "EffectivitySummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "LocationID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Location"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "LocationID": {
+          "description": "A unique global identifier for the location.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "7898"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "LocationIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Location"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "LocationID": {
+          "description": "A unique global identifier for the location.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "7898"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Location": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Location"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/LocationID"
+        },
+        {
+          "properties": {
+            "URI": {
+              "description": "The URI for the location.",
+              "type": "string"
+            },
+            "Address": {
+              "description": "Assigned Type: ms-0200:Address",
+              "$ref": "#/definitions/Address"
+            },
+            "Position": {
+              "description": "Assigned Type: ms-0200:Position",
+              "$ref": "#/definitions/Position"
+            },
+            "LocationStatus": {
+              "description": "Assigned Type: ms-0200:Status_Enum",
+              "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/Status_Enum"
+            },
+            "OperationSchedule": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OperationSchedule"
+              }
+            },
+            "Description": {
+              "description": "A description of the location (e.g. store , ghost kitchen).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Pine Street Location"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ChannelEffectivity": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ChannelEffectivity"
+              }
+            },
+            "Phone": {
+              "description": "Assigned Type: ms-0200:Phone",
+              "$ref": "#/definitions/Phone"
+            },
+            "PreferredStoreDescription": {
+              "description": "Describes the context of the preferred store, such as for work, or for multibrand conglomerates, or aggregators.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Work luncheon"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Privacy": {
+              "description": "Assigned Type: ms-0200:Privacy",
+              "$ref": "#/definitions/Privacy"
+            },
+            "CommunicationMethod": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CommunicationMethod"
+              }
+            },
+            "PreferredOrderChannel": {
+              "description": "Assigned Type: ms-0200:OrderChannel_Enum",
+              "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/OrderChannel_Enum"
+            },
+            "TermsAndConditions": {
+              "description": "Assigned Type: ms-0200:TermsAndConditions",
+              "$ref": "#/definitions/TermsAndConditions"
+            },
+            "preferredStoreIndicatorInd": {
+              "description": "When true, this store is a favorite.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "LocationSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Location"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/LocationID"
+        },
+        {
+          "properties": {
+            "URI": {
+              "description": "The URI for the location.",
+              "type": "string"
+            },
+            "Address": {
+              "description": "Assigned Type: ms-0200:Address",
+              "$ref": "#/definitions/Address"
+            },
+            "Position": {
+              "description": "Assigned Type: ms-0200:Position",
+              "$ref": "#/definitions/Position"
+            },
+            "LocationStatus": {
+              "description": "Assigned Type: ms-0200:Status_Enum",
+              "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/Status_Enum"
+            },
+            "OperationSchedule": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OperationSchedule"
+              }
+            },
+            "Description": {
+              "description": "A description of the location (e.g. store , ghost kitchen).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Pine Street Location"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ChannelEffectivity": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ChannelEffectivity"
+              }
+            },
+            "Phone": {
+              "description": "Assigned Type: ms-0200:Phone",
+              "$ref": "#/definitions/Phone"
+            },
+            "PreferredStoreDescription": {
+              "description": "Describes the context of the preferred store, such as for work, or for multibrand conglomerates, or aggregators.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Work luncheon"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Privacy": {
+              "description": "Assigned Type: ms-0200:Privacy",
+              "$ref": "#/definitions/Privacy"
+            },
+            "CommunicationMethod": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CommunicationMethod"
+              }
+            },
+            "PreferredOrderChannel": {
+              "description": "Assigned Type: ms-0200:OrderChannel_Enum",
+              "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/OrderChannel_Enum"
+            },
+            "TermsAndConditions": {
+              "description": "Assigned Type: ms-0200:TermsAndConditions",
+              "$ref": "#/definitions/TermsAndConditions"
+            },
+            "preferredStoreIndicatorInd": {
+              "description": "When true, this store is a favorite.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "LocationDetail": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Location"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Location"
+        },
+        {
+          "properties": {
+            "OpenDate": {
+              "description": "Specifies the date the restaurant is to open.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "ClosedDate": {
+              "description": "Specifies the date a location is to close.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "Address": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Address"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "StreetAddress": {
+          "description": "The street number and street name.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "100 Main Avenue"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "CityName": {
+          "description": "The name of the city in which the entitiy is located.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Rochester"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "PostalCode": {
+          "description": "Specifies the zip code for the entity.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "14604"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Country": {
+          "description": "Specifies the country in which the entity is located.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "United States"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "CountryCode": {
+          "description": "ISO 3166 code for a country.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "US"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "StateOrTerritory": {
+          "description": "Specifies the state, territory or province in which the entity is located,",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "NY"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "AddressType": {
+          "description": "Assigned Type: ms-0200:AddressType_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Personal"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/AddressType_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "OperationSchedule": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "OperationSchedule"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "TimeSpanSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeSpanSummary"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Position": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Position"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Latitude": {
+          "description": "The measure of the angular distance on the meridean north or south of the equator.",
+          "type": "string"
+        },
+        "Longitude": {
+          "description": "The measure of the angular distance on the meridian east or west of the prime meridian.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ChannelEffectivity": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "ChannelEffectivity"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Channel": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "EffectivitySummary": {
+          "description": "Assigned Type: ms-0200:Effectivity_Summary",
+          "$ref": "#/definitions/EffectivitySummary"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Phone": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Phone"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "description": "The telephone number.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "555-555-5555"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Type": {
+          "description": "Assigned Type: ms-0200:PhoneType_Enum",
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/PhoneType_Enum"
+        },
+        "Capabilities": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/PhoneCapabilities_Enum"
+          }
+        },
+        "primaryInd": {
+          "description": "When true, this is the main phone number for the person.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "PhoneNumber"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "PersonName": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "PersonName"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "language": {
+          "description": "The language in which the name is represented.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "en-us"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "First": {
+          "description": "The first name or given name of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "John"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Last": {
+          "description": "The surname of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Smith"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Middle": {
+          "description": "The middle name of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Jacob"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Prefix": {
+          "description": "Salutation for the person (e.g. Mr., Mrs., Ms., Dr., etc.)",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Mr."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Suffix": {
+          "description": "A suffix related to the name (e.g. Jr., Sr., III, Esq., etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Jr."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "NameType": {
+          "description": "Assigned Type: ms-0200:NameType_Enum",
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/NameType_Enum"
+        },
+        "Title": {
+          "description": "Specifies degrees or honors of the person (e.g. M.D., Ph.D., etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "M.D."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "LastNamePrefix": {
+          "description": "Specifies the last name prefix (e.g. \\\"Van der\\\", \\\"von\\\", \\\"de\\\", etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Von de"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "primaryInd": {
+          "description": "When true, this is the default or primary name for the person.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "CustomerName": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "PersonName"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "language": {
+          "description": "The language in which the name is represented.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "en-us"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "First": {
+          "description": "The first name or given name of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "John"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Last": {
+          "description": "The surname of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Smith"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Middle": {
+          "description": "The middle name of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Jacob"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Prefix": {
+          "description": "Salutation for the person (e.g. Mr., Mrs., Ms., Dr., etc.)",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Mr."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Suffix": {
+          "description": "A suffix related to the name (e.g. Jr., Sr., III, Esq., etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Jr."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "NameType": {
+          "description": "Assigned Type: ms-0200:NameType_Enum",
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/NameType_Enum"
+        },
+        "Title": {
+          "description": "Specifies degrees or honors of the person (e.g. M.D., Ph.D., etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "M.D."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "LastNamePrefix": {
+          "description": "Specifies the last name prefix (e.g. \\\"Van der\\\", \\\"von\\\", \\\"de\\\", etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Von de"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "primaryInd": {
+          "description": "When true, this is the default or primary name for the person.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Person": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Person"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "birthday": {
+          "description": "The date of birth.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2000-11-30"
+              }
+            ]
+          },
+          "type": "string",
+          "format": "date"
+        },
+        "PersonName": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PersonName"
+          }
+        },
+        "Email": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Email"
+          }
+        },
+        "Phone": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Phone"
+          }
+        },
+        "Address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "SocialMedia": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SocialMedia"
+          }
+        },
+        "CommunicationMethod": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommunicationMethod"
+          }
+        },
+        "Verification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Verification"
+          }
+        },
+        "ThirdPartySystem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ThirdPartySystemID"
+          }
+        },
+        "Gender": {
+          "description": "The gender for the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Male"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "PreferredPronoun": {
+          "description": "Assigned Type: ms-0200:Pronoun_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "He/Him"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/Pronoun_Enum"
+        },
+        "Company": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CompanyID"
+          }
+        },
+        "SignificantDate": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SignificantDate"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "PersonSummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Person"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "birthday": {
+          "description": "The date of birth.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2000-11-30"
+              }
+            ]
+          },
+          "type": "string",
+          "format": "date"
+        },
+        "PersonName": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PersonName"
+          }
+        },
+        "Email": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Email"
+          }
+        },
+        "Phone": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Phone"
+          }
+        },
+        "Address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "SocialMedia": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SocialMedia"
+          }
+        },
+        "CommunicationMethod": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommunicationMethod"
+          }
+        },
+        "Verification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Verification"
+          }
+        },
+        "ThirdPartySystem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ThirdPartySystemID"
+          }
+        },
+        "Gender": {
+          "description": "The gender for the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Male"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "PreferredPronoun": {
+          "description": "Assigned Type: ms-0200:Pronoun_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "He/Him"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/Pronoun_Enum"
+        },
+        "Company": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CompanyID"
+          }
+        },
+        "SignificantDate": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SignificantDate"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Contact": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Person"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "birthday": {
+          "description": "The date of birth.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2000-11-30"
+              }
+            ]
+          },
+          "type": "string",
+          "format": "date"
+        },
+        "PersonName": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PersonName"
+          }
+        },
+        "Email": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Email"
+          }
+        },
+        "Phone": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Phone"
+          }
+        },
+        "Address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "SocialMedia": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SocialMedia"
+          }
+        },
+        "CommunicationMethod": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommunicationMethod"
+          }
+        },
+        "Verification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Verification"
+          }
+        },
+        "ThirdPartySystem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ThirdPartySystemID"
+          }
+        },
+        "Gender": {
+          "description": "The gender for the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Male"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "PreferredPronoun": {
+          "description": "Assigned Type: ms-0200:Pronoun_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "He/Him"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/Pronoun_Enum"
+        },
+        "Company": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CompanyID"
+          }
+        },
+        "SignificantDate": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SignificantDate"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ContactSummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Person"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "birthday": {
+          "description": "The date of birth.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2000-11-30"
+              }
+            ]
+          },
+          "type": "string",
+          "format": "date"
+        },
+        "PersonName": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PersonName"
+          }
+        },
+        "Email": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Email"
+          }
+        },
+        "Phone": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Phone"
+          }
+        },
+        "Address": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "SocialMedia": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SocialMedia"
+          }
+        },
+        "CommunicationMethod": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommunicationMethod"
+          }
+        },
+        "Verification": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Verification"
+          }
+        },
+        "ThirdPartySystem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ThirdPartySystemID"
+          }
+        },
+        "Gender": {
+          "description": "The gender for the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Male"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "PreferredPronoun": {
+          "description": "Assigned Type: ms-0200:Pronoun_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "He/Him"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/Pronoun_Enum"
+        },
+        "Company": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CompanyID"
+          }
+        },
+        "SignificantDate": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SignificantDate"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "PersonDetail": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Person"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Person"
+        },
+        {
+          "properties": {
+            "Description": {
+              "description": "A description associated with the person.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "VIP"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "ContactDetail": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Person"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Contact"
+        },
+        {
+          "properties": {
+            "Description": {
+              "description": "A description associated with the person.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "VIP"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "Email": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Email"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "description": "An email address.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "john.dough@gmail.com"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "EmailType": {
+          "description": "Assigned Type: ms-0200:AddressType_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Personal"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/AddressType_Enum"
+        },
+        "primaryInd": {
+          "description": "When true, this is the primary email address for the person.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "EmailAddress"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "SocialMedia": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "SocialMedia"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "URL": {
+          "description": "The URL for the social media platform.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "https://www.instagram.com/"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Platform": {
+          "description": "The name of the social media platform.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Instagram"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Handle": {
+          "description": "The person\u0027s handle for the social media platform.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "@RTN"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "UserName": {
+          "description": "The user name for the person on the social media platform.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "John.Dough"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "Platform",
+        "Handle",
+        "UserName"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "CommunicationMethod": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "CommunicationMethod"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "CommunicationMethod": {
+          "description": "Assigned Type: ms-0200:CommunicationMethod_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Email"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/CommunicationMethod_Enum"
+        },
+        "PreferredLanguage": {
+          "description": "The  preferred language for communications.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "en"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "primaryInd": {
+          "description": "When true, this is the primary method for communication for this individual.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ThirdPartySystemID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "ThirdPartySystem"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ThirdPartySystemID": {
+          "description": "A globally unique identifier for a third party system.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type",
+        "ThirdPartySystemID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ThirdPartySystemIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "ThirdPartySystem"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ThirdPartySystemID": {
+          "description": "A globally unique identifier for a third party system.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type",
+        "ThirdPartySystemID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ThirdPartySystem": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "ThirdPartySystem"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ThirdPartySystemID"
+        },
+        {
+          "properties": {
+            "Type": {
+              "description": "Assigned Type: ms-0200:ThirdPartySystemType_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Loyalty"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/ThirdPartySystemType_Enum"
+            },
+            "SystemName": {
+              "description": "The name of the third party system.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Paytronix"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "CustomerID": {
+              "description": "An ID for the customer within the third party system.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "58688464525"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ProgramID": {
+              "description": "An identifier for the program (birthday club, new guest club, tier within a loyalty system, etc.)",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "A8V7"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "Type"
+          ]
+        }
+      ]
+    },
+    "ThirdPartySystemSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "ThirdPartySystem"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ThirdPartySystemID"
+        },
+        {
+          "properties": {
+            "Type": {
+              "description": "Assigned Type: ms-0200:ThirdPartySystemType_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Loyalty"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/ThirdPartySystemType_Enum"
+            },
+            "SystemName": {
+              "description": "The name of the third party system.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Paytronix"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "CustomerID": {
+              "description": "An ID for the customer within the third party system.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "58688464525"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ProgramID": {
+              "description": "An identifier for the program (birthday club, new guest club, tier within a loyalty system, etc.)",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "A8V7"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "Type"
+          ]
+        }
+      ]
+    },
+    "YesNoInherit_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "YesNoInherit_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No",
+        "Inherit"
+      ]
+    },
+    "TermsAndConditions": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TermsAndConditions"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "IssuerID": {
+          "description": "An identifier for the issuer of the terms and conditions.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "LRU5654"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "IssuerDescription": {
+          "description": "The name or description for the issuer.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Loyalties R Us"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Description": {
+          "description": "A description of the terms and conditions.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Loyalty program terms and conditions"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "DateTime": {
+          "description": "The date and time that the customer reviewed the terms and conditions.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "2021-09-07T15:50:00-04:00"
+              }
+            ]
+          },
+          "type": "string",
+          "format": "date-time"
+        },
+        "acceptanceInd": {
+          "description": "When true, the customer as agreed to the terms and conditions.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "IssuerID",
+        "IssuerDescription",
+        "Description",
+        "DateTime"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Verification": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Verification"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "VerificationCategory": {
+          "description": "Assigned Type: ms-0200:VerificationCategory_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Age"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/VerificationCategory_Enum"
+        },
+        "VerificationType": {
+          "description": "Assigned Type: ms-0200:VerificationType_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Drivers license"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/VerificationType_Enum"
+        },
+        "VerifiedBy": {
+          "description": "Identifies a person who verified the ID.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Fred Flintstone"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "VerificationSystem": {
+          "description": "Identifies the verification system.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Mitek Systems"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Description": {
+          "description": "A name or description for the verification system.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Mitek verifies age data from scan of drivers license."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "VerifiedInd": {
+          "description": "When true, this verification category has been verified.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "VerificationCategory",
+        "VerificationType"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Brand": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Brand"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "BrandName": {
+          "description": "The brand name for the group of restaurants (i.e. McDonalds, Panera, etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Carrabas"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "BrandID": {
+          "description": "An identifer for the brand.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "SRG01"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "PreferredBrandDescription": {
+          "description": "Describes the context of the preferred brand, such as for work, or for multibrand conglomerates, or aggregators.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Work luncheons"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Location": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LocationID"
+          }
+        },
+        "Privacy": {
+          "description": "Assigned Type: ms-0200:Privacy",
+          "$ref": "#/definitions/Privacy"
+        },
+        "CommunicationMethod": {
+          "description": "Assigned Type: ms-0200:CommunicationMethod",
+          "$ref": "#/definitions/CommunicationMethod"
+        },
+        "TermsAndConditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TermsAndConditions"
+          }
+        },
+        "PreferredOrderChannel": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/OrderChannel_Enum"
+          }
+        },
+        "BrandDescription": {
+          "description": "Provides descriptive information about the brand.",
+          "type": "string"
+        },
+        "preferredBrandInd": {
+          "description": "When true, this is a favorite brand.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "BrandID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Privacy": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Privacy"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ShareMarketIndicator": {
+          "description": "Assigned Type: ms-0200:YesNoInherit_Enum",
+          "$ref": "#/definitions/YesNoInherit_Enum"
+        },
+        "ShareSyncIndicator": {
+          "description": "Assigned Type: ms-0200:YesNoInherit_Enum",
+          "$ref": "#/definitions/YesNoInherit_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "CompanyID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Company"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "CompanyID": {
+          "description": "A unique identifier for the company.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "CompanyIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Company"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "CompanyID": {
+          "description": "A unique identifier for the company.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Company": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Company"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/CompanyID"
+        },
+        {
+          "properties": {
+            "CompanyName": {
+              "description": "Specifies the title or name of the company.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "IBM"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Address": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Address"
+              }
+            },
+            "Phone": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Phone"
+              }
+            },
+            "Contact": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contact"
+              }
+            },
+            "Description": {
+              "description": "A description related to the company profile.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Typewriter division"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "WebsiteURL": {
+              "description": "The URL to the company website.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "https://www.ibm.com/"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "TimeZone": {
+              "description": "The time zone for the company.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Eastern"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "CompanyName"
+          ]
+        }
+      ]
+    },
+    "CompanySummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Company"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/CompanyID"
+        },
+        {
+          "properties": {
+            "CompanyName": {
+              "description": "Specifies the title or name of the company.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "IBM"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Address": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Address"
+              }
+            },
+            "Phone": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Phone"
+              }
+            },
+            "Contact": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Contact"
+              }
+            },
+            "Description": {
+              "description": "A description related to the company profile.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Typewriter division"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "WebsiteURL": {
+              "description": "The URL to the company website.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "https://www.ibm.com/"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "TimeZone": {
+              "description": "The time zone for the company.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Eastern"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "CompanyName"
+          ]
+        }
+      ]
+    },
+    "CompanyDetail": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Company"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Company"
+        },
+        {
+          "properties": {
+            "IndustryClassificationName": {
+              "description": "Specifies the industry segment for the company.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Computer related services"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "IndustryClassificationCode": {
+              "description": "Industry standard for classification (e.g. SIC, NAIC).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "7379"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "IndustryClassificationStandard": {
+              "description": "Specifies the standard in which the industry classification code is found (e.g. SIC, NAIC).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "SIC"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "PortfolioHoldingCompany": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "PortfolioHoldingCompany"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "HoldingCompanyName": {
+          "description": "The name of a company that owns one or more brands.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Bloomin\u0027 Brands"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "HoldingCompanyID": {
+          "description": "An identifier for the holding company.",
+          "type": "string"
+        },
+        "Brand": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Brand"
+          }
+        },
+        "Privacy": {
+          "description": "Assigned Type: ms-0200:Privacy",
+          "$ref": "#/definitions/Privacy"
+        },
+        "CommunicationMethod": {
+          "description": "Assigned Type: ms-0200:CommunicationMethod",
+          "$ref": "#/definitions/CommunicationMethod"
+        },
+        "TermsAndConditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TermsAndConditions"
+          }
+        },
+        "Description": {
+          "description": "A textual description for the holding company.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "SignificantDate": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "SignificantDate"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Date": {
+          "description": "Specifies the date related to the date type.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "May 1"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Description": {
+          "description": "Comments related to the significant date.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "The person\u0027s anniversary date."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "DateType": {
+          "description": "Assigned Type: ms-0200:DateType_Enum",
+          "$ref": "RTN_Codelist_2_Trim.schema.json#/definitions/DateType_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/TimeSpan"
+    },
+    {
+      "$ref": "#/definitions/TimeSpanSummary"
+    },
+    {
+      "$ref": "#/definitions/Effectivity"
+    },
+    {
+      "$ref": "#/definitions/EffectivitySummary"
+    },
+    {
+      "$ref": "#/definitions/LocationID"
+    },
+    {
+      "$ref": "#/definitions/LocationIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Location"
+    },
+    {
+      "$ref": "#/definitions/LocationSummary"
+    },
+    {
+      "$ref": "#/definitions/LocationDetail"
+    },
+    {
+      "$ref": "#/definitions/Address"
+    },
+    {
+      "$ref": "#/definitions/OperationSchedule"
+    },
+    {
+      "$ref": "#/definitions/Position"
+    },
+    {
+      "$ref": "#/definitions/ChannelEffectivity"
+    },
+    {
+      "$ref": "#/definitions/Phone"
+    },
+    {
+      "$ref": "#/definitions/PersonName"
+    },
+    {
+      "$ref": "#/definitions/CustomerName"
+    },
+    {
+      "$ref": "#/definitions/Person"
+    },
+    {
+      "$ref": "#/definitions/PersonSummary"
+    },
+    {
+      "$ref": "#/definitions/Contact"
+    },
+    {
+      "$ref": "#/definitions/ContactSummary"
+    },
+    {
+      "$ref": "#/definitions/PersonDetail"
+    },
+    {
+      "$ref": "#/definitions/ContactDetail"
+    },
+    {
+      "$ref": "#/definitions/Email"
+    },
+    {
+      "$ref": "#/definitions/SocialMedia"
+    },
+    {
+      "$ref": "#/definitions/CommunicationMethod"
+    },
+    {
+      "$ref": "#/definitions/ThirdPartySystemID"
+    },
+    {
+      "$ref": "#/definitions/ThirdPartySystemIdentifier"
+    },
+    {
+      "$ref": "#/definitions/ThirdPartySystem"
+    },
+    {
+      "$ref": "#/definitions/ThirdPartySystemSummary"
+    },
+    {
+      "$ref": "#/definitions/YesNoInherit_Enum"
+    },
+    {
+      "$ref": "#/definitions/TermsAndConditions"
+    },
+    {
+      "$ref": "#/definitions/Verification"
+    },
+    {
+      "$ref": "#/definitions/Brand"
+    },
+    {
+      "$ref": "#/definitions/Privacy"
+    },
+    {
+      "$ref": "#/definitions/CompanyID"
+    },
+    {
+      "$ref": "#/definitions/CompanyIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Company"
+    },
+    {
+      "$ref": "#/definitions/CompanySummary"
+    },
+    {
+      "$ref": "#/definitions/CompanyDetail"
+    },
+    {
+      "$ref": "#/definitions/PortfolioHoldingCompany"
+    },
+    {
+      "$ref": "#/definitions/SignificantDate"
+    }
+  ]
+}

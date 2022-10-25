@@ -1,0 +1,1798 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Codelist",
+  "x-otm-library": {
+    "ProjectName": "RTN_CustomerData_Phase_II_Final.otp",
+    "LibraryName": "RTN_Codelist",
+    "LibraryVersion": "4.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Codelist_4_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-10-11T09:49:25.541-0400"
+  },
+  "definitions": {
+    "AllergyInformation_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "AllergyInformation_Enum"
+      },
+      "description": "A list of allergens.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AllergyInformation_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "AllergyInformation_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "AllergyInformation_Enum"
+      },
+      "description": "A list of allergens.",
+      "type": "string",
+      "enum": [
+        "Gluten",
+        "Nut",
+        "Peanut",
+        "Other_"
+      ]
+    },
+    "LifestyleChoices_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "LifestyleChoices_Enum"
+      },
+      "description": "A list of lifestyle choices (e.g. Vegan).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/LifestyleChoices_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "LifestyleChoices_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "LifestyleChoices_Enum"
+      },
+      "description": "A list of lifestyle choices (e.g. Vegan).",
+      "type": "string",
+      "enum": [
+        "Halal",
+        "Kosher",
+        "Vegan",
+        "Vegetarian",
+        "Other_"
+      ]
+    },
+    "NutritionInformationType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "NutritionInformationType_Enum"
+      },
+      "description": "Specifies the details for the nutrition item being sent.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/NutritionInformationType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "NutritionInformationType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "NutritionInformationType_Enum"
+      },
+      "description": "Specifies the details for the nutrition item being sent.",
+      "type": "string",
+      "enum": [
+        "Calorie count",
+        "Sodium",
+        "Calories from fat",
+        "Total fat",
+        "Saturated fat",
+        "Trans fat",
+        "Cholesterol",
+        "Total carbohydrates",
+        "Dietary fiber",
+        "Sugars",
+        "Protein",
+        "Other_"
+      ]
+    },
+    "UnitOfMeasure_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "UnitOfMeasure_Enum"
+      },
+      "description": "Specifies the unit of measure for an associated item.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/UnitOfMeasure_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "UnitOfMeasure_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "UnitOfMeasure_Enum"
+      },
+      "description": "Specifies the unit of measure for an associated item.",
+      "type": "string",
+      "enum": [
+        "Calories",
+        "Grams",
+        "Milligrams",
+        "Ounces",
+        "Pounds",
+        "Cups",
+        "Pints",
+        "Quarts",
+        "Gallons",
+        "Other_"
+      ]
+    },
+    "DaysOfWeek_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "DaysOfWeek_Enum"
+      },
+      "description": "An enumeration of the seven days of the week.",
+      "type": "string",
+      "enum": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ]
+    },
+    "ValueType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "ValueType_Enum"
+      },
+      "description": "Specifies whether a value is an amount or a percent.",
+      "type": "string",
+      "enum": [
+        "Amount",
+        "Percent"
+      ]
+    },
+    "Action_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "Action_Enum"
+      },
+      "description": "Specifies an action to be taken.",
+      "type": "string",
+      "enum": [
+        "Add",
+        "Remove"
+      ]
+    },
+    "Contains_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Contains_Enum"
+      },
+      "description": "Specifies whether a product contains or is free from a related item.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Contains_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Contains_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Contains_Enum"
+      },
+      "description": "Specifies whether a product contains or is free from a related item.",
+      "type": "string",
+      "enum": [
+        "Contains",
+        "Free From",
+        "Other_"
+      ]
+    },
+    "Status_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Status_Enum"
+      },
+      "description": "Specifies the state of an item or service, e.g. the restaurant is temporarily closed.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Status_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Status_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Status_Enum"
+      },
+      "description": "Specifies the state of an item or service, e.g. the restaurant is temporarily closed.",
+      "type": "string",
+      "enum": [
+        "Open",
+        "Permanently Closed",
+        "Temporarily Closed",
+        "Other_"
+      ]
+    },
+    "OrderStatus_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderStatus_Enum"
+      },
+      "description": "Specifies the status of the order (e.g. recieved, in progress, delivered).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderStatus_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderStatus_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderStatus_Enum"
+      },
+      "description": "Specifies the status of the order (e.g. recieved, in progress, delivered).",
+      "type": "string",
+      "enum": [
+        "Received",
+        "In Progress",
+        "Delivered",
+        "Completed",
+        "Other_"
+      ]
+    },
+    "AddressType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "AddressType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AddressType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "AddressType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "AddressType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Business",
+        "Personal",
+        "Other_"
+      ]
+    },
+    "PhoneCapabilities_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PhoneCapabilities_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/PhoneCapabilities_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "PhoneCapabilities_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PhoneCapabilities_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Multimedia",
+        "Text",
+        "TTY",
+        "Voice",
+        "Other_"
+      ]
+    },
+    "CommunicationMethod_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "CommunicationMethod_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/CommunicationMethod_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "CommunicationMethod_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "CommunicationMethod_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Phone",
+        "Email",
+        "SMS",
+        "WeChat",
+        "Whats App",
+        "Other_"
+      ]
+    },
+    "ProfileStatus_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ProfileStatus_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ProfileStatus_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "ProfileStatus_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ProfileStatus_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Marked for deletion",
+        "Locked",
+        "Other_"
+      ]
+    },
+    "RelationshipType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "RelationshipType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/RelationshipType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "RelationshipType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "RelationshipType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Business",
+        "Household",
+        "School group",
+        "Social group",
+        "Duplicate profile",
+        "Other_"
+      ]
+    },
+    "ThirdPartySystemType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ThirdPartySystemType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ThirdPartySystemType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "ThirdPartySystemType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ThirdPartySystemType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Loyalty",
+        "Reservation",
+        "Kitchen production",
+        "Delivery company",
+        "Other_"
+      ]
+    },
+    "OptInStatus_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "OptInStatus_Enum"
+      },
+      "description": "Provides various statuses related to opting in and out for communications and shareing of data.",
+      "type": "string",
+      "enum": [
+        "Opted in",
+        "Opted out",
+        "Unknown"
+      ]
+    },
+    "NameType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "NameType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/NameType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "NameType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "NameType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Alias",
+        "Altername",
+        "Former",
+        "Nickname",
+        "Other_"
+      ]
+    },
+    "VerificationCategory_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "VerificationCategory_Enum"
+      },
+      "description": "Specifies the type of verification that has been performed.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/VerificationCategory_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "VerificationCategory_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "VerificationCategory_Enum"
+      },
+      "description": "Specifies the type of verification that has been performed.",
+      "type": "string",
+      "enum": [
+        "Age",
+        "Vaccine",
+        "Military",
+        "Other_"
+      ]
+    },
+    "VerificationType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "VerificationType_Enum"
+      },
+      "description": "Identifies the type of document used for verification.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/VerificationType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "VerificationType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "VerificationType_Enum"
+      },
+      "description": "Identifies the type of document used for verification.",
+      "type": "string",
+      "enum": [
+        "Passport",
+        "Drivers license",
+        "State ID",
+        "Other_"
+      ]
+    },
+    "Pronoun_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Pronoun_Enum"
+      },
+      "description": "A list of prounouns that may be utilized by a person.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Pronoun_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Pronoun_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Pronoun_Enum"
+      },
+      "description": "A list of prounouns that may be utilized by a person.",
+      "type": "string",
+      "enum": [
+        "He/Him",
+        "She/Her",
+        "They/Them",
+        "Other_"
+      ]
+    },
+    "OrderChannel_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderChannel_Enum"
+      },
+      "description": "Provides a list of systems for creating restaurant orders.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderChannel_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderChannel_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderChannel_Enum"
+      },
+      "description": "Provides a list of systems for creating restaurant orders.",
+      "type": "string",
+      "enum": [
+        "In store",
+        "Out of store",
+        "Phone",
+        "Mobile device",
+        "Desk top",
+        "Third party delivery",
+        "First party delivery",
+        "Kiosk",
+        "Mobile kiosk",
+        "Social ordering",
+        "Other_"
+      ]
+    },
+    "PhoneType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PhoneType_Enum"
+      },
+      "description": "Specifies the type of phone (home, business, mobile).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/PhoneType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "PhoneType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PhoneType_Enum"
+      },
+      "description": "Specifies the type of phone (home, business, mobile).",
+      "type": "string",
+      "enum": [
+        "Home",
+        "Business",
+        "Mobile",
+        "Other_"
+      ]
+    },
+    "DateType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DateType_Enum"
+      },
+      "description": "Specifes a type of date (birthday, anniversary, etc.)",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/DateType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "DateType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DateType_Enum"
+      },
+      "description": "Specifes a type of date (birthday, anniversary, etc.)",
+      "type": "string",
+      "enum": [
+        "Birthday",
+        "Anniversary",
+        "Membership anniversary",
+        "Other_"
+      ]
+    },
+    "TranactionType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "TranactionType_Enum"
+      },
+      "description": "Identifies the type of transaction (e.g. Create, Add, Update, Delete).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/TranactionType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "TranactionType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "TranactionType_Enum"
+      },
+      "description": "Identifies the type of transaction (e.g. Create, Add, Update, Delete).",
+      "type": "string",
+      "enum": [
+        "Add",
+        "Create",
+        "Delete",
+        "Update",
+        "Other_"
+      ]
+    },
+    "EmployeeRole_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "EmployeeRole_Enum"
+      },
+      "description": "Specifies roles or positions related to employees.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/EmployeeRole_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "EmployeeRole_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "EmployeeRole_Enum"
+      },
+      "description": "Specifies roles or positions related to employees.",
+      "type": "string",
+      "enum": [
+        "Approver",
+        "Originator",
+        "Other_"
+      ]
+    },
+    "OrderState_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderState_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderState_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderState_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderState_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Abandoned",
+        "Canceled",
+        "Closed",
+        "Open",
+        "Voided",
+        "Other_"
+      ]
+    },
+    "SeatingType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "SeatingType_Enum"
+      },
+      "description": "Specifies types of seating (e.g. high chair, infant seat, wheelchair accessible).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/SeatingType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "SeatingType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "SeatingType_Enum"
+      },
+      "description": "Specifies types of seating (e.g. high chair, infant seat, wheelchair accessible).",
+      "type": "string",
+      "enum": [
+        "High chair",
+        "Infant seat",
+        "Booster seat",
+        "Wheelchair accessible",
+        "Chair with arms",
+        "Chair without arms",
+        "Other_"
+      ]
+    },
+    "PartyType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PartyType_Enum"
+      },
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/PartyType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "PartyType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PartyType_Enum"
+      },
+      "type": "string",
+      "enum": [
+        "Infants",
+        "Children",
+        "Adults",
+        "Seniors",
+        "Service animal",
+        "Pet",
+        "Other_"
+      ]
+    },
+    "OrderItemState_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderItemState_Enum"
+      },
+      "description": "Specifies the state of a specific order item.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderItemState_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderItemState_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderItemState_Enum"
+      },
+      "description": "Specifies the state of a specific order item.",
+      "type": "string",
+      "enum": [
+        "Held",
+        "Void",
+        "Deleted",
+        "Committed",
+        "Abandoned",
+        "Other_"
+      ]
+    },
+    "TenderType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "TenderType_Enum"
+      },
+      "description": "Specifies methods of payment.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/TenderType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "TenderType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "TenderType_Enum"
+      },
+      "description": "Specifies methods of payment.",
+      "type": "string",
+      "enum": [
+        "Cash",
+        "Credit card",
+        "Gift card",
+        "Gift certificate",
+        "House account",
+        "Loyalty reward",
+        "Other_"
+      ]
+    },
+    "CardType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "CardType_Enum"
+      },
+      "description": "Identifies different types of cards used for payments.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/CardType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "CardType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "CardType_Enum"
+      },
+      "description": "Identifies different types of cards used for payments.",
+      "type": "string",
+      "enum": [
+        "American Express",
+        "Discover",
+        "Mastercard",
+        "Visa",
+        "Other_"
+      ]
+    },
+    "CardEntryType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "CardEntryType_Enum"
+      },
+      "description": "Specifies methods for how a payment may be submitted.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/CardEntryType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "CardEntryType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "CardEntryType_Enum"
+      },
+      "description": "Specifies methods for how a payment may be submitted.",
+      "type": "string",
+      "enum": [
+        "Dip",
+        "Manual",
+        "NFC",
+        "Swipe",
+        "Other_"
+      ]
+    },
+    "ReservationStatus_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ReservationStatus_Enum"
+      },
+      "description": "Specifies the state of the reservation (e.g. confirmed, waitlist, etc,.)",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/ReservationStatus_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "ReservationStatus_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "ReservationStatus_Enum"
+      },
+      "description": "Specifies the state of the reservation (e.g. confirmed, waitlist, etc,.)",
+      "type": "string",
+      "enum": [
+        "Arrived",
+        "Booked",
+        "Canceled",
+        "No show",
+        "Waitlist",
+        "Other_"
+      ]
+    },
+    "PunchType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PunchType_Enum"
+      },
+      "description": "Specifies the type of punch (e.g. punch-in, punch-out, break-out, break-in, etc.)",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/PunchType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "PunchType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "PunchType_Enum"
+      },
+      "description": "Specifies the type of punch (e.g. punch-in, punch-out, break-out, break-in, etc.)",
+      "type": "string",
+      "enum": [
+        "Clock in",
+        "Clock out",
+        "Break in",
+        "Break out",
+        "Meal break in",
+        "Meal break out",
+        "Rest break in",
+        "Rest break out",
+        "Other_"
+      ]
+    },
+    "DrawerReason_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DrawerReason_Enum"
+      },
+      "description": "Specifies why a drawer transaction was initiated.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/DrawerReason_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "DrawerReason_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DrawerReason_Enum"
+      },
+      "description": "Specifies why a drawer transaction was initiated.",
+      "type": "string",
+      "enum": [
+        "Till assignment",
+        "Drawer assignment",
+        "Till reconcilliation",
+        "Till transfer",
+        "Deposit",
+        "Cash drop",
+        "Cash in",
+        "Proof",
+        "Paid in",
+        "Paid out",
+        "No sale",
+        "Sale",
+        "Refund",
+        "Key",
+        "Unknown",
+        "Other_"
+      ]
+    },
+    "OrderOriginationLocation_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderOriginationLocation_Enum"
+      },
+      "description": "Specifies the location in which an order originated.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderOriginationLocation_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderOriginationLocation_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderOriginationLocation_Enum"
+      },
+      "description": "Specifies the location in which an order originated.",
+      "type": "string",
+      "enum": [
+        "Counter",
+        "Table",
+        "Drive thru",
+        "Lobby",
+        "Curbside",
+        "Host stand",
+        "Walk up",
+        "Drive up",
+        "Bar",
+        "Server station",
+        "Guest\u0027s location",
+        "POS station",
+        "Other_"
+      ]
+    },
+    "OrderOriginationLocationCategory_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderOriginationLocationCategory_Enum"
+      },
+      "description": "Specifies if the order took place on or off premises.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderOriginationLocationCategory_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderOriginationLocationCategory_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderOriginationLocationCategory_Enum"
+      },
+      "description": "Specifies if the order took place on or off premises.",
+      "type": "string",
+      "enum": [
+        "On-premise",
+        "Off-premise",
+        "Other_"
+      ]
+    },
+    "DataEntryApplicationType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DataEntryApplicationType_Enum"
+      },
+      "description": "Specifies a type of application.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/DataEntryApplicationType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "DataEntryApplicationType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DataEntryApplicationType_Enum"
+      },
+      "description": "Specifies a type of application.",
+      "type": "string",
+      "enum": [
+        "POS",
+        "Web",
+        "Mobile web",
+        "App",
+        "Kiosk",
+        "Voice bot",
+        "Chat bot",
+        "Text bot",
+        "Social",
+        "Call center portal",
+        "Other_"
+      ]
+    },
+    "DataEntryDevice_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DataEntryDevice_Enum"
+      },
+      "description": "Specifies a type of device.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/DataEntryDevice_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "DataEntryDevice_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DataEntryDevice_Enum"
+      },
+      "description": "Specifies a type of device.",
+      "type": "string",
+      "enum": [
+        "POS Terminal",
+        "POS mobile terminal",
+        "Desktop",
+        "Laptop",
+        "Mobile device",
+        "Other_"
+      ]
+    },
+    "OrderResponsibility_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderResponsibility_Enum"
+      },
+      "description": "Specifies who is ultimately responsible for the order.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderResponsibility_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderResponsibility_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderResponsibility_Enum"
+      },
+      "description": "Specifies who is ultimately responsible for the order.",
+      "type": "string",
+      "enum": [
+        "Assisted order",
+        "Self order",
+        "Other_"
+      ]
+    },
+    "DestinationMealEnjoymentLocation_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DestinationMealEnjoymentLocation_Enum"
+      },
+      "description": "Specifies the location where the order was captured.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/DestinationMealEnjoymentLocation_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "DestinationMealEnjoymentLocation_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "DestinationMealEnjoymentLocation_Enum"
+      },
+      "description": "Specifies the location where the order was captured.",
+      "type": "string",
+      "enum": [
+        "Area",
+        "Building",
+        "Room",
+        "Table",
+        "Seat",
+        "Guest\u0027s location",
+        "Other_"
+      ]
+    },
+    "Demographic_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Demographic_Enum"
+      },
+      "description": "A demographic category.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Demographic_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Demographic_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Demographic_Enum"
+      },
+      "description": "A demographic category.",
+      "type": "string",
+      "enum": [
+        "Age",
+        "Gender",
+        "Education",
+        "Income",
+        "Marital status",
+        "Children",
+        "Occupation",
+        "Race/Ethnicity",
+        "Nationality",
+        "Religion",
+        "Other_"
+      ]
+    },
+    "Geographic_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Geographic_Enum"
+      },
+      "description": "A geographic category.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Geographic_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Geographic_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Geographic_Enum"
+      },
+      "description": "A geographic category.",
+      "type": "string",
+      "enum": [
+        "Country",
+        "State",
+        "City",
+        "Town",
+        "Postal code",
+        "Time zone",
+        "Other_"
+      ]
+    },
+    "Psychographic_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Psychographic_Enum"
+      },
+      "description": "A psychographic category.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Psychographic_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Psychographic_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Psychographic_Enum"
+      },
+      "description": "A psychographic category.",
+      "type": "string",
+      "enum": [
+        "Attitude",
+        "Opinions",
+        "Interests",
+        "Other_"
+      ]
+    },
+    "Technographic_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Technographic_Enum"
+      },
+      "description": "A technographic category.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Technographic_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Technographic_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Technographic_Enum"
+      },
+      "description": "A technographic category.",
+      "type": "string",
+      "enum": [
+        "Mobile user",
+        "Desktop",
+        "Apps",
+        "Software",
+        "Voice bot",
+        "Other_"
+      ]
+    },
+    "Behavior_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Behavior_Enum"
+      },
+      "description": "A behavior category.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Behavior_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Behavior_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Behavior_Enum"
+      },
+      "description": "A behavior category.",
+      "type": "string",
+      "enum": [
+        "Tendencies",
+        "Frequent actions",
+        "Product use",
+        "Habits",
+        "Other_"
+      ]
+    },
+    "Behavior": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Behavior"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "BehaviorType": {
+          "description": "Assigned Type: ms-0400:Behavior_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Tendencies"
+              }
+            ]
+          },
+          "$ref": "#/definitions/Behavior_Enum"
+        },
+        "Value": {
+          "description": "This is used in conjunction with the Behavior_Enum category to provide the specific information related to that category (e.g. if the Behavior_Enum \u003d  Tendencies the Value may \u003d Dessert lover).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Dessert Lover"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/AllergyInformation_Enum"
+    },
+    {
+      "$ref": "#/definitions/AllergyInformation_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/LifestyleChoices_Enum"
+    },
+    {
+      "$ref": "#/definitions/LifestyleChoices_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/NutritionInformationType_Enum"
+    },
+    {
+      "$ref": "#/definitions/NutritionInformationType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/UnitOfMeasure_Enum"
+    },
+    {
+      "$ref": "#/definitions/UnitOfMeasure_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/DaysOfWeek_Enum"
+    },
+    {
+      "$ref": "#/definitions/ValueType_Enum"
+    },
+    {
+      "$ref": "#/definitions/Action_Enum"
+    },
+    {
+      "$ref": "#/definitions/Contains_Enum"
+    },
+    {
+      "$ref": "#/definitions/Contains_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Status_Enum"
+    },
+    {
+      "$ref": "#/definitions/Status_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderStatus_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderStatus_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/AddressType_Enum"
+    },
+    {
+      "$ref": "#/definitions/AddressType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/PhoneCapabilities_Enum"
+    },
+    {
+      "$ref": "#/definitions/PhoneCapabilities_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/CommunicationMethod_Enum"
+    },
+    {
+      "$ref": "#/definitions/CommunicationMethod_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/ProfileStatus_Enum"
+    },
+    {
+      "$ref": "#/definitions/ProfileStatus_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/RelationshipType_Enum"
+    },
+    {
+      "$ref": "#/definitions/RelationshipType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/ThirdPartySystemType_Enum"
+    },
+    {
+      "$ref": "#/definitions/ThirdPartySystemType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OptInStatus_Enum"
+    },
+    {
+      "$ref": "#/definitions/NameType_Enum"
+    },
+    {
+      "$ref": "#/definitions/NameType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/VerificationCategory_Enum"
+    },
+    {
+      "$ref": "#/definitions/VerificationCategory_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/VerificationType_Enum"
+    },
+    {
+      "$ref": "#/definitions/VerificationType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Pronoun_Enum"
+    },
+    {
+      "$ref": "#/definitions/Pronoun_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderChannel_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderChannel_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/PhoneType_Enum"
+    },
+    {
+      "$ref": "#/definitions/PhoneType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/DateType_Enum"
+    },
+    {
+      "$ref": "#/definitions/DateType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/TranactionType_Enum"
+    },
+    {
+      "$ref": "#/definitions/TranactionType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/EmployeeRole_Enum"
+    },
+    {
+      "$ref": "#/definitions/EmployeeRole_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderState_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderState_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/SeatingType_Enum"
+    },
+    {
+      "$ref": "#/definitions/SeatingType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/PartyType_Enum"
+    },
+    {
+      "$ref": "#/definitions/PartyType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderItemState_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderItemState_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/TenderType_Enum"
+    },
+    {
+      "$ref": "#/definitions/TenderType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/CardType_Enum"
+    },
+    {
+      "$ref": "#/definitions/CardType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/CardEntryType_Enum"
+    },
+    {
+      "$ref": "#/definitions/CardEntryType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/ReservationStatus_Enum"
+    },
+    {
+      "$ref": "#/definitions/ReservationStatus_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/PunchType_Enum"
+    },
+    {
+      "$ref": "#/definitions/PunchType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/DrawerReason_Enum"
+    },
+    {
+      "$ref": "#/definitions/DrawerReason_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderOriginationLocation_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderOriginationLocation_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderOriginationLocationCategory_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderOriginationLocationCategory_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/DataEntryApplicationType_Enum"
+    },
+    {
+      "$ref": "#/definitions/DataEntryApplicationType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/DataEntryDevice_Enum"
+    },
+    {
+      "$ref": "#/definitions/DataEntryDevice_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderResponsibility_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderResponsibility_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/DestinationMealEnjoymentLocation_Enum"
+    },
+    {
+      "$ref": "#/definitions/DestinationMealEnjoymentLocation_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Demographic_Enum"
+    },
+    {
+      "$ref": "#/definitions/Demographic_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Geographic_Enum"
+    },
+    {
+      "$ref": "#/definitions/Geographic_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Psychographic_Enum"
+    },
+    {
+      "$ref": "#/definitions/Psychographic_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Technographic_Enum"
+    },
+    {
+      "$ref": "#/definitions/Technographic_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Behavior_Enum"
+    },
+    {
+      "$ref": "#/definitions/Behavior_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Behavior"
+    }
+  ]
+}

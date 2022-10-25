@@ -1,0 +1,8 @@
+{
+  "LifestyleChoice" : {
+    "medicalNeedInd" : true,
+    "LifeStyleChoiceType" : {
+      "value" : "Halal"
+    }
+  }
+}
