@@ -1,0 +1,7 @@
+{
+  "Denomination" : {
+    "DenominationType" : "Quarters",
+    "Amount" : 10.00,
+    "Quantity" : 40
+  }
+}

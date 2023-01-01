@@ -1,0 +1,2454 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_MenuSync",
+  "x-otm-library": {
+    "ProjectName": "RTN_Transactions_FINAL.otp",
+    "LibraryName": "RTN_MenuSync",
+    "LibraryVersion": "1.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_MenuSync_1_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-09-21T10:17:50.806-0400"
+  },
+  "definitions": {
+    "MenuItemID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuItem"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "MenuItemIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuItem"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "IngredientID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuItem"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "IngredientIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuItem"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "MenuItem": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuItem"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuItemID"
+        },
+        {
+          "properties": {
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Online ordering and call center."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3438, 4983"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Sauteed and served with fried onions."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Harrison Ranch"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Pricing"
+              }
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1.schema.json#/definitions/SKU"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "MenuItemSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuItem"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuItemID"
+        },
+        {
+          "properties": {
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Online ordering and call center."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3438, 4983"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Sauteed and served with fried onions."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Harrison Ranch"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Pricing"
+              }
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1.schema.json#/definitions/SKU"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "Ingredient": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuItem"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/IngredientID"
+        },
+        {
+          "properties": {
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Online ordering and call center."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3438, 4983"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Sauteed and served with fried onions."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Harrison Ranch"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Pricing"
+              }
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1.schema.json#/definitions/SKU"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "IngredientSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuItem"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/IngredientID"
+        },
+        {
+          "properties": {
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Online ordering and call center."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3438, 4983"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Sauteed and served with fried onions."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Harrison Ranch"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Pricing"
+              }
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1.schema.json#/definitions/SKU"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "BaselineNutrition": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "BaselineNutrition"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "count": {
+          "description": "The amount of the item specified in the Nutrition Information element (e.g. if the item selected in Nutrition Information is Sodium, this is the amount of sodium.  The unit of measure field identifies how this count is measured such as milligrams or grams).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "500"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "NutritionInformationType": {
+          "description": "Assigned Type: ms-0100:NutritionInformationType_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Calorie count"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_1.schema.json#/definitions/NutritionInformationType_Enum"
+        },
+        "UnitOfMeasure": {
+          "description": "Assigned Type: ms-0100:UnitOfMeasure_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Calories"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_1.schema.json#/definitions/UnitOfMeasure_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "BaselineNutritionSummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "BaselineNutrition"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "count": {
+          "description": "The amount of the item specified in the Nutrition Information element (e.g. if the item selected in Nutrition Information is Sodium, this is the amount of sodium.  The unit of measure field identifies how this count is measured such as milligrams or grams).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "500"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "NutritionInformationType": {
+          "description": "Assigned Type: ms-0100:NutritionInformationType_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Calorie count"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_1.schema.json#/definitions/NutritionInformationType_Enum"
+        },
+        "UnitOfMeasure": {
+          "description": "Assigned Type: ms-0100:UnitOfMeasure_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Calories"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_1.schema.json#/definitions/UnitOfMeasure_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "BaselineNutritionDetail": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "BaselineNutrition"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaselineNutrition"
+        },
+        {
+          "properties": {
+            "minCount": {
+              "description": "Specifies the minimum amount related to the NutritionalInformation item (may be used when a range is sent).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "350"
+                  }
+                ]
+              },
+              "type": "integer",
+              "format": "int32"
+            },
+            "maxCount": {
+              "description": "Specifies the minimum amount related to the NutritionalInformation item (may be used when a range is sent).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "500"
+                  }
+                ]
+              },
+              "type": "integer",
+              "format": "int32"
+            },
+            "displayRange": {
+              "description": "Specifies the range for the nutritional information count.  Typically a slash is used between counts when a menu item has two choices e.g. sandwich with chips or side salad (350\\/450) and a dash is used between counts when a menu item has three or more choices e.g. sandwich with chips, side salad or fruit (350-500).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "350-500"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "shortName": {
+              "description": "Specifies an abbreviated name for the NutritionalInformation item (e.g. Cal, Carbs).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Cal"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "MenuID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Menu"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "menuID": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "MenuIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Menu"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "menuID": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Menu": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Menu"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuID"
+        },
+        {
+          "properties": {
+            "nutritionResource": {
+              "description": "The URL to long form, master nutritional guide for all nutrition information for the menu.",
+              "type": "string"
+            },
+            "Category": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "MasterDescription": {
+              "description": "The default description for the menu.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Lunch"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ChannelDescription": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ChannelAvailability": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "LocationAvailability": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "MenuProduct": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuProductID"
+              }
+            },
+            "MenuItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuItemID"
+              }
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "RegulatoryRequirementsDescription": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "MenuDisclaimers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "MenuSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Menu"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuID"
+        },
+        {
+          "properties": {
+            "nutritionResource": {
+              "description": "The URL to long form, master nutritional guide for all nutrition information for the menu.",
+              "type": "string"
+            },
+            "Category": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "MasterDescription": {
+              "description": "The default description for the menu.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Lunch"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ChannelDescription": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ChannelAvailability": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "LocationAvailability": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "MenuProduct": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuProductID"
+              }
+            },
+            "MenuItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuItemID"
+              }
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "RegulatoryRequirementsDescription": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "MenuDisclaimers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "DietaryRestrictions": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "DietaryRestrictions"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "AllergenDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AllergenDetails"
+          }
+        },
+        "LifestyleChoices_Enum": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_1.schema.json#/definitions/LifestyleChoices_Enum"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ServingSize": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "ServingSize"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "count": {
+          "description": "The amount of the item related to the unit of measure.  The unit of measure field identifies how this count is measured such as milligrams or grams (e.g count - 422, UnitOfMeasure - grams to specify a 422 gram serving size).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "4"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "UnitOfMeasure_Enum": {
+          "description": "Assigned Type: ms-0100:UnitOfMeasure_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "ounces"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_1.schema.json#/definitions/UnitOfMeasure_Enum"
+        },
+        "PreparedUnitOfMeasure": {
+          "description": "A text description of the unit of measure as the item is prepared (e.g. 1 taco, 1 bowl, 2 ramakins).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "1 burger"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Description": {
+          "description": "A textual description of the serving size.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Quarter pound"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Default": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Default"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "A number associated with QuantityUnits that describes the amount of a MenuProduct default.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "2"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "QuantityUnits": {
+          "description": "Descriptive units associated with the Quantity that describe the amount of a MenuProduct Default.  Arbitrary pieces such as cases, ounces, sizes or any other descriptive unit.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Cream"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Preparation": {
+          "description": "The name of the composition of the  items that are included as part of the menu item, menu product or modifier.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "On the side"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "PreparationQuantity": {
+          "description": "The amount of the item composition.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "1"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "PreparationUnits": {
+          "description": "Specifies the measure that apply to the composition.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "ounces"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "DefaultNotes": {
+          "description": "Description or comments related to the item being defined.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ModifierID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Modifier"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ModifierIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Modifier"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "iD": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Modifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Modifier"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModifierID"
+        },
+        {
+          "properties": {
+            "action": {
+              "description": "Specifies if the modifer is being added or removed.",
+              "$ref": "RTN_Codelist_1.schema.json#/definitions/Action_Enum"
+            },
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Online ordering and call center."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3438, 4983"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Sauteed and served with fried onions."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Harrison Ranch"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1.schema.json#/definitions/SKU"
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Pricing"
+              }
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "ModifierSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Modifier"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModifierID"
+        },
+        {
+          "properties": {
+            "action": {
+              "description": "Specifies if the modifer is being added or removed.",
+              "$ref": "RTN_Codelist_1.schema.json#/definitions/Action_Enum"
+            },
+            "NutritionResource": {
+              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "type": "string"
+            },
+            "BaselineNutrition": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BaselineNutrition"
+              }
+            },
+            "DietaryRestrictions": {
+              "description": "Assigned Type: ms-0100:DietaryRestrictions",
+              "$ref": "#/definitions/DietaryRestrictions"
+            },
+            "RegulatoryRequirementsDescription": {
+              "description": "Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Online ordering and call center."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3438, 4983"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Description": {
+              "description": "A textual description of the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Preparation": {
+              "description": "Describes how the menu item is prepared.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Sauteed and served with fried onions."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "MasterDescription": {
+              "description": "The main description for the menu item.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "It\u0027s seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "Channel": {
+              "description": "Assigned Type: ms-0100:Channel",
+              "$ref": "#/definitions/Channel"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderingNotes": {
+              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "type": "string"
+            },
+            "Ingredient": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IngredientID"
+              }
+            },
+            "ServingSize": {
+              "description": "Assigned Type: ms-0100:ServingSize",
+              "$ref": "#/definitions/ServingSize"
+            },
+            "Promotion": {
+              "description": "Assigned Type: ms-0100:Promotion",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Promotion"
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Source": {
+              "description": "Where the item came from.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Harrison Ranch"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1.schema.json#/definitions/SKU"
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Pricing"
+              }
+            },
+            "modifierEligibleInd": {
+              "description": "When true, this menu item may be modified.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "MenuProductID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuProduct"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "menuProductID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "MenuProductIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuProduct"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "menuProductID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "MenuProduct": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuProduct"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuProductID"
+        },
+        {
+          "properties": {
+            "name": {
+              "description": "The name of the menu product (e.g. Hamburger combo meal).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Cheeseburger combo meal"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "size": {
+              "description": "Specifies the size related to the menu product (e.g. Large, Medium, Small).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Large"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "maximumOptions": {
+              "description": "The largest number of options that can be selected with this menu option.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3"
+                  }
+                ]
+              },
+              "type": "integer",
+              "format": "int32"
+            },
+            "minimumOptions": {
+              "description": "The smallest number of options that can be selected with this menu product.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "0"
+                  }
+                ]
+              },
+              "type": "integer",
+              "format": "int32"
+            },
+            "MasterDescription": {
+              "description": "The master description for the menu product.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Combo #1"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ChannelDescription": {
+              "description": "The description of the menu product specific to the channel.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Cheesburger combo"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "MenuItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuItemID"
+              },
+              "minItems": 1
+            },
+            "Promotion": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Promotion"
+              }
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Pricing"
+              },
+              "minItems": 1
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1.schema.json#/definitions/SKU"
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "PackingList": {
+              "description": "Assigned Type: ms-0100:PackingList",
+              "$ref": "RTN_Common_1.schema.json#/definitions/PackingList"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "name",
+            "MenuItem",
+            "Pricing"
+          ]
+        }
+      ]
+    },
+    "MenuProductSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "MenuProduct"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/MenuProductID"
+        },
+        {
+          "properties": {
+            "name": {
+              "description": "The name of the menu product (e.g. Hamburger combo meal).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Cheeseburger combo meal"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "size": {
+              "description": "Specifies the size related to the menu product (e.g. Large, Medium, Small).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Large"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "maximumOptions": {
+              "description": "The largest number of options that can be selected with this menu option.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3"
+                  }
+                ]
+              },
+              "type": "integer",
+              "format": "int32"
+            },
+            "minimumOptions": {
+              "description": "The smallest number of options that can be selected with this menu product.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "0"
+                  }
+                ]
+              },
+              "type": "integer",
+              "format": "int32"
+            },
+            "MasterDescription": {
+              "description": "The master description for the menu product.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Combo #1"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ChannelDescription": {
+              "description": "The description of the menu product specific to the channel.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Cheesburger combo"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "MenuItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuItemID"
+              },
+              "minItems": 1
+            },
+            "Promotion": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Promotion"
+              }
+            },
+            "MediaCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/MediaCategory"
+              }
+            },
+            "Availability": {
+              "description": "Assigned Type: ms-0100:Availability",
+              "$ref": "RTN_Common_1.schema.json#/definitions/Availability"
+            },
+            "Default": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Default"
+              }
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1.schema.json#/definitions/Pricing"
+              },
+              "minItems": 1
+            },
+            "SKU": {
+              "description": "Assigned Type: ms-0100:SKU",
+              "$ref": "RTN_Common_1.schema.json#/definitions/SKU"
+            },
+            "Modifier": {
+              "description": "Assigned Type: ms-0100:Modifier",
+              "$ref": "#/definitions/ModifierID"
+            },
+            "PackingList": {
+              "description": "Assigned Type: ms-0100:PackingList",
+              "$ref": "RTN_Common_1.schema.json#/definitions/PackingList"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "name",
+            "MenuItem",
+            "Pricing"
+          ]
+        }
+      ]
+    },
+    "Channel": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Channel"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ChannelName": {
+          "description": "Identifies a channel.",
+          "type": "string"
+        },
+        "MenuItemDescription": {
+          "description": "A description related to the channel.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "RestaurantDetailsID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "RestaurantDetails"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "restaurantID": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "RestaurantDetailsIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "RestaurantDetails"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "restaurantID": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "RestaurantDetails": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "RestaurantDetails"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/RestaurantDetailsID"
+        },
+        {
+          "properties": {
+            "Location": {
+              "description": "Assigned Type: ms-0100:Location",
+              "$ref": "RTN_Common_1.schema.json#/definitions/LocationID"
+            },
+            "Menu": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuID"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "RestaurantDetailsSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "RestaurantDetails"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/RestaurantDetailsID"
+        },
+        {
+          "properties": {
+            "Location": {
+              "description": "Assigned Type: ms-0100:Location",
+              "$ref": "RTN_Common_1.schema.json#/definitions/LocationID"
+            },
+            "Menu": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuID"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "AllergenDetails": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "AllergenDetails"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "AllergyInformation_Enum": {
+          "description": "Assigned Type: ms-0100:AllergyInformation_Enum",
+          "$ref": "RTN_Codelist_1.schema.json#/definitions/AllergyInformation_Enum"
+        },
+        "Contains_Enum": {
+          "description": "Assigned Type: ms-0100:Contains_Enum",
+          "$ref": "RTN_Codelist_1.schema.json#/definitions/Contains_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "AllergyInformation_Enum",
+        "Contains_Enum"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/MenuItemID"
+    },
+    {
+      "$ref": "#/definitions/MenuItemIdentifier"
+    },
+    {
+      "$ref": "#/definitions/IngredientID"
+    },
+    {
+      "$ref": "#/definitions/IngredientIdentifier"
+    },
+    {
+      "$ref": "#/definitions/MenuItem"
+    },
+    {
+      "$ref": "#/definitions/MenuItemSummary"
+    },
+    {
+      "$ref": "#/definitions/Ingredient"
+    },
+    {
+      "$ref": "#/definitions/IngredientSummary"
+    },
+    {
+      "$ref": "#/definitions/BaselineNutrition"
+    },
+    {
+      "$ref": "#/definitions/BaselineNutritionSummary"
+    },
+    {
+      "$ref": "#/definitions/BaselineNutritionDetail"
+    },
+    {
+      "$ref": "#/definitions/MenuID"
+    },
+    {
+      "$ref": "#/definitions/MenuIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Menu"
+    },
+    {
+      "$ref": "#/definitions/MenuSummary"
+    },
+    {
+      "$ref": "#/definitions/DietaryRestrictions"
+    },
+    {
+      "$ref": "#/definitions/ServingSize"
+    },
+    {
+      "$ref": "#/definitions/Default"
+    },
+    {
+      "$ref": "#/definitions/ModifierID"
+    },
+    {
+      "$ref": "#/definitions/ModifierIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Modifier"
+    },
+    {
+      "$ref": "#/definitions/ModifierSummary"
+    },
+    {
+      "$ref": "#/definitions/MenuProductID"
+    },
+    {
+      "$ref": "#/definitions/MenuProductIdentifier"
+    },
+    {
+      "$ref": "#/definitions/MenuProduct"
+    },
+    {
+      "$ref": "#/definitions/MenuProductSummary"
+    },
+    {
+      "$ref": "#/definitions/Channel"
+    },
+    {
+      "$ref": "#/definitions/RestaurantDetailsID"
+    },
+    {
+      "$ref": "#/definitions/RestaurantDetailsIdentifier"
+    },
+    {
+      "$ref": "#/definitions/RestaurantDetails"
+    },
+    {
+      "$ref": "#/definitions/RestaurantDetailsSummary"
+    },
+    {
+      "$ref": "#/definitions/AllergenDetails"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "PersonName" : {
+    "language" : "en-us",
+    "primaryInd" : true,
+    "First" : "John",
+    "Last" : "Smith",
+    "Middle" : "Jacob",
+    "Prefix" : "Mr.",
+    "Suffix" : "Jr.",
+    "NameType" : {
+      "value" : "Alias"
+    },
+    "Title" : "M.D.",
+    "LastNamePrefix" : "Von de"
+  }
+}

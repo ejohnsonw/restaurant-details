@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0100:MenuItem
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    iD="Example String Value" modifierEligibleInd="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_MenuSync_1_0_0.xsd">
+    <ms-0100:NutritionResource>http://www.w3.org/2001/XMLSchema</ms-0100:NutritionResource>
+    <ms-0100:BaselineNutritionDetail count="500" displayRange="350-500"
+        maxCount="500" minCount="350" shortName="Cal">
+        <ms-0100:NutritionInformationType>Calorie count</ms-0100:NutritionInformationType>
+        <ms-0100:UnitOfMeasure>Calories</ms-0100:UnitOfMeasure>
+    </ms-0100:BaselineNutritionDetail>
+    <ms-0100:DietaryRestrictions>
+        <ms-0100:AllergenDetails>
+            <ms-0100:AllergyInformation_Enum>Gluten</ms-0100:AllergyInformation_Enum>
+            <ms-0100:Contains_Enum>Contains</ms-0100:Contains_Enum>
+        </ms-0100:AllergenDetails>
+        <ms-0100:LifestyleChoices_Enum>Halal</ms-0100:LifestyleChoices_Enum>
+    </ms-0100:DietaryRestrictions>
+    <ms-0100:RegulatoryRequirementsDescription>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.</ms-0100:RegulatoryRequirementsDescription>
+    <ms-0100:AvailabilityEffectivity>
+        <ms-0100:EffectivityDetail endDate="2011-07-04T14:15:00+06:00" startDate="2011-01-24T09:45:00-06:00">
+            <ms-0100:DaysOfWeek>Sunday</ms-0100:DaysOfWeek>
+            <ms-0100:Name>Happy hour</ms-0100:Name>
+            <ms-0100:WeekOfMonth>1</ms-0100:WeekOfMonth>
+            <ms-0100:MonthOfYear>7</ms-0100:MonthOfYear>
+        </ms-0100:EffectivityDetail>
+    </ms-0100:AvailabilityEffectivity>
+    <ms-0100:ChannelAvailability>Online ordering and call center.</ms-0100:ChannelAvailability>
+    <ms-0100:LocationAvailability>3438, 4983</ms-0100:LocationAvailability>
+    <ms-0100:Destination>Take out</ms-0100:Destination>
+    <ms-0100:Description>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</ms-0100:Description>
+    <ms-0100:Preparation>Sauteed and served with fried onions.</ms-0100:Preparation>
+    <ms-0100:MasterDescription>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</ms-0100:MasterDescription>
+    <ms-0100:Channel>
+        <ms-0100:ChannelName>Example String Value</ms-0100:ChannelName>
+        <ms-0100:MenuItemDescription>Example String Value</ms-0100:MenuItemDescription>
+    </ms-0100:Channel>
+    <ms-0100:PackingList>
+        <ms-0100:ItemName>Mustard</ms-0100:ItemName>
+        <ms-0100:Quantity>2</ms-0100:Quantity>
+    </ms-0100:PackingList>
+    <ms-0100:OrderingNotes>Example String Value</ms-0100:OrderingNotes>
+    <ms-0100:ServingSize count="4">
+        <ms-0100:UnitOfMeasure_Enum>Grams</ms-0100:UnitOfMeasure_Enum>
+        <ms-0100:PreparedUnitOfMeasure>1 burger</ms-0100:PreparedUnitOfMeasure>
+        <ms-0100:Description>Quarter pound</ms-0100:Description>
+    </ms-0100:ServingSize>
+    <ms-0100:Promotion>
+        <ms-0100:PromotionCode>Promo1</ms-0100:PromotionCode>
+        <ms-0100:Description>School fundraiser</ms-0100:Description>
+    </ms-0100:Promotion>
+    <ms-0100:MediaCategory>
+        <ms-0100:Name>Beverages</ms-0100:Name>
+        <ms-0100:Media>
+            <ms-0100:MediaURI>http://www.OpenTravel.org/ns/OTA2/Common_v01_00</ms-0100:MediaURI>
+            <ms-0100:KnownAssetNumber>Example String Value</ms-0100:KnownAssetNumber>
+        </ms-0100:Media>
+    </ms-0100:MediaCategory>
+    <ms-0100:Source>Harrison Ranch</ms-0100:Source>
+    <ms-0100:Pricing taxExemptInd="true">
+        <ms-0100:Currency decimalPlaces="2">Example String Value</ms-0100:Currency>
+        <ms-0100:Surcharge amount="3.00" surchargeIncludedInd="true">
+            <ms-0100:Description>Delivery fee</ms-0100:Description>
+        </ms-0100:Surcharge>
+        <ms-0100:Tax amount=".53" taxIncludedInd="true">
+            <ms-0100:Description>State tax</ms-0100:Description>
+        </ms-0100:Tax>
+        <ms-0100:ItemPrice>7.00</ms-0100:ItemPrice>
+        <ms-0100:Context>Third party delivery</ms-0100:Context>
+        <ms-0100:Discount beforeTaxInd="true" value="3.00" valueType="Amount">
+            <ms-0100:Application>Example String Value</ms-0100:Application>
+            <ms-0100:Description>Senior discount.</ms-0100:Description>
+        </ms-0100:Discount>
+    </ms-0100:Pricing>
+    <ms-0100:SKU productCode="Example String Value" productName="Example String Value"/>
+    <ms-0100:Default>
+        <ms-0100:Quantity>2</ms-0100:Quantity>
+        <ms-0100:QuantityUnits>Cream</ms-0100:QuantityUnits>
+        <ms-0100:Preparation>On the side</ms-0100:Preparation>
+        <ms-0100:PreparationQuantity>1</ms-0100:PreparationQuantity>
+        <ms-0100:PreparationUnits>ounces</ms-0100:PreparationUnits>
+        <ms-0100:DefaultNotes>Example String Value</ms-0100:DefaultNotes>
+    </ms-0100:Default>
+    <ms-0100:Modifier action="Add" iD="Example String Value" modifierEligibleInd="true">
+        <ms-0100:NutritionResource>http://www.w3.org/2001/XMLSchema</ms-0100:NutritionResource>
+        <ms-0100:BaselineNutritionDetail count="500"
+            displayRange="350-500" maxCount="500" minCount="350" shortName="Cal">
+            <ms-0100:NutritionInformationType>Sodium</ms-0100:NutritionInformationType>
+            <ms-0100:UnitOfMeasure>Milligrams</ms-0100:UnitOfMeasure>
+        </ms-0100:BaselineNutritionDetail>
+        <ms-0100:DietaryRestrictions>
+            <ms-0100:AllergenDetails>
+                <ms-0100:AllergyInformation_Enum>Nut</ms-0100:AllergyInformation_Enum>
+                <ms-0100:Contains_Enum>Free From</ms-0100:Contains_Enum>
+            </ms-0100:AllergenDetails>
+            <ms-0100:LifestyleChoices_Enum>Kosher</ms-0100:LifestyleChoices_Enum>
+        </ms-0100:DietaryRestrictions>
+        <ms-0100:RegulatoryRequirementsDescription>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.</ms-0100:RegulatoryRequirementsDescription>
+        <ms-0100:AvailabilityEffectivity>
+            <ms-0100:EffectivityDetail
+                endDate="2011-01-24T09:45:00-06:00" startDate="2011-12-05T06:00:00Z">
+                <ms-0100:DaysOfWeek>Monday</ms-0100:DaysOfWeek>
+                <ms-0100:Name>Happy hour</ms-0100:Name>
+                <ms-0100:WeekOfMonth>1</ms-0100:WeekOfMonth>
+                <ms-0100:MonthOfYear>7</ms-0100:MonthOfYear>
+            </ms-0100:EffectivityDetail>
+        </ms-0100:AvailabilityEffectivity>
+        <ms-0100:ChannelAvailability>Online ordering and call center.</ms-0100:ChannelAvailability>
+        <ms-0100:LocationAvailability>3438, 4983</ms-0100:LocationAvailability>
+        <ms-0100:Destination>Take out</ms-0100:Destination>
+        <ms-0100:Description>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</ms-0100:Description>
+        <ms-0100:Preparation>Sauteed and served with fried onions.</ms-0100:Preparation>
+        <ms-0100:MasterDescription>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</ms-0100:MasterDescription>
+        <ms-0100:Channel>
+            <ms-0100:ChannelName>Example String Value</ms-0100:ChannelName>
+            <ms-0100:MenuItemDescription>Example String Value</ms-0100:MenuItemDescription>
+        </ms-0100:Channel>
+        <ms-0100:PackingList>
+            <ms-0100:ItemName>Mustard</ms-0100:ItemName>
+            <ms-0100:Quantity>2</ms-0100:Quantity>
+        </ms-0100:PackingList>
+        <ms-0100:OrderingNotes>Example String Value</ms-0100:OrderingNotes>
+        <ms-0100:ServingSize count="4">
+            <ms-0100:UnitOfMeasure_Enum>Ounces</ms-0100:UnitOfMeasure_Enum>
+            <ms-0100:PreparedUnitOfMeasure>1 burger</ms-0100:PreparedUnitOfMeasure>
+            <ms-0100:Description>Quarter pound</ms-0100:Description>
+        </ms-0100:ServingSize>
+        <ms-0100:Promotion>
+            <ms-0100:PromotionCode>Promo1</ms-0100:PromotionCode>
+            <ms-0100:Description>School fundraiser</ms-0100:Description>
+        </ms-0100:Promotion>
+        <ms-0100:MediaCategory>
+            <ms-0100:Name>Beverages</ms-0100:Name>
+            <ms-0100:Media>
+                <ms-0100:MediaURI>http://www.OpenTravel.org/ns/OTA2/Common_v01_00</ms-0100:MediaURI>
+                <ms-0100:KnownAssetNumber>Example String Value</ms-0100:KnownAssetNumber>
+            </ms-0100:Media>
+        </ms-0100:MediaCategory>
+        <ms-0100:Source>Harrison Ranch</ms-0100:Source>
+        <ms-0100:SKU productCode="Example String Value" productName="Example String Value"/>
+        <ms-0100:Default>
+            <ms-0100:Quantity>2</ms-0100:Quantity>
+            <ms-0100:QuantityUnits>Cream</ms-0100:QuantityUnits>
+            <ms-0100:Preparation>On the side</ms-0100:Preparation>
+            <ms-0100:PreparationQuantity>1</ms-0100:PreparationQuantity>
+            <ms-0100:PreparationUnits>ounces</ms-0100:PreparationUnits>
+            <ms-0100:DefaultNotes>Example String Value</ms-0100:DefaultNotes>
+        </ms-0100:Default>
+        <ms-0100:Pricing taxExemptInd="true">
+            <ms-0100:Currency decimalPlaces="2">Example String Value</ms-0100:Currency>
+            <ms-0100:Surcharge amount="3.00" surchargeIncludedInd="true">
+                <ms-0100:Description>Delivery fee</ms-0100:Description>
+            </ms-0100:Surcharge>
+            <ms-0100:Tax amount=".53" taxIncludedInd="true">
+                <ms-0100:Description>State tax</ms-0100:Description>
+            </ms-0100:Tax>
+            <ms-0100:ItemPrice>7.00</ms-0100:ItemPrice>
+            <ms-0100:Context>Third party delivery</ms-0100:Context>
+            <ms-0100:Discount beforeTaxInd="true" value="3.00" valueType="Percent">
+                <ms-0100:Application>Example String Value</ms-0100:Application>
+                <ms-0100:Description>Senior discount.</ms-0100:Description>
+            </ms-0100:Discount>
+        </ms-0100:Pricing>
+    </ms-0100:Modifier>
+</ms-0100:MenuItem>

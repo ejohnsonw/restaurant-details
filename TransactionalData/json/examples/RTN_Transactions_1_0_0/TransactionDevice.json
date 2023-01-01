@@ -1,0 +1,7 @@
+{
+  "TransactionDeviceDetail" : {
+    "DeviceID" : "7",
+    "DeviceDescription" : "Cash terminal",
+    "DrawerID" : "2"
+  }
+}

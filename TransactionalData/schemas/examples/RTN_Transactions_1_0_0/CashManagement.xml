@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pf1:CashManagement
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Transactions_1_0_0.xsd">
+    <pf1:Amount>1000</pf1:Amount>
+    <pf1:Currency decimalPlaces="2">Example String Value</pf1:Currency>
+    <pf1:Denomination>
+        <pf1:DenominationType>Quarters</pf1:DenominationType>
+        <pf1:Amount>10.00</pf1:Amount>
+        <pf1:Quantity>40</pf1:Quantity>
+    </pf1:Denomination>
+    <pf1:MonetaryDeviceID>CD1</pf1:MonetaryDeviceID>
+    <pf1:MonetaryDeviceDescription>Coin dispenser</pf1:MonetaryDeviceDescription>
+</pf1:CashManagement>

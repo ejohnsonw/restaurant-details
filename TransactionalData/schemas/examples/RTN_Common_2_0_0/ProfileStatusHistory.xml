@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0200:ProfileStatusHistory
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v2 ../../RTN_Common_2_0_0.xsd">
+    <ms-0200:Status>Active</ms-0200:Status>
+    <ms-0200:ChangeDate>2021-11-30T20:33:35+00:00</ms-0200:ChangeDate>
+    <ms-0200:ChangedBy>c5fe1946-1ab7-4967-be42-eea4c58d56fc</ms-0200:ChangedBy>
+    <ms-0200:SystemName>Loyalty R Us</ms-0200:SystemName>
+    <ms-0200:Comment>System status changed based on inactivity.</ms-0200:Comment>
+</ms-0200:ProfileStatusHistory>

@@ -1,0 +1,10 @@
+{
+  "ServingSize" : {
+    "count" : 4,
+    "UnitOfMeasure_Enum" : {
+      "value" : "Calories"
+    },
+    "PreparedUnitOfMeasure" : "1 burger",
+    "Description" : "Quarter pound"
+  }
+}

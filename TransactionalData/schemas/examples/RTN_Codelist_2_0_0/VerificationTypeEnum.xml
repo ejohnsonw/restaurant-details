@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0200:VerificationType_Enum
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2" extension="Other_Value">Passport</ms-0200:VerificationType_Enum>

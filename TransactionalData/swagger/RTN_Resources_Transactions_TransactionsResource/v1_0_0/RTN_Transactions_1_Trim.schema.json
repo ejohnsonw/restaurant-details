@@ -1,0 +1,1857 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Transactions",
+  "x-otm-library": {
+    "LibraryName": "RTN_Transactions",
+    "LibraryVersion": "1.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Transactions_1_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-09-21T10:17:55.740-0400"
+  },
+  "definitions": {
+    "EventID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Event"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "TransactionGUID": {
+          "description": "GUID of any interaction a customer has with a restaurant.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "EventIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Event"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "TransactionGUID": {
+          "description": "GUID of any interaction a customer has with a restaurant.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Event": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Event"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/EventID"
+        },
+        {
+          "properties": {
+            "TransactionDateTimeStamp": {
+              "description": "The date\\/time that the transaction occurred.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-06-21T12:59:49+00:00"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "TransactionType": {
+              "description": "Assigned Type: ms-0300:TranactionType_Enum",
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/TranactionType_Enum"
+            },
+            "BusinessDate": {
+              "description": "The business date when the transaction occurred.  This could be different than the timestamp depending on when the day is closed out.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-06-21T12:59:49+00:00"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "Location": {
+              "description": "Assigned Type: ms-0300:Location",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/LocationID"
+            },
+            "TransactionDevice": {
+              "description": "Assigned Type: pf1:TransactionDevice",
+              "$ref": "#/definitions/TransactionDevice"
+            },
+            "Employee": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/EmployeeID"
+              }
+            },
+            "EventType": {
+              "description": "Assigned Type: pf1:EventType",
+              "$ref": "#/definitions/EventType"
+            },
+            "Approver": {
+              "description": "Assigned Type: ms-0300:Approver",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/ApproverID"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "EventSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Event"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/EventID"
+        },
+        {
+          "properties": {
+            "TransactionDateTimeStamp": {
+              "description": "The date\\/time that the transaction occurred.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-06-21T12:59:49+00:00"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "TransactionType": {
+              "description": "Assigned Type: ms-0300:TranactionType_Enum",
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/TranactionType_Enum"
+            },
+            "BusinessDate": {
+              "description": "The business date when the transaction occurred.  This could be different than the timestamp depending on when the day is closed out.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-06-21T12:59:49+00:00"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "Location": {
+              "description": "Assigned Type: ms-0300:Location",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/LocationID"
+            },
+            "TransactionDevice": {
+              "description": "Assigned Type: pf1:TransactionDevice",
+              "$ref": "#/definitions/TransactionDevice"
+            },
+            "Employee": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/EmployeeID"
+              }
+            },
+            "EventType": {
+              "description": "Assigned Type: pf1:EventType",
+              "$ref": "#/definitions/EventType"
+            },
+            "Approver": {
+              "description": "Assigned Type: ms-0300:Approver",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/ApproverID"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
+    },
+    "TransactionDevice": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TransactionDevice"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "DeviceID": {
+          "description": "An identifier for the physical device (cash terminal, punch clock, kiosk, etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "7"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "DeviceDescription": {
+          "description": "A name or description for the device.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Cash terminal"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "TransactionDeviceSummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TransactionDevice"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "DeviceID": {
+          "description": "An identifier for the physical device (cash terminal, punch clock, kiosk, etc.).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "7"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "DeviceDescription": {
+          "description": "A name or description for the device.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Cash terminal"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "TransactionDeviceDetail": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TransactionDevice"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/TransactionDevice"
+        },
+        {
+          "properties": {
+            "DrawerID": {
+              "description": "The carrier of the till.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "EventType": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "EventType"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "EventTypeOrder": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "EventType"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/EventType"
+        },
+        {
+          "properties": {
+            "Order": {
+              "description": "Assigned Type: ms-0200:Order",
+              "$ref": "RTN_Order_2_Trim.schema.json#/definitions/OrderID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "EventTypeTimeCard": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "EventType"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/EventType"
+        },
+        {
+          "properties": {
+            "TimeCard": {
+              "description": "Assigned Type: pf1:TimeCard",
+              "$ref": "#/definitions/TimeCard"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "EventTypeReservation": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "EventType"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/EventType"
+        },
+        {
+          "properties": {
+            "Reservation": {
+              "description": "Assigned Type: pf1:Reservation",
+              "$ref": "#/definitions/ReservationID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "EventTypeRefund": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "EventType"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/EventType"
+        },
+        {
+          "properties": {
+            "Refund": {
+              "description": "Assigned Type: pf1:Refund",
+              "$ref": "#/definitions/Refund"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "EventTypeDrawer": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "EventType"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/EventType"
+        },
+        {
+          "properties": {
+            "Drawer": {
+              "description": "Assigned Type: pf1:Drawer",
+              "$ref": "#/definitions/DrawerID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "Party": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Party"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PartyName": {
+          "description": "Name used to identify one or more individuals.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Smith"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "PartyDescription": {
+          "description": "A description of the occasion.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Smith anniversary dinner"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Customer": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Customer"
+          }
+        },
+        "TotalInParty": {
+          "description": "The total number of individuals in the party.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "8"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "SeatingType": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SeatingType"
+          }
+        },
+        "PartyRequests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PartyRequests"
+          }
+        },
+        "PartyMix": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PartyMix"
+          }
+        },
+        "Contact": {
+          "description": "Assigned Type: ms-0300:Contact",
+          "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Contact"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "PartyRequests": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "PartyRequests"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "DietaryRestrictions": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_MenuSync_1_Trim.schema.json#/definitions/DietaryRestrictions"
+          }
+        },
+        "Requests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "SeatingLocation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "SeatingType": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "SeatingType"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "SeatingType": {
+          "description": "Assigned Type: ms-0300:SeatingType_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "High chair"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/SeatingType_Enum"
+        },
+        "Quantity": {
+          "description": "The number requested of the item identified in the SeatingType field.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "PartyMix": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "PartyMix"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PartyType": {
+          "description": "Assigned Type: ms-0300:PartyType_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Infants"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/PartyType_Enum"
+        },
+        "PartyTypeQuantity": {
+          "description": "Specifies the quantity of people in the party for the specified PartyType.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "PartyType",
+        "PartyTypeQuantity"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "OrderItemState": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "OrderItemState"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ItemState": {
+          "description": "Assigned Type: ms-0300:OrderItemState_Enum",
+          "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/OrderItemState_Enum"
+        },
+        "Timestamp": {
+          "description": "The date\\/time that the state was entered.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2022-03-29T12:10:53"
+              }
+            ]
+          },
+          "type": "string",
+          "format": "date-time"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "ItemState",
+        "Timestamp"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ReservationID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Reservation"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ReservationID": {
+          "description": "An identifier for the reservation.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "87458448"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "ReservationID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ReservationIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Reservation"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ReservationID": {
+          "description": "An identifier for the reservation.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "87458448"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "ReservationID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Reservation": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Reservation"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ReservationID"
+        },
+        {
+          "properties": {
+            "EmployeeIdentifier": {
+              "description": "Assigned Type: ms-0300:Employee_ID",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/EmployeeIdentifier"
+            },
+            "ReservationSystem": {
+              "description": "Assigned Type: ms-0300:Reference",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Reference"
+            },
+            "ReservationDateTime": {
+              "description": "The date and time for the reservation.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T19:00:00"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "Status": {
+              "description": "Assigned Type: ms-0300:ReservationStatus_Enum",
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/ReservationStatus_Enum"
+            },
+            "DepositDetails": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/DepositDetails"
+              }
+            },
+            "Party": {
+              "description": "Assigned Type: pf1:Party",
+              "$ref": "#/definitions/Party"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "Party"
+          ]
+        }
+      ]
+    },
+    "ReservationSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Reservation"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ReservationID"
+        },
+        {
+          "properties": {
+            "EmployeeIdentifier": {
+              "description": "Assigned Type: ms-0300:Employee_ID",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/EmployeeIdentifier"
+            },
+            "ReservationSystem": {
+              "description": "Assigned Type: ms-0300:Reference",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Reference"
+            },
+            "ReservationDateTime": {
+              "description": "The date and time for the reservation.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T19:00:00"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "Status": {
+              "description": "Assigned Type: ms-0300:ReservationStatus_Enum",
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/ReservationStatus_Enum"
+            },
+            "DepositDetails": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/DepositDetails"
+              }
+            },
+            "Party": {
+              "description": "Assigned Type: pf1:Party",
+              "$ref": "#/definitions/Party"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "Party"
+          ]
+        }
+      ]
+    },
+    "TimeCard": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeCard"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Employee": {
+          "description": "Assigned Type: ms-0300:Employee",
+          "$ref": "RTN_Common_3_Trim.schema.json#/definitions/EmployeeID"
+        },
+        "Job": {
+          "description": "Assigned Type: pf1:Job",
+          "$ref": "#/definitions/Job"
+        },
+        "ClockDataTransaction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ClockDataTransactionID"
+          },
+          "minItems": 1
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "Employee",
+        "Job",
+        "ClockDataTransaction"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ClockDataTransactionID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "ClockDataTransaction"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "TimeCardCorrelationGUID": {
+          "description": "A unique identifier for the time card transaction.  If this transaction is an adjustment of a punch card transction, the TimeCardCorrelationGUID will be the same as the original time card record.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type",
+        "TimeCardCorrelationGUID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ClockDataTransactionIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "ClockDataTransaction"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "TimeCardCorrelationGUID": {
+          "description": "A unique identifier for the time card transaction.  If this transaction is an adjustment of a punch card transction, the TimeCardCorrelationGUID will be the same as the original time card record.",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type",
+        "TimeCardCorrelationGUID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "ClockDataTransaction": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "ClockDataTransaction"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ClockDataTransactionID"
+        },
+        {
+          "properties": {
+            "PunchType": {
+              "description": "Assigned Type: ms-0300:PunchType_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Clock-in"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/PunchType_Enum"
+            },
+            "ClockDateTime": {
+              "description": "The date and time of the punch.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T17:06:10"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "EmployeeIdentifier": {
+              "description": "Assigned Type: ms-0300:Employee_ID",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/EmployeeIdentifier"
+            },
+            "CreatedTimestamp": {
+              "description": "Specifies the date and time that a manual punch was entered.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T17:06:10"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "OtherID": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Reference"
+              }
+            },
+            "Approver": {
+              "description": "Assigned Type: ms-0300:Approver",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/ApproverID"
+            },
+            "Reason": {
+              "description": "Allows text details regarding the punch to be sent.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Employee clock-in"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "systemGeneratedInd": {
+              "description": "When true, the system generated the punch transaction.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "PunchType",
+            "ClockDateTime"
+          ]
+        }
+      ]
+    },
+    "ClockDataTransactionSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "ClockDataTransaction"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/ClockDataTransactionID"
+        },
+        {
+          "properties": {
+            "PunchType": {
+              "description": "Assigned Type: ms-0300:PunchType_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Clock-in"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/PunchType_Enum"
+            },
+            "ClockDateTime": {
+              "description": "The date and time of the punch.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T17:06:10"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "EmployeeIdentifier": {
+              "description": "Assigned Type: ms-0300:Employee_ID",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/EmployeeIdentifier"
+            },
+            "CreatedTimestamp": {
+              "description": "Specifies the date and time that a manual punch was entered.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T17:06:10"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "OtherID": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Reference"
+              }
+            },
+            "Approver": {
+              "description": "Assigned Type: ms-0300:Approver",
+              "$ref": "RTN_Common_3_Trim.schema.json#/definitions/ApproverID"
+            },
+            "Reason": {
+              "description": "Allows text details regarding the punch to be sent.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Employee clock-in"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "systemGeneratedInd": {
+              "description": "When true, the system generated the punch transaction.",
+              "type": "boolean"
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "PunchType",
+            "ClockDateTime"
+          ]
+        }
+      ]
+    },
+    "Job": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Job"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "JobCode": {
+          "description": "A code that represents a position that this employee works in.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "6756"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "JobCodeName": {
+          "description": "A description for the job code.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Server"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Rate": {
+          "description": "The pay rate for this position.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "15.75"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "JobCode"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Refund": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Refund"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Payment": {
+          "description": "Assigned Type: ms-0300:Payment",
+          "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Payment"
+        },
+        "RefundTotal": {
+          "description": "The total amount of the reimbursement.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "32.00"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "RefundReason": {
+          "description": "Specifies why the refund was made.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Dissatified with Menu Item"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "RefundReasonDescription": {
+          "description": "Provides a more detailed explanation for the refund.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Steak was overcooked"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "RefundTransactionType": {
+          "description": "Assigned Type: pf1:RefundTransactionType",
+          "$ref": "#/definitions/RefundTransactionType"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "Payment"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "RefundTransactionType": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "RefundTransactionType"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "RefundTransactionTypeOrder": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "RefundTransactionType"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/RefundTransactionType"
+        },
+        {
+          "properties": {
+            "Order": {
+              "description": "Assigned Type: ms-0200:Order",
+              "$ref": "RTN_Order_2_Trim.schema.json#/definitions/OrderID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "RefundTransactionTypeReservation": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "RefundTransactionType"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/RefundTransactionType"
+        },
+        {
+          "properties": {
+            "Reservation": {
+              "description": "Assigned Type: pf1:Reservation",
+              "$ref": "#/definitions/ReservationID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "RefundTransactionTypeRefund": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "RefundTransactionType"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/RefundTransactionType"
+        },
+        {
+          "properties": {
+            "Refund": {
+              "description": "Assigned Type: pf1:Refund",
+              "$ref": "#/definitions/Refund"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "DrawerID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Drawer"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "DrawerEventGUID": {
+          "description": "A unique identifier for a drawer event used to tie multiple drawer transactions to a single drawer event.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "bc7af2bb-6213-4d0b-8284-632ec3a0abc5"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type",
+        "DrawerEventGUID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "DrawerIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Drawer"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "DrawerEventGUID": {
+          "description": "A unique identifier for a drawer event used to tie multiple drawer transactions to a single drawer event.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "bc7af2bb-6213-4d0b-8284-632ec3a0abc5"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type",
+        "DrawerEventGUID"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Drawer": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Drawer"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DrawerID"
+        },
+        {
+          "properties": {
+            "TillID": {
+              "description": "An identifier for the removeable cash holder that can be placed in or removed from the drawer.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "1"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "DrawerOpenTime": {
+              "description": "The date\\/time the drawer was open (represented in ISO 8601 format).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T17:06:10"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "DrawerCloseTime": {
+              "description": "The date\\/time the drawer was closed (represented in ISO 8601 format).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T17:07:03"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "DrawerTransactionReason": {
+              "description": "Assigned Type: ms-0300:DrawerReason_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Till assignment"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/DrawerReason_Enum"
+            },
+            "ReasonDescription": {
+              "description": "Textual information to further describe the reason for the drawer event.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Drawer opened to assign till at beginning of shift."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ReferencedTransactionGUID": {
+              "description": "A unique identifier a transaction that initiated the drawer event (e.g. Order, Reservation).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "7041b5fe-eaf7-446c-9a27-588c61dfd621"
+                  }
+                ]
+              },
+              "type": "string",
+              "maxLength": 128
+            },
+            "CashManagement": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CashManagement"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "ReferencedTransactionGUID"
+          ]
+        }
+      ]
+    },
+    "DrawerSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Drawer"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/DrawerID"
+        },
+        {
+          "properties": {
+            "TillID": {
+              "description": "An identifier for the removeable cash holder that can be placed in or removed from the drawer.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "1"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "DrawerOpenTime": {
+              "description": "The date\\/time the drawer was open (represented in ISO 8601 format).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T17:06:10"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "DrawerCloseTime": {
+              "description": "The date\\/time the drawer was closed (represented in ISO 8601 format).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-07-05T17:07:03"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "DrawerTransactionReason": {
+              "description": "Assigned Type: ms-0300:DrawerReason_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Till assignment"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/DrawerReason_Enum"
+            },
+            "ReasonDescription": {
+              "description": "Textual information to further describe the reason for the drawer event.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Drawer opened to assign till at beginning of shift."
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "ReferencedTransactionGUID": {
+              "description": "A unique identifier a transaction that initiated the drawer event (e.g. Order, Reservation).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "7041b5fe-eaf7-446c-9a27-588c61dfd621"
+                  }
+                ]
+              },
+              "type": "string",
+              "maxLength": 128
+            },
+            "CashManagement": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CashManagement"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "ReferencedTransactionGUID"
+          ]
+        }
+      ]
+    },
+    "CashManagement": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "CashManagement"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Amount": {
+          "description": "The total amount related to the drawer transaction.  If broken out into denominations then the total of the amounts for all of the denomination objects would be expressed in this field.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "1000"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "Currency": {
+          "description": "Assigned Type: ms-0300:CurrencyCode",
+          "$ref": "RTN_Common_3_Trim.schema.json#/definitions/CurrencyCode"
+        },
+        "Denomination": {
+          "description": "Assigned Type: pf1:Denomination",
+          "$ref": "#/definitions/Denomination"
+        },
+        "MonetaryDeviceID": {
+          "description": "An identifier for an external device (e.g. coin dispenser, reverse ATM).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "CD1"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "MonetaryDeviceDescription": {
+          "description": "A description of the external monetary device.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Coin dispenser"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "Amount"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Denomination": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Denomination"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "DenominationType": {
+          "description": "Specifies the kind of denomination.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Quarters"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Amount": {
+          "description": "The monetary amount of this denomination (e.g type \u003d $10 Amount\u003d$80 Quantity \u003d 8, means there are 8 ten dollar bills that have the value of $80.00).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "10.00"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "Quantity": {
+          "description": "The number of this item.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "40"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "DenominationType",
+        "Amount"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/EventID"
+    },
+    {
+      "$ref": "#/definitions/EventIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Event"
+    },
+    {
+      "$ref": "#/definitions/EventSummary"
+    },
+    {
+      "$ref": "#/definitions/TransactionDevice"
+    },
+    {
+      "$ref": "#/definitions/TransactionDeviceSummary"
+    },
+    {
+      "$ref": "#/definitions/TransactionDeviceDetail"
+    },
+    {
+      "$ref": "#/definitions/EventType"
+    },
+    {
+      "$ref": "#/definitions/EventTypeOrder"
+    },
+    {
+      "$ref": "#/definitions/EventTypeTimeCard"
+    },
+    {
+      "$ref": "#/definitions/EventTypeReservation"
+    },
+    {
+      "$ref": "#/definitions/EventTypeRefund"
+    },
+    {
+      "$ref": "#/definitions/EventTypeDrawer"
+    },
+    {
+      "$ref": "#/definitions/Party"
+    },
+    {
+      "$ref": "#/definitions/PartyRequests"
+    },
+    {
+      "$ref": "#/definitions/SeatingType"
+    },
+    {
+      "$ref": "#/definitions/PartyMix"
+    },
+    {
+      "$ref": "#/definitions/OrderItemState"
+    },
+    {
+      "$ref": "#/definitions/ReservationID"
+    },
+    {
+      "$ref": "#/definitions/ReservationIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Reservation"
+    },
+    {
+      "$ref": "#/definitions/ReservationSummary"
+    },
+    {
+      "$ref": "#/definitions/TimeCard"
+    },
+    {
+      "$ref": "#/definitions/ClockDataTransactionID"
+    },
+    {
+      "$ref": "#/definitions/ClockDataTransactionIdentifier"
+    },
+    {
+      "$ref": "#/definitions/ClockDataTransaction"
+    },
+    {
+      "$ref": "#/definitions/ClockDataTransactionSummary"
+    },
+    {
+      "$ref": "#/definitions/Job"
+    },
+    {
+      "$ref": "#/definitions/Refund"
+    },
+    {
+      "$ref": "#/definitions/RefundTransactionType"
+    },
+    {
+      "$ref": "#/definitions/RefundTransactionTypeOrder"
+    },
+    {
+      "$ref": "#/definitions/RefundTransactionTypeReservation"
+    },
+    {
+      "$ref": "#/definitions/RefundTransactionTypeRefund"
+    },
+    {
+      "$ref": "#/definitions/DrawerID"
+    },
+    {
+      "$ref": "#/definitions/DrawerIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Drawer"
+    },
+    {
+      "$ref": "#/definitions/DrawerSummary"
+    },
+    {
+      "$ref": "#/definitions/CashManagement"
+    },
+    {
+      "$ref": "#/definitions/Denomination"
+    }
+  ]
+}

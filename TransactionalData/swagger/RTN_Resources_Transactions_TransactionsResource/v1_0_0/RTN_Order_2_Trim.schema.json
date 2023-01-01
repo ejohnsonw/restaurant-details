@@ -1,0 +1,804 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Order",
+  "x-otm-library": {
+    "LibraryName": "RTN_Order",
+    "LibraryVersion": "2.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Order_2_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-09-21T10:17:55.727-0400"
+  },
+  "definitions": {
+    "OrderID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Order"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "OrderID": {
+          "description": "A globally unique identifier for the order.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "32fc2468-67b7-4e6e-b744-6fe722c7198d"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        },
+        "OrderNumber": {
+          "description": "A unique identifier for the order in the ordering system (e.g. number printed on a receipt)..",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "832"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "OrderIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Order"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "OrderID": {
+          "description": "A globally unique identifier for the order.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "32fc2468-67b7-4e6e-b744-6fe722c7198d"
+              }
+            ]
+          },
+          "type": "string",
+          "maxLength": 128
+        },
+        "OrderNumber": {
+          "description": "A unique identifier for the order in the ordering system (e.g. number printed on a receipt)..",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "832"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Order": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Order"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderID"
+        },
+        {
+          "properties": {
+            "OrderStatus": {
+              "description": "Assigned Type: ms-0100:OrderStatus_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Received"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_1_Trim.schema.json#/definitions/OrderStatus_Enum"
+            },
+            "OrderTime": {
+              "description": "The date\\/time that the order was placed.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-03-29T12:10:53"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "PromiseDateTime": {
+              "description": "The date\\/time that the order was promised to be ready.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-03-29T12:11:05"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "LocationIdentifier": {
+              "description": "Assigned Type: ms-0100:Location_ID",
+              "$ref": "RTN_Common_1_Trim.schema.json#/definitions/LocationIdentifier"
+            },
+            "Customer": {
+              "description": "Assigned Type: ms-0100:Customer",
+              "$ref": "RTN_Common_1_Trim.schema.json#/definitions/Customer"
+            },
+            "OrderItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OrderItem"
+              },
+              "minItems": 1
+            },
+            "Total": {
+              "description": "Assigned Type: ms-0200:Total",
+              "$ref": "#/definitions/Total"
+            },
+            "Promotion": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_Trim.schema.json#/definitions/Promotion"
+              }
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Reference"
+              }
+            },
+            "ChannelDescription": {
+              "description": "A description of the channel where the order originated.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Mobile App"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "OrderItemCount": {
+              "description": "The number of order items  contained within this order.  This field may be used to validate all order items have been received.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3"
+                  }
+                ]
+              },
+              "type": "integer",
+              "format": "int32"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_Trim.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderState": {
+              "description": "Assigned Type: ms-0300:OrderState_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Abandoned"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/OrderState_Enum"
+            },
+            "Party": {
+              "description": "Assigned Type: pf1:Party",
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/Party"
+            },
+            "OrderSource": {
+              "description": "Assigned Type: ms-0200:OrderSource",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Mobile"
+                  }
+                ]
+              },
+              "$ref": "#/definitions/OrderSource"
+            },
+            "OrderTracking": {
+              "description": "Assigned Type: ms-0200:OrderTracking",
+              "$ref": "#/definitions/OrderTracking"
+            },
+            "Payment": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Payment"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "OrderItem",
+            "OrderItemCount"
+          ]
+        }
+      ]
+    },
+    "OrderSummary": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Order"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderID"
+        },
+        {
+          "properties": {
+            "OrderStatus": {
+              "description": "Assigned Type: ms-0100:OrderStatus_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Received"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_1_Trim.schema.json#/definitions/OrderStatus_Enum"
+            },
+            "OrderTime": {
+              "description": "The date\\/time that the order was placed.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-03-29T12:10:53"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "PromiseDateTime": {
+              "description": "The date\\/time that the order was promised to be ready.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "2022-03-29T12:11:05"
+                  }
+                ]
+              },
+              "type": "string",
+              "format": "date-time"
+            },
+            "LocationIdentifier": {
+              "description": "Assigned Type: ms-0100:Location_ID",
+              "$ref": "RTN_Common_1_Trim.schema.json#/definitions/LocationIdentifier"
+            },
+            "Customer": {
+              "description": "Assigned Type: ms-0100:Customer",
+              "$ref": "RTN_Common_1_Trim.schema.json#/definitions/Customer"
+            },
+            "OrderItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OrderItem"
+              },
+              "minItems": 1
+            },
+            "Total": {
+              "description": "Assigned Type: ms-0200:Total",
+              "$ref": "#/definitions/Total"
+            },
+            "Promotion": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_Trim.schema.json#/definitions/Promotion"
+              }
+            },
+            "Destination": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Reference"
+              }
+            },
+            "ChannelDescription": {
+              "description": "A description of the channel where the order originated.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Mobile App"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "OrderItemCount": {
+              "description": "The number of order items  contained within this order.  This field may be used to validate all order items have been received.",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "3"
+                  }
+                ]
+              },
+              "type": "integer",
+              "format": "int32"
+            },
+            "PackingList": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_1_Trim.schema.json#/definitions/PackingList"
+              }
+            },
+            "OrderState": {
+              "description": "Assigned Type: ms-0300:OrderState_Enum",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Abandoned"
+                  }
+                ]
+              },
+              "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/OrderState_Enum"
+            },
+            "Party": {
+              "description": "Assigned Type: pf1:Party",
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/Party"
+            },
+            "OrderSource": {
+              "description": "Assigned Type: ms-0200:OrderSource",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "Example",
+                    "value": "Mobile"
+                  }
+                ]
+              },
+              "$ref": "#/definitions/OrderSource"
+            },
+            "OrderTracking": {
+              "description": "Assigned Type: ms-0200:OrderTracking",
+              "$ref": "#/definitions/OrderTracking"
+            },
+            "Payment": {
+              "type": "array",
+              "items": {
+                "$ref": "RTN_Common_3_Trim.schema.json#/definitions/Payment"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+            }
+          },
+          "required": [
+            "OrderItem",
+            "OrderItemCount"
+          ]
+        }
+      ]
+    },
+    "OrderItem": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "OrderItem"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Customer": {
+          "description": "Assigned Type: ms-0100:Customer",
+          "$ref": "RTN_Common_1_Trim.schema.json#/definitions/Customer"
+        },
+        "SeatNumber": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "TableNumber": {
+          "description": "Identifies the physical table location where products are consumed by a customer.",
+          "type": "string"
+        },
+        "OrderItemState": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/OrderItemState"
+          },
+          "minItems": 1
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "OrderItemState"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "OrderItemMenuProduct": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "OrderItem"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderItem"
+        },
+        {
+          "properties": {
+            "MenuProduct": {
+              "description": "Assigned Type: ms-0100:MenuProduct",
+              "$ref": "RTN_MenuSync_1_Trim.schema.json#/definitions/MenuProductID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "OrderItemMenuItem": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "OrderItem"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/OrderItem"
+        },
+        {
+          "properties": {
+            "MenuItem": {
+              "description": "Assigned Type: ms-0100:MenuItem",
+              "$ref": "RTN_MenuSync_1_Trim.schema.json#/definitions/MenuItemID"
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "Total": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Total"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Currency": {
+          "description": "Assigned Type: ms-0100:CurrencyCode",
+          "$ref": "RTN_Common_1_Trim.schema.json#/definitions/CurrencyCode"
+        },
+        "Surcharge": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Common_1_Trim.schema.json#/definitions/Surcharge"
+          }
+        },
+        "Tax": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Common_1_Trim.schema.json#/definitions/Tax"
+          }
+        },
+        "ItemPrice": {
+          "description": "The cost of an item.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "7.00"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "Context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Discount": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Common_1_Trim.schema.json#/definitions/Discount"
+          }
+        },
+        "Gratuity": {
+          "description": "A tip on the order.",
+          "type": "number",
+          "format": "float"
+        },
+        "taxExemptInd": {
+          "description": "When true, this item is not taxable  When false, this item is taxable.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "ItemPrice"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "OrderSource": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderSource"
+      },
+      "description": "Specifies how the order was made such as the device type or in person.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderSource_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderSource_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderSource"
+      },
+      "description": "Specifies how the order was made such as the device type or in person.",
+      "type": "string",
+      "enum": [
+        "Mobile",
+        "Online",
+        "Kiosk",
+        "Phone",
+        "Walk in",
+        "Other_"
+      ]
+    },
+    "OrderTracking": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "OrderTracking"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "OrderOriginationLocationCategory": {
+          "description": "Assigned Type: ms-0300:OrderOriginationLocationCategory_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "On-premise"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/OrderOriginationLocationCategory_Enum"
+        },
+        "OrderOriginationLocation": {
+          "description": "Assigned Type: ms-0300:OrderOriginationLocation_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Counter"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/OrderOriginationLocation_Enum"
+        },
+        "DataEntryDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataEntryDetails"
+          }
+        },
+        "OrderOriginResponsibility": {
+          "description": "Assigned Type: ms-0300:OrderResponsibility_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Assisted order"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/OrderResponsibility_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "DataEntryDetails": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "DataEntryDetails"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Role": {
+          "description": "Assigned Type: ms-0200:OrderRole_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Originator"
+              }
+            ]
+          },
+          "$ref": "#/definitions/OrderRole_Enum"
+        },
+        "DataEntryApplication": {
+          "description": "Assigned Type: ms-0300:DataEntryApplicationType_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "POS"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/DataEntryApplicationType_Enum"
+        },
+        "DataOwner": {
+          "description": "The ID of the system where these details were obtained.",
+          "type": "string"
+        },
+        "DataEntryDevice": {
+          "description": "Assigned Type: ms-0300:DataEntryDevice_Enum",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "POS terminal"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_3_Trim.schema.json#/definitions/DataEntryDevice_Enum"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "OrderRole_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderRole_Enum"
+      },
+      "description": "Specifies if these order details are from the order originator or another person or system that the order passed through.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderRole_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderRole_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderRole_Enum"
+      },
+      "description": "Specifies if these order details are from the order originator or another person or system that the order passed through.",
+      "type": "string",
+      "enum": [
+        "Originator",
+        "Subsequent",
+        "Other_"
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/OrderID"
+    },
+    {
+      "$ref": "#/definitions/OrderIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Order"
+    },
+    {
+      "$ref": "#/definitions/OrderSummary"
+    },
+    {
+      "$ref": "#/definitions/OrderItem"
+    },
+    {
+      "$ref": "#/definitions/OrderItemMenuProduct"
+    },
+    {
+      "$ref": "#/definitions/OrderItemMenuItem"
+    },
+    {
+      "$ref": "#/definitions/Total"
+    },
+    {
+      "$ref": "#/definitions/OrderSource"
+    },
+    {
+      "$ref": "#/definitions/OrderSource_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderTracking"
+    },
+    {
+      "$ref": "#/definitions/DataEntryDetails"
+    },
+    {
+      "$ref": "#/definitions/OrderRole_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderRole_Enum_Base"
+    }
+  ]
+}

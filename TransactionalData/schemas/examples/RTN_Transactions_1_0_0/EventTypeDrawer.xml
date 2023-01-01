@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pf1:EventTypeDrawer
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Transactions_1_0_0.xsd">
+    <pf1:Drawer>
+        <pf1:DrawerEventGUID>bc7af2bb-6213-4d0b-8284-632ec3a0abc5</pf1:DrawerEventGUID>
+        <pf1:TillID>1</pf1:TillID>
+        <pf1:DrawerOpenTime>2022-07-05T17:06:10</pf1:DrawerOpenTime>
+        <pf1:DrawerCloseTime>2022-07-05T17:07:03</pf1:DrawerCloseTime>
+        <pf1:DrawerTransactionReason>Till assignment</pf1:DrawerTransactionReason>
+        <pf1:ReasonDescription>Drawer opened to assign till at beginning of shift.</pf1:ReasonDescription>
+        <pf1:ReferencedTransactionGUID>7041b5fe-eaf7-446c-9a27-588c61dfd621</pf1:ReferencedTransactionGUID>
+        <pf1:CashManagement>
+            <pf1:Amount>1000</pf1:Amount>
+            <pf1:Currency decimalPlaces="2">Example String Value</pf1:Currency>
+            <pf1:Denomination>
+                <pf1:DenominationType>Quarters</pf1:DenominationType>
+                <pf1:Amount>10.00</pf1:Amount>
+                <pf1:Quantity>40</pf1:Quantity>
+            </pf1:Denomination>
+            <pf1:MonetaryDeviceID>CD1</pf1:MonetaryDeviceID>
+            <pf1:MonetaryDeviceDescription>Coin dispenser</pf1:MonetaryDeviceDescription>
+        </pf1:CashManagement>
+    </pf1:Drawer>
+</pf1:EventTypeDrawer>

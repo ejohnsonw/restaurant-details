@@ -1,0 +1,614 @@
+{
+  "MenuProductSummary" : {
+    "menuProductID" : "menuProduct_1",
+    "name" : "Cheeseburger combo meal",
+    "size" : "Large",
+    "maximumOptions" : 3,
+    "minimumOptions" : 0,
+    "MasterDescription" : "Combo #1",
+    "ChannelDescription" : "Cheesburger combo",
+    "MenuItem" : [ {
+      "@type" : "MenuItem",
+      "iD" : "Example String Value",
+      "modifierEligibleInd" : true,
+      "NutritionResource" : "http://www.w3.org/2001/XMLSchema",
+      "BaselineNutrition" : [ {
+        "@type" : "BaselineNutritionDetail",
+        "count" : 500,
+        "minCount" : 350,
+        "maxCount" : 500,
+        "displayRange" : "350-500",
+        "shortName" : "Cal",
+        "NutritionInformationType" : {
+          "value" : "Calorie count"
+        },
+        "UnitOfMeasure" : {
+          "value" : "Calories"
+        }
+      } ],
+      "DietaryRestrictions" : {
+        "@type" : "DietaryRestrictions",
+        "AllergenDetails" : [ {
+          "@type" : "AllergenDetails",
+          "AllergyInformation_Enum" : {
+            "value" : "Gluten"
+          },
+          "Contains_Enum" : {
+            "value" : "Contains"
+          }
+        } ],
+        "LifestyleChoices_Enum" : [ {
+          "value" : "Halal"
+        }, {
+          "value" : "Halal"
+        } ]
+      },
+      "RegulatoryRequirementsDescription" : "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.",
+      "Availability" : {
+        "@type" : "AvailabilityEffectivity",
+        "Effectivity" : [ {
+          "@type" : "EffectivityDetail",
+          "startDate" : "2011-01-24T09:45:00-06:00",
+          "endDate" : "2011-07-04T14:15:00+06:00",
+          "EffectivityDetail" : [ "Sunday", 1, 7 ],
+          "Name" : "Happy hour"
+        } ]
+      },
+      "ChannelAvailability" : "Online ordering and call center.",
+      "LocationAvailability" : "3438, 4983",
+      "Destination" : [ "Take out" ],
+      "Description" : "It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+      "Preparation" : "Sauteed and served with fried onions.",
+      "MasterDescription" : "It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+      "Channel" : {
+        "@type" : "Channel",
+        "ChannelName" : "Example String Value",
+        "MenuItemDescription" : "Example String Value"
+      },
+      "PackingList" : [ {
+        "@type" : "PackingList",
+        "ItemName" : "Mustard",
+        "Quantity" : 2
+      } ],
+      "OrderingNotes" : "Example String Value",
+      "Ingredient" : [ ],
+      "ServingSize" : {
+        "@type" : "ServingSize",
+        "count" : 4,
+        "UnitOfMeasure_Enum" : {
+          "value" : "Grams"
+        },
+        "PreparedUnitOfMeasure" : "1 burger",
+        "Description" : "Quarter pound"
+      },
+      "Promotion" : {
+        "@type" : "Promotion",
+        "PromotionCode" : "Promo1",
+        "Description" : "School fundraiser"
+      },
+      "MediaCategory" : [ {
+        "@type" : "MediaCategory",
+        "Name" : "Beverages",
+        "Media" : {
+          "@type" : "Media",
+          "MediaURI" : "http://www.OpenTravel.org/ns/OTA2/Common_v01_00",
+          "KnownAssetNumber" : "Example String Value"
+        }
+      }, {
+        "@type" : "MediaCategory",
+        "Name" : "Beverages",
+        "Media" : {
+          "@type" : "Media",
+          "MediaURI" : "http://www.w3.org/2001/XMLSchema",
+          "KnownAssetNumber" : "Example String Value"
+        }
+      } ],
+      "Source" : "Harrison Ranch",
+      "Pricing" : [ {
+        "@type" : "Pricing",
+        "taxExemptInd" : true,
+        "Currency" : {
+          "value" : "Example String Value",
+          "decimalPlaces" : "2"
+        },
+        "Surcharge" : [ {
+          "@type" : "Surcharge",
+          "amount" : 3.00,
+          "surchargeIncludedInd" : true,
+          "Description" : "Delivery fee"
+        } ],
+        "Tax" : [ {
+          "@type" : "Tax",
+          "amount" : 0.53,
+          "taxIncludedInd" : true,
+          "Description" : "State tax"
+        } ],
+        "ItemPrice" : 7.00,
+        "Context" : [ "Third party delivery" ],
+        "Discount" : [ {
+          "@type" : "Discount",
+          "valueType" : "Amount",
+          "value" : 3.00,
+          "beforeTaxInd" : true,
+          "Application" : [ "Example String Value" ],
+          "Description" : "Senior discount."
+        } ]
+      }, {
+        "@type" : "Pricing",
+        "taxExemptInd" : true,
+        "Currency" : {
+          "value" : "Example String Value",
+          "decimalPlaces" : "2"
+        },
+        "Surcharge" : [ {
+          "@type" : "Surcharge",
+          "amount" : 3.00,
+          "surchargeIncludedInd" : true,
+          "Description" : "Delivery fee"
+        } ],
+        "Tax" : [ {
+          "@type" : "Tax",
+          "amount" : 0.53,
+          "taxIncludedInd" : true,
+          "Description" : "State tax"
+        } ],
+        "ItemPrice" : 7.00,
+        "Context" : [ "Third party delivery" ],
+        "Discount" : [ {
+          "@type" : "Discount",
+          "valueType" : "Amount",
+          "value" : 3.00,
+          "beforeTaxInd" : true,
+          "Application" : [ "Example String Value" ],
+          "Description" : "Senior discount."
+        } ]
+      } ],
+      "SKU" : {
+        "value" : null,
+        "productName" : "Example String Value",
+        "productCode" : "Example String Value"
+      },
+      "Default" : [ {
+        "@type" : "Default",
+        "Quantity" : 2,
+        "QuantityUnits" : "Cream",
+        "Preparation" : "On the side",
+        "PreparationQuantity" : 1,
+        "PreparationUnits" : "ounces",
+        "DefaultNotes" : "Example String Value"
+      }, {
+        "@type" : "Default",
+        "Quantity" : 2,
+        "QuantityUnits" : "Cream",
+        "Preparation" : "On the side",
+        "PreparationQuantity" : 1,
+        "PreparationUnits" : "ounces",
+        "DefaultNotes" : "Example String Value"
+      } ],
+      "Modifier" : {
+        "@type" : "Modifier",
+        "iD" : "Example String Value",
+        "action" : "Add",
+        "modifierEligibleInd" : true,
+        "NutritionResource" : "http://www.w3.org/2001/XMLSchema",
+        "BaselineNutrition" : [ {
+          "@type" : "BaselineNutritionDetail",
+          "count" : 500,
+          "minCount" : 350,
+          "maxCount" : 500,
+          "displayRange" : "350-500",
+          "shortName" : "Cal",
+          "NutritionInformationType" : {
+            "value" : "Sodium"
+          },
+          "UnitOfMeasure" : {
+            "value" : "Milligrams"
+          }
+        } ],
+        "DietaryRestrictions" : {
+          "@type" : "DietaryRestrictions",
+          "AllergenDetails" : [ {
+            "@type" : "AllergenDetails",
+            "AllergyInformation_Enum" : {
+              "value" : "Nut"
+            },
+            "Contains_Enum" : {
+              "value" : "Free From"
+            }
+          } ],
+          "LifestyleChoices_Enum" : [ {
+            "value" : "Kosher"
+          }, {
+            "value" : "Kosher"
+          } ]
+        },
+        "RegulatoryRequirementsDescription" : "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.",
+        "Availability" : {
+          "@type" : "AvailabilityEffectivity",
+          "Effectivity" : [ {
+            "@type" : "EffectivityDetail",
+            "startDate" : "2011-12-05T06:00:00Z",
+            "endDate" : "2011-01-24T09:45:00-06:00",
+            "EffectivityDetail" : [ "Monday", 1, 7 ],
+            "Name" : "Happy hour"
+          } ]
+        },
+        "ChannelAvailability" : "Online ordering and call center.",
+        "LocationAvailability" : "3438, 4983",
+        "Destination" : [ "Take out" ],
+        "Description" : "It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+        "Preparation" : "Sauteed and served with fried onions.",
+        "MasterDescription" : "It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+        "Channel" : {
+          "@type" : "Channel",
+          "ChannelName" : "Example String Value",
+          "MenuItemDescription" : "Example String Value"
+        },
+        "PackingList" : [ {
+          "@type" : "PackingList",
+          "ItemName" : "Mustard",
+          "Quantity" : 2
+        } ],
+        "OrderingNotes" : "Example String Value",
+        "Ingredient" : [ ],
+        "ServingSize" : {
+          "@type" : "ServingSize",
+          "count" : 4,
+          "UnitOfMeasure_Enum" : {
+            "value" : "Ounces"
+          },
+          "PreparedUnitOfMeasure" : "1 burger",
+          "Description" : "Quarter pound"
+        },
+        "Promotion" : {
+          "@type" : "Promotion",
+          "PromotionCode" : "Promo1",
+          "Description" : "School fundraiser"
+        },
+        "MediaCategory" : [ {
+          "@type" : "MediaCategory",
+          "Name" : "Beverages",
+          "Media" : {
+            "@type" : "Media",
+            "MediaURI" : "http://www.OpenTravel.org/ns/OTA2/Common_v01_00",
+            "KnownAssetNumber" : "Example String Value"
+          }
+        } ],
+        "Source" : "Harrison Ranch",
+        "SKU" : {
+          "value" : null,
+          "productName" : "Example String Value",
+          "productCode" : "Example String Value"
+        },
+        "Default" : [ {
+          "@type" : "Default",
+          "Quantity" : 2,
+          "QuantityUnits" : "Cream",
+          "Preparation" : "On the side",
+          "PreparationQuantity" : 1,
+          "PreparationUnits" : "ounces",
+          "DefaultNotes" : "Example String Value"
+        } ],
+        "Pricing" : [ {
+          "@type" : "Pricing",
+          "taxExemptInd" : true,
+          "Currency" : {
+            "value" : "Example String Value",
+            "decimalPlaces" : "2"
+          },
+          "Surcharge" : [ {
+            "@type" : "Surcharge",
+            "amount" : 3.00,
+            "surchargeIncludedInd" : true,
+            "Description" : "Delivery fee"
+          } ],
+          "Tax" : [ {
+            "@type" : "Tax",
+            "amount" : 0.53,
+            "taxIncludedInd" : true,
+            "Description" : "State tax"
+          } ],
+          "ItemPrice" : 7.00,
+          "Context" : [ "Third party delivery" ],
+          "Discount" : [ {
+            "@type" : "Discount",
+            "valueType" : "Percent",
+            "value" : 3.00,
+            "beforeTaxInd" : true,
+            "Application" : [ "Example String Value" ],
+            "Description" : "Senior discount."
+          } ]
+        } ]
+      }
+    } ],
+    "Promotion" : [ {
+      "@type" : "Promotion",
+      "PromotionCode" : "Promo1",
+      "Description" : "School fundraiser"
+    } ],
+    "Availability" : {
+      "@type" : "AvailabilityEffectivity",
+      "Effectivity" : [ {
+        "@type" : "EffectivityDetail",
+        "startDate" : "2011-07-04T14:15:00+06:00",
+        "endDate" : "2011-12-05T06:00:00Z",
+        "EffectivityDetail" : [ "Tuesday", 1, 7 ],
+        "Name" : "Happy hour"
+      } ]
+    },
+    "SKU" : {
+      "value" : null,
+      "productName" : "Example String Value",
+      "productCode" : "Example String Value"
+    },
+    "Modifier" : {
+      "@type" : "Modifier",
+      "iD" : "Example String Value",
+      "action" : "Remove",
+      "modifierEligibleInd" : true,
+      "NutritionResource" : "http://www.OpenTravel.org/ns/OTA2/Common_v01_00",
+      "BaselineNutrition" : [ {
+        "@type" : "BaselineNutritionDetail",
+        "count" : 500,
+        "minCount" : 350,
+        "maxCount" : 500,
+        "displayRange" : "350-500",
+        "shortName" : "Cal",
+        "NutritionInformationType" : {
+          "value" : "Calories from fat"
+        },
+        "UnitOfMeasure" : {
+          "value" : "Pounds"
+        }
+      } ],
+      "DietaryRestrictions" : {
+        "@type" : "DietaryRestrictions",
+        "AllergenDetails" : [ {
+          "@type" : "AllergenDetails",
+          "AllergyInformation_Enum" : {
+            "value" : "Peanut"
+          },
+          "Contains_Enum" : {
+            "value" : "Contains"
+          }
+        } ],
+        "LifestyleChoices_Enum" : [ {
+          "value" : "Vegan"
+        }, {
+          "value" : "Vegan"
+        } ]
+      },
+      "RegulatoryRequirementsDescription" : "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.",
+      "Availability" : {
+        "@type" : "AvailabilityEffectivity",
+        "Effectivity" : [ {
+          "@type" : "EffectivityDetail",
+          "startDate" : "2011-01-24T09:45:00-06:00",
+          "endDate" : "2011-07-04T14:15:00+06:00",
+          "EffectivityDetail" : [ "Wednesday", 1, 7 ],
+          "Name" : "Happy hour"
+        } ]
+      },
+      "ChannelAvailability" : "Online ordering and call center.",
+      "LocationAvailability" : "3438, 4983",
+      "Destination" : [ "Take out" ],
+      "Description" : "It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+      "Preparation" : "Sauteed and served with fried onions.",
+      "MasterDescription" : "It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+      "Channel" : {
+        "@type" : "Channel",
+        "ChannelName" : "Example String Value",
+        "MenuItemDescription" : "Example String Value"
+      },
+      "PackingList" : [ {
+        "@type" : "PackingList",
+        "ItemName" : "Mustard",
+        "Quantity" : 2
+      } ],
+      "OrderingNotes" : "Example String Value",
+      "Ingredient" : [ {
+        "@type" : "Ingredient",
+        "iD" : "Example String Value",
+        "modifierEligibleInd" : true,
+        "NutritionResource" : "http://www.w3.org/2001/XMLSchema",
+        "BaselineNutrition" : [ {
+          "@type" : "BaselineNutritionDetail",
+          "count" : 500,
+          "minCount" : 350,
+          "maxCount" : 500,
+          "displayRange" : "350-500",
+          "shortName" : "Cal",
+          "NutritionInformationType" : {
+            "value" : "Total fat"
+          },
+          "UnitOfMeasure" : {
+            "value" : "Cups"
+          }
+        } ],
+        "DietaryRestrictions" : {
+          "@type" : "DietaryRestrictions",
+          "AllergenDetails" : [ {
+            "@type" : "AllergenDetails",
+            "AllergyInformation_Enum" : {
+              "value" : "Gluten"
+            },
+            "Contains_Enum" : {
+              "value" : "Free From"
+            }
+          } ],
+          "LifestyleChoices_Enum" : [ {
+            "value" : "Vegetarian"
+          }, {
+            "value" : "Vegetarian"
+          } ]
+        },
+        "RegulatoryRequirementsDescription" : "Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.",
+        "Availability" : {
+          "@type" : "AvailabilityEffectivity",
+          "Effectivity" : [ {
+            "@type" : "EffectivityDetail",
+            "startDate" : "2011-12-05T06:00:00Z",
+            "endDate" : "2011-01-24T09:45:00-06:00",
+            "EffectivityDetail" : [ "Thursday", 1, 7 ],
+            "Name" : "Happy hour"
+          } ]
+        },
+        "ChannelAvailability" : "Online ordering and call center.",
+        "LocationAvailability" : "3438, 4983",
+        "IngredientSummary" : [ "Take out" ],
+        "Description" : "It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+        "Preparation" : "Sauteed and served with fried onions.",
+        "MasterDescription" : "It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.",
+        "Channel" : {
+          "@type" : "Channel",
+          "ChannelName" : "Example String Value",
+          "MenuItemDescription" : "Example String Value"
+        },
+        "PackingList" : [ {
+          "@type" : "PackingList",
+          "ItemName" : "Mustard",
+          "Quantity" : 2
+        } ],
+        "OrderingNotes" : "Example String Value",
+        "ServingSize" : {
+          "@type" : "ServingSize",
+          "count" : 4,
+          "UnitOfMeasure_Enum" : {
+            "value" : "Pints"
+          },
+          "PreparedUnitOfMeasure" : "1 burger",
+          "Description" : "Quarter pound"
+        },
+        "Promotion" : {
+          "@type" : "Promotion",
+          "PromotionCode" : "Promo1",
+          "Description" : "School fundraiser"
+        },
+        "MediaCategory" : [ {
+          "@type" : "MediaCategory",
+          "Name" : "Beverages",
+          "Media" : {
+            "@type" : "Media",
+            "MediaURI" : "http://www.OpenTravel.org/ns/OTA2/Common_v01_00",
+            "KnownAssetNumber" : "Example String Value"
+          }
+        }, {
+          "@type" : "MediaCategory",
+          "Name" : "Beverages",
+          "Media" : {
+            "@type" : "Media",
+            "MediaURI" : "http://www.w3.org/2001/XMLSchema",
+            "KnownAssetNumber" : "Example String Value"
+          }
+        } ],
+        "Source" : "Harrison Ranch",
+        "Pricing" : [ {
+          "@type" : "Pricing",
+          "taxExemptInd" : true,
+          "Currency" : {
+            "value" : "Example String Value",
+            "decimalPlaces" : "2"
+          },
+          "Surcharge" : [ {
+            "@type" : "Surcharge",
+            "amount" : 3.00,
+            "surchargeIncludedInd" : true,
+            "Description" : "Delivery fee"
+          } ],
+          "Tax" : [ {
+            "@type" : "Tax",
+            "amount" : 0.53,
+            "taxIncludedInd" : true,
+            "Description" : "State tax"
+          } ],
+          "ItemPrice" : 7.00,
+          "Context" : [ "Third party delivery" ],
+          "Discount" : [ {
+            "@type" : "Discount",
+            "valueType" : "Percent",
+            "value" : 3.00,
+            "beforeTaxInd" : true,
+            "Application" : [ "Example String Value" ],
+            "Description" : "Senior discount."
+          } ]
+        }, {
+          "@type" : "Pricing",
+          "taxExemptInd" : true,
+          "Currency" : {
+            "value" : "Example String Value",
+            "decimalPlaces" : "2"
+          },
+          "Surcharge" : [ {
+            "@type" : "Surcharge",
+            "amount" : 3.00,
+            "surchargeIncludedInd" : true,
+            "Description" : "Delivery fee"
+          } ],
+          "Tax" : [ {
+            "@type" : "Tax",
+            "amount" : 0.53,
+            "taxIncludedInd" : true,
+            "Description" : "State tax"
+          } ],
+          "ItemPrice" : 7.00,
+          "Context" : [ "Third party delivery" ],
+          "Discount" : [ {
+            "@type" : "Discount",
+            "valueType" : "Amount",
+            "value" : 3.00,
+            "beforeTaxInd" : true,
+            "Application" : [ "Example String Value" ],
+            "Description" : "Senior discount."
+          } ]
+        } ],
+        "SKU" : {
+          "value" : null,
+          "productName" : "Example String Value",
+          "productCode" : "Example String Value"
+        },
+        "Default" : [ {
+          "@type" : "Default",
+          "Quantity" : 2,
+          "QuantityUnits" : "Cream",
+          "Preparation" : "On the side",
+          "PreparationQuantity" : 1,
+          "PreparationUnits" : "ounces",
+          "DefaultNotes" : "Example String Value"
+        }, {
+          "@type" : "Default",
+          "Quantity" : 2,
+          "QuantityUnits" : "Cream",
+          "Preparation" : "On the side",
+          "PreparationQuantity" : 1,
+          "PreparationUnits" : "ounces",
+          "DefaultNotes" : "Example String Value"
+        } ]
+      } ],
+      "ServingSize" : {
+        "@type" : "ServingSize",
+        "count" : 4,
+        "UnitOfMeasure_Enum" : {
+          "value" : "Quarts"
+        },
+        "PreparedUnitOfMeasure" : "1 burger",
+        "Description" : "Quarter pound"
+      },
+      "Promotion" : {
+        "@type" : "Promotion",
+        "PromotionCode" : "Promo1",
+        "Description" : "School fundraiser"
+      },
+      "Source" : "Harrison Ranch",
+      "SKU" : {
+        "value" : null,
+        "productName" : "Example String Value",
+        "productCode" : "Example String Value"
+      }
+    },
+    "PackingList" : {
+      "@type" : "PackingList",
+      "ItemName" : "Mustard",
+      "Quantity" : 2
+    }
+  }
+}

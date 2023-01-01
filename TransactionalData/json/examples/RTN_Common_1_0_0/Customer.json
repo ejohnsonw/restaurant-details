@@ -1,0 +1,9 @@
+{
+  "Customer" : {
+    "PersonName" : {
+      "@type" : "PersonName",
+      "First" : "John",
+      "Last" : "Smith"
+    }
+  }
+}

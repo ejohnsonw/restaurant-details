@@ -1,0 +1,15 @@
+{
+  "BaselineNutritionDetail" : {
+    "count" : 500,
+    "minCount" : 350,
+    "maxCount" : 500,
+    "displayRange" : "350-500",
+    "shortName" : "Cal",
+    "NutritionInformationType" : {
+      "value" : "Calorie count"
+    },
+    "UnitOfMeasure" : {
+      "value" : "Calories"
+    }
+  }
+}

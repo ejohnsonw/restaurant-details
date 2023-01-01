@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    version="1.0.0"
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:ota2="http://www.opentravel.org/OTM/Common/v0"
+    xmlns:otm="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:annotation>
+        <xsd:appinfo>
+            <otm:Library>
+                <otm:LibraryName>RTN_MenuSync</otm:LibraryName>
+                <otm:LibraryVersion>1.0.0</otm:LibraryVersion>
+                <otm:LibraryStatus>FINAL</otm:LibraryStatus>
+                <otm:SourceFile>/RTN_MenuSync_1_0_0.otm</otm:SourceFile>
+                <otm:CompilerVersion>4.0-SNAPSHOT</otm:CompilerVersion>
+                <otm:CompileDate>2022-09-21T10:17:56.436-04:00</otm:CompileDate>
+            </otm:Library>
+        </xsd:appinfo>
+    </xsd:annotation>
+    
+    <xsd:import namespace="http://www.opentravel.org/OTM/Common/v0" schemaLocation="built-ins/OTM_BuiltIns.xsd"/>
+    <xsd:import
+        namespace="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" schemaLocation="built-ins/OTA2_AppInfo_v1.0.0.xsd"/>
+    <xsd:include schemaLocation="RTN_Codelist_1_0_0_Trim.xsd"/>
+    <xsd:include schemaLocation="RTN_Common_1_0_0_Trim.xsd"/>
+    
+    <xsd:element abstract="true" name="MenuItemSubGrp" type="ms-0100:MenuItem_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A single item within a menu product.  A menu item may have multiple copies to support dynamic pricing (or multiple prices per menu item) based on capabilities of publisher / subscriber systems, though the pricing data structure supports multiple/intelligent/dynamic pricing.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">MenuItem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="MenuItemID"
+        substitutionGroup="ms-0100:MenuItemSubGrp" type="ms-0100:MenuItem_ID"/>
+    <xsd:element name="MenuItemIdentifier" type="ms-0100:MenuItem_ID"/>
+    <xsd:element name="MenuItem"
+        substitutionGroup="ms-0100:MenuItemSubGrp" type="ms-0100:MenuItem"/>
+    <xsd:element name="MenuItemSummary" type="ms-0100:MenuItem"/>
+    
+    <xsd:element abstract="true" name="IngredientSubGrp" type="ms-0100:MenuItem_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A single item within a menu product.  A menu item may have multiple copies to support dynamic pricing (or multiple prices per menu item) based on capabilities of publisher / subscriber systems, though the pricing data structure supports multiple/intelligent/dynamic pricing.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">MenuItem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="IngredientID"
+        substitutionGroup="ms-0100:IngredientSubGrp" type="ms-0100:MenuItem_ID"/>
+    <xsd:element name="IngredientIdentifier" type="ms-0100:MenuItem_ID"/>
+    <xsd:element name="Ingredient"
+        substitutionGroup="ms-0100:IngredientSubGrp" type="ms-0100:MenuItem"/>
+    <xsd:element name="IngredientSummary" type="ms-0100:MenuItem"/>
+    
+    <xsd:complexType name="MenuItem_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">MenuItem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:attribute name="iD" type="ms-0100:GUID" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">A globally unique identifier for the menu item or ingredient depending on the use.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="MenuItem">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">MenuItem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:MenuItem_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="NutritionResource" type="xsd:anyURI">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">URL to master nutrition guide for specific information about a menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:BaselineNutritionSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Nutrition information for the this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:DietaryRestrictions">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Information regarding dietary resctrictions for this item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="RegulatoryRequirementsDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" ref="ms-0100:Availability">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The effective dates/times or day parts for this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="ChannelAvailability" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="LocationAvailability" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="Destination" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">This is where the menu item is handed off to the customer.  This could be a drive through, dine in / take out, etc. This is NOT an order channel.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A textual description of the menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Preparation" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Describes how the menu item is prepared.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="MasterDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The main description for the menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Channel">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides a channel for which this menu is available and a description for the menu item specific to the channel.  If no channel description is available the MasterDescription should be used.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:PackingList">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A list of items that should be packed for this menu item (e.g. utensils, napkins).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="OrderingNotes" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Textual information regarding any specific ordering information for this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:IngredientSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An ingredient used in this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:ServingSize">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information on the size of the portion for this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Promotion">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information about a promotion or charity event related to this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:MediaCategory">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A media asset for this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Source" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Where the item came from.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Pricing">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Pricing information associated with the item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="SKU" type="ms-0100:SKU">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The SKU code for the menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Default">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A preselected group of items associated with a menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:ModifierSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An item that modifies the parent item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+                <xsd:attribute name="modifierEligibleInd"
+                    type="xsd:boolean" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">When true, this menu item may be modified.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="BaselineNutritionSubGrp" type="ms-0100:BaselineNutrition">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Basic nutrition information.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">BaselineNutrition</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="BaselineNutrition"
+        substitutionGroup="ms-0100:BaselineNutritionSubGrp" type="ms-0100:BaselineNutrition"/>
+    <xsd:element name="BaselineNutritionSummary" type="ms-0100:BaselineNutrition"/>
+    <xsd:element name="BaselineNutritionDetail"
+        substitutionGroup="ms-0100:BaselineNutritionSubGrp" type="ms-0100:BaselineNutrition_Detail"/>
+    
+    <xsd:complexType name="BaselineNutrition">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">BaselineNutrition</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="NutritionInformationType" type="ms-0100:NutritionInformationType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the type of nutrition information being provided for the menu item (e.g. number of calories or amount of sodium)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="UnitOfMeasure" type="ms-0100:UnitOfMeasure_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the unit of measure for the count attribute.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="count" type="xsd:integer" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">The amount of the item specified in the Nutrition Information element (e.g. if the item selected in Nutrition Information is Sodium, this is the amount of sodium.  The unit of measure field identifies how this count is measured such as milligrams or grams).</xsd:documentation>
+                <xsd:appinfo>
+                    <otm:Example context="ms">500</otm:Example>
+                </xsd:appinfo>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BaselineNutrition_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">BaselineNutrition</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:BaselineNutrition">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+                <xsd:attribute name="minCount" type="xsd:integer" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">Specifies the minimum amount related to the NutritionalInformation item (may be used when a range is sent).</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">350</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="maxCount" type="xsd:integer" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">Specifies the minimum amount related to the NutritionalInformation item (may be used when a range is sent).</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">500</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="displayRange" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">Specifies the range for the nutritional information count.  Typically a slash is used between counts when a menu item has two choices e.g. sandwich with chips or side salad (350/450) and a dash is used between counts when a menu item has three or more choices e.g. sandwich with chips, side salad or fruit (350-500).</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">350-500</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="shortName" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">Specifies an abbreviated name for the NutritionalInformation item (e.g. Cal, Carbs).</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">Cal</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="DietaryRestrictions" type="ms-0100:DietaryRestrictions"/>
+    
+    <xsd:complexType name="DietaryRestrictions">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides information regarding dietary restrictions.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">DietaryRestrictions</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:AllergenDetails">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Allergy information for this item (e.g. gluten, nut).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="LifestyleChoices_Enum" type="ms-0100:LifestyleChoices_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Information regarding lifesyle choice for this item (e.g. vegetarian, vegan).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="ServingSize" type="ms-0100:ServingSize"/>
+    
+    <xsd:complexType name="ServingSize">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the details related to the size of the portion.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">ServingSize</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="UnitOfMeasure_Enum" type="ms-0100:UnitOfMeasure_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the unit of measure for the count.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PreparedUnitOfMeasure" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A text description of the unit of measure as the item is prepared (e.g. 1 taco, 1 bowl, 2 ramakins).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A textual description of the serving size.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="count" type="xsd:positiveInteger" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">The amount of the item related to the unit of measure.  The unit of measure field identifies how this count is measured such as milligrams or grams (e.g count - 422, UnitOfMeasure - grams to specify a 422 gram serving size).</xsd:documentation>
+                <xsd:appinfo>
+                    <otm:Example context="Example">4</otm:Example>
+                </xsd:appinfo>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element name="Default" type="ms-0100:Default"/>
+    
+    <xsd:complexType name="Default">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A preselected group of items associated with an item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Default</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Quantity" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A number associated with QuantityUnits that describes the amount of a MenuProduct default.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="QuantityUnits" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Descriptive units associated with the Quantity that describe the amount of a MenuProduct Default.  Arbitrary pieces such as cases, ounces, sizes or any other descriptive unit.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Preparation" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the composition of the  items that are included as part of the menu item, menu product or modifier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PreparationQuantity" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The amount of the item composition.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PreparationUnits" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the measure that apply to the composition.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DefaultNotes" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Description or comments related to the item being defined.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="ModifierSubGrp" type="ms-0100:Modifier_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Modifier</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="ModifierID"
+        substitutionGroup="ms-0100:ModifierSubGrp" type="ms-0100:Modifier_ID"/>
+    <xsd:element name="ModifierIdentifier" type="ms-0100:Modifier_ID"/>
+    <xsd:element name="Modifier"
+        substitutionGroup="ms-0100:ModifierSubGrp" type="ms-0100:Modifier"/>
+    <xsd:element name="ModifierSummary" type="ms-0100:Modifier"/>
+    
+    <xsd:complexType name="Modifier_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Modifier</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:attribute name="iD" type="ms-0100:GUID" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">A globally unique identifier for the menu item or ingredient depending on the use.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Modifier">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Modifier</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:Modifier_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="NutritionResource" type="xsd:anyURI">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">URL to master nutrition guide for specific information about a menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:BaselineNutritionSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Nutrition information for the this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:DietaryRestrictions">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Information regarding dietary resctrictions for this item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="RegulatoryRequirementsDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides regulatory notification requirements (e.g. Sodium warning, calorie warning).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" ref="ms-0100:Availability">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The effective dates/times or day parts for this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="ChannelAvailability" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="LocationAvailability" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="Destination" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">This is where the menu item is handed off to the customer.  This could be a drive through, dine in / take out, etc. This is NOT an order channel.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A textual description of the menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Preparation" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Describes how the menu item is prepared.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="MasterDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The main description for the menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Channel">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides a channel for which this menu is available and a description for the menu item specific to the channel.  If no channel description is available the MasterDescription should be used.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:PackingList">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A list of items that should be packed for this menu item (e.g. utensils, napkins).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="OrderingNotes" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Textual information regarding any specific ordering information for this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:IngredientSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An ingredient used in this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:ServingSize">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information on the size of the portion for this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Promotion">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information about a promotion or charity event related to this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:MediaCategory">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A media asset for this menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Source" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Where the item came from.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="SKU" type="ms-0100:SKU">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The SKU code for the menu item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:ModifierSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An item that modifies the parent item.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Default">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A preselected group of items associated with the Modifier.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Pricing">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Price information related to the modifier.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+                <xsd:attribute name="action" type="ms-0100:Action_Enum" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">Specifies if the modifer is being added or removed.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="modifierEligibleInd"
+                    type="xsd:boolean" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">When true, this menu item may be modified.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="MenuProductSubGrp" type="ms-0100:MenuProduct_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A group of one or more menu items, typically sold with a single price.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">MenuProduct</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="MenuProductID"
+        substitutionGroup="ms-0100:MenuProductSubGrp" type="ms-0100:MenuProduct_ID"/>
+    <xsd:element name="MenuProductIdentifier" type="ms-0100:MenuProduct_ID"/>
+    <xsd:element name="MenuProduct"
+        substitutionGroup="ms-0100:MenuProductSubGrp" type="ms-0100:MenuProduct"/>
+    <xsd:element name="MenuProductSummary" type="ms-0100:MenuProduct"/>
+    
+    <xsd:complexType name="MenuProduct_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">MenuProduct</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:attribute name="menuProductID" type="xsd:ID" use="optional"/>
+    </xsd:complexType>
+    
+    <xsd:complexType name="MenuProduct">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">MenuProduct</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0100:MenuProduct_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="MasterDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The master description for the menu product.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ChannelDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The description of the menu product specific to the channel.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" ref="ms-0100:MenuItemSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">One or more menu items that make up this menu product.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Promotion">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies a promotion related to this menu product.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:MediaCategory">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A media asset for this menu product.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" ref="ms-0100:Availability">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the day part or timespan details for when this menu product is available.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Default">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A preselected group of items associated with a menu product.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" ref="ms-0100:Pricing">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Pricing information for this menu product.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="SKU" type="ms-0100:SKU">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The SKU code for the menu product.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:ModifierSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An item that modifies the menu product.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:PackingList">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A list of items that should be packed for this menu item (e.g. utensils, napkins).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">The name of the menu product (e.g. Hamburger combo meal).</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">Cheeseburger combo meal</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="size" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">Specifies the size related to the menu product (e.g. Large, Medium, Small).</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">Large</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="maximumOptions" type="xsd:integer" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">The largest number of options that can be selected with this menu option.</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">3</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="minimumOptions" type="xsd:integer" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">The smallest number of options that can be selected with this menu product.</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">0</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Channel" type="ms-0100:Channel"/>
+    
+    <xsd:complexType name="Channel">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Identifies a channel and description information.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Channel</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ChannelName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies a channel.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MenuItemDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A description related to the channel.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="AllergenDetails" type="ms-0100:AllergenDetails"/>
+    
+    <xsd:complexType name="AllergenDetails">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies whether an item contains or is free from an allergen.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">AllergenDetails</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="AllergyInformation_Enum" type="ms-0100:AllergyInformation_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies a type of allergen.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="Contains_Enum" type="ms-0100:Contains_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies whether the allergen either contains or is free from the allergen identified in the AllergyInformation field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+</xsd:schema>

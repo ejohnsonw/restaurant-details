@@ -1,0 +1,49 @@
+{
+  "LocationDetail" : {
+    "GUID" : "Example String Value",
+    "URI" : "http://www.w3.org/2001/XMLSchema",
+    "Address" : {
+      "@type" : "Address",
+      "StreetAddress" : "100 Main Avenue",
+      "CityName" : "Rochester",
+      "PostalCode" : "14604",
+      "Country" : "United States",
+      "CountryCode" : "US",
+      "StateOrTerritory" : "NY"
+    },
+    "Position" : {
+      "@type" : "Position",
+      "Latitude" : "Example String Value",
+      "Longitude" : "Example String Value"
+    },
+    "LocationStatus" : {
+      "value" : "Open"
+    },
+    "OperationSchedule" : [ {
+      "@type" : "OperationSchedule",
+      "TimeSpanSummary" : [ {
+        "startDate" : "2011-01-24T09:45:00-06:00",
+        "endDate" : "2011-07-04T14:15:00+06:00",
+        "DaysOfWeek" : [ "Sunday" ]
+      } ]
+    } ],
+    "Description" : "Example String Value",
+    "LocationID" : "Example String Value",
+    "ChannelEffectivity" : [ {
+      "@type" : "ChannelEffectivity",
+      "Channel" : [ "Curbside" ],
+      "EffectivitySummary" : {
+        "startDate" : "2011-12-05T06:00:00Z",
+        "endDate" : "2011-01-24T09:45:00-06:00",
+        "EffectivitySummary" : [ "Monday" ]
+      }
+    } ],
+    "Phone" : {
+      "@type" : "Phone",
+      "PhoneNumber" : "555-555-5555",
+      "Type" : "Mobile"
+    },
+    "OpenDate" : "2011-07-04T14:15:00+06:00",
+    "ClosedDate" : "2011-12-05T06:00:00Z"
+  }
+}

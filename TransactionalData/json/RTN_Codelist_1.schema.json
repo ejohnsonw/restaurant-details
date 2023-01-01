@@ -1,0 +1,341 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Codelist",
+  "x-otm-library": {
+    "ProjectName": "RTN_Transactions_FINAL.otp",
+    "LibraryName": "RTN_Codelist",
+    "LibraryVersion": "1.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Codelist_1_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-09-21T10:17:50.969-0400"
+  },
+  "definitions": {
+    "AllergyInformation_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "AllergyInformation_Enum"
+      },
+      "description": "A list of allergens.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/AllergyInformation_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "AllergyInformation_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "AllergyInformation_Enum"
+      },
+      "description": "A list of allergens.",
+      "type": "string",
+      "enum": [
+        "Gluten",
+        "Nut",
+        "Peanut",
+        "Other_"
+      ]
+    },
+    "LifestyleChoices_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "LifestyleChoices_Enum"
+      },
+      "description": "A list of lifestyle choices (e.g. Vegan).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/LifestyleChoices_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "LifestyleChoices_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "LifestyleChoices_Enum"
+      },
+      "description": "A list of lifestyle choices (e.g. Vegan).",
+      "type": "string",
+      "enum": [
+        "Halal",
+        "Kosher",
+        "Vegan",
+        "Vegetarian",
+        "Other_"
+      ]
+    },
+    "NutritionInformationType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "NutritionInformationType_Enum"
+      },
+      "description": "Specifies the details for the nutrition item being sent.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/NutritionInformationType_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "NutritionInformationType_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "NutritionInformationType_Enum"
+      },
+      "description": "Specifies the details for the nutrition item being sent.",
+      "type": "string",
+      "enum": [
+        "Calorie count",
+        "Sodium",
+        "Calories from fat",
+        "Total fat",
+        "Saturated fat",
+        "Trans fat",
+        "Cholesterol",
+        "Total carbohydrates",
+        "Dietary fiber",
+        "Sugars",
+        "Protein",
+        "Other_"
+      ]
+    },
+    "UnitOfMeasure_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "UnitOfMeasure_Enum"
+      },
+      "description": "Specifies the unit of measure for an associated item.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/UnitOfMeasure_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "UnitOfMeasure_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "UnitOfMeasure_Enum"
+      },
+      "description": "Specifies the unit of measure for an associated item.",
+      "type": "string",
+      "enum": [
+        "Calories",
+        "Grams",
+        "Milligrams",
+        "Ounces",
+        "Pounds",
+        "Cups",
+        "Pints",
+        "Quarts",
+        "Gallons",
+        "Other_"
+      ]
+    },
+    "DaysOfWeek_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "DaysOfWeek_Enum"
+      },
+      "description": "An enumeration of the seven days of the week.",
+      "type": "string",
+      "enum": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ]
+    },
+    "ValueType_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "ValueType_Enum"
+      },
+      "description": "Specifies whether a value is an amount or a percent.",
+      "type": "string",
+      "enum": [
+        "Amount",
+        "Percent"
+      ]
+    },
+    "Action_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationClosed",
+        "EntityName": "Action_Enum"
+      },
+      "description": "Specifies an action to be taken.",
+      "type": "string",
+      "enum": [
+        "Add",
+        "Remove"
+      ]
+    },
+    "Contains_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Contains_Enum"
+      },
+      "description": "Specifies whether a product contains or is free from a related item.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Contains_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Contains_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Contains_Enum"
+      },
+      "description": "Specifies whether a product contains or is free from a related item.",
+      "type": "string",
+      "enum": [
+        "Contains",
+        "Free From",
+        "Other_"
+      ]
+    },
+    "Status_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Status_Enum"
+      },
+      "description": "Specifies the state of an item or service, e.g. the restaurant is temporarily closed.",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/Status_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "Status_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "Status_Enum"
+      },
+      "description": "Specifies the state of an item or service, e.g. the restaurant is temporarily closed.",
+      "type": "string",
+      "enum": [
+        "Open",
+        "Permanently Closed",
+        "Temporarily Closed",
+        "Other_"
+      ]
+    },
+    "OrderStatus_Enum": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderStatus_Enum"
+      },
+      "description": "Specifies the status of the order (e.g. recieved, in progress, delivered).",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/OrderStatus_Enum_Base"
+        },
+        "extension": {
+          "type": "string",
+          "maxLength": 128,
+          "minLength": 1
+        }
+      }
+    },
+    "OrderStatus_Enum_Base": {
+      "x-otm-entity": {
+        "EntityType": "EnumerationOpen",
+        "EntityName": "OrderStatus_Enum"
+      },
+      "description": "Specifies the status of the order (e.g. recieved, in progress, delivered).",
+      "type": "string",
+      "enum": [
+        "Received",
+        "In Progress",
+        "Delivered",
+        "Completed",
+        "Other_"
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/AllergyInformation_Enum"
+    },
+    {
+      "$ref": "#/definitions/AllergyInformation_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/LifestyleChoices_Enum"
+    },
+    {
+      "$ref": "#/definitions/LifestyleChoices_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/NutritionInformationType_Enum"
+    },
+    {
+      "$ref": "#/definitions/NutritionInformationType_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/UnitOfMeasure_Enum"
+    },
+    {
+      "$ref": "#/definitions/UnitOfMeasure_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/DaysOfWeek_Enum"
+    },
+    {
+      "$ref": "#/definitions/ValueType_Enum"
+    },
+    {
+      "$ref": "#/definitions/Action_Enum"
+    },
+    {
+      "$ref": "#/definitions/Contains_Enum"
+    },
+    {
+      "$ref": "#/definitions/Contains_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/Status_Enum"
+    },
+    {
+      "$ref": "#/definitions/Status_Enum_Base"
+    },
+    {
+      "$ref": "#/definitions/OrderStatus_Enum"
+    },
+    {
+      "$ref": "#/definitions/OrderStatus_Enum_Base"
+    }
+  ]
+}

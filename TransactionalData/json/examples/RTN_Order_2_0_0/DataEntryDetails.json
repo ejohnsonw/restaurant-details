@@ -1,0 +1,14 @@
+{
+  "DataEntryDetails" : {
+    "Role" : {
+      "value" : "Originator"
+    },
+    "DataEntryApplication" : {
+      "value" : "POS"
+    },
+    "DataOwner" : "Example String Value",
+    "DataEntryDevice" : {
+      "value" : "POS Terminal"
+    }
+  }
+}

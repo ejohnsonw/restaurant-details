@@ -1,0 +1,6 @@
+{
+  "NutritionInformationType_Enum" : {
+    "value" : "Calorie count"
+  },
+  "extension" : "Other_Value"
+}

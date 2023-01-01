@@ -1,0 +1,29 @@
+{
+  "DrawerSummary" : {
+    "DrawerEventGUID" : "bc7af2bb-6213-4d0b-8284-632ec3a0abc5",
+    "TillID" : "1",
+    "DrawerOpenTime" : "2022-07-05T17:06:10",
+    "DrawerCloseTime" : "2022-07-05T17:07:03",
+    "DrawerTransactionReason" : {
+      "value" : "Till assignment"
+    },
+    "ReasonDescription" : "Drawer opened to assign till at beginning of shift.",
+    "ReferencedTransactionGUID" : "7041b5fe-eaf7-446c-9a27-588c61dfd621",
+    "CashManagement" : [ {
+      "@type" : "CashManagement",
+      "Amount" : 1000,
+      "Currency" : {
+        "value" : "Example String Value",
+        "decimalPlaces" : "2"
+      },
+      "Denomination" : {
+        "@type" : "Denomination",
+        "DenominationType" : "Quarters",
+        "Amount" : 10.00,
+        "Quantity" : 40
+      },
+      "MonetaryDeviceID" : "CD1",
+      "MonetaryDeviceDescription" : "Coin dispenser"
+    } ]
+  }
+}

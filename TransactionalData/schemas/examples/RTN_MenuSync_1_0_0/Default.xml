@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0100:Default
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_MenuSync_1_0_0.xsd">
+    <ms-0100:Quantity>2</ms-0100:Quantity>
+    <ms-0100:QuantityUnits>Cream</ms-0100:QuantityUnits>
+    <ms-0100:Preparation>On the side</ms-0100:Preparation>
+    <ms-0100:PreparationQuantity>1</ms-0100:PreparationQuantity>
+    <ms-0100:PreparationUnits>ounces</ms-0100:PreparationUnits>
+    <ms-0100:DefaultNotes>Example String Value</ms-0100:DefaultNotes>
+</ms-0100:Default>

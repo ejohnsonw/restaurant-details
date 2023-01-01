@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0100:LocationDetail
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Common_1_0_0.xsd">
+    <ms-0100:GUID>Example String Value</ms-0100:GUID>
+    <ms-0100:URI>http://www.w3.org/2001/XMLSchema</ms-0100:URI>
+    <ms-0100:Address>
+        <ms-0100:StreetAddress>100 Main Avenue</ms-0100:StreetAddress>
+        <ms-0100:CityName>Rochester</ms-0100:CityName>
+        <ms-0100:PostalCode>14604</ms-0100:PostalCode>
+        <ms-0100:Country>United States</ms-0100:Country>
+        <ms-0100:CountryCode>US</ms-0100:CountryCode>
+        <ms-0100:StateOrTerritory>NY</ms-0100:StateOrTerritory>
+    </ms-0100:Address>
+    <ms-0100:Position>
+        <ms-0100:Latitude>Example String Value</ms-0100:Latitude>
+        <ms-0100:Longitude>Example String Value</ms-0100:Longitude>
+    </ms-0100:Position>
+    <ms-0100:LocationStatus>Open</ms-0100:LocationStatus>
+    <ms-0100:OperationSchedule>
+        <ms-0100:TimeSpanSummary endDate="2011-07-04T14:15:00+06:00" startDate="2011-01-24T09:45:00-06:00">
+            <ms-0100:DaysOfWeek>Sunday</ms-0100:DaysOfWeek>
+        </ms-0100:TimeSpanSummary>
+    </ms-0100:OperationSchedule>
+    <ms-0100:Description>Example String Value</ms-0100:Description>
+    <ms-0100:LocationID>Example String Value</ms-0100:LocationID>
+    <ms-0100:ChannelEffectivity>
+        <ms-0100:Channel>Curbside</ms-0100:Channel>
+        <ms-0100:EffectivitySummary endDate="2011-01-24T09:45:00-06:00" startDate="2011-12-05T06:00:00Z">
+            <ms-0100:DaysOfWeek>Monday</ms-0100:DaysOfWeek>
+        </ms-0100:EffectivitySummary>
+    </ms-0100:ChannelEffectivity>
+    <ms-0100:Phone>
+        <ms-0100:PhoneNumber>555-555-5555</ms-0100:PhoneNumber>
+        <ms-0100:Type>Mobile</ms-0100:Type>
+    </ms-0100:Phone>
+    <ms-0100:OpenDate>2011-07-04T14:15:00+06:00</ms-0100:OpenDate>
+    <ms-0100:ClosedDate>2011-12-05T06:00:00Z</ms-0100:ClosedDate>
+</ms-0100:LocationDetail>

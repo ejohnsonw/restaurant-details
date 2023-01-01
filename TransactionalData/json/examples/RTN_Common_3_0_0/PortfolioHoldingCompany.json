@@ -1,0 +1,148 @@
+{
+  "PortfolioHoldingCompany" : {
+    "HoldingCompanyName" : "Bloomin' Brands",
+    "HoldingCompanyID" : "Example String Value",
+    "Brand" : [ {
+      "@type" : "Brand",
+      "preferredBrandInd" : true,
+      "BrandName" : "Carrabas",
+      "BrandID" : "SRG01",
+      "PreferredBrandDescription" : "Work luncheons",
+      "Location" : [ {
+        "@type" : "LocationDetail",
+        "preferredStoreIndicatorInd" : true,
+        "LocationID" : "7898",
+        "URI" : "https://locations.RestaurantsRUs.com/md/california.html",
+        "Address" : {
+          "@type" : "Address",
+          "StreetAddress" : "100 Main Avenue",
+          "CityName" : "Rochester",
+          "PostalCode" : "14604",
+          "Country" : "United States",
+          "CountryCode" : "US",
+          "StateOrTerritory" : "NY",
+          "AddressType" : {
+            "value" : "Business"
+          }
+        },
+        "Position" : {
+          "@type" : "Position",
+          "Latitude" : "38.290668",
+          "Longitude" : "-76.529121"
+        },
+        "LocationStatus" : {
+          "value" : "Open"
+        },
+        "OperationSchedule" : [ {
+          "@type" : "OperationSchedule",
+          "TimeSpanSummary" : [ {
+            "startDate" : "2022-07-05T16:27:29+00:00",
+            "endDate" : "2022-07-05T16:35:42+00:00",
+            "DaysOfWeek" : [ "Sunday" ]
+          } ]
+        } ],
+        "Description" : "Pine Street Location",
+        "ChannelEffectivity" : [ {
+          "@type" : "ChannelEffectivity",
+          "Channel" : [ "Curbside" ],
+          "Effectivity" : {
+            "@type" : "EffectivityDetail",
+            "startDate" : "2022-07-05T16:27:29+00:00",
+            "endDate" : "2022-07-05T16:35:42+00:00",
+            "EffectivityDetail" : [ "Monday", 1, 7 ],
+            "Name" : "Happy hour"
+          }
+        } ],
+        "Phone" : {
+          "@type" : "Phone",
+          "primaryInd" : true,
+          "PhoneNumber" : "555-555-5555",
+          "Type" : {
+            "value" : "Home"
+          },
+          "Capabilities" : [ {
+            "value" : "Multimedia"
+          }, {
+            "value" : "Multimedia"
+          } ]
+        },
+        "PreferredStoreDescription" : "Work luncheon",
+        "Privacy" : {
+          "@type" : "Privacy",
+          "ShareMarketIndicator" : "Yes",
+          "ShareSyncIndicator" : "No"
+        },
+        "CommunicationMethod" : [ {
+          "@type" : "CommunicationMethod",
+          "primaryInd" : true,
+          "CommunicationMethod" : {
+            "value" : "Phone"
+          },
+          "PreferredLanguage" : "en"
+        } ],
+        "PreferredOrderChannel" : {
+          "value" : "In store"
+        },
+        "TermsAndConditions" : {
+          "@type" : "TermsAndConditions",
+          "acceptanceInd" : true,
+          "IssuerID" : "LRU5654",
+          "IssuerDescription" : "Loyalties R Us",
+          "Description" : "Loyalty program terms and conditions",
+          "DateTime" : "2021-09-07T15:50:00-04:00"
+        },
+        "OpenDate" : "2023-07-05T00:00:00",
+        "ClosedDate" : "2024-07-05T00:00:00"
+      } ],
+      "Privacy" : {
+        "@type" : "Privacy",
+        "ShareMarketIndicator" : "Inherit",
+        "ShareSyncIndicator" : "Yes"
+      },
+      "CommunicationMethod" : {
+        "@type" : "CommunicationMethod",
+        "primaryInd" : true,
+        "CommunicationMethod" : {
+          "value" : "Email"
+        },
+        "PreferredLanguage" : "en"
+      },
+      "TermsAndConditions" : [ {
+        "@type" : "TermsAndConditions",
+        "acceptanceInd" : true,
+        "IssuerID" : "LRU5654",
+        "IssuerDescription" : "Loyalties R Us",
+        "Description" : "Loyalty program terms and conditions",
+        "DateTime" : "2021-09-07T15:50:00-04:00"
+      } ],
+      "PreferredOrderChannel" : [ {
+        "value" : "Out of store"
+      }, {
+        "value" : "Out of store"
+      } ],
+      "BrandDescription" : "Example String Value"
+    } ],
+    "Privacy" : {
+      "@type" : "Privacy",
+      "ShareMarketIndicator" : "No",
+      "ShareSyncIndicator" : "Inherit"
+    },
+    "CommunicationMethod" : {
+      "@type" : "CommunicationMethod",
+      "primaryInd" : true,
+      "CommunicationMethod" : {
+        "value" : "SMS"
+      },
+      "PreferredLanguage" : "en"
+    },
+    "TermsAndConditions" : [ {
+      "@type" : "TermsAndConditions",
+      "acceptanceInd" : true,
+      "IssuerID" : "LRU5654",
+      "IssuerDescription" : "Loyalties R Us",
+      "Description" : "Loyalty program terms and conditions",
+      "DateTime" : "2021-09-07T15:50:00-04:00"
+    } ],
+    "Description" : "Example String Value"
+  }
+}

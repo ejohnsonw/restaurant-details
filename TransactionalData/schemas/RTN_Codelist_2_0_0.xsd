@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    version="2.0.0"
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:ota2="http://www.opentravel.org/OTM/Common/v0"
+    xmlns:otm="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:annotation>
+        <xsd:appinfo>
+            <otm:Library>
+                <otm:ProjectName>RTN_Transactions_FINAL.otp</otm:ProjectName>
+                <otm:LibraryName>RTN_Codelist</otm:LibraryName>
+                <otm:LibraryVersion>2.0.0</otm:LibraryVersion>
+                <otm:LibraryStatus>FINAL</otm:LibraryStatus>
+                <otm:SourceFile>/RTN_Codelist_2_0_0.otm</otm:SourceFile>
+                <otm:CompilerVersion>4.0-SNAPSHOT</otm:CompilerVersion>
+                <otm:CompileDate>2022-09-21T10:17:46.485-04:00</otm:CompileDate>
+            </otm:Library>
+        </xsd:appinfo>
+    </xsd:annotation>
+    
+    <xsd:import namespace="http://www.opentravel.org/OTM/Common/v0" schemaLocation="built-ins/OTM_BuiltIns.xsd"/>
+    <xsd:import
+        namespace="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" schemaLocation="built-ins/OTA2_AppInfo_v1.0.0.xsd"/>
+    
+    <xsd:complexType name="AllergyInformation_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of allergens.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">AllergyInformation_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:AllergyInformation_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="AllergyInformation_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of allergens.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">AllergyInformation_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Gluten"/>
+            <xsd:enumeration value="Nut"/>
+            <xsd:enumeration value="Peanut"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="LifestyleChoices_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of lifestyle choices (e.g. Vegan).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">LifestyleChoices_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:LifestyleChoices_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="LifestyleChoices_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of lifestyle choices (e.g. Vegan).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">LifestyleChoices_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Halal"/>
+            <xsd:enumeration value="Kosher"/>
+            <xsd:enumeration value="Vegan"/>
+            <xsd:enumeration value="Vegetarian"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="NutritionInformationType_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the details for the nutrition item being sent.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">NutritionInformationType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:NutritionInformationType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="NutritionInformationType_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the details for the nutrition item being sent.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">NutritionInformationType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Calorie count"/>
+            <xsd:enumeration value="Sodium"/>
+            <xsd:enumeration value="Calories from fat"/>
+            <xsd:enumeration value="Total fat"/>
+            <xsd:enumeration value="Saturated fat"/>
+            <xsd:enumeration value="Trans fat"/>
+            <xsd:enumeration value="Cholesterol"/>
+            <xsd:enumeration value="Total carbohydrates"/>
+            <xsd:enumeration value="Dietary fiber"/>
+            <xsd:enumeration value="Sugars"/>
+            <xsd:enumeration value="Protein"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="UnitOfMeasure_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the unit of measure for an associated item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">UnitOfMeasure_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:UnitOfMeasure_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="UnitOfMeasure_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the unit of measure for an associated item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">UnitOfMeasure_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Calories"/>
+            <xsd:enumeration value="Grams"/>
+            <xsd:enumeration value="Milligrams"/>
+            <xsd:enumeration value="Ounces"/>
+            <xsd:enumeration value="Pounds"/>
+            <xsd:enumeration value="Cups"/>
+            <xsd:enumeration value="Pints"/>
+            <xsd:enumeration value="Quarts"/>
+            <xsd:enumeration value="Gallons"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="DaysOfWeek_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">An enumeration of the seven days of the week.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">DaysOfWeek_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Sunday"/>
+            <xsd:enumeration value="Monday"/>
+            <xsd:enumeration value="Tuesday"/>
+            <xsd:enumeration value="Wednesday"/>
+            <xsd:enumeration value="Thursday"/>
+            <xsd:enumeration value="Friday"/>
+            <xsd:enumeration value="Saturday"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="ValueType_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies whether a value is an amount or a percent.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">ValueType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Amount"/>
+            <xsd:enumeration value="Percent"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="Action_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies an action to be taken.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">Action_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Add"/>
+            <xsd:enumeration value="Remove"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="Contains_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies whether a product contains or is free from a related item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">Contains_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:Contains_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="Contains_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies whether a product contains or is free from a related item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">Contains_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Contains">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The product contains the item defined.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Free From">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The product is free from the item defined.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="Status_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the state of an item or service, e.g. the restaurant is temporarily closed.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">Status_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:Status_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="Status_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the state of an item or service, e.g. the restaurant is temporarily closed.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">Status_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Open">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Open for business.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Permanently Closed">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Closed for business forever.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Temporarily Closed">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Closed for business for a period of time.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="OrderStatus_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the status of the order (e.g. recieved, in progress, delivered).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">OrderStatus_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:OrderStatus_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="OrderStatus_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the status of the order (e.g. recieved, in progress, delivered).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">OrderStatus_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Received"/>
+            <xsd:enumeration value="In Progress"/>
+            <xsd:enumeration value="Delivered"/>
+            <xsd:enumeration value="Completed"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="AddressType_Enum">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">AddressType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:AddressType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="AddressType_Enum_Base">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">AddressType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Business"/>
+            <xsd:enumeration value="Personal"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="PhoneCapabilities_Enum">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">PhoneCapabilities_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:PhoneCapabilities_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="PhoneCapabilities_Enum_Base">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">PhoneCapabilities_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Multimedia"/>
+            <xsd:enumeration value="Text"/>
+            <xsd:enumeration value="TTY"/>
+            <xsd:enumeration value="Voice"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="CommunicationMethod_Enum">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">CommunicationMethod_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:CommunicationMethod_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="CommunicationMethod_Enum_Base">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">CommunicationMethod_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Phone"/>
+            <xsd:enumeration value="Email"/>
+            <xsd:enumeration value="SMS"/>
+            <xsd:enumeration value="WeChat"/>
+            <xsd:enumeration value="Whats App"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="ProfileStatus_Enum">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">ProfileStatus_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:ProfileStatus_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="ProfileStatus_Enum_Base">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">ProfileStatus_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Active"/>
+            <xsd:enumeration value="Inactive"/>
+            <xsd:enumeration value="Marked for deletion"/>
+            <xsd:enumeration value="Locked"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="RelationshipType_Enum">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">RelationshipType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:RelationshipType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="RelationshipType_Enum_Base">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">RelationshipType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Business"/>
+            <xsd:enumeration value="Household"/>
+            <xsd:enumeration value="School group"/>
+            <xsd:enumeration value="Social group"/>
+            <xsd:enumeration value="Duplicate profile">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">This profile is a duplicate with the profile that is as associated with.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="ThirdPartySystemType_Enum">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">ThirdPartySystemType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:ThirdPartySystemType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="ThirdPartySystemType_Enum_Base">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">ThirdPartySystemType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Loyalty"/>
+            <xsd:enumeration value="Reservation"/>
+            <xsd:enumeration value="Kitchen production"/>
+            <xsd:enumeration value="Delivery company"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="OptInStatus_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides various statuses related to opting in and out for communications and shareing of data.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">OptInStatus_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Opted in"/>
+            <xsd:enumeration value="Opted out"/>
+            <xsd:enumeration value="Unknown"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="NameType_Enum">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">NameType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:NameType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="NameType_Enum_Base">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">NameType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Alias"/>
+            <xsd:enumeration value="Altername"/>
+            <xsd:enumeration value="Former"/>
+            <xsd:enumeration value="Nickname"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="VerificationCategory_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the type of verification that has been performed.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">VerificationCategory_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:VerificationCategory_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="VerificationCategory_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the type of verification that has been performed.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">VerificationCategory_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Age"/>
+            <xsd:enumeration value="Vaccine"/>
+            <xsd:enumeration value="Military"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="VerificationType_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Identifies the type of document used for verification.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">VerificationType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:VerificationType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="VerificationType_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Identifies the type of document used for verification.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">VerificationType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Passport"/>
+            <xsd:enumeration value="Drivers license"/>
+            <xsd:enumeration value="State ID"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="Pronoun_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of prounouns that may be utilized by a person.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">Pronoun_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:Pronoun_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="Pronoun_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A list of prounouns that may be utilized by a person.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">Pronoun_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="He/Him"/>
+            <xsd:enumeration value="She/Her"/>
+            <xsd:enumeration value="They/Them"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="OrderChannel_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides a list of systems for creating restaurant orders.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">OrderChannel_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:OrderChannel_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="OrderChannel_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides a list of systems for creating restaurant orders.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">OrderChannel_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="In store"/>
+            <xsd:enumeration value="Out of store"/>
+            <xsd:enumeration value="Phone"/>
+            <xsd:enumeration value="Mobile device"/>
+            <xsd:enumeration value="Desk top"/>
+            <xsd:enumeration value="Third party delivery"/>
+            <xsd:enumeration value="First party delivery"/>
+            <xsd:enumeration value="Kiosk"/>
+            <xsd:enumeration value="Mobile kiosk"/>
+            <xsd:enumeration value="Social ordering">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Sites such as facebook, google, etc.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="PhoneType_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the type of phone (home, business, mobile).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">PhoneType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:PhoneType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="PhoneType_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the type of phone (home, business, mobile).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">PhoneType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Home"/>
+            <xsd:enumeration value="Business"/>
+            <xsd:enumeration value="Mobile"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="DateType_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifes a type of date (birthday, anniversary, etc.)</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">DateType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:DateType_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="DateType_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifes a type of date (birthday, anniversary, etc.)</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">DateType_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Birthday"/>
+            <xsd:enumeration value="Anniversary"/>
+            <xsd:enumeration value="Membership anniversary"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+</xsd:schema>

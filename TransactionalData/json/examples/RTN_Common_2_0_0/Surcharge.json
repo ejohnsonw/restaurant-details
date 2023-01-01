@@ -1,0 +1,7 @@
+{
+  "Surcharge" : {
+    "amount" : 3.00,
+    "surchargeIncludedInd" : true,
+    "Description" : "Delivery fee"
+  }
+}

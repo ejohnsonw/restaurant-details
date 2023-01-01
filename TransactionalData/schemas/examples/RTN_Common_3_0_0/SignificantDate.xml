@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0300:SignificantDate
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v3 ../../RTN_Common_3_0_0.xsd">
+    <ms-0300:Date>May 1</ms-0300:Date>
+    <ms-0300:Description>The person's anniversary date.</ms-0300:Description>
+    <ms-0300:DateType>Birthday</ms-0300:DateType>
+</ms-0300:SignificantDate>

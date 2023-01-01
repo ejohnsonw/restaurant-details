@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0100:BaselineNutritionDetail
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    count="500" displayRange="350-500" maxCount="500" minCount="350"
+    shortName="Cal"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_MenuSync_1_0_0.xsd">
+    <ms-0100:NutritionInformationType>Calorie count</ms-0100:NutritionInformationType>
+    <ms-0100:UnitOfMeasure>Calories</ms-0100:UnitOfMeasure>
+</ms-0100:BaselineNutritionDetail>

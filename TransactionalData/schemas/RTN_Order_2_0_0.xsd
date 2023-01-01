@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    version="2.0.0"
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:ota2="http://www.opentravel.org/OTM/Common/v0"
+    xmlns:otm="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:annotation>
+        <xsd:appinfo>
+            <otm:Library>
+                <otm:ProjectName>RTN_Transactions_FINAL.otp</otm:ProjectName>
+                <otm:LibraryName>RTN_Order</otm:LibraryName>
+                <otm:LibraryVersion>2.0.0</otm:LibraryVersion>
+                <otm:LibraryStatus>FINAL</otm:LibraryStatus>
+                <otm:SourceFile>/RTN_Order_2_0_0.otm</otm:SourceFile>
+                <otm:CompilerVersion>4.0-SNAPSHOT</otm:CompilerVersion>
+                <otm:CompileDate>2022-09-21T10:17:46.452-04:00</otm:CompileDate>
+            </otm:Library>
+        </xsd:appinfo>
+    </xsd:annotation>
+    
+    <xsd:import namespace="http://www.opentravel.org/OTM/Common/v0" schemaLocation="built-ins/OTM_BuiltIns.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v3" schemaLocation="ms-0300_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v3" schemaLocation="ms-0300_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v1" schemaLocation="ms-0100_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v1" schemaLocation="ms-0100_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v1" schemaLocation="ms-0100_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v1" schemaLocation="ms-0100_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" schemaLocation="built-ins/OTA2_AppInfo_v1.0.0.xsd"/>
+    <xsd:include schemaLocation="RTN_Codelist_2_0_0.xsd"/>
+    
+    <xsd:element abstract="true" name="OrderSubGrp" type="ms-0200:Order_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Any saleable item or group of items on the menu.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Order</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="OrderID" substitutionGroup="ms-0200:OrderSubGrp" type="ms-0200:Order_ID"/>
+    <xsd:element name="OrderIdentifier" type="ms-0200:Order_ID"/>
+    <xsd:element name="Order" substitutionGroup="ms-0200:OrderSubGrp" type="ms-0200:Order"/>
+    <xsd:element name="OrderSummary" type="ms-0200:Order"/>
+    
+    <xsd:complexType name="Order_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Order</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="OrderID" type="ms-0100:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A globally unique identifier for the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A unique identifier for the order in the ordering system (e.g. number printed on a receipt)..</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Order">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Order</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0200:Order_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OrderStatus" type="ms-0100:OrderStatus_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the status of the order (e.g. recieved, in progress, delivered).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="OrderTime" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The date/time that the order was placed.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="PromiseDateTime" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The date/time that the order was promised to be ready.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:LocationIdentifier">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Identifies the location where the order is being prepared.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Customer">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Details about the customer related to the order.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" ref="ms-0200:OrderItem">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A collection of items contained in the order (e.g. MenuProducts, MenuItems).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0200:Total">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The price of the order as a whole.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Promotion">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies a promotion or fund raiser that applies to this order.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="Destination" type="ms-0300:Reference">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">This is where the order and its items are handed off to the customer.  This could be a drive through, dine in / take out, etc. This is NOT an order channel.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ChannelDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A description of the channel where the order originated.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="1" name="OrderItemCount" type="xsd:integer">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The number of order items  contained within this order.  This field may be used to validate all order items have been received.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:PackingList">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A list of items that should be packed for this order (e.g. utensils, napkins).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="OrderState" type="ms-0300:OrderState_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the current state of the order (e.g. Open, Closed, Canceled, etc.).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0100:Party">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides details about a party when relevant to the order.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="OrderSource" type="ms-0200:OrderSource">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies how the order was received (e.g. Phone, Walk in , On line, etc.).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0200:OrderTracking">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides tracking details on the order from creation to delivery.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Payment">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Payment information for this order.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="OrderItem" type="ms-0200:OrderItem">
+        <xsd:annotation>
+            <xsd:documentation source="Description">An item belonging to the order (e.g. MenuProduct, MenuItem).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">OrderItem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="OrderItemMenuProduct"
+        substitutionGroup="ms-0200:OrderItem" type="ms-0200:OrderItem_MenuProduct"/>
+    <xsd:element name="OrderItemMenuItem"
+        substitutionGroup="ms-0200:OrderItem" type="ms-0200:OrderItem_MenuItem"/>
+    
+    <xsd:complexType abstract="true" name="OrderItem">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">OrderItem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="ms-0100:Customer">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Details about the customer related to this specific order item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="SeatNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies a seat at a particular location enabling bar services or split checks among other things.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TableNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies the physical table location where products are consumed by a customer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" ref="ms-0100:OrderItemState">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An array of states for this specific order item.  The state with the latest timestamp is the current state of the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="OrderItem_MenuProduct">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">OrderItem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0200:OrderItem">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0100:MenuProductSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A menu product that is part of this order.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="OrderItem_MenuItem">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">OrderItem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0200:OrderItem">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0100:MenuItemSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A menu item that is part of this order.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Total" type="ms-0200:Total"/>
+    
+    <xsd:complexType name="Total">
+        <xsd:annotation>
+            <xsd:documentation source="Description">The total price.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Total</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Currency" type="ms-0100:CurrencyCode">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the currency information for the amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Surcharge">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A collection of surcharges associated with the item (e.g. bag charge).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Tax">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A collection of taxes associated with the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="ItemPrice" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The cost of an item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="Context" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The order channel, daypart, effectivity for which this pricing item applies.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0100:Discount">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Describes a discount and to which items it applies.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Gratuity" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A tip on the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="taxExemptInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, this item is not taxable  When false, this item is taxable.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="OrderSource">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies how the order was made such as the device type or in person.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">OrderSource</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:OrderSource_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="OrderSource_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies how the order was made such as the device type or in person.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">OrderSource</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Mobile">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Order is placed through a mobile device.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Online">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Online is through a website regardless of the device.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Kiosk">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Order is placed through a kiosk in the restaurant.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Phone">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Customer placing order over a telephone.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Walk in">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Customer placing order at counter or with wait staff.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:element name="OrderTracking" type="ms-0200:OrderTracking"/>
+    
+    <xsd:complexType name="OrderTracking">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides details to track an order from origination to delivery.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">OrderTracking</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0"
+                name="OrderOriginationLocationCategory" type="ms-0300:OrderOriginationLocationCategory_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies if the order took place on or off premises.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderOriginationLocation" type="ms-0300:OrderOriginationLocation_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the location in which an order originated.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0200:DataEntryDetails">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies details for how an order was entered.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OrderOriginResponsibility" type="ms-0300:OrderResponsibility_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies if the order was created by the customer or if there was assistance with the order (e.g. staff member).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="DataEntryDetails" type="ms-0200:DataEntryDetails"/>
+    
+    <xsd:complexType name="DataEntryDetails">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies how and where the order was taken.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">DataEntryDetails</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Role" type="ms-0200:OrderRole_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies if these order details are from the originator of the order or a person or system that the original order passed through.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DataEntryApplication" type="ms-0300:DataEntryApplicationType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the type of application in which this order was entered.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DataOwner" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The ID of the system where these details were obtained.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DataEntryDevice" type="ms-0300:DataEntryDevice_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies a type of device where this order was entered.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="OrderRole_Enum">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies if these order details are from the order originator or another person or system that the order passed through.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">OrderRole_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0200:OrderRole_Enum_Base">
+                <xsd:attribute name="extension" type="ota2:String_EnumExtension"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="OrderRole_Enum_Base">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies if these order details are from the order originator or another person or system that the order passed through.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationOpen">OrderRole_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Originator"/>
+            <xsd:enumeration value="Subsequent"/>
+            <xsd:enumeration value="Other_"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+</xsd:schema>

@@ -1,0 +1,28 @@
+{
+  "ClockDataTransactionSummary" : {
+    "systemGeneratedInd" : true,
+    "TimeCardCorrelationGUID" : "Example String Value",
+    "PunchType" : {
+      "value" : "Clock in"
+    },
+    "ClockDateTime" : "2022-07-05T17:06:10",
+    "EmployeeIdentifier" : {
+      "EmployeeID" : "5623315"
+    },
+    "CreatedTimestamp" : "2022-07-05T17:06:10",
+    "OtherID" : [ {
+      "value" : null,
+      "iD" : "Example String Value",
+      "name" : "Example String Value",
+      "sourceSystem" : "Example String Value"
+    } ],
+    "Approver" : {
+      "@type" : "Approver",
+      "EmployeeID" : "5623315",
+      "EmployeeRole" : {
+        "value" : "Approver"
+      }
+    },
+    "Reason" : "Employee clock-in"
+  }
+}

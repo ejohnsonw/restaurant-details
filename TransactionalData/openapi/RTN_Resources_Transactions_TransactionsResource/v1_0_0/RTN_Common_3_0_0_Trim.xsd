@@ -1,0 +1,1409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    version="3.0.0"
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:ota2="http://www.opentravel.org/OTM/Common/v0"
+    xmlns:otm="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:annotation>
+        <xsd:appinfo>
+            <otm:Library>
+                <otm:LibraryName>RTN_Common</otm:LibraryName>
+                <otm:LibraryVersion>3.0.0</otm:LibraryVersion>
+                <otm:LibraryStatus>FINAL</otm:LibraryStatus>
+                <otm:SourceFile>/RTN_Common_3_0_0.otm</otm:SourceFile>
+                <otm:CompilerVersion>4.0-SNAPSHOT</otm:CompilerVersion>
+                <otm:CompileDate>2022-09-21T10:17:56.403-04:00</otm:CompileDate>
+            </otm:Library>
+        </xsd:appinfo>
+    </xsd:annotation>
+    
+    <xsd:import namespace="http://www.opentravel.org/OTM/Common/v0" schemaLocation="built-ins/OTM_BuiltIns.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v2" schemaLocation="ms-0200_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" schemaLocation="built-ins/OTA2_AppInfo_v1.0.0.xsd"/>
+    <xsd:include schemaLocation="RTN_Codelist_3_0_0_Trim.xsd"/>
+    
+    <xsd:element abstract="true" name="TimeSpanSubGrp" type="ms-0300:TimeSpan">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies a time span by intdicating the start and end dates/times.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeSpan</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="TimeSpan"
+        substitutionGroup="ms-0300:TimeSpanSubGrp" type="ms-0300:TimeSpan"/>
+    <xsd:element name="TimeSpanSummary" type="ms-0300:TimeSpan"/>
+    <xsd:element name="TimeSpanDetail"
+        substitutionGroup="ms-0300:TimeSpanSubGrp" type="ms-0300:TimeSpan_Detail"/>
+    
+    <xsd:element abstract="true" name="EffectivitySubGrp" type="ms-0300:TimeSpan">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies a time span by intdicating the start and end dates/times.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeSpan</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Effectivity"
+        substitutionGroup="ms-0300:EffectivitySubGrp" type="ms-0300:TimeSpan"/>
+    <xsd:element name="EffectivitySummary" type="ms-0300:TimeSpan"/>
+    <xsd:element name="EffectivityDetail"
+        substitutionGroup="ms-0300:EffectivitySubGrp" type="ms-0300:TimeSpan_Detail"/>
+    
+    <xsd:complexType name="TimeSpan">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeSpan</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="7" minOccurs="0" name="DaysOfWeek" type="ms-0200:DaysOfWeek_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the days of week.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="startDate" type="xsd:dateTime" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">Specifies the start date/time.</xsd:documentation>
+                <xsd:appinfo>
+                    <otm:Example context="Example">2022-07-05T16:27:29+00:00</otm:Example>
+                </xsd:appinfo>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="endDate" type="xsd:dateTime" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">Specifies the end date/time.</xsd:documentation>
+                <xsd:appinfo>
+                    <otm:Example context="Example">2022-07-05T16:35:42+00:00</otm:Example>
+                </xsd:appinfo>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="TimeSpan_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeSpan</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:TimeSpan">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Name" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Marketing name associated with the availability of an item (e.g. Happy Hour).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="4" minOccurs="0"
+                        name="WeekOfMonth" type="xsd:positiveInteger">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the specific week of the month that are applicable.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="12" minOccurs="0"
+                        name="MonthOfYear" type="xsd:positiveInteger">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the specific month of the year that is applicable.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="GUID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A globally unique ID for an object.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="Simple">GUID</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="128"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="AlphaLength3">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="Simple">AlphaLength3</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[a-zA-Z]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:element abstract="true" name="LocationSubGrp" type="ms-0300:Location_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies details for a store or location.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Location</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="LocationID"
+        substitutionGroup="ms-0300:LocationSubGrp" type="ms-0300:Location_ID"/>
+    <xsd:element name="LocationIdentifier" type="ms-0300:Location_ID"/>
+    <xsd:element name="Location"
+        substitutionGroup="ms-0300:LocationSubGrp" type="ms-0300:Location"/>
+    <xsd:element name="LocationSummary" type="ms-0300:Location"/>
+    <xsd:element name="LocationDetail"
+        substitutionGroup="ms-0300:LocationSubGrp" type="ms-0300:Location_Detail"/>
+    
+    <xsd:complexType name="Location_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Location</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="LocationID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A unique global identifier for the location.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Location">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Location</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:Location_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="URI" type="xsd:anyURI">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The URI for the location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:Address">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the physical location of the entity.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:Position">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Used to specify the geographic coordinates of a location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="LocationStatus" type="ms-0200:Status_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifes whether a location is open, temporarily closed or permanently closed.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:OperationSchedule">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the hours the location is open for business.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A description of the location (e.g. store , ghost kitchen).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:ChannelEffectivity">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the the availability (days, and hours) as well as the channels (e.g. Delivery, Curbside, Take-out). for which the availability applies.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:Phone">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Phone number associated with the location.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="PreferredStoreDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Describes the context of the preferred store, such as for work, or for multibrand conglomerates, or aggregators.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:Privacy">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information as to the person&amp;apos;s preference for sharing information.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:CommunicationMethod">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides details for a specific form of communication.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="PreferredOrderChannel" type="ms-0200:OrderChannel_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A favorite channel for placing orders for this store.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:TermsAndConditions">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Code of conduct for the guest upon entering a restaurant (masks, no pics, ect.)</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+                <xsd:attribute name="preferredStoreIndicatorInd"
+                    type="xsd:boolean" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">When true, this store is a favorite.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Location_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Location</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:Location">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OpenDate" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the date the restaurant is to open.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ClosedDate" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the date a location is to close.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Address" type="ms-0300:Address"/>
+    <xsd:element name="DeliveryLocation" type="ms-0300:Address"/>
+    
+    <xsd:complexType name="Address">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the physical location of an entity.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Address</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="StreetAddress" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The street number and street name.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CityName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the city in which the entitiy is located.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PostalCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the zip code for the entity.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Country" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the country in which the entity is located.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CountryCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">ISO 3166 code for a country.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="StateOrTerritory" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the state, territory or province in which the entity is located,</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AddressType" type="ms-0200:AddressType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the type of address (e.g. home, business).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="OperationSchedule" type="ms-0300:OperationSchedule"/>
+    
+    <xsd:complexType name="OperationSchedule">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the days and times of operation.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">OperationSchedule</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:TimeSpanSummary">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The days and times a location is open for business.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Position" type="ms-0300:Position"/>
+    
+    <xsd:complexType name="Position">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the geographic position of the entity.  This position element uses the ISO 6709 standard.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Position</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Latitude" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The measure of the angular distance on the meridean north or south of the equator.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Longitude" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The measure of the angular distance on the meridian east or west of the prime meridian.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="ChannelEffectivity" type="ms-0300:ChannelEffectivity"/>
+    
+    <xsd:complexType name="ChannelEffectivity">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies availability for specific channels (e.g. curbside, take-out, delivery).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">ChannelEffectivity</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="Channel" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the channel for which the availabilty applies (e.g Curbside, Delivery, Take-out).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ms-0300:EffectivitySubGrp"/>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Phone" type="ms-0300:Phone"/>
+    
+    <xsd:complexType name="Phone">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies telephone information.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Phone</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="PhoneNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The telephone number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Type" type="ms-0200:PhoneType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The phone number type (e.g. business, mobile).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="Capabilities" type="ms-0200:PhoneCapabilities_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the functionalities of the phone.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="primaryInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, this is the main phone number for the person.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element name="PersonName" type="ms-0300:PersonName"/>
+    
+    <xsd:complexType name="PersonName">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the name of a person (e.g. customer, employee).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">PersonName</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="First" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The first name or given name of the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Last" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The surname of the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Middle" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The middle name of the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Prefix" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Salutation for the person (e.g. Mr., Mrs., Ms., Dr., etc.)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Suffix" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A suffix related to the name (e.g. Jr., Sr., III, Esq., etc.).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="NameType" type="ms-0200:NameType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the type of name for the person (e.g. former, nickname, alternate, alias, etc.).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Title" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies degrees or honors of the person (e.g. M.D., Ph.D., etc.).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LastNamePrefix" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the last name prefix (e.g. &amp;quot;Van der&amp;quot;, &amp;quot;von&amp;quot;, &amp;quot;de&amp;quot;, etc.).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="language" type="xsd:language" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">The language in which the name is represented.</xsd:documentation>
+                <xsd:appinfo>
+                    <otm:Example context="Example">en-us</otm:Example>
+                </xsd:appinfo>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="primaryInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, this is the default or primary name for the person.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="PersonSubGrp" type="ms-0300:Person">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details about a person.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Person</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Person" substitutionGroup="ms-0300:PersonSubGrp" type="ms-0300:Person"/>
+    <xsd:element name="PersonSummary" type="ms-0300:Person"/>
+    <xsd:element name="PersonDetail"
+        substitutionGroup="ms-0300:PersonSubGrp" type="ms-0300:Person_Detail"/>
+    
+    <xsd:element abstract="true" name="ContactSubGrp" type="ms-0300:Person">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details about a person.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Person</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Contact"
+        substitutionGroup="ms-0300:ContactSubGrp" type="ms-0300:Person"/>
+    <xsd:element name="ContactSummary" type="ms-0300:Person"/>
+    <xsd:element name="ContactDetail"
+        substitutionGroup="ms-0300:ContactSubGrp" type="ms-0300:Person_Detail"/>
+    
+    <xsd:complexType name="Person">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Person</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:PersonName">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the person.  This may include given name, surname, etc..</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Email">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Email address details for the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Phone">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Phone details associated with this person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Address">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Addresses associated with this person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:SocialMedia">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Social media details for the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:CommunicationMethod">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies communications methods preferred by the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Verification">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies information for the person that has been previously verified.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:ThirdPartySystemSubGrp">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Provides information related to the person in a third party system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Gender" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The gender for the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PreferredPronoun" type="ms-0200:Pronoun_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The person&amp;apos;s preferred pronoun.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:CompanySubGrp">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A company that the person is associated with.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:SignificantDate">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Speifies dates that are of importance to the person .</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="birthday" type="xsd:date" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">The date of birth.</xsd:documentation>
+                <xsd:appinfo>
+                    <otm:Example context="Example">2000-11-30</otm:Example>
+                </xsd:appinfo>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Person_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Person</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:Person">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A description associated with the person.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="CustomerSubGrp" type="ms-0300:Customer">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details about a customer.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Customer</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="Customer"
+        substitutionGroup="ms-0300:CustomerSubGrp" type="ms-0300:Customer"/>
+    <xsd:element name="CustomerSummary" type="ms-0300:Customer"/>
+    <xsd:element name="CustomerDetail"
+        substitutionGroup="ms-0300:CustomerSubGrp" type="ms-0300:Customer_Detail"/>
+    
+    <xsd:complexType name="Customer">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Customer</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:PersonName">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the person.  This may include given name, surname, etc..</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Email">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Email address details for the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Phone">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Phone details associated with this person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Address">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Addresses associated with this person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:SocialMedia">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Social media details for the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:CommunicationMethod">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies communications methods preferred by the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Verification">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies information for the person that has been previously verified.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:ThirdPartySystemSubGrp">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Provides information related to the person in a third party system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Gender" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The gender for the person.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PreferredPronoun" type="ms-0200:Pronoun_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The person&amp;apos;s preferred pronoun.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:CompanySubGrp">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A company that the person is associated with.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:SignificantDate">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Speifies dates that are of importance to the person .</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CustomerID" type="xsd:string"/>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="birthday" type="xsd:date" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">The date of birth.</xsd:documentation>
+                <xsd:appinfo>
+                    <otm:Example context="Example">2000-11-30</otm:Example>
+                </xsd:appinfo>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="primaryInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">Identifies this customer as the primary customer when multiple customer objects are present.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Customer_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Customer</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:Customer">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A description associated with the person.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:DeliveryLocation">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The address to which deliveries are made.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="CurrencyCode">
+        <xsd:annotation>
+            <xsd:documentation source="Description">An ISO 4217 alpha character code used to specify the monetary unit.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ValueWithAttributes">CurrencyCode</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ms-0300:AlphaLength3">
+                <xsd:attribute name="decimalPlaces" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">An ISO 4201 &amp;quot;minor unit&amp;quot; typically used when an amount is sent without the decimal places to specify where the decimal should be placed (e.g. 2500 USD with 2 minor units would represent $25.00)</xsd:documentation>
+                        <xsd:appinfo>
+                            <otm:Example context="ms">2</otm:Example>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Email" type="ms-0300:Email"/>
+    
+    <xsd:complexType name="Email">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Email address information.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Email</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="EmailAddress" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An email address.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="EmailType" type="ms-0200:AddressType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the type of email (e.g. Business, Personal).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="primaryInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, this is the primary email address for the person.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element name="SocialMedia" type="ms-0300:SocialMedia"/>
+    
+    <xsd:complexType name="SocialMedia">
+        <xsd:annotation>
+            <xsd:documentation source="Description">SocialMedia</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">SocialMedia</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="URL" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The URL for the social media platform.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="Platform" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name of the social media platform.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="Handle" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The person&amp;apos;s handle for the social media platform.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="1" name="UserName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The user name for the person on the social media platform.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="CommunicationMethod" type="ms-0300:CommunicationMethod"/>
+    
+    <xsd:complexType name="CommunicationMethod">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides details for a specific form of communication.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">CommunicationMethod</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="CommunicationMethod" type="ms-0200:CommunicationMethod_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A type of communication used by the individual.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PreferredLanguage" type="xsd:language">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The  preferred language for communications.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="primaryInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, this is the primary method for communication for this individual.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="ThirdPartySystemSubGrp" type="ms-0300:ThirdPartySystem_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">ThirdPartySystem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="ThirdPartySystemID"
+        substitutionGroup="ms-0300:ThirdPartySystemSubGrp" type="ms-0300:ThirdPartySystem_ID"/>
+    <xsd:element name="ThirdPartySystemIdentifier" type="ms-0300:ThirdPartySystem_ID"/>
+    <xsd:element name="ThirdPartySystem"
+        substitutionGroup="ms-0300:ThirdPartySystemSubGrp" type="ms-0300:ThirdPartySystem"/>
+    <xsd:element name="ThirdPartySystemSummary" type="ms-0300:ThirdPartySystem"/>
+    
+    <xsd:complexType name="ThirdPartySystem_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">ThirdPartySystem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="ThirdPartySystemID" type="ms-0300:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A globally unique identifier for a third party system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="ThirdPartySystem">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">ThirdPartySystem</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:ThirdPartySystem_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" name="Type" type="ms-0200:ThirdPartySystemType_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A classification for the type of third party system.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="SystemName" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The name of the third party system.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="CustomerID" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An ID for the customer within the third party system.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ProgramID" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An identifier for the program (birthday club, new guest club, tier within a loyalty system, etc.)</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="YesNoInherit_Enum">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="EnumerationClosed">YesNoInherit_Enum</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Yes"/>
+            <xsd:enumeration value="No"/>
+            <xsd:enumeration value="Inherit"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:element name="TermsAndConditions" type="ms-0300:TermsAndConditions"/>
+    
+    <xsd:complexType name="TermsAndConditions">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TermsAndConditions</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="IssuerID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An identifier for the issuer of the terms and conditions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="IssuerDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The name or description for the issuer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A description of the terms and conditions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="DateTime" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The date and time that the customer reviewed the terms and conditions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="acceptanceInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, the customer as agreed to the terms and conditions.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element name="Verification" type="ms-0300:Verification"/>
+    
+    <xsd:complexType name="Verification">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies information for the person that has been previously verified.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Verification</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="VerificationCategory" type="ms-0200:VerificationCategory_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the type of verification that has been performed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="VerificationType" type="ms-0200:VerificationType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies the type of document used for verification.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VerifiedBy" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies a person who verified the ID.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="VerificationSystem" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies the verification system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A name or description for the verification system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="VerifiedInd" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">When true, this verification category has been verified.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Privacy" type="ms-0300:Privacy"/>
+    
+    <xsd:complexType name="Privacy">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Allows for control of the sharing of data between parties.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Privacy</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ShareMarketIndicator" type="ms-0300:YesNoInherit_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Permission for sharing information for marketing purposes.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShareSyncIndicator" type="ms-0300:YesNoInherit_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Permission for sharing data for synchonization of information held by other service providers.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="CompanySubGrp" type="ms-0300:Company_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Information pertaining to a buisness unit.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Company</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="CompanyID"
+        substitutionGroup="ms-0300:CompanySubGrp" type="ms-0300:Company_ID"/>
+    <xsd:element name="CompanyIdentifier" type="ms-0300:Company_ID"/>
+    <xsd:element name="Company"
+        substitutionGroup="ms-0300:CompanySubGrp" type="ms-0300:Company"/>
+    <xsd:element name="CompanySummary" type="ms-0300:Company"/>
+    <xsd:element name="CompanyDetail"
+        substitutionGroup="ms-0300:CompanySubGrp" type="ms-0300:Company_Detail"/>
+    
+    <xsd:complexType name="Company_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Company</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="CompanyID" type="ms-0300:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A unique identifier for the company.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Company">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Company</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:Company_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" name="CompanyName" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the title or name of the company.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Address">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An address for the company.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:Phone">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The company&amp;apos;s phone number.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:ContactSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A person related to the company.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A description related to the company profile.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="WebsiteURL" type="xsd:anyURI">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The URL to the company website.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="TimeZone" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The time zone for the company.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Company_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Company</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:Company">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0"
+                        name="IndustryClassificationName" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the industry segment for the company.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="IndustryClassificationCode" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Industry standard for classification (e.g. SIC, NAIC).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="IndustryClassificationStandard" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the standard in which the industry classification code is found (e.g. SIC, NAIC).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="SignificantDate" type="ms-0300:SignificantDate"/>
+    
+    <xsd:complexType name="SignificantDate">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Identifies dates that are related to the profile (e.g Birthday, Anniversay, Membership Anniversary, etc.)</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">SignificantDate</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Date" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the date related to the date type.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Description" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Comments related to the significant date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DateType" type="ms-0200:DateType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the type of significant date (Birthday, Anniversary, etc.)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="EmployeeSubGrp" type="ms-0300:Employee_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Information regarding an employee..</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Employee</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="EmployeeID"
+        substitutionGroup="ms-0300:EmployeeSubGrp" type="ms-0300:Employee_ID"/>
+    <xsd:element name="EmployeeIdentifier" type="ms-0300:Employee_ID"/>
+    <xsd:element name="Employee"
+        substitutionGroup="ms-0300:EmployeeSubGrp" type="ms-0300:Employee"/>
+    <xsd:element name="EmployeeSummary" type="ms-0300:Employee"/>
+    
+    <xsd:element abstract="true" name="ApproverSubGrp" type="ms-0300:Employee_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Information regarding an employee..</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Employee</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="ApproverID"
+        substitutionGroup="ms-0300:ApproverSubGrp" type="ms-0300:Employee_ID"/>
+    <xsd:element name="ApproverIdentifier" type="ms-0300:Employee_ID"/>
+    <xsd:element name="Approver"
+        substitutionGroup="ms-0300:ApproverSubGrp" type="ms-0300:Employee"/>
+    <xsd:element name="ApproverSummary" type="ms-0300:Employee"/>
+    
+    <xsd:complexType name="Employee_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Employee</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="EmployeeID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An identifier for the employee that is unique to the system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Employee">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Employee</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="ms-0300:Employee_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="EmployeeRole" type="ms-0300:EmployeeRole_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the role of the employee in this transaction.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Reference">
+        <xsd:annotation>
+            <xsd:documentation source="Description">The reference object is used to identify an item related to but not contained within this transaction (e,g. identifies a check that is associated to another check).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ValueWithAttributes">Reference</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="ota2:Empty">
+                <xsd:attribute name="iD" type="xsd:string" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">An identifier for the reference.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="name" type="xsd:string" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">Specifies the type of reference (e.g. stall number, counter number, table tent number, etc.)</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+                <xsd:attribute name="sourceSystem" type="xsd:string" use="required">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">Specifies the system from which the ID originated.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Payment" type="ms-0300:Payment"/>
+    <xsd:element name="Deposit" type="ms-0300:Payment"/>
+    
+    <xsd:complexType name="Payment">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details regarding the exchange of goods for money.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Payment</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="Amount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The amount of the payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="CurrencyCode" type="ms-0300:CurrencyCode">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the currency code and decimal places for the payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Tip" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An optional addition to the payment to reward good service.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Gratuity" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A mandatory addition to the check for service.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="TenderType" type="ms-0300:TenderType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Identifies the payment method.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CardType" type="ms-0300:CardType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Used in conjunction with TenderType when the tender type is a card to identify the type of card (e.g Visa, Mastercard, American Express, etc.).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TenderDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Provides information regarding the tender type.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AuthorizationCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The code returned by the authorization system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CardEntryType" type="ms-0300:CardEntryType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies how a payment method is entered into the payment system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CustomerName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The customer name.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LastFour" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The last four digits of a credit/debit card.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FirstSix" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The first six digits of a credit/debit card.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AccountNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies account information for tender types other than credit cards.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+        <xsd:attribute name="tenderPresenceInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, the payment method was present at the transaction location.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="depositInd" type="xsd:boolean" use="optional">
+            <xsd:annotation>
+                <xsd:documentation source="Description">When true, this payment is applied as a deposit (e.g. for a reservation or future order).</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    
+    <xsd:element name="DepositDetails" type="ms-0300:DepositDetails"/>
+    
+    <xsd:complexType name="DepositDetails">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details about a deposit.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">DepositDetails</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="ms-0300:Deposit">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Payment details for the deposit.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DepositPolicy" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the policy for the deposit (when due, cancellation pollicy, etc.).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TimeStamp" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The date and time of the deposit.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+</xsd:schema>

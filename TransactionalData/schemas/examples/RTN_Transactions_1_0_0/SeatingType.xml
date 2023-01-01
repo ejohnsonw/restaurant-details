@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pf1:SeatingType
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Transactions_1_0_0.xsd">
+    <pf1:SeatingType>High chair</pf1:SeatingType>
+    <pf1:Quantity>2</pf1:Quantity>
+</pf1:SeatingType>

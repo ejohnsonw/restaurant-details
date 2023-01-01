@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pf1:PartyMix
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Transactions_1_0_0.xsd">
+    <pf1:PartyType>Infants</pf1:PartyType>
+    <pf1:PartyTypeQuantity>2</pf1:PartyTypeQuantity>
+</pf1:PartyMix>

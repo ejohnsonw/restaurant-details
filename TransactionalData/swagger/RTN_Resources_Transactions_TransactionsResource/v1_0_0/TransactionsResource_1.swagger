@@ -1,0 +1,188 @@
+{
+  "swagger": "2.0",
+  "x-otm-resource": {
+    "namespace": "http://www.modeldev.restauranttechnologynetwork.com/models/v1",
+    "localName": "TransactionsResource"
+  },
+  "info": {
+    "title": "TransactionsResource",
+    "x-otm-library": {
+      "ResourceName": "TransactionsResource",
+      "LibraryName": "RTN_Resources_Transactions",
+      "LibraryVersion": "1.0.0",
+      "LibraryStatus": "FINAL",
+      "SourceFile": "/RTN_Resources_Transactions_1_0_0.otm",
+      "CompilerVersion": "4.0-SNAPSHOT",
+      "CompileDate": "2022-09-21T10:17:53.170-0400"
+    },
+    "description": "Resources for various transactions.",
+    "version": "1.0.0"
+  },
+  "host": "example.com",
+  "basePath": "/resource/v1",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Events": {
+      "post": {
+        "summary": "TransactionsResource - Create",
+        "operationId": "Create",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "EventID",
+            "in": "body",
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "required": false,
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "401": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "403": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "404": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "500": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          }
+        }
+      }
+    },
+    "/Events/{TransactionGUID}": {
+      "get": {
+        "summary": "TransactionsResource - Get",
+        "operationId": "Get",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "TransactionGUID",
+            "in": "path",
+            "description": "GUID of any interaction a customer has with a restaurant.",
+            "required": true,
+            "type": "string",
+            "maxLength": 128
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "400": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "401": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "402": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "403": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "404": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          },
+          "500": {
+            "description": "Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)",
+            "schema": {
+              "$ref": "RTN_Transactions_1_Trim.schema.json#/definitions/EventID"
+            },
+            "x-xml-schema": {
+              "$ref": "RTN_Transactions_1_0_0_Trim.xsd#/Event"
+            }
+          }
+        }
+      }
+    }
+  }
+}

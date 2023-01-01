@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pf1:RefundTransactionTypeReservation
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Transactions_1_0_0.xsd">
+    <pf1:Reservation>
+        <pf1:ReservationID>87458448</pf1:ReservationID>
+        <ms-0300:EmployeeIdentifier>
+            <ms-0300:EmployeeID>5623315</ms-0300:EmployeeID>
+        </ms-0300:EmployeeIdentifier>
+        <pf1:ReservationSystem iD="Example String Value"
+            name="Example String Value" sourceSystem="Example String Value"/>
+        <pf1:ReservationDateTime>2022-07-05T19:00:00</pf1:ReservationDateTime>
+        <pf1:Status>Arrived</pf1:Status>
+        <ms-0300:DepositDetails>
+            <ms-0300:Deposit depositInd="true" tenderPresenceInd="true">
+                <ms-0300:Amount>32.50</ms-0300:Amount>
+                <ms-0300:CurrencyCode decimalPlaces="2">Example String Value</ms-0300:CurrencyCode>
+                <ms-0300:Tip>6.00</ms-0300:Tip>
+                <ms-0300:Gratuity>5.00</ms-0300:Gratuity>
+                <ms-0300:TenderType>Cash</ms-0300:TenderType>
+                <ms-0300:CardType>American Express</ms-0300:CardType>
+                <ms-0300:TenderDescription>Personal card</ms-0300:TenderDescription>
+                <ms-0300:AuthorizationCode>456</ms-0300:AuthorizationCode>
+                <ms-0300:CardEntryType>Dip</ms-0300:CardEntryType>
+                <ms-0300:CustomerName>John Dough</ms-0300:CustomerName>
+                <ms-0300:LastFour>9090</ms-0300:LastFour>
+                <ms-0300:FirstSix>429808</ms-0300:FirstSix>
+                <ms-0300:AccountNumber>12398873887</ms-0300:AccountNumber>
+            </ms-0300:Deposit>
+            <ms-0300:DepositPolicy>Example String Value</ms-0300:DepositPolicy>
+            <ms-0300:TimeStamp>2011-01-24T09:45:00-06:00</ms-0300:TimeStamp>
+        </ms-0300:DepositDetails>
+        <pf1:Party>
+            <pf1:PartyName>Smith</pf1:PartyName>
+            <pf1:PartyDescription>Smith anniversary dinner</pf1:PartyDescription>
+            <ms-0300:CustomerDetail birthday="2000-11-30" primaryInd="true">
+                <ms-0300:PersonName language="en-us" primaryInd="true">
+                    <ms-0300:First>John</ms-0300:First>
+                    <ms-0300:Last>Smith</ms-0300:Last>
+                    <ms-0300:Middle>Jacob</ms-0300:Middle>
+                    <ms-0300:Prefix>Mr.</ms-0300:Prefix>
+                    <ms-0300:Suffix>Jr.</ms-0300:Suffix>
+                    <ms-0300:NameType>Alias</ms-0300:NameType>
+                    <ms-0300:Title>M.D.</ms-0300:Title>
+                    <ms-0300:LastNamePrefix>Von de</ms-0300:LastNamePrefix>
+                </ms-0300:PersonName>
+                <ms-0300:Email primaryInd="true">
+                    <ms-0300:EmailAddress>john.dough@gmail.com</ms-0300:EmailAddress>
+                    <ms-0300:EmailType>Business</ms-0300:EmailType>
+                </ms-0300:Email>
+                <ms-0300:Phone primaryInd="true">
+                    <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                    <ms-0300:Type>Home</ms-0300:Type>
+                    <ms-0300:Capabilities>Multimedia</ms-0300:Capabilities>
+                </ms-0300:Phone>
+                <ms-0300:Address>
+                    <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                    <ms-0300:CityName>Rochester</ms-0300:CityName>
+                    <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                    <ms-0300:Country>United States</ms-0300:Country>
+                    <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                    <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                    <ms-0300:AddressType>Personal</ms-0300:AddressType>
+                </ms-0300:Address>
+                <ms-0300:SocialMedia>
+                    <ms-0300:URL>https://www.instagram.com/</ms-0300:URL>
+                    <ms-0300:Platform>Instagram</ms-0300:Platform>
+                    <ms-0300:Handle>@RTN</ms-0300:Handle>
+                    <ms-0300:UserName>John.Dough</ms-0300:UserName>
+                </ms-0300:SocialMedia>
+                <ms-0300:CommunicationMethod primaryInd="true">
+                    <ms-0300:CommunicationMethod>Phone</ms-0300:CommunicationMethod>
+                    <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+                </ms-0300:CommunicationMethod>
+                <ms-0300:Verification>
+                    <ms-0300:VerificationCategory>Age</ms-0300:VerificationCategory>
+                    <ms-0300:VerificationType>Passport</ms-0300:VerificationType>
+                    <ms-0300:VerifiedBy>Fred Flintstone</ms-0300:VerifiedBy>
+                    <ms-0300:VerificationSystem>Mitek Systems</ms-0300:VerificationSystem>
+                    <ms-0300:Description>Mitek verifies age data from scan of drivers license.</ms-0300:Description>
+                    <ms-0300:VerifiedInd>true</ms-0300:VerifiedInd>
+                </ms-0300:Verification>
+                <ms-0300:ThirdPartySystem>
+                    <ms-0300:ThirdPartySystemID>Example String Value</ms-0300:ThirdPartySystemID>
+                    <ms-0300:Type>Loyalty</ms-0300:Type>
+                    <ms-0300:SystemName>Paytronix</ms-0300:SystemName>
+                    <ms-0300:CustomerID>58688464525</ms-0300:CustomerID>
+                    <ms-0300:ProgramID>A8V7</ms-0300:ProgramID>
+                </ms-0300:ThirdPartySystem>
+                <ms-0300:Gender>Male</ms-0300:Gender>
+                <ms-0300:PreferredPronoun>He/Him</ms-0300:PreferredPronoun>
+                <ms-0300:CompanyDetail>
+                    <ms-0300:CompanyID>Example String Value</ms-0300:CompanyID>
+                    <ms-0300:CompanyName>IBM</ms-0300:CompanyName>
+                    <ms-0300:Address>
+                        <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                        <ms-0300:CityName>Rochester</ms-0300:CityName>
+                        <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                        <ms-0300:Country>United States</ms-0300:Country>
+                        <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                        <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                        <ms-0300:AddressType>Business</ms-0300:AddressType>
+                    </ms-0300:Address>
+                    <ms-0300:Phone primaryInd="true">
+                        <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                        <ms-0300:Type>Business</ms-0300:Type>
+                        <ms-0300:Capabilities>Text</ms-0300:Capabilities>
+                    </ms-0300:Phone>
+                    <ms-0300:ContactDetail birthday="2000-11-30">
+                        <ms-0300:PersonName language="en-us" primaryInd="true">
+                            <ms-0300:First>John</ms-0300:First>
+                            <ms-0300:Last>Smith</ms-0300:Last>
+                            <ms-0300:Middle>Jacob</ms-0300:Middle>
+                            <ms-0300:Prefix>Mr.</ms-0300:Prefix>
+                            <ms-0300:Suffix>Jr.</ms-0300:Suffix>
+                            <ms-0300:NameType>Altername</ms-0300:NameType>
+                            <ms-0300:Title>M.D.</ms-0300:Title>
+                            <ms-0300:LastNamePrefix>Von de</ms-0300:LastNamePrefix>
+                        </ms-0300:PersonName>
+                        <ms-0300:Email primaryInd="true">
+                            <ms-0300:EmailAddress>john.dough@gmail.com</ms-0300:EmailAddress>
+                            <ms-0300:EmailType>Personal</ms-0300:EmailType>
+                        </ms-0300:Email>
+                        <ms-0300:Phone primaryInd="true">
+                            <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                            <ms-0300:Type>Mobile</ms-0300:Type>
+                            <ms-0300:Capabilities>TTY</ms-0300:Capabilities>
+                        </ms-0300:Phone>
+                        <ms-0300:Address>
+                            <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                            <ms-0300:CityName>Rochester</ms-0300:CityName>
+                            <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                            <ms-0300:Country>United States</ms-0300:Country>
+                            <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                            <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                            <ms-0300:AddressType>Business</ms-0300:AddressType>
+                        </ms-0300:Address>
+                        <ms-0300:SocialMedia>
+                            <ms-0300:URL>https://www.instagram.com/</ms-0300:URL>
+                            <ms-0300:Platform>Instagram</ms-0300:Platform>
+                            <ms-0300:Handle>@RTN</ms-0300:Handle>
+                            <ms-0300:UserName>John.Dough</ms-0300:UserName>
+                        </ms-0300:SocialMedia>
+                        <ms-0300:CommunicationMethod primaryInd="true">
+                            <ms-0300:CommunicationMethod>Email</ms-0300:CommunicationMethod>
+                            <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+                        </ms-0300:CommunicationMethod>
+                        <ms-0300:Verification>
+                            <ms-0300:VerificationCategory>Vaccine</ms-0300:VerificationCategory>
+                            <ms-0300:VerificationType>Drivers license</ms-0300:VerificationType>
+                            <ms-0300:VerifiedBy>Fred Flintstone</ms-0300:VerifiedBy>
+                            <ms-0300:VerificationSystem>Mitek Systems</ms-0300:VerificationSystem>
+                            <ms-0300:Description>Mitek verifies age data from scan of drivers license.</ms-0300:Description>
+                            <ms-0300:VerifiedInd>true</ms-0300:VerifiedInd>
+                        </ms-0300:Verification>
+                        <ms-0300:ThirdPartySystem>
+                            <ms-0300:ThirdPartySystemID>Example String Value</ms-0300:ThirdPartySystemID>
+                            <ms-0300:Type>Reservation</ms-0300:Type>
+                            <ms-0300:SystemName>Paytronix</ms-0300:SystemName>
+                            <ms-0300:CustomerID>58688464525</ms-0300:CustomerID>
+                            <ms-0300:ProgramID>A8V7</ms-0300:ProgramID>
+                        </ms-0300:ThirdPartySystem>
+                        <ms-0300:Gender>Male</ms-0300:Gender>
+                        <ms-0300:PreferredPronoun>She/Her</ms-0300:PreferredPronoun>
+                        <ms-0300:SignificantDate>
+                            <ms-0300:Date>May 1</ms-0300:Date>
+                            <ms-0300:Description>The person's anniversary date.</ms-0300:Description>
+                            <ms-0300:DateType>Birthday</ms-0300:DateType>
+                        </ms-0300:SignificantDate>
+                        <ms-0300:Description>VIP</ms-0300:Description>
+                    </ms-0300:ContactDetail>
+                    <ms-0300:Description>Typewriter division</ms-0300:Description>
+                    <ms-0300:WebsiteURL>https://www.ibm.com/</ms-0300:WebsiteURL>
+                    <ms-0300:TimeZone>Eastern</ms-0300:TimeZone>
+                    <ms-0300:IndustryClassificationName>Computer related services</ms-0300:IndustryClassificationName>
+                    <ms-0300:IndustryClassificationCode>7379</ms-0300:IndustryClassificationCode>
+                    <ms-0300:IndustryClassificationStandard>SIC</ms-0300:IndustryClassificationStandard>
+                </ms-0300:CompanyDetail>
+                <ms-0300:SignificantDate>
+                    <ms-0300:Date>May 1</ms-0300:Date>
+                    <ms-0300:Description>The person's anniversary date.</ms-0300:Description>
+                    <ms-0300:DateType>Anniversary</ms-0300:DateType>
+                </ms-0300:SignificantDate>
+                <ms-0300:CustomerID>Example String Value</ms-0300:CustomerID>
+                <ms-0300:Description>VIP</ms-0300:Description>
+                <ms-0300:DeliveryLocation>
+                    <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                    <ms-0300:CityName>Rochester</ms-0300:CityName>
+                    <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                    <ms-0300:Country>United States</ms-0300:Country>
+                    <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                    <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                    <ms-0300:AddressType>Personal</ms-0300:AddressType>
+                </ms-0300:DeliveryLocation>
+            </ms-0300:CustomerDetail>
+            <pf1:TotalInParty>8</pf1:TotalInParty>
+            <pf1:SeatingType>
+                <pf1:SeatingType>High chair</pf1:SeatingType>
+                <pf1:Quantity>2</pf1:Quantity>
+            </pf1:SeatingType>
+            <pf1:PartyRequests>
+                <pf1:DietaryRestrictions>
+                    <pf1:AllergenDetails>
+                        <pf1:AllergyInformation_Enum>Gluten</pf1:AllergyInformation_Enum>
+                        <pf1:Contains_Enum>Contains</pf1:Contains_Enum>
+                    </pf1:AllergenDetails>
+                    <pf1:LifestyleChoices_Enum>Halal</pf1:LifestyleChoices_Enum>
+                </pf1:DietaryRestrictions>
+                <pf1:Requests>Water view</pf1:Requests>
+                <pf1:SeatingLocation>Patio</pf1:SeatingLocation>
+            </pf1:PartyRequests>
+            <pf1:PartyMix>
+                <pf1:PartyType>Infants</pf1:PartyType>
+                <pf1:PartyTypeQuantity>2</pf1:PartyTypeQuantity>
+            </pf1:PartyMix>
+            <ms-0300:ContactDetail birthday="2000-11-30">
+                <ms-0300:PersonName language="en-us" primaryInd="true">
+                    <ms-0300:First>John</ms-0300:First>
+                    <ms-0300:Last>Smith</ms-0300:Last>
+                    <ms-0300:Middle>Jacob</ms-0300:Middle>
+                    <ms-0300:Prefix>Mr.</ms-0300:Prefix>
+                    <ms-0300:Suffix>Jr.</ms-0300:Suffix>
+                    <ms-0300:NameType>Former</ms-0300:NameType>
+                    <ms-0300:Title>M.D.</ms-0300:Title>
+                    <ms-0300:LastNamePrefix>Von de</ms-0300:LastNamePrefix>
+                </ms-0300:PersonName>
+                <ms-0300:Email primaryInd="true">
+                    <ms-0300:EmailAddress>john.dough@gmail.com</ms-0300:EmailAddress>
+                    <ms-0300:EmailType>Business</ms-0300:EmailType>
+                </ms-0300:Email>
+                <ms-0300:Phone primaryInd="true">
+                    <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                    <ms-0300:Type>Home</ms-0300:Type>
+                    <ms-0300:Capabilities>Voice</ms-0300:Capabilities>
+                </ms-0300:Phone>
+                <ms-0300:Address>
+                    <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                    <ms-0300:CityName>Rochester</ms-0300:CityName>
+                    <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                    <ms-0300:Country>United States</ms-0300:Country>
+                    <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                    <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                    <ms-0300:AddressType>Personal</ms-0300:AddressType>
+                </ms-0300:Address>
+                <ms-0300:SocialMedia>
+                    <ms-0300:URL>https://www.instagram.com/</ms-0300:URL>
+                    <ms-0300:Platform>Instagram</ms-0300:Platform>
+                    <ms-0300:Handle>@RTN</ms-0300:Handle>
+                    <ms-0300:UserName>John.Dough</ms-0300:UserName>
+                </ms-0300:SocialMedia>
+                <ms-0300:CommunicationMethod primaryInd="true">
+                    <ms-0300:CommunicationMethod>SMS</ms-0300:CommunicationMethod>
+                    <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+                </ms-0300:CommunicationMethod>
+                <ms-0300:Verification>
+                    <ms-0300:VerificationCategory>Military</ms-0300:VerificationCategory>
+                    <ms-0300:VerificationType>State ID</ms-0300:VerificationType>
+                    <ms-0300:VerifiedBy>Fred Flintstone</ms-0300:VerifiedBy>
+                    <ms-0300:VerificationSystem>Mitek Systems</ms-0300:VerificationSystem>
+                    <ms-0300:Description>Mitek verifies age data from scan of drivers license.</ms-0300:Description>
+                    <ms-0300:VerifiedInd>true</ms-0300:VerifiedInd>
+                </ms-0300:Verification>
+                <ms-0300:ThirdPartySystem>
+                    <ms-0300:ThirdPartySystemID>Example String Value</ms-0300:ThirdPartySystemID>
+                    <ms-0300:Type>Kitchen production</ms-0300:Type>
+                    <ms-0300:SystemName>Paytronix</ms-0300:SystemName>
+                    <ms-0300:CustomerID>58688464525</ms-0300:CustomerID>
+                    <ms-0300:ProgramID>A8V7</ms-0300:ProgramID>
+                </ms-0300:ThirdPartySystem>
+                <ms-0300:Gender>Male</ms-0300:Gender>
+                <ms-0300:PreferredPronoun>They/Them</ms-0300:PreferredPronoun>
+                <ms-0300:CompanyDetail>
+                    <ms-0300:CompanyID>Example String Value</ms-0300:CompanyID>
+                    <ms-0300:CompanyName>IBM</ms-0300:CompanyName>
+                    <ms-0300:Address>
+                        <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                        <ms-0300:CityName>Rochester</ms-0300:CityName>
+                        <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                        <ms-0300:Country>United States</ms-0300:Country>
+                        <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                        <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                        <ms-0300:AddressType>Business</ms-0300:AddressType>
+                    </ms-0300:Address>
+                    <ms-0300:Phone primaryInd="true">
+                        <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                        <ms-0300:Type>Business</ms-0300:Type>
+                        <ms-0300:Capabilities>Multimedia</ms-0300:Capabilities>
+                    </ms-0300:Phone>
+                    <ms-0300:Description>Typewriter division</ms-0300:Description>
+                    <ms-0300:WebsiteURL>https://www.ibm.com/</ms-0300:WebsiteURL>
+                    <ms-0300:TimeZone>Eastern</ms-0300:TimeZone>
+                    <ms-0300:IndustryClassificationName>Computer related services</ms-0300:IndustryClassificationName>
+                    <ms-0300:IndustryClassificationCode>7379</ms-0300:IndustryClassificationCode>
+                    <ms-0300:IndustryClassificationStandard>SIC</ms-0300:IndustryClassificationStandard>
+                </ms-0300:CompanyDetail>
+                <ms-0300:SignificantDate>
+                    <ms-0300:Date>May 1</ms-0300:Date>
+                    <ms-0300:Description>The person's anniversary date.</ms-0300:Description>
+                    <ms-0300:DateType>Membership anniversary</ms-0300:DateType>
+                </ms-0300:SignificantDate>
+                <ms-0300:Description>VIP</ms-0300:Description>
+            </ms-0300:ContactDetail>
+        </pf1:Party>
+    </pf1:Reservation>
+</pf1:RefundTransactionTypeReservation>

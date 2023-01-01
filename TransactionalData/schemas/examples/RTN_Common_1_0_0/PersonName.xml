@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0100:PersonName
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Common_1_0_0.xsd">
+    <ms-0100:First>John</ms-0100:First>
+    <ms-0100:Last>Smith</ms-0100:Last>
+</ms-0100:PersonName>

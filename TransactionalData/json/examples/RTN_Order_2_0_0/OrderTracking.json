@@ -1,0 +1,26 @@
+{
+  "OrderTracking" : {
+    "OrderOriginationLocationCategory" : {
+      "value" : "On-premise"
+    },
+    "OrderOriginationLocation" : {
+      "value" : "Counter"
+    },
+    "DataEntryDetails" : [ {
+      "@type" : "DataEntryDetails",
+      "Role" : {
+        "value" : "Originator"
+      },
+      "DataEntryApplication" : {
+        "value" : "POS"
+      },
+      "DataOwner" : "Example String Value",
+      "DataEntryDevice" : {
+        "value" : "POS Terminal"
+      }
+    } ],
+    "OrderOriginResponsibility" : {
+      "value" : "Assisted order"
+    }
+  }
+}

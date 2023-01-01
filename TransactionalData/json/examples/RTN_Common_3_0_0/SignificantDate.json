@@ -1,0 +1,9 @@
+{
+  "SignificantDate" : {
+    "Date" : "May 1",
+    "Description" : "The person's anniversary date.",
+    "DateType" : {
+      "value" : "Birthday"
+    }
+  }
+}

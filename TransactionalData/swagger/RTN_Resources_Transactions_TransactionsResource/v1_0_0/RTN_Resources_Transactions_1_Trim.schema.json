@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Resources_Transactions",
+  "x-otm-library": {
+    "LibraryName": "RTN_Resources_Transactions",
+    "LibraryVersion": "1.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Resources_Transactions_1_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-09-21T10:17:55.829-0400"
+  }
+}

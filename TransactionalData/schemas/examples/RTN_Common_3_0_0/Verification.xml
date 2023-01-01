@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0300:Verification
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v3 ../../RTN_Common_3_0_0.xsd">
+    <ms-0300:VerificationCategory>Age</ms-0300:VerificationCategory>
+    <ms-0300:VerificationType>Passport</ms-0300:VerificationType>
+    <ms-0300:VerifiedBy>Fred Flintstone</ms-0300:VerifiedBy>
+    <ms-0300:VerificationSystem>Mitek Systems</ms-0300:VerificationSystem>
+    <ms-0300:Description>Mitek verifies age data from scan of drivers license.</ms-0300:Description>
+    <ms-0300:VerifiedInd>true</ms-0300:VerifiedInd>
+</ms-0300:Verification>

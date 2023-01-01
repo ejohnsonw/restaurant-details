@@ -1,0 +1,28 @@
+{
+  "Payment" : {
+    "tenderPresenceInd" : true,
+    "depositInd" : true,
+    "Amount" : 32.50,
+    "CurrencyCode" : {
+      "value" : "Example String Value",
+      "decimalPlaces" : "2"
+    },
+    "Tip" : 6.00,
+    "Gratuity" : 5.00,
+    "TenderType" : {
+      "value" : "Cash"
+    },
+    "CardType" : {
+      "value" : "American Express"
+    },
+    "TenderDescription" : "Personal card",
+    "AuthorizationCode" : "456",
+    "CardEntryType" : {
+      "value" : "Dip"
+    },
+    "CustomerName" : "John Dough",
+    "LastFour" : "9090",
+    "FirstSix" : "429808",
+    "AccountNumber" : "12398873887"
+  }
+}

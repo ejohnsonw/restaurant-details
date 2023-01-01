@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pf1:EventTypeOrder
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Transactions_1_0_0.xsd">
+    <ms-0200:Order>
+        <ms-0200:OrderID>32fc2468-67b7-4e6e-b744-6fe722c7198d</ms-0200:OrderID>
+        <ms-0200:OrderNumber>832</ms-0200:OrderNumber>
+        <ms-0200:OrderStatus>Received</ms-0200:OrderStatus>
+        <ms-0200:OrderTime>2022-03-29T12:10:53</ms-0200:OrderTime>
+        <ms-0200:PromiseDateTime>2022-03-29T12:11:05</ms-0200:PromiseDateTime>
+        <pf1:LocationIdentifier>
+            <pf1:GUID>Example String Value</pf1:GUID>
+        </pf1:LocationIdentifier>
+        <pf1:Customer>
+            <pf1:PersonName>
+                <pf1:First>John</pf1:First>
+                <pf1:Last>Smith</pf1:Last>
+            </pf1:PersonName>
+        </pf1:Customer>
+        <ms-0200:OrderItemMenuProduct>
+            <pf1:Customer>
+                <pf1:PersonName>
+                    <pf1:First>John</pf1:First>
+                    <pf1:Last>Smith</pf1:Last>
+                </pf1:PersonName>
+            </pf1:Customer>
+            <ms-0200:SeatNumber>Example String Value</ms-0200:SeatNumber>
+            <ms-0200:TableNumber>Example String Value</ms-0200:TableNumber>
+            <pf1:OrderItemState>
+                <pf1:ItemState>Held</pf1:ItemState>
+                <pf1:Timestamp>2022-03-29T12:10:53</pf1:Timestamp>
+            </pf1:OrderItemState>
+            <pf1:MenuProduct maximumOptions="3"
+                menuProductID="menuProduct_1" minimumOptions="0"
+                name="Cheeseburger combo meal" size="Large">
+                <pf1:MasterDescription>Combo #1</pf1:MasterDescription>
+                <pf1:ChannelDescription>Cheesburger combo</pf1:ChannelDescription>
+                <pf1:MenuItem iD="Example String Value" modifierEligibleInd="true">
+                    <pf1:NutritionResource>http://www.w3.org/2001/XMLSchema</pf1:NutritionResource>
+                    <pf1:BaselineNutritionDetail count="500"
+                        displayRange="350-500" maxCount="500"
+                        minCount="350" shortName="Cal">
+                        <pf1:NutritionInformationType>Calorie count</pf1:NutritionInformationType>
+                        <pf1:UnitOfMeasure>Calories</pf1:UnitOfMeasure>
+                    </pf1:BaselineNutritionDetail>
+                    <pf1:DietaryRestrictions>
+                        <pf1:AllergenDetails>
+                            <pf1:AllergyInformation_Enum>Gluten</pf1:AllergyInformation_Enum>
+                            <pf1:Contains_Enum>Contains</pf1:Contains_Enum>
+                        </pf1:AllergenDetails>
+                        <pf1:LifestyleChoices_Enum>Halal</pf1:LifestyleChoices_Enum>
+                    </pf1:DietaryRestrictions>
+                    <pf1:RegulatoryRequirementsDescription>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.</pf1:RegulatoryRequirementsDescription>
+                    <pf1:AvailabilityEffectivity>
+                        <pf1:EffectivityDetail
+                            endDate="2011-07-04T14:15:00+06:00" startDate="2011-01-24T09:45:00-06:00">
+                            <pf1:DaysOfWeek>Sunday</pf1:DaysOfWeek>
+                            <pf1:Name>Happy hour</pf1:Name>
+                            <pf1:WeekOfMonth>1</pf1:WeekOfMonth>
+                            <pf1:MonthOfYear>7</pf1:MonthOfYear>
+                        </pf1:EffectivityDetail>
+                    </pf1:AvailabilityEffectivity>
+                    <pf1:ChannelAvailability>Online ordering and call center.</pf1:ChannelAvailability>
+                    <pf1:LocationAvailability>3438, 4983</pf1:LocationAvailability>
+                    <pf1:Destination>Take out</pf1:Destination>
+                    <pf1:Description>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</pf1:Description>
+                    <pf1:Preparation>Sauteed and served with fried onions.</pf1:Preparation>
+                    <pf1:MasterDescription>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</pf1:MasterDescription>
+                    <pf1:Channel>
+                        <pf1:ChannelName>Example String Value</pf1:ChannelName>
+                        <pf1:MenuItemDescription>Example String Value</pf1:MenuItemDescription>
+                    </pf1:Channel>
+                    <pf1:PackingList>
+                        <pf1:ItemName>Mustard</pf1:ItemName>
+                        <pf1:Quantity>2</pf1:Quantity>
+                    </pf1:PackingList>
+                    <pf1:OrderingNotes>Example String Value</pf1:OrderingNotes>
+                    <pf1:ServingSize count="4">
+                        <pf1:UnitOfMeasure_Enum>Grams</pf1:UnitOfMeasure_Enum>
+                        <pf1:PreparedUnitOfMeasure>1 burger</pf1:PreparedUnitOfMeasure>
+                        <pf1:Description>Quarter pound</pf1:Description>
+                    </pf1:ServingSize>
+                    <pf1:Promotion>
+                        <pf1:PromotionCode>Promo1</pf1:PromotionCode>
+                        <pf1:Description>School fundraiser</pf1:Description>
+                    </pf1:Promotion>
+                    <pf1:MediaCategory>
+                        <pf1:Name>Beverages</pf1:Name>
+                        <pf1:Media>
+                            <pf1:MediaURI>http://www.OpenTravel.org/ns/OTA2/Common_v01_00</pf1:MediaURI>
+                            <pf1:KnownAssetNumber>Example String Value</pf1:KnownAssetNumber>
+                        </pf1:Media>
+                    </pf1:MediaCategory>
+                    <pf1:Source>Harrison Ranch</pf1:Source>
+                    <pf1:Pricing taxExemptInd="true">
+                        <pf1:Currency decimalPlaces="2">Example String Value</pf1:Currency>
+                        <pf1:Surcharge amount="3.00" surchargeIncludedInd="true">
+                            <pf1:Description>Delivery fee</pf1:Description>
+                        </pf1:Surcharge>
+                        <pf1:Tax amount=".53" taxIncludedInd="true">
+                            <pf1:Description>State tax</pf1:Description>
+                        </pf1:Tax>
+                        <pf1:ItemPrice>7.00</pf1:ItemPrice>
+                        <pf1:Context>Third party delivery</pf1:Context>
+                        <pf1:Discount beforeTaxInd="true" value="3.00" valueType="Amount">
+                            <pf1:Application>Example String Value</pf1:Application>
+                            <pf1:Description>Senior discount.</pf1:Description>
+                        </pf1:Discount>
+                    </pf1:Pricing>
+                    <pf1:SKU productCode="Example String Value" productName="Example String Value"/>
+                    <pf1:Default>
+                        <pf1:Quantity>2</pf1:Quantity>
+                        <pf1:QuantityUnits>Cream</pf1:QuantityUnits>
+                        <pf1:Preparation>On the side</pf1:Preparation>
+                        <pf1:PreparationQuantity>1</pf1:PreparationQuantity>
+                        <pf1:PreparationUnits>ounces</pf1:PreparationUnits>
+                        <pf1:DefaultNotes>Example String Value</pf1:DefaultNotes>
+                    </pf1:Default>
+                    <pf1:Modifier action="Add" iD="Example String Value" modifierEligibleInd="true">
+                        <pf1:NutritionResource>http://www.w3.org/2001/XMLSchema</pf1:NutritionResource>
+                        <pf1:BaselineNutritionDetail count="500"
+                            displayRange="350-500" maxCount="500"
+                            minCount="350" shortName="Cal">
+                            <pf1:NutritionInformationType>Sodium</pf1:NutritionInformationType>
+                            <pf1:UnitOfMeasure>Milligrams</pf1:UnitOfMeasure>
+                        </pf1:BaselineNutritionDetail>
+                        <pf1:DietaryRestrictions>
+                            <pf1:AllergenDetails>
+                                <pf1:AllergyInformation_Enum>Nut</pf1:AllergyInformation_Enum>
+                                <pf1:Contains_Enum>Free From</pf1:Contains_Enum>
+                            </pf1:AllergenDetails>
+                            <pf1:LifestyleChoices_Enum>Kosher</pf1:LifestyleChoices_Enum>
+                        </pf1:DietaryRestrictions>
+                        <pf1:RegulatoryRequirementsDescription>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.</pf1:RegulatoryRequirementsDescription>
+                        <pf1:AvailabilityEffectivity>
+                            <pf1:EffectivityDetail
+                                endDate="2011-01-24T09:45:00-06:00" startDate="2011-12-05T06:00:00Z">
+                                <pf1:DaysOfWeek>Monday</pf1:DaysOfWeek>
+                                <pf1:Name>Happy hour</pf1:Name>
+                                <pf1:WeekOfMonth>1</pf1:WeekOfMonth>
+                                <pf1:MonthOfYear>7</pf1:MonthOfYear>
+                            </pf1:EffectivityDetail>
+                        </pf1:AvailabilityEffectivity>
+                        <pf1:ChannelAvailability>Online ordering and call center.</pf1:ChannelAvailability>
+                        <pf1:LocationAvailability>3438, 4983</pf1:LocationAvailability>
+                        <pf1:Destination>Take out</pf1:Destination>
+                        <pf1:Description>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</pf1:Description>
+                        <pf1:Preparation>Sauteed and served with fried onions.</pf1:Preparation>
+                        <pf1:MasterDescription>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</pf1:MasterDescription>
+                        <pf1:Channel>
+                            <pf1:ChannelName>Example String Value</pf1:ChannelName>
+                            <pf1:MenuItemDescription>Example String Value</pf1:MenuItemDescription>
+                        </pf1:Channel>
+                        <pf1:PackingList>
+                            <pf1:ItemName>Mustard</pf1:ItemName>
+                            <pf1:Quantity>2</pf1:Quantity>
+                        </pf1:PackingList>
+                        <pf1:OrderingNotes>Example String Value</pf1:OrderingNotes>
+                        <pf1:ServingSize count="4">
+                            <pf1:UnitOfMeasure_Enum>Ounces</pf1:UnitOfMeasure_Enum>
+                            <pf1:PreparedUnitOfMeasure>1 burger</pf1:PreparedUnitOfMeasure>
+                            <pf1:Description>Quarter pound</pf1:Description>
+                        </pf1:ServingSize>
+                        <pf1:Promotion>
+                            <pf1:PromotionCode>Promo1</pf1:PromotionCode>
+                            <pf1:Description>School fundraiser</pf1:Description>
+                        </pf1:Promotion>
+                        <pf1:MediaCategory>
+                            <pf1:Name>Beverages</pf1:Name>
+                            <pf1:Media>
+                                <pf1:MediaURI>http://www.OpenTravel.org/ns/OTA2/Common_v01_00</pf1:MediaURI>
+                                <pf1:KnownAssetNumber>Example String Value</pf1:KnownAssetNumber>
+                            </pf1:Media>
+                        </pf1:MediaCategory>
+                        <pf1:Source>Harrison Ranch</pf1:Source>
+                        <pf1:SKU productCode="Example String Value" productName="Example String Value"/>
+                        <pf1:Default>
+                            <pf1:Quantity>2</pf1:Quantity>
+                            <pf1:QuantityUnits>Cream</pf1:QuantityUnits>
+                            <pf1:Preparation>On the side</pf1:Preparation>
+                            <pf1:PreparationQuantity>1</pf1:PreparationQuantity>
+                            <pf1:PreparationUnits>ounces</pf1:PreparationUnits>
+                            <pf1:DefaultNotes>Example String Value</pf1:DefaultNotes>
+                        </pf1:Default>
+                        <pf1:Pricing taxExemptInd="true">
+                            <pf1:Currency decimalPlaces="2">Example String Value</pf1:Currency>
+                            <pf1:Surcharge amount="3.00" surchargeIncludedInd="true">
+                                <pf1:Description>Delivery fee</pf1:Description>
+                            </pf1:Surcharge>
+                            <pf1:Tax amount=".53" taxIncludedInd="true">
+                                <pf1:Description>State tax</pf1:Description>
+                            </pf1:Tax>
+                            <pf1:ItemPrice>7.00</pf1:ItemPrice>
+                            <pf1:Context>Third party delivery</pf1:Context>
+                            <pf1:Discount beforeTaxInd="true"
+                                value="3.00" valueType="Percent">
+                                <pf1:Application>Example String Value</pf1:Application>
+                                <pf1:Description>Senior discount.</pf1:Description>
+                            </pf1:Discount>
+                        </pf1:Pricing>
+                    </pf1:Modifier>
+                </pf1:MenuItem>
+                <pf1:Promotion>
+                    <pf1:PromotionCode>Promo1</pf1:PromotionCode>
+                    <pf1:Description>School fundraiser</pf1:Description>
+                </pf1:Promotion>
+                <pf1:MediaCategory>
+                    <pf1:Name>Beverages</pf1:Name>
+                    <pf1:Media>
+                        <pf1:MediaURI>http://www.w3.org/2001/XMLSchema</pf1:MediaURI>
+                        <pf1:KnownAssetNumber>Example String Value</pf1:KnownAssetNumber>
+                    </pf1:Media>
+                </pf1:MediaCategory>
+                <pf1:AvailabilityEffectivity>
+                    <pf1:EffectivityDetail
+                        endDate="2011-12-05T06:00:00Z" startDate="2011-07-04T14:15:00+06:00">
+                        <pf1:DaysOfWeek>Tuesday</pf1:DaysOfWeek>
+                        <pf1:Name>Happy hour</pf1:Name>
+                        <pf1:WeekOfMonth>1</pf1:WeekOfMonth>
+                        <pf1:MonthOfYear>7</pf1:MonthOfYear>
+                    </pf1:EffectivityDetail>
+                </pf1:AvailabilityEffectivity>
+                <pf1:Default>
+                    <pf1:Quantity>2</pf1:Quantity>
+                    <pf1:QuantityUnits>Cream</pf1:QuantityUnits>
+                    <pf1:Preparation>On the side</pf1:Preparation>
+                    <pf1:PreparationQuantity>1</pf1:PreparationQuantity>
+                    <pf1:PreparationUnits>ounces</pf1:PreparationUnits>
+                    <pf1:DefaultNotes>Example String Value</pf1:DefaultNotes>
+                </pf1:Default>
+                <pf1:Pricing taxExemptInd="true">
+                    <pf1:Currency decimalPlaces="2">Example String Value</pf1:Currency>
+                    <pf1:Surcharge amount="3.00" surchargeIncludedInd="true">
+                        <pf1:Description>Delivery fee</pf1:Description>
+                    </pf1:Surcharge>
+                    <pf1:Tax amount=".53" taxIncludedInd="true">
+                        <pf1:Description>State tax</pf1:Description>
+                    </pf1:Tax>
+                    <pf1:ItemPrice>7.00</pf1:ItemPrice>
+                    <pf1:Context>Third party delivery</pf1:Context>
+                    <pf1:Discount beforeTaxInd="true" value="3.00" valueType="Amount">
+                        <pf1:Application>Example String Value</pf1:Application>
+                        <pf1:Description>Senior discount.</pf1:Description>
+                    </pf1:Discount>
+                </pf1:Pricing>
+                <pf1:SKU productCode="Example String Value" productName="Example String Value"/>
+                <pf1:Modifier action="Remove" iD="Example String Value" modifierEligibleInd="true">
+                    <pf1:NutritionResource>http://www.OpenTravel.org/ns/OTA2/Common_v01_00</pf1:NutritionResource>
+                    <pf1:BaselineNutritionDetail count="500"
+                        displayRange="350-500" maxCount="500"
+                        minCount="350" shortName="Cal">
+                        <pf1:NutritionInformationType>Calories from fat</pf1:NutritionInformationType>
+                        <pf1:UnitOfMeasure>Pounds</pf1:UnitOfMeasure>
+                    </pf1:BaselineNutritionDetail>
+                    <pf1:DietaryRestrictions>
+                        <pf1:AllergenDetails>
+                            <pf1:AllergyInformation_Enum>Peanut</pf1:AllergyInformation_Enum>
+                            <pf1:Contains_Enum>Contains</pf1:Contains_Enum>
+                        </pf1:AllergenDetails>
+                        <pf1:LifestyleChoices_Enum>Vegan</pf1:LifestyleChoices_Enum>
+                    </pf1:DietaryRestrictions>
+                    <pf1:RegulatoryRequirementsDescription>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.</pf1:RegulatoryRequirementsDescription>
+                    <pf1:AvailabilityEffectivity>
+                        <pf1:EffectivityDetail
+                            endDate="2011-07-04T14:15:00+06:00" startDate="2011-01-24T09:45:00-06:00">
+                            <pf1:DaysOfWeek>Wednesday</pf1:DaysOfWeek>
+                            <pf1:Name>Happy hour</pf1:Name>
+                            <pf1:WeekOfMonth>1</pf1:WeekOfMonth>
+                            <pf1:MonthOfYear>7</pf1:MonthOfYear>
+                        </pf1:EffectivityDetail>
+                    </pf1:AvailabilityEffectivity>
+                    <pf1:ChannelAvailability>Online ordering and call center.</pf1:ChannelAvailability>
+                    <pf1:LocationAvailability>3438, 4983</pf1:LocationAvailability>
+                    <pf1:Destination>Take out</pf1:Destination>
+                    <pf1:Description>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</pf1:Description>
+                    <pf1:Preparation>Sauteed and served with fried onions.</pf1:Preparation>
+                    <pf1:MasterDescription>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</pf1:MasterDescription>
+                    <pf1:Channel>
+                        <pf1:ChannelName>Example String Value</pf1:ChannelName>
+                        <pf1:MenuItemDescription>Example String Value</pf1:MenuItemDescription>
+                    </pf1:Channel>
+                    <pf1:PackingList>
+                        <pf1:ItemName>Mustard</pf1:ItemName>
+                        <pf1:Quantity>2</pf1:Quantity>
+                    </pf1:PackingList>
+                    <pf1:OrderingNotes>Example String Value</pf1:OrderingNotes>
+                    <pf1:Ingredient iD="Example String Value" modifierEligibleInd="true">
+                        <pf1:NutritionResource>http://www.w3.org/2001/XMLSchema</pf1:NutritionResource>
+                        <pf1:BaselineNutritionDetail count="500"
+                            displayRange="350-500" maxCount="500"
+                            minCount="350" shortName="Cal">
+                            <pf1:NutritionInformationType>Total fat</pf1:NutritionInformationType>
+                            <pf1:UnitOfMeasure>Cups</pf1:UnitOfMeasure>
+                        </pf1:BaselineNutritionDetail>
+                        <pf1:DietaryRestrictions>
+                            <pf1:AllergenDetails>
+                                <pf1:AllergyInformation_Enum>Gluten</pf1:AllergyInformation_Enum>
+                                <pf1:Contains_Enum>Free From</pf1:Contains_Enum>
+                            </pf1:AllergenDetails>
+                            <pf1:LifestyleChoices_Enum>Vegetarian</pf1:LifestyleChoices_Enum>
+                        </pf1:DietaryRestrictions>
+                        <pf1:RegulatoryRequirementsDescription>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.</pf1:RegulatoryRequirementsDescription>
+                        <pf1:AvailabilityEffectivity>
+                            <pf1:EffectivityDetail
+                                endDate="2011-01-24T09:45:00-06:00" startDate="2011-12-05T06:00:00Z">
+                                <pf1:DaysOfWeek>Thursday</pf1:DaysOfWeek>
+                                <pf1:Name>Happy hour</pf1:Name>
+                                <pf1:WeekOfMonth>1</pf1:WeekOfMonth>
+                                <pf1:MonthOfYear>7</pf1:MonthOfYear>
+                            </pf1:EffectivityDetail>
+                        </pf1:AvailabilityEffectivity>
+                        <pf1:ChannelAvailability>Online ordering and call center.</pf1:ChannelAvailability>
+                        <pf1:LocationAvailability>3438, 4983</pf1:LocationAvailability>
+                        <pf1:Destination>Take out</pf1:Destination>
+                        <pf1:Description>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</pf1:Description>
+                        <pf1:Preparation>Sauteed and served with fried onions.</pf1:Preparation>
+                        <pf1:MasterDescription>It's seasoned with just a pinch of salt and pepper, sizzled on a flat iron grill, then topped with slivered onions, tangy pickles and two slices of melty cheese on a sesame seed bun.</pf1:MasterDescription>
+                        <pf1:Channel>
+                            <pf1:ChannelName>Example String Value</pf1:ChannelName>
+                            <pf1:MenuItemDescription>Example String Value</pf1:MenuItemDescription>
+                        </pf1:Channel>
+                        <pf1:PackingList>
+                            <pf1:ItemName>Mustard</pf1:ItemName>
+                            <pf1:Quantity>2</pf1:Quantity>
+                        </pf1:PackingList>
+                        <pf1:OrderingNotes>Example String Value</pf1:OrderingNotes>
+                        <pf1:ServingSize count="4">
+                            <pf1:UnitOfMeasure_Enum>Pints</pf1:UnitOfMeasure_Enum>
+                            <pf1:PreparedUnitOfMeasure>1 burger</pf1:PreparedUnitOfMeasure>
+                            <pf1:Description>Quarter pound</pf1:Description>
+                        </pf1:ServingSize>
+                        <pf1:Promotion>
+                            <pf1:PromotionCode>Promo1</pf1:PromotionCode>
+                            <pf1:Description>School fundraiser</pf1:Description>
+                        </pf1:Promotion>
+                        <pf1:MediaCategory>
+                            <pf1:Name>Beverages</pf1:Name>
+                            <pf1:Media>
+                                <pf1:MediaURI>http://www.OpenTravel.org/ns/OTA2/Common_v01_00</pf1:MediaURI>
+                                <pf1:KnownAssetNumber>Example String Value</pf1:KnownAssetNumber>
+                            </pf1:Media>
+                        </pf1:MediaCategory>
+                        <pf1:Source>Harrison Ranch</pf1:Source>
+                        <pf1:Pricing taxExemptInd="true">
+                            <pf1:Currency decimalPlaces="2">Example String Value</pf1:Currency>
+                            <pf1:Surcharge amount="3.00" surchargeIncludedInd="true">
+                                <pf1:Description>Delivery fee</pf1:Description>
+                            </pf1:Surcharge>
+                            <pf1:Tax amount=".53" taxIncludedInd="true">
+                                <pf1:Description>State tax</pf1:Description>
+                            </pf1:Tax>
+                            <pf1:ItemPrice>7.00</pf1:ItemPrice>
+                            <pf1:Context>Third party delivery</pf1:Context>
+                            <pf1:Discount beforeTaxInd="true"
+                                value="3.00" valueType="Percent">
+                                <pf1:Application>Example String Value</pf1:Application>
+                                <pf1:Description>Senior discount.</pf1:Description>
+                            </pf1:Discount>
+                        </pf1:Pricing>
+                        <pf1:SKU productCode="Example String Value" productName="Example String Value"/>
+                        <pf1:Default>
+                            <pf1:Quantity>2</pf1:Quantity>
+                            <pf1:QuantityUnits>Cream</pf1:QuantityUnits>
+                            <pf1:Preparation>On the side</pf1:Preparation>
+                            <pf1:PreparationQuantity>1</pf1:PreparationQuantity>
+                            <pf1:PreparationUnits>ounces</pf1:PreparationUnits>
+                            <pf1:DefaultNotes>Example String Value</pf1:DefaultNotes>
+                        </pf1:Default>
+                    </pf1:Ingredient>
+                    <pf1:ServingSize count="4">
+                        <pf1:UnitOfMeasure_Enum>Quarts</pf1:UnitOfMeasure_Enum>
+                        <pf1:PreparedUnitOfMeasure>1 burger</pf1:PreparedUnitOfMeasure>
+                        <pf1:Description>Quarter pound</pf1:Description>
+                    </pf1:ServingSize>
+                    <pf1:Promotion>
+                        <pf1:PromotionCode>Promo1</pf1:PromotionCode>
+                        <pf1:Description>School fundraiser</pf1:Description>
+                    </pf1:Promotion>
+                    <pf1:MediaCategory>
+                        <pf1:Name>Beverages</pf1:Name>
+                        <pf1:Media>
+                            <pf1:MediaURI>http://www.w3.org/2001/XMLSchema</pf1:MediaURI>
+                            <pf1:KnownAssetNumber>Example String Value</pf1:KnownAssetNumber>
+                        </pf1:Media>
+                    </pf1:MediaCategory>
+                    <pf1:Source>Harrison Ranch</pf1:Source>
+                    <pf1:SKU productCode="Example String Value" productName="Example String Value"/>
+                    <pf1:Default>
+                        <pf1:Quantity>2</pf1:Quantity>
+                        <pf1:QuantityUnits>Cream</pf1:QuantityUnits>
+                        <pf1:Preparation>On the side</pf1:Preparation>
+                        <pf1:PreparationQuantity>1</pf1:PreparationQuantity>
+                        <pf1:PreparationUnits>ounces</pf1:PreparationUnits>
+                        <pf1:DefaultNotes>Example String Value</pf1:DefaultNotes>
+                    </pf1:Default>
+                    <pf1:Pricing taxExemptInd="true">
+                        <pf1:Currency decimalPlaces="2">Example String Value</pf1:Currency>
+                        <pf1:Surcharge amount="3.00" surchargeIncludedInd="true">
+                            <pf1:Description>Delivery fee</pf1:Description>
+                        </pf1:Surcharge>
+                        <pf1:Tax amount=".53" taxIncludedInd="true">
+                            <pf1:Description>State tax</pf1:Description>
+                        </pf1:Tax>
+                        <pf1:ItemPrice>7.00</pf1:ItemPrice>
+                        <pf1:Context>Third party delivery</pf1:Context>
+                        <pf1:Discount beforeTaxInd="true" value="3.00" valueType="Amount">
+                            <pf1:Application>Example String Value</pf1:Application>
+                            <pf1:Description>Senior discount.</pf1:Description>
+                        </pf1:Discount>
+                    </pf1:Pricing>
+                </pf1:Modifier>
+                <pf1:PackingList>
+                    <pf1:ItemName>Mustard</pf1:ItemName>
+                    <pf1:Quantity>2</pf1:Quantity>
+                </pf1:PackingList>
+            </pf1:MenuProduct>
+        </ms-0200:OrderItemMenuProduct>
+        <ms-0200:Total taxExemptInd="true">
+            <ms-0200:Currency decimalPlaces="2">Example String Value</ms-0200:Currency>
+            <pf1:Surcharge amount="3.00" surchargeIncludedInd="true">
+                <pf1:Description>Delivery fee</pf1:Description>
+            </pf1:Surcharge>
+            <pf1:Tax amount=".53" taxIncludedInd="true">
+                <pf1:Description>State tax</pf1:Description>
+            </pf1:Tax>
+            <ms-0200:ItemPrice>7.00</ms-0200:ItemPrice>
+            <ms-0200:Context>Third party delivery</ms-0200:Context>
+            <pf1:Discount beforeTaxInd="true" value="3.00" valueType="Percent">
+                <pf1:Application>Example String Value</pf1:Application>
+                <pf1:Description>Senior discount.</pf1:Description>
+            </pf1:Discount>
+            <ms-0200:Gratuity>12</ms-0200:Gratuity>
+        </ms-0200:Total>
+        <pf1:Promotion>
+            <pf1:PromotionCode>Promo1</pf1:PromotionCode>
+            <pf1:Description>School fundraiser</pf1:Description>
+        </pf1:Promotion>
+        <ms-0200:Destination iD="Example String Value"
+            name="Example String Value" sourceSystem="Example String Value"/>
+        <ms-0200:ChannelDescription>Mobile App</ms-0200:ChannelDescription>
+        <ms-0200:OrderItemCount>3</ms-0200:OrderItemCount>
+        <pf1:PackingList>
+            <pf1:ItemName>Mustard</pf1:ItemName>
+            <pf1:Quantity>2</pf1:Quantity>
+        </pf1:PackingList>
+        <ms-0200:OrderState>Abandoned</ms-0200:OrderState>
+        <pf1:Party>
+            <pf1:PartyName>Smith</pf1:PartyName>
+            <pf1:PartyDescription>Smith anniversary dinner</pf1:PartyDescription>
+            <ms-0300:CustomerDetail birthday="2000-11-30" primaryInd="true">
+                <ms-0300:PersonName language="en-us" primaryInd="true">
+                    <ms-0300:First>John</ms-0300:First>
+                    <ms-0300:Last>Smith</ms-0300:Last>
+                    <ms-0300:Middle>Jacob</ms-0300:Middle>
+                    <ms-0300:Prefix>Mr.</ms-0300:Prefix>
+                    <ms-0300:Suffix>Jr.</ms-0300:Suffix>
+                    <ms-0300:NameType>Alias</ms-0300:NameType>
+                    <ms-0300:Title>M.D.</ms-0300:Title>
+                    <ms-0300:LastNamePrefix>Von de</ms-0300:LastNamePrefix>
+                </ms-0300:PersonName>
+                <ms-0300:Email primaryInd="true">
+                    <ms-0300:EmailAddress>john.dough@gmail.com</ms-0300:EmailAddress>
+                    <ms-0300:EmailType>Business</ms-0300:EmailType>
+                </ms-0300:Email>
+                <ms-0300:Phone primaryInd="true">
+                    <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                    <ms-0300:Type>Home</ms-0300:Type>
+                    <ms-0300:Capabilities>Multimedia</ms-0300:Capabilities>
+                </ms-0300:Phone>
+                <ms-0300:Address>
+                    <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                    <ms-0300:CityName>Rochester</ms-0300:CityName>
+                    <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                    <ms-0300:Country>United States</ms-0300:Country>
+                    <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                    <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                    <ms-0300:AddressType>Personal</ms-0300:AddressType>
+                </ms-0300:Address>
+                <ms-0300:SocialMedia>
+                    <ms-0300:URL>https://www.instagram.com/</ms-0300:URL>
+                    <ms-0300:Platform>Instagram</ms-0300:Platform>
+                    <ms-0300:Handle>@RTN</ms-0300:Handle>
+                    <ms-0300:UserName>John.Dough</ms-0300:UserName>
+                </ms-0300:SocialMedia>
+                <ms-0300:CommunicationMethod primaryInd="true">
+                    <ms-0300:CommunicationMethod>Phone</ms-0300:CommunicationMethod>
+                    <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+                </ms-0300:CommunicationMethod>
+                <ms-0300:Verification>
+                    <ms-0300:VerificationCategory>Age</ms-0300:VerificationCategory>
+                    <ms-0300:VerificationType>Passport</ms-0300:VerificationType>
+                    <ms-0300:VerifiedBy>Fred Flintstone</ms-0300:VerifiedBy>
+                    <ms-0300:VerificationSystem>Mitek Systems</ms-0300:VerificationSystem>
+                    <ms-0300:Description>Mitek verifies age data from scan of drivers license.</ms-0300:Description>
+                    <ms-0300:VerifiedInd>true</ms-0300:VerifiedInd>
+                </ms-0300:Verification>
+                <ms-0300:ThirdPartySystem>
+                    <ms-0300:ThirdPartySystemID>Example String Value</ms-0300:ThirdPartySystemID>
+                    <ms-0300:Type>Loyalty</ms-0300:Type>
+                    <ms-0300:SystemName>Paytronix</ms-0300:SystemName>
+                    <ms-0300:CustomerID>58688464525</ms-0300:CustomerID>
+                    <ms-0300:ProgramID>A8V7</ms-0300:ProgramID>
+                </ms-0300:ThirdPartySystem>
+                <ms-0300:Gender>Male</ms-0300:Gender>
+                <ms-0300:PreferredPronoun>He/Him</ms-0300:PreferredPronoun>
+                <ms-0300:CompanyDetail>
+                    <ms-0300:CompanyID>Example String Value</ms-0300:CompanyID>
+                    <ms-0300:CompanyName>IBM</ms-0300:CompanyName>
+                    <ms-0300:Address>
+                        <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                        <ms-0300:CityName>Rochester</ms-0300:CityName>
+                        <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                        <ms-0300:Country>United States</ms-0300:Country>
+                        <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                        <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                        <ms-0300:AddressType>Business</ms-0300:AddressType>
+                    </ms-0300:Address>
+                    <ms-0300:Phone primaryInd="true">
+                        <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                        <ms-0300:Type>Business</ms-0300:Type>
+                        <ms-0300:Capabilities>Text</ms-0300:Capabilities>
+                    </ms-0300:Phone>
+                    <ms-0300:ContactDetail birthday="2000-11-30">
+                        <ms-0300:PersonName language="en-us" primaryInd="true">
+                            <ms-0300:First>John</ms-0300:First>
+                            <ms-0300:Last>Smith</ms-0300:Last>
+                            <ms-0300:Middle>Jacob</ms-0300:Middle>
+                            <ms-0300:Prefix>Mr.</ms-0300:Prefix>
+                            <ms-0300:Suffix>Jr.</ms-0300:Suffix>
+                            <ms-0300:NameType>Altername</ms-0300:NameType>
+                            <ms-0300:Title>M.D.</ms-0300:Title>
+                            <ms-0300:LastNamePrefix>Von de</ms-0300:LastNamePrefix>
+                        </ms-0300:PersonName>
+                        <ms-0300:Email primaryInd="true">
+                            <ms-0300:EmailAddress>john.dough@gmail.com</ms-0300:EmailAddress>
+                            <ms-0300:EmailType>Personal</ms-0300:EmailType>
+                        </ms-0300:Email>
+                        <ms-0300:Phone primaryInd="true">
+                            <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                            <ms-0300:Type>Mobile</ms-0300:Type>
+                            <ms-0300:Capabilities>TTY</ms-0300:Capabilities>
+                        </ms-0300:Phone>
+                        <ms-0300:Address>
+                            <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                            <ms-0300:CityName>Rochester</ms-0300:CityName>
+                            <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                            <ms-0300:Country>United States</ms-0300:Country>
+                            <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                            <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                            <ms-0300:AddressType>Business</ms-0300:AddressType>
+                        </ms-0300:Address>
+                        <ms-0300:SocialMedia>
+                            <ms-0300:URL>https://www.instagram.com/</ms-0300:URL>
+                            <ms-0300:Platform>Instagram</ms-0300:Platform>
+                            <ms-0300:Handle>@RTN</ms-0300:Handle>
+                            <ms-0300:UserName>John.Dough</ms-0300:UserName>
+                        </ms-0300:SocialMedia>
+                        <ms-0300:CommunicationMethod primaryInd="true">
+                            <ms-0300:CommunicationMethod>Email</ms-0300:CommunicationMethod>
+                            <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+                        </ms-0300:CommunicationMethod>
+                        <ms-0300:Verification>
+                            <ms-0300:VerificationCategory>Vaccine</ms-0300:VerificationCategory>
+                            <ms-0300:VerificationType>Drivers license</ms-0300:VerificationType>
+                            <ms-0300:VerifiedBy>Fred Flintstone</ms-0300:VerifiedBy>
+                            <ms-0300:VerificationSystem>Mitek Systems</ms-0300:VerificationSystem>
+                            <ms-0300:Description>Mitek verifies age data from scan of drivers license.</ms-0300:Description>
+                            <ms-0300:VerifiedInd>true</ms-0300:VerifiedInd>
+                        </ms-0300:Verification>
+                        <ms-0300:ThirdPartySystem>
+                            <ms-0300:ThirdPartySystemID>Example String Value</ms-0300:ThirdPartySystemID>
+                            <ms-0300:Type>Reservation</ms-0300:Type>
+                            <ms-0300:SystemName>Paytronix</ms-0300:SystemName>
+                            <ms-0300:CustomerID>58688464525</ms-0300:CustomerID>
+                            <ms-0300:ProgramID>A8V7</ms-0300:ProgramID>
+                        </ms-0300:ThirdPartySystem>
+                        <ms-0300:Gender>Male</ms-0300:Gender>
+                        <ms-0300:PreferredPronoun>She/Her</ms-0300:PreferredPronoun>
+                        <ms-0300:SignificantDate>
+                            <ms-0300:Date>May 1</ms-0300:Date>
+                            <ms-0300:Description>The person's anniversary date.</ms-0300:Description>
+                            <ms-0300:DateType>Birthday</ms-0300:DateType>
+                        </ms-0300:SignificantDate>
+                        <ms-0300:Description>VIP</ms-0300:Description>
+                    </ms-0300:ContactDetail>
+                    <ms-0300:Description>Typewriter division</ms-0300:Description>
+                    <ms-0300:WebsiteURL>https://www.ibm.com/</ms-0300:WebsiteURL>
+                    <ms-0300:TimeZone>Eastern</ms-0300:TimeZone>
+                    <ms-0300:IndustryClassificationName>Computer related services</ms-0300:IndustryClassificationName>
+                    <ms-0300:IndustryClassificationCode>7379</ms-0300:IndustryClassificationCode>
+                    <ms-0300:IndustryClassificationStandard>SIC</ms-0300:IndustryClassificationStandard>
+                </ms-0300:CompanyDetail>
+                <ms-0300:SignificantDate>
+                    <ms-0300:Date>May 1</ms-0300:Date>
+                    <ms-0300:Description>The person's anniversary date.</ms-0300:Description>
+                    <ms-0300:DateType>Anniversary</ms-0300:DateType>
+                </ms-0300:SignificantDate>
+                <ms-0300:CustomerID>Example String Value</ms-0300:CustomerID>
+                <ms-0300:Description>VIP</ms-0300:Description>
+                <ms-0300:DeliveryLocation>
+                    <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                    <ms-0300:CityName>Rochester</ms-0300:CityName>
+                    <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                    <ms-0300:Country>United States</ms-0300:Country>
+                    <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                    <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                    <ms-0300:AddressType>Personal</ms-0300:AddressType>
+                </ms-0300:DeliveryLocation>
+            </ms-0300:CustomerDetail>
+            <pf1:TotalInParty>8</pf1:TotalInParty>
+            <pf1:SeatingType>
+                <pf1:SeatingType>High chair</pf1:SeatingType>
+                <pf1:Quantity>2</pf1:Quantity>
+            </pf1:SeatingType>
+            <pf1:PartyRequests>
+                <pf1:DietaryRestrictions>
+                    <pf1:AllergenDetails>
+                        <pf1:AllergyInformation_Enum>Nut</pf1:AllergyInformation_Enum>
+                        <pf1:Contains_Enum>Contains</pf1:Contains_Enum>
+                    </pf1:AllergenDetails>
+                    <pf1:LifestyleChoices_Enum>Halal</pf1:LifestyleChoices_Enum>
+                </pf1:DietaryRestrictions>
+                <pf1:Requests>Water view</pf1:Requests>
+                <pf1:SeatingLocation>Patio</pf1:SeatingLocation>
+            </pf1:PartyRequests>
+            <pf1:PartyMix>
+                <pf1:PartyType>Infants</pf1:PartyType>
+                <pf1:PartyTypeQuantity>2</pf1:PartyTypeQuantity>
+            </pf1:PartyMix>
+            <ms-0300:ContactDetail birthday="2000-11-30">
+                <ms-0300:PersonName language="en-us" primaryInd="true">
+                    <ms-0300:First>John</ms-0300:First>
+                    <ms-0300:Last>Smith</ms-0300:Last>
+                    <ms-0300:Middle>Jacob</ms-0300:Middle>
+                    <ms-0300:Prefix>Mr.</ms-0300:Prefix>
+                    <ms-0300:Suffix>Jr.</ms-0300:Suffix>
+                    <ms-0300:NameType>Former</ms-0300:NameType>
+                    <ms-0300:Title>M.D.</ms-0300:Title>
+                    <ms-0300:LastNamePrefix>Von de</ms-0300:LastNamePrefix>
+                </ms-0300:PersonName>
+                <ms-0300:Email primaryInd="true">
+                    <ms-0300:EmailAddress>john.dough@gmail.com</ms-0300:EmailAddress>
+                    <ms-0300:EmailType>Business</ms-0300:EmailType>
+                </ms-0300:Email>
+                <ms-0300:Phone primaryInd="true">
+                    <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                    <ms-0300:Type>Home</ms-0300:Type>
+                    <ms-0300:Capabilities>Voice</ms-0300:Capabilities>
+                </ms-0300:Phone>
+                <ms-0300:Address>
+                    <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                    <ms-0300:CityName>Rochester</ms-0300:CityName>
+                    <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                    <ms-0300:Country>United States</ms-0300:Country>
+                    <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                    <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                    <ms-0300:AddressType>Personal</ms-0300:AddressType>
+                </ms-0300:Address>
+                <ms-0300:SocialMedia>
+                    <ms-0300:URL>https://www.instagram.com/</ms-0300:URL>
+                    <ms-0300:Platform>Instagram</ms-0300:Platform>
+                    <ms-0300:Handle>@RTN</ms-0300:Handle>
+                    <ms-0300:UserName>John.Dough</ms-0300:UserName>
+                </ms-0300:SocialMedia>
+                <ms-0300:CommunicationMethod primaryInd="true">
+                    <ms-0300:CommunicationMethod>SMS</ms-0300:CommunicationMethod>
+                    <ms-0300:PreferredLanguage>en</ms-0300:PreferredLanguage>
+                </ms-0300:CommunicationMethod>
+                <ms-0300:Verification>
+                    <ms-0300:VerificationCategory>Military</ms-0300:VerificationCategory>
+                    <ms-0300:VerificationType>State ID</ms-0300:VerificationType>
+                    <ms-0300:VerifiedBy>Fred Flintstone</ms-0300:VerifiedBy>
+                    <ms-0300:VerificationSystem>Mitek Systems</ms-0300:VerificationSystem>
+                    <ms-0300:Description>Mitek verifies age data from scan of drivers license.</ms-0300:Description>
+                    <ms-0300:VerifiedInd>true</ms-0300:VerifiedInd>
+                </ms-0300:Verification>
+                <ms-0300:ThirdPartySystem>
+                    <ms-0300:ThirdPartySystemID>Example String Value</ms-0300:ThirdPartySystemID>
+                    <ms-0300:Type>Kitchen production</ms-0300:Type>
+                    <ms-0300:SystemName>Paytronix</ms-0300:SystemName>
+                    <ms-0300:CustomerID>58688464525</ms-0300:CustomerID>
+                    <ms-0300:ProgramID>A8V7</ms-0300:ProgramID>
+                </ms-0300:ThirdPartySystem>
+                <ms-0300:Gender>Male</ms-0300:Gender>
+                <ms-0300:PreferredPronoun>They/Them</ms-0300:PreferredPronoun>
+                <ms-0300:CompanyDetail>
+                    <ms-0300:CompanyID>Example String Value</ms-0300:CompanyID>
+                    <ms-0300:CompanyName>IBM</ms-0300:CompanyName>
+                    <ms-0300:Address>
+                        <ms-0300:StreetAddress>100 Main Avenue</ms-0300:StreetAddress>
+                        <ms-0300:CityName>Rochester</ms-0300:CityName>
+                        <ms-0300:PostalCode>14604</ms-0300:PostalCode>
+                        <ms-0300:Country>United States</ms-0300:Country>
+                        <ms-0300:CountryCode>US</ms-0300:CountryCode>
+                        <ms-0300:StateOrTerritory>NY</ms-0300:StateOrTerritory>
+                        <ms-0300:AddressType>Business</ms-0300:AddressType>
+                    </ms-0300:Address>
+                    <ms-0300:Phone primaryInd="true">
+                        <ms-0300:PhoneNumber>555-555-5555</ms-0300:PhoneNumber>
+                        <ms-0300:Type>Business</ms-0300:Type>
+                        <ms-0300:Capabilities>Multimedia</ms-0300:Capabilities>
+                    </ms-0300:Phone>
+                    <ms-0300:Description>Typewriter division</ms-0300:Description>
+                    <ms-0300:WebsiteURL>https://www.ibm.com/</ms-0300:WebsiteURL>
+                    <ms-0300:TimeZone>Eastern</ms-0300:TimeZone>
+                    <ms-0300:IndustryClassificationName>Computer related services</ms-0300:IndustryClassificationName>
+                    <ms-0300:IndustryClassificationCode>7379</ms-0300:IndustryClassificationCode>
+                    <ms-0300:IndustryClassificationStandard>SIC</ms-0300:IndustryClassificationStandard>
+                </ms-0300:CompanyDetail>
+                <ms-0300:SignificantDate>
+                    <ms-0300:Date>May 1</ms-0300:Date>
+                    <ms-0300:Description>The person's anniversary date.</ms-0300:Description>
+                    <ms-0300:DateType>Membership anniversary</ms-0300:DateType>
+                </ms-0300:SignificantDate>
+                <ms-0300:Description>VIP</ms-0300:Description>
+            </ms-0300:ContactDetail>
+        </pf1:Party>
+        <ms-0200:OrderSource>Mobile</ms-0200:OrderSource>
+        <ms-0200:OrderTracking>
+            <ms-0200:OrderOriginationLocationCategory>On-premise</ms-0200:OrderOriginationLocationCategory>
+            <ms-0200:OrderOriginationLocation>Counter</ms-0200:OrderOriginationLocation>
+            <ms-0200:DataEntryDetails>
+                <ms-0200:Role>Originator</ms-0200:Role>
+                <ms-0200:DataEntryApplication>POS</ms-0200:DataEntryApplication>
+                <ms-0200:DataOwner>Example String Value</ms-0200:DataOwner>
+                <ms-0200:DataEntryDevice>POS Terminal</ms-0200:DataEntryDevice>
+            </ms-0200:DataEntryDetails>
+            <ms-0200:OrderOriginResponsibility>Assisted order</ms-0200:OrderOriginResponsibility>
+        </ms-0200:OrderTracking>
+        <ms-0300:Payment depositInd="true" tenderPresenceInd="true">
+            <ms-0300:Amount>32.50</ms-0300:Amount>
+            <ms-0300:CurrencyCode decimalPlaces="2">Example String Value</ms-0300:CurrencyCode>
+            <ms-0300:Tip>6.00</ms-0300:Tip>
+            <ms-0300:Gratuity>5.00</ms-0300:Gratuity>
+            <ms-0300:TenderType>Cash</ms-0300:TenderType>
+            <ms-0300:CardType>American Express</ms-0300:CardType>
+            <ms-0300:TenderDescription>Personal card</ms-0300:TenderDescription>
+            <ms-0300:AuthorizationCode>456</ms-0300:AuthorizationCode>
+            <ms-0300:CardEntryType>Dip</ms-0300:CardEntryType>
+            <ms-0300:CustomerName>John Dough</ms-0300:CustomerName>
+            <ms-0300:LastFour>9090</ms-0300:LastFour>
+            <ms-0300:FirstSix>429808</ms-0300:FirstSix>
+            <ms-0300:AccountNumber>12398873887</ms-0300:AccountNumber>
+        </ms-0300:Payment>
+    </ms-0200:Order>
+</pf1:EventTypeOrder>

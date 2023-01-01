@@ -1,0 +1,11 @@
+{
+  "ThirdPartySystemSummary" : {
+    "ThirdPartySystemID" : "Example String Value",
+    "Type" : {
+      "value" : "Loyalty"
+    },
+    "SystemName" : "Paytronix",
+    "CustomerID" : "58688464525",
+    "ProgramID" : "A8V7"
+  }
+}

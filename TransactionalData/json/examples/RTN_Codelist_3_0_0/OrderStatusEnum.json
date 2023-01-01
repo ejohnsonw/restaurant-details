@@ -1,0 +1,6 @@
+{
+  "OrderStatus_Enum" : {
+    "value" : "Received"
+  },
+  "extension" : "Other_Value"
+}

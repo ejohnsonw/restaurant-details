@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    version="1.0.0"
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:ota2="http://www.opentravel.org/OTM/Common/v0"
+    xmlns:otm="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00"
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    
+    <xsd:annotation>
+        <xsd:appinfo>
+            <otm:Library>
+                <otm:LibraryName>RTN_Transactions</otm:LibraryName>
+                <otm:LibraryVersion>1.0.0</otm:LibraryVersion>
+                <otm:LibraryStatus>FINAL</otm:LibraryStatus>
+                <otm:SourceFile>/RTN_Transactions_1_0_0.otm</otm:SourceFile>
+                <otm:CompilerVersion>4.0-SNAPSHOT</otm:CompilerVersion>
+                <otm:CompileDate>2022-09-21T10:17:56.478-04:00</otm:CompileDate>
+            </otm:Library>
+        </xsd:appinfo>
+    </xsd:annotation>
+    
+    <xsd:import namespace="http://www.opentravel.org/OTM/Common/v0" schemaLocation="built-ins/OTM_BuiltIns.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v3" schemaLocation="ms-0300_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v2" schemaLocation="ms-0200_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v3" schemaLocation="ms-0300_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.modeldev.restauranttechnologynetwork.com/models/v2" schemaLocation="ms-0200_imports.xsd"/>
+    <xsd:import
+        namespace="http://www.OpenTravel.org/ns/OTA2/AppInfo_v01_00" schemaLocation="built-ins/OTA2_AppInfo_v1.0.0.xsd"/>
+    <xsd:include schemaLocation="RTN_MenuSync_1_0_0_Trim.xsd"/>
+    <xsd:include schemaLocation="RTN_Codelist_1_0_0_Trim.xsd"/>
+    <xsd:include schemaLocation="RTN_Common_1_0_0_Trim.xsd"/>
+    
+    <xsd:element abstract="true" name="EventSubGrp" type="pf1:Event_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the type of transaction (e.g. Order, PunchCard, Reservation, etc.)</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Event</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="EventID" substitutionGroup="pf1:EventSubGrp" type="pf1:Event_ID"/>
+    <xsd:element name="EventIdentifier" type="pf1:Event_ID"/>
+    <xsd:element name="Event" substitutionGroup="pf1:EventSubGrp" type="pf1:Event"/>
+    <xsd:element name="EventSummary" type="pf1:Event"/>
+    
+    <xsd:complexType name="Event_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Event</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="TransactionGUID" type="ms-0300:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">GUID of any interaction a customer has with a restaurant.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Event">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Event</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:Event_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0"
+                        name="TransactionDateTimeStamp" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The date/time that the transaction occurred.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="TransactionType" type="ms-0300:TranactionType_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the type of transaction (e.g. Add, Create, Delete, Update).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="BusinessDate" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The business date when the transaction occurred.  This could be different than the timestamp depending on when the day is closed out.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:LocationSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the location for which the transaction occurred.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="pf1:TransactionDeviceSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides details about the instrument used to conduct the transaction.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:EmployeeSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An employee related to this transaction.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="pf1:EventType">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the type of transaction (e.g. Order, Reservation, Refund, etc.).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:ApproverSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Details related to the employee approving this transaction.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="TransactionDeviceSubGrp" type="pf1:TransactionDevice">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides details about the instrument used to conduct the transaction.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TransactionDevice</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="TransactionDevice"
+        substitutionGroup="pf1:TransactionDeviceSubGrp" type="pf1:TransactionDevice"/>
+    <xsd:element name="TransactionDeviceSummary" type="pf1:TransactionDevice"/>
+    <xsd:element name="TransactionDeviceDetail"
+        substitutionGroup="pf1:TransactionDeviceSubGrp" type="pf1:TransactionDevice_Detail"/>
+    
+    <xsd:complexType name="TransactionDevice">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TransactionDevice</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="DeviceID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An identifier for the physical device (cash terminal, punch clock, kiosk, etc.).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DeviceDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A name or description for the device.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="TransactionDevice_Detail">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TransactionDevice</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:TransactionDevice">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="DrawerID" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The carrier of the till.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Detail"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="EventType" type="pf1:EventType">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the type of transaction (e.g. Order, Reservation, Refund, etc.).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">EventType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="EventTypeOrder" substitutionGroup="pf1:EventType" type="pf1:EventType_Order"/>
+    <xsd:element name="EventTypeTimeCard"
+        substitutionGroup="pf1:EventType" type="pf1:EventType_TimeCard"/>
+    <xsd:element name="EventTypeReservation"
+        substitutionGroup="pf1:EventType" type="pf1:EventType_Reservation"/>
+    <xsd:element name="EventTypeRefund"
+        substitutionGroup="pf1:EventType" type="pf1:EventType_Refund"/>
+    <xsd:element name="EventTypeDrawer"
+        substitutionGroup="pf1:EventType" type="pf1:EventType_Drawer"/>
+    
+    <xsd:complexType abstract="true" name="EventType">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">EventType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="EventType_Order">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">EventType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:EventType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0200:OrderSubGrp"/>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="EventType_TimeCard">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">EventType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:EventType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="pf1:TimeCard"/>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="EventType_Reservation">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">EventType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:EventType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="pf1:ReservationSubGrp"/>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="EventType_Refund">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">EventType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:EventType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="pf1:Refund">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information related to a reimbursement.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="EventType_Drawer">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">EventType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:EventType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="pf1:DrawerSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies information related to a drawer transaction.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Party" type="pf1:Party"/>
+    
+    <xsd:complexType name="Party">
+        <xsd:annotation>
+            <xsd:documentation source="Description">One or more guests.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Party</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="PartyName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Name used to identify one or more individuals.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PartyDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A description of the occasion.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:CustomerSubGrp">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A person related to the party.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TotalInParty" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The total number of individuals in the party.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="pf1:SeatingType">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies seating needs for the party (e.g. high chair, booster seat, wheelchair accessible).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="pf1:PartyRequests">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies needs or preferences for the party.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="pf1:PartyMix">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the breakdown individuals for the party by age category.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ms-0300:ContactSubGrp">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A person who made the reservation transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="PartyRequests" type="pf1:PartyRequests"/>
+    
+    <xsd:complexType name="PartyRequests">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies needs and/or preferences of the party.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">PartyRequests</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="pf1:DietaryRestrictions">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies dietary restrictions or preferences for those in the party.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="Requests" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A description of requests or needs (e.g. patio, outdoors, water view, non-smoking area).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0"
+                name="SeatingLocation" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the seating preferences for the party (e.g. patio, high chairs, indoors, etc.)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="SeatingType" type="pf1:SeatingType"/>
+    
+    <xsd:complexType name="SeatingType">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies seating needs for the party.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">SeatingType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="SeatingType" type="ms-0300:SeatingType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies a type of seating (e.g. High chair, Booster seat, Wheelchair accessible).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Quantity" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The number requested of the item identified in the SeatingType field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="PartyMix" type="pf1:PartyMix"/>
+    
+    <xsd:complexType name="PartyMix">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Details regarding the age categories of the party.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">PartyMix</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PartyType" type="ms-0300:PartyType_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies an age category for the party.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="PartyTypeQuantity" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the quantity of people in the party for the specified PartyType.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="OrderItemState" type="pf1:OrderItemState"/>
+    
+    <xsd:complexType name="OrderItemState">
+        <xsd:annotation>
+            <xsd:documentation source="Description">An array of states for the order item.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">OrderItemState</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="ItemState" type="ms-0300:OrderItemState_Enum">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the state of this specific order item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="Timestamp" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The date/time that the state was entered.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="ReservationSubGrp" type="pf1:Reservation_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Used to hold a table at a location.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Reservation</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="ReservationID"
+        substitutionGroup="pf1:ReservationSubGrp" type="pf1:Reservation_ID"/>
+    <xsd:element name="ReservationIdentifier" type="pf1:Reservation_ID"/>
+    <xsd:element name="Reservation"
+        substitutionGroup="pf1:ReservationSubGrp" type="pf1:Reservation"/>
+    <xsd:element name="ReservationSummary" type="pf1:Reservation"/>
+    
+    <xsd:complexType name="Reservation_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Reservation</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="ReservationID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An identifier for the reservation.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Reservation">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Reservation</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:Reservation_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0300:EmployeeIdentifier">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The identifier for the employee related to this reservation transaction.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ReservationSystem" type="ms-0300:Reference">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the system from which the reservation transaction was initiated.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="ReservationDateTime" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The date and time for the reservation.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Status" type="ms-0300:ReservationStatus_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The status of the reservation at the time of the transaction.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ms-0300:DepositDetails">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides details for a deposit used to hold the reservation.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="1" ref="pf1:Party">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides details about the person or people to whom the reservation belongs.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="TimeCard" type="pf1:TimeCard"/>
+    
+    <xsd:complexType name="TimeCard">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides details regarding clock data transactions.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">TimeCard</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" ref="ms-0300:EmployeeSubGrp">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The employee for this punch card transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" ref="pf1:Job">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A code representing the position that the employee was working in for this punch card.  An employee may be trained to serve in multiple positions, this indicates the position they were performing during this punch card.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" ref="pf1:ClockDataTransactionSubGrp">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A record of a punch transaction for the employee (e.g. this may be a punch in or out for a shift, or a punch in our out for a break).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="ClockDataTransactionSubGrp" type="pf1:ClockDataTransaction_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">A record of a punch transaction for the employee (e.g. this may be a punch in or out for a shift, or a punch in our out for a break).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">ClockDataTransaction</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="ClockDataTransactionID"
+        substitutionGroup="pf1:ClockDataTransactionSubGrp" type="pf1:ClockDataTransaction_ID"/>
+    <xsd:element name="ClockDataTransactionIdentifier" type="pf1:ClockDataTransaction_ID"/>
+    <xsd:element name="ClockDataTransaction"
+        substitutionGroup="pf1:ClockDataTransactionSubGrp" type="pf1:ClockDataTransaction"/>
+    <xsd:element name="ClockDataTransactionSummary" type="pf1:ClockDataTransaction"/>
+    
+    <xsd:complexType name="ClockDataTransaction_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">ClockDataTransaction</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="TimeCardCorrelationGUID" type="ms-0300:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A unique identifier for the time card transaction.  If this transaction is an adjustment of a punch card transction, the TimeCardCorrelationGUID will be the same as the original time card record.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="ClockDataTransaction">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">ClockDataTransaction</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:ClockDataTransaction_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" name="PunchType" type="ms-0300:PunchType_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the type of punch (e.g. punch-in, punch-out, break-out, break-in, etc.).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="1" name="ClockDateTime" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The date and time of the punch.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:EmployeeIdentifier">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies who created the punch, this may be the employee, supervisor or the system.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="CreatedTimestamp" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies the date and time that a manual punch was entered.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0"
+                        name="OtherID" type="ms-0300:Reference">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Allows for other systems data to be recorded.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ms-0300:ApproverSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Identifies who approved the punch record, typically used when an employee is clocking in or out, outside of their scheduled shift time.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="Reason" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Allows text details regarding the punch to be sent.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+                <xsd:attribute name="systemGeneratedInd"
+                    type="xsd:boolean" use="optional">
+                    <xsd:annotation>
+                        <xsd:documentation source="Description">When true, the system generated the punch transaction.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="Job" type="pf1:Job"/>
+    
+    <xsd:complexType name="Job">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Information pertaining to a position in the organization (e.g. Waiter, Host, Dishwasher, etc.),</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Job</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="JobCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A code that represents a position that this employee works in.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="JobCodeName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A description for the job code.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Rate" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The pay rate for this position.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Refund" type="pf1:Refund"/>
+    
+    <xsd:complexType name="Refund">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides information regarding a reimbursement.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Refund</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" ref="ms-0300:Payment">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies details of the refund payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RefundTotal" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The total amount of the reimbursement.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RefundReason" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies why the refund was made.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RefundReasonDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Provides a more detailed explanation for the refund.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="pf1:RefundTransactionType">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Provides information about the transaction for which this refund applies if applicable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="RefundTransactionType" type="pf1:RefundTransactionType">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies the type of transaction that the refund applies to.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">RefundTransactionType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="RefundTransactionTypeOrder"
+        substitutionGroup="pf1:RefundTransactionType" type="pf1:RefundTransactionType_Order"/>
+    <xsd:element name="RefundTransactionTypeReservation"
+        substitutionGroup="pf1:RefundTransactionType" type="pf1:RefundTransactionType_Reservation"/>
+    <xsd:element name="RefundTransactionTypeRefund"
+        substitutionGroup="pf1:RefundTransactionType" type="pf1:RefundTransactionType_Refund"/>
+    
+    <xsd:complexType abstract="true" name="RefundTransactionType">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">RefundTransactionType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="RefundTransactionType_Order">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">RefundTransactionType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:RefundTransactionType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="ms-0200:OrderSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information regarding the order to which this refund applies.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="RefundTransactionType_Reservation">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">RefundTransactionType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:RefundTransactionType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="pf1:ReservationSubGrp">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Provides information about the reservation for which this refund applies.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:complexType name="RefundTransactionType_Refund">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="ChoiceObject">RefundTransactionType</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:RefundTransactionType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" ref="pf1:Refund">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Used to return money to a customer (e.g. refund the price of a food iteem because it was not prepared as requested or to refund a deposit for a reservation thta was canceled within the cancellation policy.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint_Choice"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element abstract="true" name="DrawerSubGrp" type="pf1:Drawer_ID">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Provides details related to a drawer transaction.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Drawer</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="DrawerID" substitutionGroup="pf1:DrawerSubGrp" type="pf1:Drawer_ID"/>
+    <xsd:element name="DrawerIdentifier" type="pf1:Drawer_ID"/>
+    <xsd:element name="Drawer" substitutionGroup="pf1:DrawerSubGrp" type="pf1:Drawer"/>
+    <xsd:element name="DrawerSummary" type="pf1:Drawer"/>
+    
+    <xsd:complexType name="Drawer_ID">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Drawer</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="DrawerEventGUID" type="ms-0300:GUID">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A unique identifier for a drawer event used to tie multiple drawer transactions to a single drawer event.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="Drawer">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="BusinessObject">Drawer</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="pf1:Drawer_ID">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="TillID" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">An identifier for the removeable cash holder that can be placed in or removed from the drawer.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="DrawerOpenTime" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The date/time the drawer was open (represented in ISO 8601 format).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="DrawerCloseTime" type="xsd:dateTime">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">The date/time the drawer was closed (represented in ISO 8601 format).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0"
+                        name="DrawerTransactionReason" type="ms-0300:DrawerReason_Enum">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Specifies why the drawer transaction was initiated.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="ReasonDescription" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Textual information to further describe the reason for the drawer event.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="1"
+                        name="ReferencedTransactionGUID" type="ms-0300:GUID">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">A unique identifier a transaction that initiated the drawer event (e.g. Order, Reservation).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" ref="pf1:CashManagement">
+                        <xsd:annotation>
+                            <xsd:documentation source="Description">Allows for monetary amount information to be sent when the amount is not tied to another type of transaction (e.g. order, refund).</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    
+    <xsd:element name="CashManagement" type="pf1:CashManagement"/>
+    
+    <xsd:complexType name="CashManagement">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Allows for monetary amount information to be sent when the amount is not tied to another type of transaction (e.g. order, refund).</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">CashManagement</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="Amount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The total amount related to the drawer transaction.  If broken out into denominations then the total of the amounts for all of the denomination objects would be expressed in this field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Currency" type="ms-0300:CurrencyCode">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The ISO currency code and decimal places for the Amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="pf1:Denomination">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies information related to the denomination of cash.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MonetaryDeviceID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">An identifier for an external device (e.g. coin dispenser, reverse ATM).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="MonetaryDeviceDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">A description of the external monetary device.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="Denomination" type="pf1:Denomination"/>
+    
+    <xsd:complexType name="Denomination">
+        <xsd:annotation>
+            <xsd:documentation source="Description">Specifies information related to the denomination of cash.</xsd:documentation>
+            <xsd:appinfo>
+                <otm:OTA2Entity type="CoreObject">Denomination</otm:OTA2Entity>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="1" name="DenominationType" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">Specifies the kind of denomination.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="1" name="Amount" type="xsd:decimal">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The monetary amount of this denomination (e.g type = $10 Amount=$80 Quantity = 8, means there are 8 ten dollar bills that have the value of $80.00).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Quantity" type="xsd:integer">
+                <xsd:annotation>
+                    <xsd:documentation source="Description">The number of this item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="ota2:ExtensionPoint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+</xsd:schema>

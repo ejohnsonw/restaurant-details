@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pf1:EventTypeTimeCard
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:ms-0300="http://www.modeldev.restauranttechnologynetwork.com/models/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Transactions_1_0_0.xsd">
+    <pf1:TimeCard>
+        <ms-0300:Employee>
+            <ms-0300:EmployeeID>5623315</ms-0300:EmployeeID>
+            <ms-0300:EmployeeRole>Approver</ms-0300:EmployeeRole>
+        </ms-0300:Employee>
+        <pf1:Job>
+            <pf1:JobCode>6756</pf1:JobCode>
+            <pf1:JobCodeName>Server</pf1:JobCodeName>
+            <pf1:Rate>15.75</pf1:Rate>
+        </pf1:Job>
+        <pf1:ClockDataTransaction systemGeneratedInd="true">
+            <pf1:TimeCardCorrelationGUID>Example String Value</pf1:TimeCardCorrelationGUID>
+            <pf1:PunchType>Clock in</pf1:PunchType>
+            <pf1:ClockDateTime>2022-07-05T17:06:10</pf1:ClockDateTime>
+            <ms-0300:EmployeeIdentifier>
+                <ms-0300:EmployeeID>5623315</ms-0300:EmployeeID>
+            </ms-0300:EmployeeIdentifier>
+            <pf1:CreatedTimestamp>2022-07-05T17:06:10</pf1:CreatedTimestamp>
+            <pf1:OtherID iD="Example String Value"
+                name="Example String Value" sourceSystem="Example String Value"/>
+            <ms-0300:Approver>
+                <ms-0300:EmployeeID>5623315</ms-0300:EmployeeID>
+                <ms-0300:EmployeeRole>Originator</ms-0300:EmployeeRole>
+            </ms-0300:Approver>
+            <pf1:Reason>Employee clock-in</pf1:Reason>
+        </pf1:ClockDataTransaction>
+    </pf1:TimeCard>
+</pf1:EventTypeTimeCard>

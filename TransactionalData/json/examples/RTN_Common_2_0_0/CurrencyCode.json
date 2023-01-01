@@ -1,0 +1,6 @@
+{
+  "CurrencyCode" : {
+    "value" : "Example String Value",
+    "decimalPlaces" : "2"
+  }
+}

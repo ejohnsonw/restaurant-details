@@ -1,0 +1,17 @@
+{
+  "CashManagement" : {
+    "Amount" : 1000,
+    "Currency" : {
+      "value" : "Example String Value",
+      "decimalPlaces" : "2"
+    },
+    "Denomination" : {
+      "@type" : "Denomination",
+      "DenominationType" : "Quarters",
+      "Amount" : 10.00,
+      "Quantity" : 40
+    },
+    "MonetaryDeviceID" : "CD1",
+    "MonetaryDeviceDescription" : "Coin dispenser"
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0200:AssociatedProfileDetail
+    xmlns:ms-0200="http://www.modeldev.restauranttechnologynetwork.com/models/v2"
+    mergeInd="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v2 ../../RTN_Common_2_0_0.xsd">
+    <ms-0200:ProfileID>fad1b3e8-81cd-4824-8f37-4437822ee512</ms-0200:ProfileID>
+    <ms-0200:UserID>1233251</ms-0200:UserID>
+    <ms-0200:RelationshipType>Business</ms-0200:RelationshipType>
+    <ms-0200:Description>Spouse</ms-0200:Description>
+</ms-0200:AssociatedProfileDetail>

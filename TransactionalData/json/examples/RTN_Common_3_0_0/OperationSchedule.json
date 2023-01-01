@@ -1,0 +1,9 @@
+{
+  "OperationSchedule" : {
+    "TimeSpan" : [ {
+      "startDate" : "2022-07-05T16:27:29+00:00",
+      "endDate" : "2022-07-05T16:35:42+00:00",
+      "DaysOfWeek" : [ "Sunday" ]
+    } ]
+  }
+}

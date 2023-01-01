@@ -1,0 +1,32 @@
+{
+  "Total" : {
+    "taxExemptInd" : true,
+    "Currency" : {
+      "value" : "Example String Value",
+      "decimalPlaces" : "2"
+    },
+    "Surcharge" : [ {
+      "@type" : "Surcharge",
+      "amount" : 3.00,
+      "surchargeIncludedInd" : true,
+      "Description" : "Delivery fee"
+    } ],
+    "Tax" : [ {
+      "@type" : "Tax",
+      "amount" : 0.53,
+      "taxIncludedInd" : true,
+      "Description" : "State tax"
+    } ],
+    "ItemPrice" : 7.00,
+    "Context" : [ "Third party delivery" ],
+    "Discount" : [ {
+      "@type" : "Discount",
+      "valueType" : "Amount",
+      "value" : 3.00,
+      "beforeTaxInd" : true,
+      "Application" : [ "Example String Value" ],
+      "Description" : "Senior discount."
+    } ],
+    "Gratuity" : 12
+  }
+}

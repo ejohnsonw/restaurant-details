@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pf1:OrderItemState
+    xmlns:pf1="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Transactions_1_0_0.xsd">
+    <pf1:ItemState>Held</pf1:ItemState>
+    <pf1:Timestamp>2022-03-29T12:10:53</pf1:Timestamp>
+</pf1:OrderItemState>

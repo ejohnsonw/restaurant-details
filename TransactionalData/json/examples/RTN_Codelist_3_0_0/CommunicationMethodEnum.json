@@ -1,0 +1,6 @@
+{
+  "CommunicationMethod_Enum" : {
+    "value" : "Phone"
+  },
+  "extension" : "Other_Value"
+}

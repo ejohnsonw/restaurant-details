@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0100:AllergenDetails
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_MenuSync_1_0_0.xsd">
+    <ms-0100:AllergyInformation_Enum>Gluten</ms-0100:AllergyInformation_Enum>
+    <ms-0100:Contains_Enum>Contains</ms-0100:Contains_Enum>
+</ms-0100:AllergenDetails>

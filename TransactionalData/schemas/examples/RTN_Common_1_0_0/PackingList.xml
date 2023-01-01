@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0100:PackingList
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_Common_1_0_0.xsd">
+    <ms-0100:ItemName>Mustard</ms-0100:ItemName>
+    <ms-0100:Quantity>2</ms-0100:Quantity>
+</ms-0100:PackingList>

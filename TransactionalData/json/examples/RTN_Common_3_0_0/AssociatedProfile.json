@@ -1,0 +1,13 @@
+{
+  "AssociatedProfileDetail" : {
+    "mergeInd" : true,
+    "ProfileID" : "fad1b3e8-81cd-4824-8f37-4437822ee512",
+    "UserID" : "1233251",
+    "RelationshipType" : [ {
+      "value" : "Business"
+    }, {
+      "value" : "Business"
+    } ],
+    "Description" : "Spouse"
+  }
+}

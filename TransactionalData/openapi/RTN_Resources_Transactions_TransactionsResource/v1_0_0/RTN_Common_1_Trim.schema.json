@@ -1,0 +1,1023 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RTN_Common",
+  "x-otm-library": {
+    "LibraryName": "RTN_Common",
+    "LibraryVersion": "1.0.0",
+    "LibraryStatus": "FINAL",
+    "SourceFile": "/RTN_Common_1_0_0.otm",
+    "CompilerVersion": "4.0-SNAPSHOT",
+    "CompileDate": "2022-09-21T10:18:03.409-0400"
+  },
+  "definitions": {
+    "TimeSpan": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_1_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "TimeSpanSummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_1_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Effectivity": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_1_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "EffectivitySummary": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "startDate": {
+          "description": "Specifies the start date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "endDate": {
+          "description": "Specifies the end date\\/time.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "DaysOfWeek": {
+          "type": "array",
+          "items": {
+            "$ref": "RTN_Codelist_1_Trim.schema.json#/definitions/DaysOfWeek_Enum"
+          },
+          "maxItems": 7
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "TimeSpanDetail": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/TimeSpan"
+        },
+        {
+          "properties": {
+            "Name": {
+              "description": "Marketing name associated with the availability of an item (e.g. Happy Hour).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Happy hour"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "WeekOfMonth": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 4
+            },
+            "MonthOfYear": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 12
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "EffectivityDetail": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "TimeSpan"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Effectivity"
+        },
+        {
+          "properties": {
+            "Name": {
+              "description": "Marketing name associated with the availability of an item (e.g. Happy Hour).",
+              "x-otm-annotations": {
+                "examples": [
+                  {
+                    "context": "ms",
+                    "value": "Happy hour"
+                  }
+                ]
+              },
+              "type": "string"
+            },
+            "WeekOfMonth": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 4
+            },
+            "MonthOfYear": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "maxItems": 12
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "SKU": {
+      "x-otm-entity": {
+        "EntityType": "ValueWithAttributes",
+        "EntityName": "SKU"
+      },
+      "description": "The Stock Keeping Unit.  A code that identifies a product.",
+      "properties": {
+        "productName": {
+          "description": "The name of the product for which the product code belongs.",
+          "type": "string"
+        },
+        "productCode": {
+          "description": "The SKU code for the product.",
+          "type": "string"
+        }
+      }
+    },
+    "Pricing": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Pricing"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Currency": {
+          "description": "Assigned Type: ms-0100:CurrencyCode",
+          "$ref": "#/definitions/CurrencyCode"
+        },
+        "Surcharge": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Surcharge"
+          }
+        },
+        "Tax": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Tax"
+          }
+        },
+        "ItemPrice": {
+          "description": "The cost of an item.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "7.00"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "Context": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Discount": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Discount"
+          }
+        },
+        "taxExemptInd": {
+          "description": "When true, this item is not taxable  When false, this item is taxable.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "ItemPrice"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Media": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Media"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "MediaURI": {
+          "description": "The URI for the media asset.",
+          "type": "string"
+        },
+        "KnownAssetNumber": {
+          "description": "The Known Asset Number for the media asset.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "MediaCategory": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "MediaCategory"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Name": {
+          "description": "The name of the category for this specific media asset.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Beverages"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Media": {
+          "description": "Assigned Type: ms-0100:Media",
+          "$ref": "#/definitions/Media"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Availability": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "Availability"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "AvailabilityEffectivity": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "Availability"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Availability"
+        },
+        {
+          "properties": {
+            "Effectivity": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Effectivity"
+              }
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "AvailabilityDayPart": {
+      "x-otm-entity": {
+        "EntityType": "ChoiceObject",
+        "EntityName": "Availability"
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Availability"
+        },
+        {
+          "properties": {
+            "DayPart": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DayPart"
+              }
+            },
+            "ExtensionPoint_Choice": {
+              "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint_Choice"
+            }
+          }
+        }
+      ]
+    },
+    "DayPart": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "DayPart"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "uRI": {
+          "description": "A URI to day part details.",
+          "type": "string"
+        },
+        "Name": {
+          "description": "Specifies the name of the day part (e.g. Breakfast, Lunch, Brunch, Dinner).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Dinner"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "TimeSpanSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeSpanSummary"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Tax": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Tax"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "amount": {
+          "description": "The system calculated tax amount.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": ".53"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "Description": {
+          "description": "A textual description of the tax.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "State tax"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "taxIncludedInd": {
+          "description": "When true, tax is included in the price amount.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "amount"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Surcharge": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Surcharge"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "amount": {
+          "description": "The cost of the surcharge.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "3.00"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "Description": {
+          "description": "A textual description of the surcharge.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "ms",
+                "value": "Delivery fee"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "surchargeIncludedInd": {
+          "description": "When true, the surcharge is included in the item price.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Discount": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Discount"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "valueType": {
+          "description": "Specifies if the discount is expressed as an amount or a percent.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Amount"
+              }
+            ]
+          },
+          "$ref": "RTN_Codelist_1_Trim.schema.json#/definitions/ValueType_Enum"
+        },
+        "value": {
+          "description": "The discount amount or percentage.  The value type defines whether the value is an amount or a percent.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "3.00"
+              }
+            ]
+          },
+          "type": "number",
+          "format": "float"
+        },
+        "Application": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 128
+          }
+        },
+        "Description": {
+          "description": "A description of the discount.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Senior discount."
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "beforeTaxInd": {
+          "description": "When true, the discount is applied before tax.  When false, the discount applies after tax.",
+          "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "LocationID": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Location"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "GUID": {
+          "description": "A unique global identifier for the location.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "LocationIdentifier": {
+      "x-otm-entity": {
+        "EntityType": "BusinessObject",
+        "EntityName": "Location"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "GUID": {
+          "description": "A unique global identifier for the location.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Promotion": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Promotion"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PromotionCode": {
+          "description": "A code that the guest provides to invoke a discount on the menu product (e.g. promotion, charity event).",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Promo1"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Description": {
+          "description": "Provides a description of the promotion or charity event identified in the promotion code.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "School fundraiser"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "PersonName": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "PersonName"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "First": {
+          "description": "The first name or given name of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "John"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Last": {
+          "description": "The surname of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Smith"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "CustomerName": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "PersonName"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "First": {
+          "description": "The first name or given name of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "John"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Last": {
+          "description": "The surname of the person.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Smith"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "Customer": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "Customer"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PersonName": {
+          "description": "Assigned Type: ms-0100:PersonName",
+          "$ref": "#/definitions/PersonName"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    },
+    "CurrencyCode": {
+      "x-otm-entity": {
+        "EntityType": "ValueWithAttributes",
+        "EntityName": "CurrencyCode"
+      },
+      "description": "An ISO 4217 alpha character code used to specify the monetary unit.",
+      "properties": {
+        "value": {
+          "type": "string",
+          "pattern": "[a-zA-Z]{3}"
+        },
+        "decimalPlaces": {
+          "description": "An ISO 4201 \\\"minor unit\\\" typically used when an amount is sent without the decimal places to specify where the decimal should be placed (e.g. 2500 USD with 2 minor units would represent $25.00)",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2"
+              }
+            ]
+          },
+          "type": "string"
+        }
+      }
+    },
+    "PackingList": {
+      "x-otm-entity": {
+        "EntityType": "CoreObject",
+        "EntityName": "PackingList"
+      },
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "ItemName": {
+          "description": "The name of the item to be packed.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "Mustard"
+              }
+            ]
+          },
+          "type": "string"
+        },
+        "Quantity": {
+          "description": "The number of the packing item to be included.",
+          "x-otm-annotations": {
+            "examples": [
+              {
+                "context": "Example",
+                "value": "2"
+              }
+            ]
+          },
+          "type": "integer",
+          "format": "int32"
+        },
+        "ExtensionPoint": {
+          "$ref": "built-ins/OTM_BuiltIns.schema.json#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": {
+        "propertyName": "@type"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/TimeSpan"
+    },
+    {
+      "$ref": "#/definitions/TimeSpanSummary"
+    },
+    {
+      "$ref": "#/definitions/Effectivity"
+    },
+    {
+      "$ref": "#/definitions/EffectivitySummary"
+    },
+    {
+      "$ref": "#/definitions/TimeSpanDetail"
+    },
+    {
+      "$ref": "#/definitions/EffectivityDetail"
+    },
+    {
+      "$ref": "#/definitions/SKU"
+    },
+    {
+      "$ref": "#/definitions/Pricing"
+    },
+    {
+      "$ref": "#/definitions/Media"
+    },
+    {
+      "$ref": "#/definitions/MediaCategory"
+    },
+    {
+      "$ref": "#/definitions/Availability"
+    },
+    {
+      "$ref": "#/definitions/AvailabilityEffectivity"
+    },
+    {
+      "$ref": "#/definitions/AvailabilityDayPart"
+    },
+    {
+      "$ref": "#/definitions/DayPart"
+    },
+    {
+      "$ref": "#/definitions/Tax"
+    },
+    {
+      "$ref": "#/definitions/Surcharge"
+    },
+    {
+      "$ref": "#/definitions/Discount"
+    },
+    {
+      "$ref": "#/definitions/LocationID"
+    },
+    {
+      "$ref": "#/definitions/LocationIdentifier"
+    },
+    {
+      "$ref": "#/definitions/Promotion"
+    },
+    {
+      "$ref": "#/definitions/PersonName"
+    },
+    {
+      "$ref": "#/definitions/CustomerName"
+    },
+    {
+      "$ref": "#/definitions/Customer"
+    },
+    {
+      "$ref": "#/definitions/CurrencyCode"
+    },
+    {
+      "$ref": "#/definitions/PackingList"
+    }
+  ]
+}

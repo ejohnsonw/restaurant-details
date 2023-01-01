@@ -1,0 +1,10 @@
+{
+  "ChannelEffectivity" : {
+    "Channel" : [ "Curbside" ],
+    "EffectivitySummary" : {
+      "startDate" : "2011-01-24T09:45:00-06:00",
+      "endDate" : "2011-07-04T14:15:00+06:00",
+      "EffectivitySummary" : [ "Sunday" ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ms-0100:Channel
+    xmlns:ms-0100="http://www.modeldev.restauranttechnologynetwork.com/models/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldev.restauranttechnologynetwork.com/models/v1 ../../RTN_MenuSync_1_0_0.xsd">
+    <ms-0100:ChannelName>Example String Value</ms-0100:ChannelName>
+    <ms-0100:MenuItemDescription>Example String Value</ms-0100:MenuItemDescription>
+</ms-0100:Channel>
