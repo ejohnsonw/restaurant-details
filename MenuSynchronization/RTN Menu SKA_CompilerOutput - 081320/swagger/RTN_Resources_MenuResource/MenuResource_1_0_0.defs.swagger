@@ -261,7 +261,7 @@
                 "$ref": "#/definitions/Default"
               }
             },
-            "Modifier": {
+            "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -385,7 +385,7 @@
                 "$ref": "#/definitions/Default"
               }
             },
-            "Modifier": {
+            "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -775,7 +775,7 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Modifier": {
+            "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -889,7 +889,7 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Modifier": {
+            "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
