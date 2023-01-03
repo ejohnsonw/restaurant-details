@@ -255,10 +255,10 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Default": {
+            "Defaults": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Default"
+                "$ref": "#/definitions/Defaults"
               }
             },
             "ModifierID": {
@@ -379,10 +379,10 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Default": {
+            "Defaults": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Default"
+                "$ref": "#/definitions/Defaults"
               }
             },
             "ModifierID": {
@@ -618,7 +618,7 @@
       ],
       "discriminator": "@type"
     },
-    "Default": {
+    "Defaults": {
       "properties": {
         "@type": {
           "type": "string"
@@ -779,10 +779,10 @@
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
-            "Default": {
+            "Defaults": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Default"
+                "$ref": "#/definitions/Defaults"
               }
             },
             "Pricing": {
@@ -872,10 +872,10 @@
               "description": "Assigned Type: ms-0100:Availability",
               "$ref": "#/definitions/Availability"
             },
-            "Default": {
+            "Defaults": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Default"
+                "$ref": "#/definitions/Defaults"
               }
             },
             "Pricing": {
