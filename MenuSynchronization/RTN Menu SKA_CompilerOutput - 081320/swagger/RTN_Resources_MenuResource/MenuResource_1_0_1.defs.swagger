@@ -1350,11 +1350,17 @@
     },
     "ProductCategory": {
       "properties": {
-        "@type": {
-          "type": "string"
+        "ProductCategoryID": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
         },
         "Name": {
           "description": "The name of the category for this specific media asset.",
+          "type": "string"
+        },
+        "Description": {
+          "description": "This category description",
           "type": "string"
         },
         "Products": {
@@ -1368,12 +1374,14 @@
           "items": {
             "$ref": "#/definitions/MenuItemID"
           }
+        },
+        "MediaAssets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Media"
+          }
         }
-      },
-      "required": [
-        "@type"
-      ],
-      "discriminator": "@type"
+      }
     },
     "Availability": {
       "properties": {
@@ -1385,7 +1393,8 @@
         }
       },
       "required": [
-        "@type"
+        "ProductCategoryID",
+        "Name"
       ],
       "discriminator": "@type"
     },
