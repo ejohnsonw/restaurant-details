@@ -744,7 +744,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredient": {
+            "Ingredients": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Ingredient"
@@ -846,10 +846,10 @@
               "description": "The description of the menu product specific to the channel.",
               "type": "string"
             },
-            "MenuItem": {
+            "MenuItems": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MenuItem"
+                "$ref": "#/definitions/MenuItemID"
               },
               "minItems": 1
             },
@@ -1369,13 +1369,13 @@
         "Products": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MenuProduct"
+            "$ref": "#/definitions/MenuProductID"
           }
         },
         "Items": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MenuItem"
+            "$ref": "#/definitions/MenuItemID"
           }
         },
         "MediaAssets": {
