@@ -1375,13 +1375,13 @@
         "Products": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MenuProductID"
+            "$ref": "#/definitions/MenuProduct"
           }
         },
         "Items": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MenuItemID"
+            "$ref": "#/definitions/MenuItem"
           }
         },
         "MediaAssets": {
