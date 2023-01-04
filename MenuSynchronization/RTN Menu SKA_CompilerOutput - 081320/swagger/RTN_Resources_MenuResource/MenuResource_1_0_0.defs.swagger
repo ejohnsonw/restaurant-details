@@ -1259,6 +1259,10 @@
         "@type": {
           "type": "string"
         },
+        "Name": {
+                  "type": "string"
+                  "description": "Name for this pricing: EG. Pick Up, Eat In, Delivery",
+                },
         "Currency": {
           "description": "Assigned Type: ms-0100:CurrencyCode",
           "$ref": "#/definitions/CurrencyCode"
