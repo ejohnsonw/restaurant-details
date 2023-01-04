@@ -221,10 +221,10 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredient": {
+            "Ingredients": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Ingredient"
+                "$ref": "#/definitions/IngredientID"
               }
             },
             "ServingSize": {
@@ -345,10 +345,10 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredient": {
+            "Ingredients": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Ingredient"
+                "$ref": "#/definitions/IngredientID"
               }
             },
             "ServingSize": {
@@ -747,7 +747,7 @@
             "Ingredients": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Ingredient"
+                "$ref": "#/definitions/IngredientID"
               }
             },
             "ServingSize": {
