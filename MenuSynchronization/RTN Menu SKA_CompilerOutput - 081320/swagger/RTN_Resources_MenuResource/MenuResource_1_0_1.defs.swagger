@@ -524,16 +524,10 @@
                 "type": "string"
               }
             },
-            "MenuProduct": {
+            "ProductCategory": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MenuProductID"
-              }
-            },
-            "MenuItem": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/MenuItemID"
+                "$ref": "#/definitions/ProductCategory"
               }
             },
             "MediaCategory": {
@@ -542,12 +536,6 @@
                 "$ref": "#/definitions/MediaCategory"
               }
             },
-            "MenuCategory": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/definitions/MenuCategory"
-                          }
-                        },
             "RegulatoryRequirementsDescription": {
               "type": "array",
               "items": {
@@ -1266,9 +1254,9 @@
           "type": "string"
         },
         "Name": {
-                  "type": "string"
-                  "description": "Name for this pricing: EG. Pick Up, Eat In, Delivery",
-                },
+          "type": "string",
+          "description": "Name for this pricing: EG. Pick Up, Eat In, Delivery"
+        },
         "Currency": {
           "description": "Assigned Type: ms-0100:CurrencyCode",
           "$ref": "#/definitions/CurrencyCode"
@@ -1353,6 +1341,33 @@
         },
         "ExtensionPoint": {
           "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "ProductCategory": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Name": {
+          "description": "The name of the category for this specific media asset.",
+          "type": "string"
+        },
+        "Products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuProductID"
+          }
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuItemID"
+          }
         }
       },
       "required": [
