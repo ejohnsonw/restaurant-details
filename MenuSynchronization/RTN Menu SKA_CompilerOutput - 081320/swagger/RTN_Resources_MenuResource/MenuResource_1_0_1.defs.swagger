@@ -224,7 +224,7 @@
             "Ingredient": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Ingredient"
+                "$ref": "#/definitions/IngredientID"
               }
             },
             "ServingSize": {
@@ -263,7 +263,7 @@
             },
             "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
+              "$ref": "#/definitions/ModifierID"
             },
             "modifierEligibleInd": {
               "description": "When true, this menu item may be modified.",
@@ -348,7 +348,7 @@
             "Ingredient": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Ingredient"
+                "$ref": "#/definitions/IngredientID"
               }
             },
             "ServingSize": {
@@ -387,7 +387,7 @@
             },
             "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
+              "$ref": "#/definitions/ModifierID"
             },
             "modifierEligibleInd": {
               "description": "When true, this menu item may be modified.",
@@ -703,10 +703,7 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Channel"
-              }
+              "type": "string"
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
@@ -747,7 +744,7 @@
             "Ingredient": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Ingredient"
+                "$ref": "#/definitions/IngredientID"
               }
             },
             "ServingSize": {
@@ -772,9 +769,9 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Modifier": {
+            "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
+              "$ref": "#/definitions/ModifierID"
             },
             "Defaults": {
               "type": "array",
@@ -849,7 +846,7 @@
             "MenuItem": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MenuItem"
+                "$ref": "#/definitions/MenuItemID"
               },
               "minItems": 1
             },
@@ -886,9 +883,9 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Modifier": {
+            "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
+              "$ref": "#/definitions/ModifierID"
             },
             "PackingList": {
               "description": "Assigned Type: ms-0100:PackingList",
@@ -1369,13 +1366,13 @@
         "Products": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MenuProduct"
+            "$ref": "#/definitions/MenuProductID"
           }
         },
         "Items": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MenuItem"
+            "$ref": "#/definitions/MenuItemID"
           }
         },
         "MediaAssets": {
@@ -1395,6 +1392,10 @@
           "$ref": "#/definitions/ExtensionPoint_Shared"
         }
       },
+      "required": [
+        "ProductCategoryID",
+        "Name"
+      ],
       "discriminator": "@type"
     },
     "AvailabilityEffectivity": {
