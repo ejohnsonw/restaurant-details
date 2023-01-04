@@ -183,7 +183,10 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Channel"
+              }
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
@@ -307,7 +310,10 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Channel"
+              }
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
@@ -369,7 +375,7 @@
               "description": "Where the item came from.",
               "type": "string"
             },
-            "Pricings": {
+            "Pricing": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Pricing"
@@ -512,7 +518,7 @@
                 "type": "string"
               }
             },
-            "ChannelAvailabilities": {
+            "ChannelAvailability": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Channel"
@@ -703,7 +709,10 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Channel"
+              }
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
@@ -779,7 +788,7 @@
                 "$ref": "#/definitions/Defaults"
               }
             },
-            "Pricings": {
+            "Pricing": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Pricing"
@@ -872,7 +881,7 @@
                 "$ref": "#/definitions/Defaults"
               }
             },
-            "Pricings": {
+            "Pricing": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Pricing"
