@@ -221,7 +221,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredients": {
+            "Ingredient": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -263,7 +263,7 @@
             },
             "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
+              "$ref": "#/definitions/ModifierID"
             },
             "modifierEligibleInd": {
               "description": "When true, this menu item may be modified.",
@@ -345,7 +345,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredients": {
+            "Ingredient": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -387,7 +387,7 @@
             },
             "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
+              "$ref": "#/definitions/ModifierID"
             },
             "modifierEligibleInd": {
               "description": "When true, this menu item may be modified.",
@@ -515,7 +515,7 @@
             "ChannelAvailability": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Channel"
+                "type": "string"
               }
             },
             "LocationAvailability": {
@@ -524,16 +524,28 @@
                 "type": "string"
               }
             },
-            "ProductCategory": {
+            "MenuProduct": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/ProductCategory"
+                "$ref": "#/definitions/MenuProductID"
+              }
+            },
+            "MenuItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuItemID"
               }
             },
             "MediaCategory": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
+              }
+            },
+            "ProductCategory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductCategory"
               }
             },
             "RegulatoryRequirementsDescription": {
@@ -703,10 +715,7 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Channel"
-              }
+              "type": "string"
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
@@ -744,7 +753,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredients": {
+            "Ingredient": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -772,9 +781,9 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Modifier": {
+            "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
+              "$ref": "#/definitions/ModifierID"
             },
             "Defaults": {
               "type": "array",
@@ -846,7 +855,7 @@
               "description": "The description of the menu product specific to the channel.",
               "type": "string"
             },
-            "MenuItems": {
+            "MenuItem": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MenuItemID"
@@ -886,9 +895,9 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Modifier": {
+            "ModifierID": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
+              "$ref": "#/definitions/ModifierID"
             },
             "PackingList": {
               "description": "Assigned Type: ms-0100:PackingList",
@@ -1353,17 +1362,11 @@
     },
     "ProductCategory": {
       "properties": {
-        "ProductCategoryID": {
-          "description": "Assigned Type: ms-0100:GUID",
-          "type": "string",
-          "maxLength": 128
+        "@type": {
+          "type": "string"
         },
         "Name": {
           "description": "The name of the category for this specific media asset.",
-          "type": "string"
-        },
-        "Description": {
-          "description": "This category description",
           "type": "string"
         },
         "Products": {
@@ -1377,14 +1380,12 @@
           "items": {
             "$ref": "#/definitions/MenuItemID"
           }
-        },
-        "MediaAssets": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MediaCategory"
-          }
         }
-      }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
     },
     "Availability": {
       "properties": {
@@ -1395,6 +1396,9 @@
           "$ref": "#/definitions/ExtensionPoint_Shared"
         }
       },
+      "required": [
+        "@type"
+      ],
       "discriminator": "@type"
     },
     "AvailabilityEffectivity": {
