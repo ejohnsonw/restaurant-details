@@ -515,7 +515,7 @@
             "ChannelAvailability": {
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/Channel"
               }
             },
             "LocationAvailability": {
