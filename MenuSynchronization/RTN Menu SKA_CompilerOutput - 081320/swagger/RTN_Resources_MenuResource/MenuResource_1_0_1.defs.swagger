@@ -524,28 +524,16 @@
                 "type": "string"
               }
             },
-            "MenuProduct": {
+            "ProductCategory": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MenuProductID"
-              }
-            },
-            "MenuItem": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/MenuItemID"
+                "$ref": "#/definitions/ProductCategory"
               }
             },
             "MediaCategory": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
-              }
-            },
-            "ProductCategory": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ProductCategory"
               }
             },
             "RegulatoryRequirementsDescription": {
