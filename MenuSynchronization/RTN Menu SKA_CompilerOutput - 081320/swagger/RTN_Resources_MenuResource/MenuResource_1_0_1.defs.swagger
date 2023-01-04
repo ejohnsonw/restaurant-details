@@ -125,7 +125,7 @@
         "@type": {
           "type": "string"
         },
-        "iD": {
+        "menuItemID": {
           "description": "Assigned Type: ms-0100:GUID",
           "type": "string",
           "maxLength": 128
@@ -189,7 +189,7 @@
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
               "type": "string"
             },
-            "Destination": {
+            "Destinations": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -221,7 +221,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredient": {
+            "Ingredients": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -235,7 +235,7 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategory": {
+            "MediaCategories": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
@@ -245,7 +245,7 @@
               "description": "Where the item came from.",
               "type": "string"
             },
-            "Pricing": {
+            "Pricings": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Pricing"
@@ -287,7 +287,7 @@
               "description": "URL to master nutrition guide for specific information about a menu item.",
               "type": "string"
             },
-            "BaselineNutrition": {
+            "BaselineNutritions": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/BaselineNutrition"
@@ -313,7 +313,7 @@
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
               "type": "string"
             },
-            "Destination": {
+            "Destinations": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -345,7 +345,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredient": {
+            "Ingredients": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -359,7 +359,7 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategory": {
+            "MediaCategories": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
@@ -369,7 +369,7 @@
               "description": "Where the item came from.",
               "type": "string"
             },
-            "Pricing": {
+            "Pricings": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Pricing"
@@ -486,7 +486,7 @@
               "description": "The URL to long form, master nutritional guide for all nutrition information for the menu.",
               "type": "string"
             },
-            "Category": {
+            "Categories": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -500,7 +500,7 @@
               "description": "The default description for the menu.",
               "type": "string"
             },
-            "ChannelDescription": {
+            "ChannelDescriptions": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -512,31 +512,31 @@
                 "type": "string"
               }
             },
-            "ChannelAvailability": {
+            "ChannelAvailabilities": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Channel"
               }
             },
-            "LocationAvailability": {
+            "LocationAvailabilities": {
               "type": "array",
               "items": {
                 "type": "string"
               }
             },
-            "ProductCategory": {
+            "ProductCategories": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/ProductCategory"
               }
             },
-            "MediaCategory": {
+            "MediaCategories": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
               }
             },
-            "RegulatoryRequirementsDescription": {
+            "RegulatoryRequirementsDescriptions": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -709,7 +709,7 @@
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
               "type": "string"
             },
-            "Destination": {
+            "Destinations": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -741,7 +741,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredient": {
+            "Ingredients": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -755,7 +755,7 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategory": {
+            "MediaCategories": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
@@ -779,7 +779,7 @@
                 "$ref": "#/definitions/Defaults"
               }
             },
-            "Pricing": {
+            "Pricings": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Pricing"
@@ -843,20 +843,20 @@
               "description": "The description of the menu product specific to the channel.",
               "type": "string"
             },
-            "MenuItem": {
+            "MenuItems": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MenuItemID"
               },
               "minItems": 1
             },
-            "Promotion": {
+            "Promotions": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Promotion"
               }
             },
-            "MediaCategory": {
+            "MediaCategories": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
@@ -872,7 +872,7 @@
                 "$ref": "#/definitions/Defaults"
               }
             },
-            "Pricing": {
+            "Pricings": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Pricing"
@@ -1261,13 +1261,13 @@
           "description": "Assigned Type: ms-0100:CurrencyCode",
           "$ref": "#/definitions/CurrencyCode"
         },
-        "Surcharge": {
+        "Surcharges": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Surcharge"
           }
         },
-        "Tax": {
+        "Taxes": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Tax"
@@ -1284,7 +1284,7 @@
             "type": "string"
           }
         },
-        "Discount": {
+        "Discounts": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Discount"
@@ -1535,7 +1535,7 @@
           "type": "number",
           "format": "float"
         },
-        "Application": {
+        "Applications": {
           "type": "array",
           "items": {
             "type": "string",
