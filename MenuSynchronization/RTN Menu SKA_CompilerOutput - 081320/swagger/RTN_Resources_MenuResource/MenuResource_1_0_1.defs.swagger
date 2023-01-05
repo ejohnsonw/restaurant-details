@@ -192,7 +192,7 @@
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
               "type": "array",
               "items": {
-                "$ref": "../../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
+                "$ref": "../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
               }
             },
             "Destinations": {
@@ -322,7 +322,7 @@
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
               "type": "array",
               "items": {
-                "$ref": "../../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
+                "$ref": "../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
               }
             },
             "Destinations": {
@@ -533,7 +533,7 @@
             "LocationAvailability": {
               "type": "array",
               "items": {
-                "$ref": "../../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
+                "$ref": "../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
               }
             },
             "ProductCategories": {
@@ -724,7 +724,7 @@
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
               "type": "array",
               "items": {
-                "$ref": "../../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
+                "$ref": "../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
               }
             },
             "Destinations": {
