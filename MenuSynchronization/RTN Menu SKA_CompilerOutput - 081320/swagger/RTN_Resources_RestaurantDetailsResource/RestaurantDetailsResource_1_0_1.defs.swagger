@@ -187,7 +187,10 @@
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Location"
+              }
             },
             "Destination": {
               "type": "array",
@@ -311,7 +314,10 @@
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Location"
+              }
             },
             "Destination": {
               "type": "array",
@@ -519,9 +525,10 @@
               }
             },
             "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/Location"
               }
             },
             "MenuProduct": {
@@ -713,7 +720,10 @@
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "string"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Location"
+              }
             },
             "Destination": {
               "type": "array",
