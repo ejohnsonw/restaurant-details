@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "MenuResource",
+    "title": "RestaurantDetailsResource",
     "version": "1.0.0"
   },
   "host": "127.0.0.1",
@@ -10,22 +10,22 @@
     "http"
   ],
   "paths": {
-    "/menus": {
+    "/restaurantdetails": {
       "post": {
-        "summary": "MenuResource - Create",
+        "summary": "RestaurantDetailsResource - Create",
         "operationId": "Create",
         "consumes": [
-          "application/xml",
-          "application/json"
+          "application/json",
+          "application/xml"
         ],
         "parameters": [
           {
-            "name": "MenuID",
+            "name": "RestaurantDetailsID",
             "in": "body",
-            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "description": "Specifies the location and menu details for a restaurant.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/MenuID"
+              "$ref": "#/definitions/RestaurantDetailsID"
             }
           }
         ],
@@ -54,19 +54,19 @@
         }
       }
     },
-    "/menus/{menuID}": {
+    "/restaurantdetails/{restaurantID}": {
       "get": {
-        "summary": "MenuResource - Get",
+        "summary": "RestaurantDetailsResource - Get",
         "operationId": "Get",
         "produces": [
-          "application/xml",
-          "application/json"
+          "application/json",
+          "application/xml"
         ],
         "parameters": [
           {
-            "name": "menuID",
+            "name": "restaurantID",
             "in": "path",
-            "description": "A system wide unique ID associated with a menu.",
+            "description": "A unique identifier for the restaurant.",
             "required": true,
             "type": "string",
             "maxLength": 128
@@ -74,45 +74,45 @@
         ],
         "responses": {
           "200": {
-            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "description": "Specifies the location and menu details for a restaurant.",
             "schema": {
-              "$ref": "#/definitions/MenuID"
+              "$ref": "#/definitions/RestaurantDetailsID"
             }
           },
           "400": {
-            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "description": "Specifies the location and menu details for a restaurant.",
             "schema": {
-              "$ref": "#/definitions/MenuID"
+              "$ref": "#/definitions/RestaurantDetailsID"
             }
           },
           "401": {
-            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "description": "Specifies the location and menu details for a restaurant.",
             "schema": {
-              "$ref": "#/definitions/MenuID"
+              "$ref": "#/definitions/RestaurantDetailsID"
             }
           },
           "402": {
-            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "description": "Specifies the location and menu details for a restaurant.",
             "schema": {
-              "$ref": "#/definitions/MenuID"
+              "$ref": "#/definitions/RestaurantDetailsID"
             }
           },
           "403": {
-            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "description": "Specifies the location and menu details for a restaurant.",
             "schema": {
-              "$ref": "#/definitions/MenuID"
+              "$ref": "#/definitions/RestaurantDetailsID"
             }
           },
           "404": {
-            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "description": "Specifies the location and menu details for a restaurant.",
             "schema": {
-              "$ref": "#/definitions/MenuID"
+              "$ref": "#/definitions/RestaurantDetailsID"
             }
           },
           "500": {
-            "description": "A collection of MenuItems, MenuProducts, Ingredients, Modifiers, and Prices.",
+            "description": "Specifies the location and menu details for a restaurant.",
             "schema": {
-              "$ref": "#/definitions/MenuID"
+              "$ref": "#/definitions/RestaurantDetailsID"
             }
           }
         }
@@ -125,7 +125,7 @@
         "@type": {
           "type": "string"
         },
-        "menuItemID": {
+        "iD": {
           "description": "Assigned Type: ms-0100:GUID",
           "type": "string",
           "maxLength": 128
@@ -183,19 +183,13 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Channel"
-              }
+              "type": "string"
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "array",
-              "items": {
-                "$ref": "../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
-              }
+              "type": "string"
             },
-            "Destinations": {
+            "Destination": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -227,7 +221,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredients": {
+            "Ingredient": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -241,7 +235,7 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategories": {
+            "MediaCategory": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
@@ -251,7 +245,7 @@
               "description": "Where the item came from.",
               "type": "string"
             },
-            "Pricings": {
+            "Pricing": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Pricing"
@@ -261,13 +255,13 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Defaults": {
+            "Default": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Defaults"
+                "$ref": "#/definitions/Default"
               }
             },
-            "ModifierID": {
+            "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -293,7 +287,7 @@
               "description": "URL to master nutrition guide for specific information about a menu item.",
               "type": "string"
             },
-            "BaselineNutritions": {
+            "BaselineNutrition": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/BaselineNutrition"
@@ -313,19 +307,13 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Channel"
-              }
+              "type": "string"
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "array",
-              "items": {
-                "$ref": "../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
-              }
+              "type": "string"
             },
-            "Destinations": {
+            "Destination": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -357,7 +345,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredients": {
+            "Ingredient": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -371,7 +359,7 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategories": {
+            "MediaCategory": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
@@ -391,13 +379,13 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Defaults": {
+            "Default": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Defaults"
+                "$ref": "#/definitions/Default"
               }
             },
-            "ModifierID": {
+            "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -498,7 +486,7 @@
               "description": "The URL to long form, master nutritional guide for all nutrition information for the menu.",
               "type": "string"
             },
-            "Categories": {
+            "Category": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -512,7 +500,7 @@
               "description": "The default description for the menu.",
               "type": "string"
             },
-            "ChannelDescriptions": {
+            "ChannelDescription": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -527,28 +515,34 @@
             "ChannelAvailability": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Channel"
+                "type": "string"
               }
             },
             "LocationAvailability": {
               "type": "array",
               "items": {
-                "$ref": "../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
+                "type": "string"
               }
             },
-            "ProductCategories": {
+            "MenuProduct": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/ProductCategory"
+                "$ref": "#/definitions/MenuProductID"
               }
             },
-            "MediaCategories": {
+            "MenuItem": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuItemID"
+              }
+            },
+            "MediaCategory": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
               }
             },
-            "RegulatoryRequirementsDescriptions": {
+            "RegulatoryRequirementsDescription": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -624,7 +618,7 @@
       ],
       "discriminator": "@type"
     },
-    "Defaults": {
+    "Default": {
       "properties": {
         "@type": {
           "type": "string"
@@ -715,19 +709,13 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Channel"
-              }
+              "type": "string"
             },
             "LocationAvailability": {
-              "description": "A location or arbitrary set of locations where the modifier may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "array",
-              "items": {
-                "$ref": "../RTN_Resources_RestaurantDetailsResource/RestaurantDetailsResource_1_0_0.defs.swagger#/definitions/LocationID"
-              }
+              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "string"
             },
-            "Destinations": {
+            "Destination": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -759,7 +747,7 @@
               "description": "Textual information regarding any specific ordering information for this menu item.",
               "type": "string"
             },
-            "Ingredients": {
+            "Ingredient": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/IngredientID"
@@ -773,7 +761,7 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategories": {
+            "MediaCategory": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
@@ -787,14 +775,14 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "ModifierID": {
+            "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
-            "Defaults": {
+            "Default": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Defaults"
+                "$ref": "#/definitions/Default"
               }
             },
             "Pricing": {
@@ -861,20 +849,20 @@
               "description": "The description of the menu product specific to the channel.",
               "type": "string"
             },
-            "MenuItems": {
+            "MenuItem": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MenuItemID"
               },
               "minItems": 1
             },
-            "Promotions": {
+            "Promotion": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Promotion"
               }
             },
-            "MediaCategories": {
+            "MediaCategory": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MediaCategory"
@@ -884,10 +872,10 @@
               "description": "Assigned Type: ms-0100:Availability",
               "$ref": "#/definitions/Availability"
             },
-            "Defaults": {
+            "Default": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Defaults"
+                "$ref": "#/definitions/Default"
               }
             },
             "Pricing": {
@@ -901,7 +889,7 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "ModifierID": {
+            "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -942,6 +930,46 @@
         "@type"
       ],
       "discriminator": "@type"
+    },
+    "RestaurantDetailsID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "restaurantID": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "RestaurantDetails": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/RestaurantDetailsID"
+        },
+        {
+          "properties": {
+            "Location": {
+              "description": "Assigned Type: ms-0100:Location",
+              "$ref": "#/definitions/LocationID"
+            },
+            "Menu": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuID"
+              }
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ]
     },
     "AllergenDetails": {
       "properties": {
@@ -1123,6 +1151,14 @@
         "Free From"
       ]
     },
+    "Status_Enum": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "Temporarily Closed",
+        "Permanently Closed"
+      ]
+    },
     "TimeSpan": {
       "properties": {
         "@type": {
@@ -1271,21 +1307,17 @@
         "@type": {
           "type": "string"
         },
-        "Name": {
-          "type": "string",
-          "description": "Name for this pricing: EG. Pick Up, Eat In, Delivery"
-        },
         "Currency": {
           "description": "Assigned Type: ms-0100:CurrencyCode",
           "$ref": "#/definitions/CurrencyCode"
         },
-        "Surcharges": {
+        "Surcharge": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Surcharge"
           }
         },
-        "Taxes": {
+        "Tax": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Tax"
@@ -1302,7 +1334,7 @@
             "type": "string"
           }
         },
-        "Discounts": {
+        "Discount": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Discount"
@@ -1366,41 +1398,6 @@
       ],
       "discriminator": "@type"
     },
-    "ProductCategory": {
-      "properties": {
-        "ProductCategoryID": {
-          "description": "Assigned Type: ms-0100:GUID",
-          "type": "string",
-          "maxLength": 128
-        },
-        "Name": {
-          "description": "The name of the category for this specific media asset.",
-          "type": "string"
-        },
-        "Description": {
-          "description": "This category description",
-          "type": "string"
-        },
-        "Products": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MenuProduct"
-          }
-        },
-        "Items": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MenuItem"
-          }
-        },
-        "MediaAssets": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MediaCategory"
-          }
-        }
-      }
-    },
     "Availability": {
       "properties": {
         "@type": {
@@ -1411,8 +1408,7 @@
         }
       },
       "required": [
-        "ProductCategoryID",
-        "Name"
+        "@type"
       ],
       "discriminator": "@type"
     },
@@ -1553,7 +1549,7 @@
           "type": "number",
           "format": "float"
         },
-        "Applications": {
+        "Application": {
           "type": "array",
           "items": {
             "type": "string",
@@ -1567,6 +1563,226 @@
         "beforeTaxInd": {
           "description": "When true, the discount is applied before tax.  When false, the discount applies after tax.",
           "type": "boolean"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "LocationID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "GUID": {
+          "description": "A unique global identifier for the location.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Location": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/LocationID"
+        },
+        {
+          "properties": {
+            "URI": {
+              "description": "The URI for the location.",
+              "type": "string"
+            },
+            "Address": {
+              "description": "Assigned Type: ms-0100:Address",
+              "$ref": "#/definitions/Address"
+            },
+            "Position": {
+              "description": "Assigned Type: ms-0100:Position",
+              "$ref": "#/definitions/Position"
+            },
+            "LocationStatus": {
+              "description": "Assigned Type: ms-0100:Status_Enum",
+              "$ref": "#/definitions/Status_Enum"
+            },
+            "OperationSchedule": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OperationSchedule"
+              }
+            },
+            "Description": {
+              "description": "A description of the location (e.g. store , ghost kitchen).",
+              "type": "string"
+            },
+            "LocationID": {
+              "description": "A number used to identify the location.",
+              "type": "string"
+            },
+            "ChannelEffectivity": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ChannelEffectivity"
+              }
+            },
+            "Phone": {
+              "description": "Assigned Type: ms-0100:Phone",
+              "$ref": "#/definitions/Phone"
+            },
+            "ExtensionPoint_Summary": {
+              "$ref": "#/definitions/ExtensionPoint_Summary"
+            }
+          }
+        }
+      ]
+    },
+    "LocationDetail": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/Location"
+        },
+        {
+          "properties": {
+            "OpenDate": {
+              "description": "Specifies the date the restaurant is to open.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "ClosedDate": {
+              "description": "Specifies the date a location is to close.",
+              "type": "string",
+              "format": "date-time"
+            },
+            "ExtensionPoint_Detail": {
+              "$ref": "#/definitions/ExtensionPoint_Detail"
+            }
+          }
+        }
+      ]
+    },
+    "Address": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "StreetAddress": {
+          "description": "The street number and street name.",
+          "type": "string"
+        },
+        "CityName": {
+          "description": "The name of the city in which the entitiy is located.",
+          "type": "string"
+        },
+        "PostalCode": {
+          "description": "Specifies the state in which the entity is located.",
+          "type": "string"
+        },
+        "Country": {
+          "description": "Specifies the country in which the entity is located.",
+          "type": "string"
+        },
+        "CountryCode": {
+          "description": "ISO 3166 code for a country.",
+          "type": "string"
+        },
+        "StateOrTerritory": {
+          "description": "Specifies the state, territory or province in which the entity is located,",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type",
+        "PostalCode"
+      ],
+      "discriminator": "@type"
+    },
+    "OperationSchedule": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "TimeSpanSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeSpan"
+          }
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Position": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Latitude": {
+          "description": "The measure of the angular distance on the meridean north or south of the equator.",
+          "type": "string"
+        },
+        "Longitude": {
+          "description": "The measure of the angular distance on the meridian east or west of the prime meridian.",
+          "type": "string"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "ChannelEffectivity": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "Channel": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "EffectivitySummary": {
+          "description": "Assigned Type: ms-0100:Effectivity_Summary",
+          "$ref": "#/definitions/Effectivity"
+        },
+        "ExtensionPoint": {
+          "$ref": "#/definitions/ExtensionPoint"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Phone": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "description": "The telephone number.",
+          "type": "string"
+        },
+        "Type": {
+          "description": "The phone number type (e.g. business, mobile).",
+          "type": "string"
         },
         "ExtensionPoint": {
           "$ref": "#/definitions/ExtensionPoint"
