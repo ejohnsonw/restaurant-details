@@ -543,11 +543,11 @@
               }
             },
             "MenuCategory": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/definitions/MenuCategory"
-                          }
-                        },
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/MenuCategory"
+              }
+            },
             "RegulatoryRequirementsDescription": {
               "type": "array",
               "items": {
@@ -1266,9 +1266,9 @@
           "type": "string"
         },
         "Name": {
-                  "type": "string"
-                  "description": "Name for this pricing: EG. Pick Up, Eat In, Delivery",
-                },
+          "type": "string",
+          "description": "Name for this pricing: EG. Pick Up, Eat In, Delivery"
+        },
         "Currency": {
           "description": "Assigned Type: ms-0100:CurrencyCode",
           "$ref": "#/definitions/CurrencyCode"
