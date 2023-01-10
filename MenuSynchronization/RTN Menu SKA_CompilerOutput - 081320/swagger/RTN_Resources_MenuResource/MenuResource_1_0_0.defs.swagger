@@ -255,13 +255,13 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Defaults": {
+            "Default": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Defaults"
+                "$ref": "#/definitions/Default"
               }
             },
-            "ModifierID": {
+            "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -379,13 +379,13 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Defaults": {
+            "Default": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Defaults"
+                "$ref": "#/definitions/Default"
               }
             },
-            "ModifierID": {
+            "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -542,12 +542,6 @@
                 "$ref": "#/definitions/MediaCategory"
               }
             },
-            "MenuCategory": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/MenuCategory"
-              }
-            },
             "RegulatoryRequirementsDescription": {
               "type": "array",
               "items": {
@@ -624,7 +618,7 @@
       ],
       "discriminator": "@type"
     },
-    "Defaults": {
+    "Default": {
       "properties": {
         "@type": {
           "type": "string"
@@ -781,14 +775,14 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "ModifierID": {
+            "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
-            "Defaults": {
+            "Default": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Defaults"
+                "$ref": "#/definitions/Default"
               }
             },
             "Pricing": {
@@ -878,10 +872,10 @@
               "description": "Assigned Type: ms-0100:Availability",
               "$ref": "#/definitions/Availability"
             },
-            "Defaults": {
+            "Default": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Defaults"
+                "$ref": "#/definitions/Default"
               }
             },
             "Pricing": {
@@ -895,7 +889,7 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "ModifierID": {
+            "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
@@ -1264,10 +1258,6 @@
       "properties": {
         "@type": {
           "type": "string"
-        },
-        "Name": {
-          "type": "string",
-          "description": "Name for this pricing: EG. Pick Up, Eat In, Delivery"
         },
         "Currency": {
           "description": "Assigned Type: ms-0100:CurrencyCode",
