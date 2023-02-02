@@ -2,7 +2,8 @@
   "swagger": "2.0",
   "info": {
     "title": "RestaurantDetailsResource",
-    "version": "1.0.0"
+    "description": "RestaurantDetailsResource Customized for RSTRNT",
+    "version": "1.0.0-RSTRNT"
   },
   "host": "127.0.0.1",
   "basePath": "/v1_0",
@@ -125,7 +126,7 @@
         "@type": {
           "type": "string"
         },
-        "iD": {
+        "GUID": {
           "description": "Assigned Type: ms-0100:GUID",
           "type": "string",
           "maxLength": 128
@@ -141,7 +142,7 @@
         "@type": {
           "type": "string"
         },
-        "iD": {
+        "GUID": {
           "description": "Assigned Type: ms-0100:GUID",
           "type": "string",
           "maxLength": 128
@@ -183,14 +184,11 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "string"
+              "$ref": "#/definitions/Channel"
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Location"
-              }
+              "$ref": "#/definitions/Location"
             },
             "Destination": {
               "type": "array",
@@ -254,14 +252,14 @@
                 "$ref": "#/definitions/Pricing"
               }
             },
-            "SKU": {
+            "Sku": {
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Default": {
+            "DefaultOption": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Default"
+                "$ref": "#/definitions/DefaultOption"
               }
             },
             "Modifier": {
@@ -314,10 +312,7 @@
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Location"
-              }
+              "type": "string"
             },
             "Destination": {
               "type": "array",
@@ -385,10 +380,10 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "Default": {
+            "DefaultOption": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Default"
+                "$ref": "#/definitions/DefaultOption"
               }
             },
             "Modifier": {
@@ -493,6 +488,7 @@
               "type": "string"
             },
             "Category": {
+              "description": "The category of the menu",
               "type": "array",
               "items": {
                 "type": "string"
@@ -521,26 +517,19 @@
             "ChannelAvailability": {
               "type": "array",
               "items": {
-                "type": "string"
+                "$ref": "#/definitions/Channel"
               }
             },
             "LocationAvailability": {
-              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Location"
               }
             },
-            "MenuProduct": {
+            "MenuCategory": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MenuProductID"
-              }
-            },
-            "MenuItem": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/MenuItemID"
+                "$ref": "#/definitions/MenuCategory"
               }
             },
             "MediaCategory": {
@@ -567,6 +556,39 @@
           }
         }
       ]
+    },
+    "MenuCategory": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "MenuCategoryDescription": {
+          "description": "The default description for the menu.",
+          "type": "string"
+        },
+        "MenuProducts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuProduct"
+          }
+        },
+        "MenuItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuItem"
+          }
+        },
+        "MediaCategory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MediaCategory"
+          }
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
     },
     "DietaryRestrictions": {
       "properties": {
@@ -625,7 +647,7 @@
       ],
       "discriminator": "@type"
     },
-    "Default": {
+    "DefaultOption": {
       "properties": {
         "@type": {
           "type": "string"
@@ -720,10 +742,7 @@
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Location"
-              }
+              "type": "string"
             },
             "Destination": {
               "type": "array",
@@ -789,10 +808,10 @@
               "description": "Assigned Type: ms-0100:Modifier",
               "$ref": "#/definitions/ModifierID"
             },
-            "Default": {
+            "DefaultOption": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Default"
+                "$ref": "#/definitions/DefaultOption"
               }
             },
             "Pricing": {
@@ -882,10 +901,10 @@
               "description": "Assigned Type: ms-0100:Availability",
               "$ref": "#/definitions/Availability"
             },
-            "Default": {
+            "DefaultOption": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Default"
+                "$ref": "#/definitions/DefaultOption"
               }
             },
             "Pricing": {
@@ -946,7 +965,7 @@
         "@type": {
           "type": "string"
         },
-        "restaurantID": {
+        "GUID": {
           "description": "Assigned Type: ms-0100:GUID",
           "type": "string",
           "maxLength": 128
@@ -966,12 +985,12 @@
           "properties": {
             "Location": {
               "description": "Assigned Type: ms-0100:Location",
-              "$ref": "#/definitions/LocationID"
+              "$ref": "#/definitions/Location"
             },
-            "Menu": {
+            "Menus": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MenuID"
+                "$ref": "#/definitions/Menu"
               }
             },
             "ExtensionPoint": {
