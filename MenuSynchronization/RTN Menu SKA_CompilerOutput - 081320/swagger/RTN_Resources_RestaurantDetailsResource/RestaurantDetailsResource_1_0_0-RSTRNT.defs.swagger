@@ -232,7 +232,7 @@
             "Ingredient": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/IngredientID"
+                "$ref": "#/definitions/Ingredient"
               }
             },
             "ServingSize": {
@@ -271,7 +271,7 @@
             },
             "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/ModifierID"
+              "$ref": "#/definitions/Modifier"
             },
             "modifierEligibleInd": {
               "description": "When true, this menu item may be modified.",
@@ -319,7 +319,6 @@
               "items": {
                 "$ref": "#/definitions/Channel"
               }
-
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the ingredient may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
@@ -363,7 +362,7 @@
             "Ingredient": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/IngredientID"
+                "$ref": "#/definitions/Ingredient"
               }
             },
             "ServingSize": {
@@ -402,7 +401,7 @@
             },
             "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/ModifierID"
+              "$ref": "#/definitions/Modifier"
             },
             "modifierEligibleInd": {
               "description": "When true, this menu item may be modified.",
@@ -709,7 +708,7 @@
         "@type": {
           "type": "string"
         },
-        "iD": {
+        "GUID": {
           "description": "Assigned Type: ms-0100:GUID",
           "type": "string",
           "maxLength": 128
@@ -797,13 +796,13 @@
               }
             },
             "OrderingNotes": {
-              "description": "Textual information regarding any specific ordering information for this menu item.",
+              "description": "Textual information regarding any specific ordering information for this modifier.",
               "type": "string"
             },
             "Ingredient": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/IngredientID"
+                "$ref": "#/definitions/Ingredient"
               }
             },
             "ServingSize": {
@@ -830,7 +829,7 @@
             },
             "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/ModifierID"
+              "$ref": "#/definitions/Modifier"
             },
             "DefaultOption": {
               "type": "array",
@@ -860,7 +859,7 @@
         "@type": {
           "type": "string"
         },
-        "menuProductID": {
+        "GUID": {
           "type": "string"
         }
       },
@@ -905,7 +904,7 @@
             "MenuItem": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MenuItemID"
+                "$ref": "#/definitions/MenuItem"
               },
               "minItems": 1
             },
@@ -944,7 +943,7 @@
             },
             "Modifier": {
               "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/ModifierID"
+              "$ref": "#/definitions/Modifier"
             },
             "PackingList": {
               "description": "Assigned Type: ms-0100:PackingList",
@@ -962,25 +961,49 @@
         }
       ]
     },
-    "Channel": {
+    "ChannelID": {
       "properties": {
         "@type": {
           "type": "string"
         },
-        "ChannelName": {
-          "description": "Identifies a channel.",
-          "type": "string"
-        },
-        "MenuItemDescription": {
-          "description": "A description related to the channel.",
-          "type": "string"
-        },
-        "ExtensionPoint": {
-          "$ref": "#/definitions/ExtensionPoint"
+        "GUID": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
         }
       },
       "required": [
         "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "Channel": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ChannelID"
+        },
+        {
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "ChannelName": {
+              "description": "Identifies a channel.",
+              "type": "string"
+            },
+            "Description": {
+              "description": "A description related to the channel.",
+              "type": "string"
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ],
+      "required": [
+        "@type",
+        "ChannelName"
       ],
       "discriminator": "@type"
     },
