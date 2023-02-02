@@ -188,7 +188,6 @@
               "items": {
                 "$ref": "#/definitions/Channel"
               }
-
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
@@ -342,7 +341,7 @@
             "SKU": {
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
-            },
+            }
           }
         }
       ]
@@ -466,7 +465,6 @@
               "items": {
                 "$ref": "#/definitions/Channel"
               }
-
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu",
@@ -691,7 +689,6 @@
               "items": {
                 "$ref": "#/definitions/Channel"
               }
-
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the modifier may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
@@ -817,7 +814,7 @@
               "type": "string"
             },
             "maximumOptions": {
-              "description": "The largest number of options that can be selected with this menu option.",
+              "description": "The largest number of options that can be selected with this menu product.",
               "type": "integer",
               "format": "int32"
             },
@@ -825,6 +822,12 @@
               "description": "The smallest number of options that can be selected with this menu product.",
               "type": "integer",
               "format": "int32"
+            },
+            "OptionSelection": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/OptionSelection"
+              }
             },
             "MasterDescription": {
               "description": "The master description for the menu product.",
@@ -834,13 +837,13 @@
               "description": "The description of the menu product specific to the channel.",
               "type": "string"
             },
-            "MenuItem": {
+            "Product": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MenuItem"
-              },
-              "minItems": 1
+              }
             },
+
             "Promotion": {
               "type": "array",
               "items": {
@@ -927,6 +930,57 @@
             "Description": {
               "description": "A description related to the channel.",
               "type": "string"
+            },
+            "ExtensionPoint": {
+              "$ref": "#/definitions/ExtensionPoint"
+            }
+          }
+        }
+      ],
+      "required": [
+        "@type",
+        "ChannelName"
+      ],
+      "discriminator": "@type"
+    },
+    "OptionSelectionID": {
+      "properties": {
+        "@type": {
+          "type": "string"
+        },
+        "GUID": {
+          "description": "Assigned Type: ms-0100:GUID",
+          "type": "string",
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "discriminator": "@type"
+    },
+    "OptionSelection": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/OptionSelectionID"
+        },
+        {
+          "properties": {
+            "@type": {
+              "type": "string"
+            },
+            "Category": {
+              "description": "the option's category: eg. drinks, sides",
+              "type": "string"
+            },
+            "MenuItem": {
+              "$ref": "#/definitions/MenuItem"
+            },
+            "Pricing": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pricing"
+              }
             },
             "ExtensionPoint": {
               "$ref": "#/definitions/ExtensionPoint"
