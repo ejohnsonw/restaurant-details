@@ -843,7 +843,6 @@
                 "$ref": "#/definitions/MenuItem"
               }
             },
-
             "Promotion": {
               "type": "array",
               "items": {
@@ -1867,6 +1866,9 @@
         "@type": {
           "type": "string"
         },
+        "Effectivity": {
+          "$ref": "#/definitions/Effectivity"
+        },
         "PromotionCode": {
           "description": "A code that the guest provides to invoke a discount on the menu product (e.g. promotion, charity event).",
           "type": "string"
@@ -1874,6 +1876,12 @@
         "Description": {
           "description": "Provides a description of the promotion or charity event identified in the promotion code.",
           "type": "string"
+        },
+        "Media": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Media"
+          }
         },
         "ExtensionPoint": {
           "$ref": "#/definitions/ExtensionPoint"
