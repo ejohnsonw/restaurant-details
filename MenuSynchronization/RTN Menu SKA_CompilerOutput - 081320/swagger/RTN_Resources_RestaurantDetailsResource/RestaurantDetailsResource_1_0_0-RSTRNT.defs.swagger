@@ -1849,7 +1849,7 @@
       "properties": {
         "@type": {
           "type": "string"
-        }
+        },
         "PromotionCode": {
           "description": "A code that the guest provides to invoke a discount on the menu product (e.g. promotion, charity event).",
           "type": "string"
@@ -1899,6 +1899,9 @@
           "items": {
             "$ref": "#/definitions/Modifier"
           }
+        },
+        "Discount": {
+          "$ref": "#/definitions/Discount"
         },
         "ExtensionPoint": {
           "$ref": "#/definitions/ExtensionPoint"
