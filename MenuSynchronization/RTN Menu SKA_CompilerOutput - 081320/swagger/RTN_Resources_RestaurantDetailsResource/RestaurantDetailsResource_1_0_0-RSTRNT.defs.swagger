@@ -238,12 +238,6 @@
               "description": "Assigned Type: ms-0100:ServingSize",
               "$ref": "#/definitions/ServingSize"
             },
-            "Promotion": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Promotion"
-              }
-            },
             "Media": {
               "type": "array",
               "items": {
@@ -739,10 +733,6 @@
               "description": "Assigned Type: ms-0100:ServingSize",
               "$ref": "#/definitions/ServingSize"
             },
-            "Promotion": {
-              "description": "Assigned Type: ms-0100:Promotion",
-              "$ref": "#/definitions/Promotion"
-            },
             "Media": {
               "type": "array",
               "items": {
@@ -841,12 +831,6 @@
               "type": "array",
               "items": {
                 "$ref": "#/definitions/MenuItem"
-              }
-            },
-            "Promotion": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Promotion"
               }
             },
             "Media": {
@@ -1865,10 +1849,7 @@
       "properties": {
         "@type": {
           "type": "string"
-        },
-        "Effectivity": {
-          "$ref": "#/definitions/Effectivity"
-        },
+        }
         "PromotionCode": {
           "description": "A code that the guest provides to invoke a discount on the menu product (e.g. promotion, charity event).",
           "type": "string"
@@ -1877,10 +1858,46 @@
           "description": "Provides a description of the promotion or charity event identified in the promotion code.",
           "type": "string"
         },
+
+        "ChannelAvailability": {
+          "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Channel"
+          }
+        },
+        "LocationAvailability": {
+          "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Location"
+          }
+        },
+        "Effectivity": {
+          "$ref": "#/definitions/Effectivity"
+        },
         "Media": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Media"
+          }
+        },
+        "MenuItem": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuItem"
+          }
+        },
+        "MenuProduct": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuProduct"
+          }
+        },
+        "Modifier": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Modifier"
           }
         },
         "ExtensionPoint": {
@@ -1888,7 +1905,8 @@
         }
       },
       "required": [
-        "@type"
+        "@type",
+        "PromotionCode"
       ],
       "discriminator": "@type"
     },
