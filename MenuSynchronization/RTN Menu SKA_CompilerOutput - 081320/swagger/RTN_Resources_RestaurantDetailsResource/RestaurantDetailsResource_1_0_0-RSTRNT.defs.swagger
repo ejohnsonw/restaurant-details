@@ -184,11 +184,18 @@
             },
             "ChannelAvailability": {
               "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "$ref": "#/definitions/Channel"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Channel"
+              }
+
             },
             "LocationAvailability": {
               "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "$ref": "#/definitions/Location"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Location"
+              }
             },
             "Destination": {
               "type": "array",
@@ -307,12 +314,19 @@
               "$ref": "#/definitions/Availability"
             },
             "ChannelAvailability": {
-              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "string"
+              "description": "Specifies the channels for which this ingredient is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Channel"
+              }
+
             },
             "LocationAvailability": {
-              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "string"
+              "description": "A location or arbitrary set of locations where the ingredient may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Location"
+              }
             },
             "Destination": {
               "type": "array",
@@ -515,12 +529,15 @@
               }
             },
             "ChannelAvailability": {
+              "description": "Specifies the channels for which this menu is available.",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Channel"
               }
+
             },
             "LocationAvailability": {
+              "description": "A location or arbitrary set of locations where the menu",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Location"
@@ -737,12 +754,19 @@
               "$ref": "#/definitions/Availability"
             },
             "ChannelAvailability": {
-              "description": "Specifies the channels for which this menu item is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "string"
+              "description": "Specifies the channels for which this modifier is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Channel"
+              }
+
             },
             "LocationAvailability": {
-              "description": "A location or arbitrary set of locations where the menu item may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "string"
+              "description": "A location or arbitrary set of locations where the modifier may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Location"
+              }
             },
             "Destination": {
               "type": "array",
