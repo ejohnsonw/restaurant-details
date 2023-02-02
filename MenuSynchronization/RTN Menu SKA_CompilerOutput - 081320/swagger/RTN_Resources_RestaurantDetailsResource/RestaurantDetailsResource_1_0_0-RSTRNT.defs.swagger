@@ -969,12 +969,19 @@
             "@type": {
               "type": "string"
             },
+            "Description": {
+              "description": "the option's category: eg. drinks, sides",
+              "type": "string"
+            },
             "Category": {
               "description": "the option's category: eg. drinks, sides",
               "type": "string"
             },
             "MenuItem": {
               "$ref": "#/definitions/MenuItem"
+            },
+            "Ingredient": {
+              "$ref": "#/definitions/Ingredient"
             },
             "Pricing": {
               "type": "array",
