@@ -243,10 +243,10 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategory": {
+            "Media": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MediaCategory"
+                "$ref": "#/definitions/Media"
               }
             },
             "Source": {
@@ -373,10 +373,10 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategory": {
+            "Media": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MediaCategory"
+                "$ref": "#/definitions/Media"
               }
             },
             "Source": {
@@ -548,10 +548,10 @@
                 "$ref": "#/definitions/MenuCategory"
               }
             },
-            "MediaCategory": {
+            "Media": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MediaCategory"
+                "$ref": "#/definitions/Media"
               }
             },
             "RegulatoryRequirementsDescription": {
@@ -594,10 +594,10 @@
             "$ref": "#/definitions/MenuItem"
           }
         },
-        "MediaCategory": {
+        "Media": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/MediaCategory"
+            "$ref": "#/definitions/Media"
           }
         }
       },
@@ -813,10 +813,10 @@
               "description": "Assigned Type: ms-0100:Promotion",
               "$ref": "#/definitions/Promotion"
             },
-            "MediaCategory": {
+            "Media": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MediaCategory"
+                "$ref": "#/definitions/Media"
               }
             },
             "Source": {
@@ -914,10 +914,10 @@
                 "$ref": "#/definitions/Promotion"
               }
             },
-            "MediaCategory": {
+            "Media": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/MediaCategory"
+                "$ref": "#/definitions/Media"
               }
             },
             "Availability": {
@@ -1445,6 +1445,9 @@
         },
         "ExtensionPoint": {
           "$ref": "#/definitions/ExtensionPoint"
+        },
+        "MediaCategory": {
+          "$ref": "#/definitions/MediaCategory"
         }
       },
       "required": [
@@ -1458,12 +1461,8 @@
           "type": "string"
         },
         "Name": {
-          "description": "The name of the category for this specific media asset.",
+          "description": "The name of the category ",
           "type": "string"
-        },
-        "Media": {
-          "description": "Assigned Type: ms-0100:Media",
-          "$ref": "#/definitions/Media"
         },
         "ExtensionPoint": {
           "$ref": "#/definitions/ExtensionPoint"
