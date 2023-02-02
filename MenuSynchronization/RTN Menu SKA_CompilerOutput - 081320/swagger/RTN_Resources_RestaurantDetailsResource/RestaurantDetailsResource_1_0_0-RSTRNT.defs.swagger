@@ -240,8 +240,10 @@
               "$ref": "#/definitions/ServingSize"
             },
             "Promotion": {
-              "description": "Assigned Type: ms-0100:Promotion",
-              "$ref": "#/definitions/Promotion"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Promotion"
+              }
             },
             "Media": {
               "type": "array",
@@ -292,7 +294,7 @@
         {
           "properties": {
             "NutritionResource": {
-              "description": "URL to master nutrition guide for specific information about a menu item.",
+              "description": "URL to master nutrition guide for specific information about an ingredient",
               "type": "string"
             },
             "BaselineNutrition": {
@@ -313,65 +315,13 @@
               "description": "Assigned Type: ms-0100:Availability",
               "$ref": "#/definitions/Availability"
             },
-            "ChannelAvailability": {
-              "description": "Specifies the channels for which this ingredient is available.  If there are no channels specified at the menu item level, then the channels specified at the menu will apply.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Channel"
-              }
-            },
-            "LocationAvailability": {
-              "description": "A location or arbitrary set of locations where the ingredient may be available.  This is a location in the restaurants direct control, i.e. restaurant x at this address, NOT a third party service.",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Location"
-              }
-            },
-            "Destination": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
             "Description": {
-              "description": "A textual description of the menu item.",
+              "description": "A textual description of the ingredient.",
               "type": "string"
-            },
-            "Preparation": {
-              "description": "Describes how the menu item is prepared.",
-              "type": "string"
-            },
-            "MasterDescription": {
-              "description": "The main description for the menu item.",
-              "type": "string"
-            },
-            "Channel": {
-              "description": "Assigned Type: ms-0100:Channel",
-              "$ref": "#/definitions/Channel"
-            },
-            "PackingList": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PackingList"
-              }
-            },
-            "OrderingNotes": {
-              "description": "Textual information regarding any specific ordering information for this menu item.",
-              "type": "string"
-            },
-            "Ingredient": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Ingredient"
-              }
             },
             "ServingSize": {
               "description": "Assigned Type: ms-0100:ServingSize",
               "$ref": "#/definitions/ServingSize"
-            },
-            "Promotion": {
-              "description": "Assigned Type: ms-0100:Promotion",
-              "$ref": "#/definitions/Promotion"
             },
             "Media": {
               "type": "array",
@@ -380,7 +330,7 @@
               }
             },
             "Source": {
-              "description": "Where the item came from.",
+              "description": "Where the ingredient came from.",
               "type": "string"
             },
             "Pricing": {
@@ -393,23 +343,6 @@
               "description": "Assigned Type: ms-0100:SKU",
               "$ref": "#/definitions/SKU"
             },
-            "DefaultOption": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/DefaultOption"
-              }
-            },
-            "Modifier": {
-              "description": "Assigned Type: ms-0100:Modifier",
-              "$ref": "#/definitions/Modifier"
-            },
-            "modifierEligibleInd": {
-              "description": "When true, this menu item may be modified.",
-              "type": "boolean"
-            },
-            "ExtensionPoint": {
-              "$ref": "#/definitions/ExtensionPoint"
-            }
           }
         }
       ]
