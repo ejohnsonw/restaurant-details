@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "RestaurantDetailsResource",
+    "title": "RestaurantDetailsResource - RSTRNT",
     "description": "RestaurantDetailsResource Customized for RSTRNT",
     "version": "1.0.0-RSTRNT"
   },
